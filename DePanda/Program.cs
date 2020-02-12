@@ -1,12 +1,17 @@
-﻿using System;
+﻿using DePandaLib.Entities;
+using System;
 
-namespace DePanda
+namespace DePandaConsole
 {
     internal class Program
     {
         private static void Main(string[] args)
         {
             Console.WriteLine("Hello Panda World!");
+            Dish dish = new Dish();
+            dish.Name = "Babi Pangang";
+
+            Console.WriteLine("We only sell: "+dish.Name);
         }
     }
 }
