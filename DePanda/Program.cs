@@ -1,4 +1,5 @@
-﻿using DePandaLib.Entities;
+﻿using DePandaLib.DAL;
+using DePandaLib.Entities;
 using System;
 
 namespace DePandaConsole
@@ -11,7 +12,9 @@ namespace DePandaConsole
             Dish dish = new Dish();
             dish.Name = "Babi Pangang";
 
-            Console.WriteLine("We only sell: "+dish.Name);
+            DataStorageHandler dth = new DataStorageHandler();
+            dth.Create<Dish>(dish);
+            Console.WriteLine("We only sell: " + dish.Name);
         }
     }
 }
