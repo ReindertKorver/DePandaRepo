@@ -3,7 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.29521.150
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DePanda", "DePanda\DePanda.csproj", "{3BC4328F-C500-482E-A79D-F35EAE20E764}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DePandaConsole", "DePanda\DePandaConsole.csproj", "{3BC4328F-C500-482E-A79D-F35EAE20E764}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DePandaLib", "DePandaLib\DePandaLib.csproj", "{D631F3A8-BFCD-4D66-BEC8-A2A541899B52}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DePandaWinForms", "DePandaWinForms\DePandaWinForms.csproj", "{F443A434-D4FC-4C33-B474-CA88EB663C9C}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +19,14 @@ Global
 		{3BC4328F-C500-482E-A79D-F35EAE20E764}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{3BC4328F-C500-482E-A79D-F35EAE20E764}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{3BC4328F-C500-482E-A79D-F35EAE20E764}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D631F3A8-BFCD-4D66-BEC8-A2A541899B52}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D631F3A8-BFCD-4D66-BEC8-A2A541899B52}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D631F3A8-BFCD-4D66-BEC8-A2A541899B52}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D631F3A8-BFCD-4D66-BEC8-A2A541899B52}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F443A434-D4FC-4C33-B474-CA88EB663C9C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F443A434-D4FC-4C33-B474-CA88EB663C9C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F443A434-D4FC-4C33-B474-CA88EB663C9C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F443A434-D4FC-4C33-B474-CA88EB663C9C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
