@@ -1,80 +1,31 @@
-﻿using DePandaLib.Interfaces;
+﻿using DePandaLib.Entities;
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Text;
+using System.Text.Json;
 
 namespace DePandaLib.DAL
 {
     /// <summary>
     /// Handles the data storage for DePanda
     /// </summary>
-    public class DataStorageHandler : ICRUD
+    public class DataStorageHandler
     {
-        /// <summary>
-        /// Creates a new object in storage
-        /// Use case:
-        /// </summary>
-        /// <example>
-        ///  DataStorageHandler dth = new DataStorageHandler();
-        ///  dth.Create<Dish>(dish);
-        /// </example>
-        /// <typeparam name="T"></typeparam>
-        /// <param name="obj"></param>
-        /// <returns></returns>
-        public T Create<T>(T obj) where T : class, new()
+        public string StorageFileLocation { get; set; }
+        public DataStorage storage { get; set; }
+
+        public DataStorageHandler(string storageFileLocation)
         {
-            Console.WriteLine("DataStorageHandler.Create is'nt implemented yet");
-            return obj;
+            this.StorageFileLocation = storageFileLocation;
+            string fileContent = File.ReadAllText(StorageFileLocation);
+            storage = JsonSerializer.Deserialize<DataStorage>(fileContent);
         }
 
-        /// <summary>
-        /// Deletes an object in storage by its key
-        /// Use case:
-        /// </summary>
-        /// <example>
-        ///  DataStorageHandler dth = new DataStorageHandler();
-        ///  dth.Delete<Dish>("key");
-        /// </example>
-        /// <typeparam name="T"></typeparam>
-        /// <param name="obj"></param>
-        /// <returns></returns>
-        public void Delete<T>(string key)
+        public void SaveChanges()
         {
-            Console.WriteLine("DataStorageHandler.Delete is'nt implemented yet");
-        }
-
-        /// <summary>
-        /// Returns an object from storage
-        /// Use case:
-        /// </summary>
-        /// <example>
-        ///  DataStorageHandler dth = new DataStorageHandler();
-        ///  dth.Read<Dish>("key");
-        /// </example>
-        /// <typeparam name="T"></typeparam>
-        /// <param name="obj"></param>
-        /// <returns></returns>
-        public T Read<T>(string key) where T : class, new()
-        {
-            Console.WriteLine("DataStorageHandler.Read is'nt implemented yet");
-            return new T() { };
-        }
-
-        /// <summary>
-        /// Updates an object in storage
-        /// Use case:
-        /// </summary>
-        /// <example>
-        ///  DataStorageHandler dth = new DataStorageHandler();
-        ///  dth.Update<Dish>(dish);
-        /// </example>
-        /// <typeparam name="T"></typeparam>
-        /// <param name="obj"></param>
-        /// <returns></returns>
-        public T Update<T>(T obj) where T : class, new()
-        {
-            Console.WriteLine("DataStorageHandler.Update is'nt implemented yet");
-            return obj;
+            string res = JsonSerializer.Serialize(storage);
+            File.WriteAllText(StorageFileLocation, res);
         }
     }
 }

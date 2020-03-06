@@ -6,6 +6,7 @@
 
   <ItemGroup>
     <Folder Include="BLL\" />
+    <Folder Include="Interfaces\" />
   </ItemGroup>
 
 </Project>
