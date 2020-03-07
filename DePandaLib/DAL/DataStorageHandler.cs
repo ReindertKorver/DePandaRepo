@@ -1,9 +1,9 @@
 ﻿using DePandaLib.Entities;
+using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Text;
-using System.Text.Json;
 
 namespace DePandaLib.DAL
 {
@@ -19,12 +19,12 @@ namespace DePandaLib.DAL
         {
             this.StorageFileLocation = storageFileLocation;
             string fileContent = File.ReadAllText(StorageFileLocation);
-            storage = JsonSerializer.Deserialize<DataStorage>(fileContent);
+            storage = JsonConvert.DeserializeObject<DataStorage>(fileContent);
         }
 
         public void SaveChanges()
         {
-            string res = JsonSerializer.Serialize(storage);
+            string res = JsonConvert.SerializeObject(storage);
             File.WriteAllText(StorageFileLocation, res);
         }
     }
