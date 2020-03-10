@@ -1,4 +1,5 @@
-﻿using System;
+﻿using DePandaWinForms.DAL;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -10,11 +11,16 @@ using System.Windows.Forms;
 
 namespace DePandaWinForms.Pages
 {
-    public partial class Login : Form
+    public partial class Login : FormDataProvider
     {
         public Login()
         {
             InitializeComponent();
+        }
+
+        public override void OnFormDataLoad()
+        {
+            base.OnFormDataLoad();
         }
 
         private void LoginBtn_Click(object sender, EventArgs e)

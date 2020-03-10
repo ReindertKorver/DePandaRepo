@@ -1,4 +1,5 @@
-﻿using System;
+﻿using DePandaClassLib.Entities;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -16,9 +17,11 @@ namespace DePandaLib.Entities
         public List<RestaurantTable> Tables { get; set; }
         public List<Order> Orders { get; set; }
 
+        private List<User> Users { get; set; }
+
         public decimal GetReservationTotal()
         {
-            return Orders.Sum(o => o.Dishes.Sum(d => d.Price));
+            return Orders.Sum(order => order.GetTotal());
         }
     }
 }

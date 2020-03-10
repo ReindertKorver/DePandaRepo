@@ -46,6 +46,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Entities\FormEventArgs.cs" />
+    <Compile Include="Entities\Navigation.cs" />
+    <Compile Include="DAL\FormDataProvider.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -85,6 +90,7 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <None Include="ClassDiagram1.cd" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -100,6 +106,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Assets\Images\" />
+    <Folder Include="BLL\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Assets\Icons\close.png" />
@@ -111,6 +118,12 @@
     <Content Include="Assets\Icons\minhover.png" />
     <Content Include="Assets\Icons\login.png" />
     <Content Include="Assets\Icons\loginhover.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\DePandaLib\DePandaLib.csproj">
+      <Project>{A8D4289D-3C8D-43FB-B4A0-7855FF339FBB}</Project>
+      <Name>DePandaLib</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
