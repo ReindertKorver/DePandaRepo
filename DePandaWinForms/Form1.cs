@@ -1,4 +1,6 @@
-﻿using DePandaWinForms.Pages;
+﻿using DePandaWinForms.DAL;
+using DePandaWinForms.Entities;
+using DePandaWinForms.Pages;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -14,18 +16,29 @@ namespace DePandaWinForms
 {
     public partial class Form1 : Form
     {
+        private FormDataProvider startScreen = new Login();
+
         public Form1()
         {
             InitializeComponent();
             this.FormBorderStyle = FormBorderStyle.None;
             this.DoubleBuffered = true;
             this.SetStyle(ControlStyles.ResizeRedraw, true);
-            Login myForm = new Login();
-            myForm.TopLevel = false;
-            myForm.AutoScroll = true;
-            myForm.Location = new Point((PagePanel.Size.Width / 2) - (myForm.Size.Width / 2), 0);
-            PagePanel.Controls.Add(myForm);
-            myForm.Show();
+
+            startScreen.Init();
+            startScreen.Navigator.PageBound += Navigator_PageBound;
+            startScreen.Navigator.PushNextPage(startScreen);
+        }
+
+        private void Navigator_PageBound(object sender, EventArgs e)
+        {
+            FormDataProvider form = ((FormEventArgs)e).form;
+            form.TopLevel = false;
+            form.AutoScroll = true;
+            form.Location = new Point((PagePanel.Size.Width / 2) - (form.Size.Width / 2), 0);
+            PagePanel.Controls.Clear();
+            PagePanel.Controls.Add(form);
+            form.Show();
         }
 
         private void Close_MouseHover(object sender, EventArgs e)
@@ -137,24 +150,18 @@ namespace DePandaWinForms
 
         private void listView1_ItemSelectionChanged(object sender, ListViewItemSelectionChangedEventArgs e)
         {
-            Test myForm = new Test();
-            myForm.TopLevel = false;
-            myForm.AutoScroll = true;
-            myForm.Location = new Point((PagePanel.Size.Width / 2) - (myForm.Size.Width / 2), 0);
-            PagePanel.Controls.Clear();
-            PagePanel.Controls.Add(myForm);
-            myForm.Show();
+            FormDataProvider myForm = new Test();
+            startScreen.Navigator.PushNextPage(myForm);
         }
 
         private void panel3_Click(object sender, EventArgs e)
         {
-            Login myForm = new Login();
-            myForm.TopLevel = false;
-            myForm.AutoScroll = true;
-            myForm.Location = new Point((PagePanel.Size.Width / 2) - (myForm.Size.Width / 2), 0);
-            PagePanel.Controls.Clear();
-            PagePanel.Controls.Add(myForm);
-            myForm.Show();
+            startScreen.Navigator.PushNextPage(startScreen);
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            startScreen.Navigator.PopPage();
         }
     }
 }
