@@ -80,7 +80,6 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "MenuPage";
             this.Text = "Reservations";
-            this.Load += new System.EventHandler(this.MenuPage_Load);
             ((System.ComponentModel.ISupportInitialize)(this.MenuGrid)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

@@ -1,5 +1,4 @@
-﻿using DePandaWinForms.DAL;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -11,7 +10,7 @@ using System.Windows.Forms;
 
 namespace DePandaWinForms.Pages
 {
-    public partial class Test : FormDataProvider
+    public partial class Test : Form
     {
         public Test()
         {

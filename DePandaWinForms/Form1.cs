@@ -1,6 +1,4 @@
-﻿using DePandaWinForms.DAL;
-using DePandaWinForms.Entities;
-using DePandaWinForms.Pages;
+﻿using DePandaWinForms.Pages;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -16,32 +14,12 @@ namespace DePandaWinForms
 {
     public partial class Form1 : Form
     {
-        private FormDataProvider startScreen = new Login();
-
         public Form1()
         {
             InitializeComponent();
             this.FormBorderStyle = FormBorderStyle.None;
             this.DoubleBuffered = true;
             this.SetStyle(ControlStyles.ResizeRedraw, true);
-
-            startScreen.Init();
-            startScreen.Navigator.PageBound += Navigator_PageBound;
-            startScreen.Navigator.PushNextPage(startScreen);
-        }
-
-        private void Navigator_PageBound(object sender, EventArgs e)
-        {
-            FormDataProvider form = ((FormEventArgs)e).form;
-            form.TopLevel = false;
-            form.AutoScroll = true;
-            if (form is Login)
-            {
-                form.Location = new Point((PagePanel.Size.Width / 2) - (form.Size.Width / 2), 0);
-            }
-            PagePanel.Controls.Clear();
-            PagePanel.Controls.Add(form);
-            form.Show();
         }
 
         private void Close_MouseHover(object sender, EventArgs e)
@@ -153,7 +131,7 @@ namespace DePandaWinForms
 
         private void listView1_ItemSelectionChanged(object sender, ListViewItemSelectionChangedEventArgs e)
         {
-            FormDataProvider form = null;
+            Form form = null;
             switch (e.Item.Text)
             {
                 case "Menu":
@@ -177,18 +155,24 @@ namespace DePandaWinForms
             }
             if (form != null)
             {
-                startScreen.Navigator.PushNextPage(form);
+                form.TopLevel = false;
+                form.AutoScroll = true;
+                if (form is Login)
+                {
+                    form.Location = new Point((PagePanel.Size.Width / 2) - (form.Size.Width / 2), 0);
+                }
+                PagePanel.Controls.Clear();
+                PagePanel.Controls.Add(form);
+                form.Show();
             }
         }
 
         private void panel3_Click(object sender, EventArgs e)
         {
-            startScreen.Navigator.PushNextPage(startScreen);
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
-            startScreen.Navigator.PopPage();
         }
     }
 }
