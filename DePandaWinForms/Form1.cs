@@ -35,7 +35,10 @@ namespace DePandaWinForms
             FormDataProvider form = ((FormEventArgs)e).form;
             form.TopLevel = false;
             form.AutoScroll = true;
-            form.Location = new Point((PagePanel.Size.Width / 2) - (form.Size.Width / 2), 0);
+            if (form is Login)
+            {
+                form.Location = new Point((PagePanel.Size.Width / 2) - (form.Size.Width / 2), 0);
+            }
             PagePanel.Controls.Clear();
             PagePanel.Controls.Add(form);
             form.Show();
@@ -150,8 +153,32 @@ namespace DePandaWinForms
 
         private void listView1_ItemSelectionChanged(object sender, ListViewItemSelectionChangedEventArgs e)
         {
-            FormDataProvider myForm = new Test();
-            startScreen.Navigator.PushNextPage(myForm);
+            FormDataProvider form = null;
+            switch (e.Item.Text)
+            {
+                case "Menu":
+                    form = new MenuPage();
+                    break;
+
+                case "Reserveringen":
+                    form = new ReservationPage();
+                    break;
+
+                case "Bestellingen":
+                    form = new OrdersPage();
+                    break;
+
+                case "Betalingen":
+                    form = new PaymentPage();
+                    break;
+
+                default:
+                    break;
+            }
+            if (form != null)
+            {
+                startScreen.Navigator.PushNextPage(form);
+            }
         }
 
         private void panel3_Click(object sender, EventArgs e)

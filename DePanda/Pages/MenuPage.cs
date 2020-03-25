@@ -19,7 +19,6 @@ namespace DePandaConsole.Pages
             do
             {
                 Console.WriteLine("Creating a new reservation");
-                
 
                 string onTheNameOf;
                 do

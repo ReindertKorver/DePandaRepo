@@ -19,4 +19,8 @@
     <Folder Include="Interfaces\" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\DePandaLib\DePandaLib.csproj" />
+  </ItemGroup>
+
 </Project>
