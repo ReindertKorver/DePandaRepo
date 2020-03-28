@@ -15,10 +15,9 @@ namespace DePandaLib.DAL
         public string StorageFileLocation { get; set; }
         public DataStorage storage { get; set; }
 
-        public DataStorageHandler(string storageFileLocation)
+        public DataStorageHandler(byte[] storageFile)
         {
-            this.StorageFileLocation = storageFileLocation;
-            string fileContent = File.ReadAllText(StorageFileLocation);
+            string fileContent = System.Text.Encoding.UTF8.GetString(storageFile);
             storage = JsonConvert.DeserializeObject<DataStorage>(fileContent);
         }
 

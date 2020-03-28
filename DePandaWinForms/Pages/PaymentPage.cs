@@ -10,15 +10,11 @@ using System.Windows.Forms;
 
 namespace DePandaWinForms.Pages
 {
-    public partial class Login : Form
+    public partial class PaymentPage : Form
     {
-        public Login()
+        public PaymentPage()
         {
             InitializeComponent();
-        }
-
-        private void LoginBtn_Click(object sender, EventArgs e)
-        {
         }
     }
 }

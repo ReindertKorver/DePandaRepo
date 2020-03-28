@@ -10,14 +10,18 @@ using System.Windows.Forms;
 
 namespace DePandaWinForms.Pages
 {
-    public partial class Login : Form
+    public partial class MenuPage : Form
     {
-        public Login()
+        public MenuPage()
         {
             InitializeComponent();
         }
 
-        private void LoginBtn_Click(object sender, EventArgs e)
+        private void Pincode_Click(object sender, EventArgs e)
+        {
+        }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
         {
         }
     }

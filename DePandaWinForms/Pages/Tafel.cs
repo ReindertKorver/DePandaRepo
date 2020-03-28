@@ -10,15 +10,20 @@ using System.Windows.Forms;
 
 namespace DePandaWinForms.Pages
 {
-    public partial class Login : Form
+    public partial class Tafel : Form
     {
-        public Login()
+        public Tafel()
         {
             InitializeComponent();
         }
 
-        private void LoginBtn_Click(object sender, EventArgs e)
+        private void label1_Click(object sender, EventArgs e)
         {
+        }
+
+        private void panel1_Click(object sender, EventArgs e)
+        {
+            Console.WriteLine(((Panel)sender).Tag.ToString());
         }
     }
 }

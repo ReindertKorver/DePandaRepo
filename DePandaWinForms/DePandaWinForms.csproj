@@ -46,11 +46,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Entities\FormEventArgs.cs" />
-    <Compile Include="Entities\Navigation.cs" />
-    <Compile Include="DAL\FormDataProvider.cs">
-      <SubType>Form</SubType>
-    </Compile>
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -63,6 +58,36 @@
     <Compile Include="Pages\Login.Designer.cs">
       <DependentUpon>Login.cs</DependentUpon>
     </Compile>
+    <Compile Include="Pages\OrdersPage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Pages\OrdersPage.Designer.cs">
+      <DependentUpon>OrdersPage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\PaymentPage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Pages\PaymentPage.Designer.cs">
+      <DependentUpon>PaymentPage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\MenuPage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Pages\MenuPage.Designer.cs">
+      <DependentUpon>MenuPage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\ReservationPage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Pages\ReservationPage.Designer.cs">
+      <DependentUpon>ReservationPage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Tafel.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Pages\Tafel.Designer.cs">
+      <DependentUpon>Tafel.cs</DependentUpon>
+    </Compile>
     <Compile Include="Pages\Test.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -71,11 +96,27 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <None Include="Resources\DataStorage.json.bmp" />
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Pages\Login.resx">
       <DependentUpon>Login.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Pages\OrdersPage.resx">
+      <DependentUpon>OrdersPage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Pages\PaymentPage.resx">
+      <DependentUpon>PaymentPage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Pages\MenuPage.resx">
+      <DependentUpon>MenuPage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Pages\ReservationPage.resx">
+      <DependentUpon>ReservationPage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Pages\Tafel.resx">
+      <DependentUpon>Tafel.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Pages\Test.resx">
       <DependentUpon>Test.cs</DependentUpon>
@@ -91,6 +132,10 @@
       <DesignTime>True</DesignTime>
     </Compile>
     <None Include="ClassDiagram1.cd" />
+    <Content Include="DataStorage.json">
+      <SubType>Designer</SubType>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -107,6 +152,8 @@
   <ItemGroup>
     <Folder Include="Assets\Images\" />
     <Folder Include="BLL\" />
+    <Folder Include="DAL\" />
+    <Folder Include="Entities\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Assets\Icons\close.png" />
