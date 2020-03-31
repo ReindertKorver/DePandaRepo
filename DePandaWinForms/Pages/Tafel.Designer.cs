@@ -72,6 +72,7 @@
             this.panel3.TabIndex = 3;
             this.panel3.Tag = "Tafel 7";
             this.panel3.Click += new System.EventHandler(this.panel1_Click);
+            this.panel3.Paint += new System.Windows.Forms.PaintEventHandler(this.panel3_Paint);
             // 
             // panel4
             // 
