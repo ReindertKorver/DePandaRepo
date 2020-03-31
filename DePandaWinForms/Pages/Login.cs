@@ -1,4 +1,5 @@
-﻿using System;
+﻿using DePandaLib.DAL;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -19,6 +20,7 @@ namespace DePandaWinForms.Pages
 
         private void LoginBtn_Click(object sender, EventArgs e)
         {
+            // if (textBox1.Text == DataStorageHandler.Storage.Settings.PinCode)
         }
     }
 }

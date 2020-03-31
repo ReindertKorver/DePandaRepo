@@ -12,18 +12,18 @@ namespace DePandaLib.DAL
     /// </summary>
     public class DataStorageHandler
     {
-        public string StorageFileLocation { get; set; }
-        public DataStorage storage { get; set; }
+        public static string StorageFileLocation { get; set; }
+        public static DataStorage Storage { get; set; }
 
-        public DataStorageHandler(byte[] storageFile)
+        public static void Init(byte[] storageFile)
         {
             string fileContent = System.Text.Encoding.UTF8.GetString(storageFile);
-            storage = JsonConvert.DeserializeObject<DataStorage>(fileContent);
+            Storage = JsonConvert.DeserializeObject<DataStorage>(fileContent);
         }
 
-        public void SaveChanges()
+        public static void SaveChanges()
         {
-            string res = JsonConvert.SerializeObject(storage);
+            string res = JsonConvert.SerializeObject(Storage);
             File.WriteAllText(StorageFileLocation, res);
         }
     }

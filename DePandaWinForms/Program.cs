@@ -1,4 +1,5 @@
-﻿using DePandaWinForms.Pages;
+﻿using DePandaLib.DAL;
+using DePandaWinForms.Pages;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -17,7 +18,7 @@ namespace DePandaWinForms
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-
+            DataStorageHandler.Init(Properties.Resources.DataStorage);
             Application.Run(new Form1());
         }
     }

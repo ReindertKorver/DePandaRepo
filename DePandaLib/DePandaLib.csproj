@@ -51,15 +51,13 @@
     <Compile Include="Entities\Order.cs" />
     <Compile Include="Entities\Reservation.cs" />
     <Compile Include="Entities\RestaurantTable.cs" />
+    <Compile Include="Entities\Settings.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="ClassDiagram1.cd" />
     <None Include="packages.config" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="BLL\" />
-    <Folder Include="Interfaces\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
