@@ -25,5 +25,9 @@ namespace DePandaWinForms.Pages
         {
             Console.WriteLine(((Panel)sender).Tag.ToString());
         }
+
+        private void panel3_Paint(object sender, PaintEventArgs e)
+        {
+        }
     }
 }
