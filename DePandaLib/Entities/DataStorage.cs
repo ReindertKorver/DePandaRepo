@@ -7,7 +7,7 @@ namespace DePandaLib.Entities
 {
     public class DataStorage
     {
-        public Settings Settings { get; set; }
+        public Settings Settings { get; set; } = new Settings();
         public List<Dish> StockDishes { get; set; } = new List<Dish>();
         public List<RestaurantTable> AvailableTables { get; set; } = new List<RestaurantTable>();
         public List<Reservation> Reservations { get; set; } = new List<Reservation>();

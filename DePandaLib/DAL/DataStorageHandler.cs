@@ -18,7 +18,14 @@ namespace DePandaLib.DAL
         public static void Init(byte[] storageFile)
         {
             string fileContent = System.Text.Encoding.UTF8.GetString(storageFile);
-            Storage = JsonConvert.DeserializeObject<DataStorage>(fileContent);
+            try
+            {
+                Storage = JsonConvert.DeserializeObject<DataStorage>(fileContent);
+            }
+            catch (Exception)
+            {
+                Storage = new DataStorage();
+            }
         }
 
         public static void SaveChanges()
