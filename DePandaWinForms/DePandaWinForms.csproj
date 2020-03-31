@@ -82,6 +82,12 @@
     <Compile Include="Pages\ReservationPage.Designer.cs">
       <DependentUpon>ReservationPage.cs</DependentUpon>
     </Compile>
+    <Compile Include="Pages\SettingsPage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Pages\SettingsPage.Designer.cs">
+      <DependentUpon>SettingsPage.cs</DependentUpon>
+    </Compile>
     <Compile Include="Pages\Tafel.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -113,6 +119,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Pages\ReservationPage.resx">
       <DependentUpon>ReservationPage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Pages\SettingsPAge.resx">
+      <DependentUpon>SettingsPage.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Pages\Tafel.resx">
       <DependentUpon>Tafel.cs</DependentUpon>

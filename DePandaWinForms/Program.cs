@@ -20,6 +20,7 @@ namespace DePandaWinForms
             Application.SetCompatibleTextRenderingDefault(false);
             DataStorageHandler.Init(Properties.Resources.DataStorage);
             Application.Run(new Form1());
+            // change Form to Login 
         }
     }
 }

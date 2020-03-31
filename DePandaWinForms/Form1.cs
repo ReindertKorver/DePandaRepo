@@ -20,6 +20,7 @@ namespace DePandaWinForms
             this.FormBorderStyle = FormBorderStyle.None;
             this.DoubleBuffered = true;
             this.SetStyle(ControlStyles.ResizeRedraw, true);
+            this.CenterToScreen();
         }
 
         private void Close_MouseHover(object sender, EventArgs e)
@@ -150,6 +151,9 @@ namespace DePandaWinForms
                     form = new PaymentPage();
                     break;
 
+                case "Instellingen":
+                    form = new SettingsPage();
+                    break;
                 default:
                     break;
             }
@@ -157,10 +161,10 @@ namespace DePandaWinForms
             {
                 form.TopLevel = false;
                 form.AutoScroll = true;
-                if (form is Login)
-                {
-                    form.Location = new Point((PagePanel.Size.Width / 2) - (form.Size.Width / 2), 0);
-                }
+                //if (form is Login)
+                //{
+                //    form.Location = new Point((PagePanel.Size.Width / 2) - (form.Size.Width / 2), 0);
+                //} Form kan geen instellingen zijn??? @reindert
                 PagePanel.Controls.Clear();
                 PagePanel.Controls.Add(form);
                 form.Show();
@@ -169,10 +173,19 @@ namespace DePandaWinForms
 
         private void panel3_Click(object sender, EventArgs e)
         {
+            this.Hide();
+            Form form = new Login();
+            form.Show();
+
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
+        }
+
+        private void listView1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }
