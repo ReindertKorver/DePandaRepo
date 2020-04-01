@@ -154,6 +154,7 @@ namespace DePandaWinForms
                 case "Instellingen":
                     form = new SettingsPage();
                     break;
+
                 default:
                     break;
             }
@@ -165,6 +166,7 @@ namespace DePandaWinForms
                 //{
                 //    form.Location = new Point((PagePanel.Size.Width / 2) - (form.Size.Width / 2), 0);
                 //} Form kan geen instellingen zijn??? @reindert
+                form.Size = new Size(PagePanel.Size.Width, PagePanel.Size.Height);
                 PagePanel.Controls.Clear();
                 PagePanel.Controls.Add(form);
                 form.Show();
@@ -176,7 +178,6 @@ namespace DePandaWinForms
             this.Hide();
             Form form = new Login();
             form.Show();
-
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -185,7 +186,6 @@ namespace DePandaWinForms
 
         private void listView1_SelectedIndexChanged(object sender, EventArgs e)
         {
-
         }
     }
 }

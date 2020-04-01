@@ -20,18 +20,27 @@ namespace DePandaWinForms.Pages
 
         private void LoginBtn_Click(object sender, EventArgs e)
         {
-            
-        }
-
-        private void LoginBtn_Click_1(object sender, EventArgs e)
-        {
             if (PinInput.Text == DataStorageHandler.Storage.Settings.PinCode) // 00000
             {
                 this.Hide();
-                Form mainScreen= new Form1();
+                Form mainScreen = new Form1();
                 mainScreen.Show();
-      
             };
+        }
+
+        private void Close_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Maximize_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Minimize_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
