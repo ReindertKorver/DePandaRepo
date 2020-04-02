@@ -19,7 +19,7 @@ namespace DePandaWinForms
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             DataStorageHandler.Init(Properties.Resources.DataStorage);
-            Application.Run(new Form1());
+            Application.Run(new Login());
             // change Form to Login 
         }
     }

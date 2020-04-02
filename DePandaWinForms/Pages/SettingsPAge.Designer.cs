@@ -22,5 +22,37 @@
 
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label Pincode;
+        private System.Windows.Forms.TextBox SunDayClosed;
+        private System.Windows.Forms.TextBox SunDayOpen;
+        private System.Windows.Forms.TextBox SaturDayOpen;
+        private System.Windows.Forms.TextBox SaturDayClosed;
+        private System.Windows.Forms.TextBox FridayOpen;
+        private System.Windows.Forms.TextBox FridayClosed;
+        private System.Windows.Forms.TextBox ThursDayClosed;
+        private System.Windows.Forms.TextBox ThursDayOpen;
+        private System.Windows.Forms.TextBox WednesDayOpen;
+        private System.Windows.Forms.TextBox WednesDayClosed;
+        private System.Windows.Forms.TextBox TuesDayClosed;
+        private System.Windows.Forms.TextBox TuesDayOpen;
+        private System.Windows.Forms.TextBox MondayClosed;
+        private System.Windows.Forms.TextBox MondayOpen;
+        private System.Windows.Forms.Label ThursDayDot;
+        private System.Windows.Forms.Label SunDayDot;
+        private System.Windows.Forms.Label SaturDayDot;
+        private System.Windows.Forms.Label FridayDot;
+        private System.Windows.Forms.Label WednesDayDot;
+        private System.Windows.Forms.Label TuesDayDot;
+        private System.Windows.Forms.Label MondayDot;
+        private System.Windows.Forms.Label SunDayText;
+        private System.Windows.Forms.Label SaturDayText;
+        private System.Windows.Forms.Label FridayText;
+        private System.Windows.Forms.Label ThursDayText;
+        private System.Windows.Forms.Label WednesDayText;
+        private System.Windows.Forms.Label TuesDayText;
+        private System.Windows.Forms.Label MondayText;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Button ChangeBTN;
+        private System.Windows.Forms.TextBox PincodeInput;
+        private System.Windows.Forms.Label PincodeText;
     }
 }

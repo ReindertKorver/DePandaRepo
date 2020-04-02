@@ -162,10 +162,6 @@ namespace DePandaWinForms
             {
                 form.TopLevel = false;
                 form.AutoScroll = true;
-                //if (form is Login)
-                //{
-                //    form.Location = new Point((PagePanel.Size.Width / 2) - (form.Size.Width / 2), 0);
-                //} Form kan geen instellingen zijn??? @reindert
                 form.Size = new Size(PagePanel.Size.Width, PagePanel.Size.Height);
                 PagePanel.Controls.Clear();
                 PagePanel.Controls.Add(form);
