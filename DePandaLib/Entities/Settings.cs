@@ -9,5 +9,6 @@ namespace DePandaClassLib.Entities
     public class Settings
     {
         public string PinCode { get; set; } = "00000";
+        public List<AlternativeDate> AlternativeDates { get; set; }
     }
 }
