@@ -18,12 +18,9 @@ namespace DePandaWinForms
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            DataStorageHandler.StorageFileLocation = "DataStorage.json";
-            DataStorageHandler.Init();
-
-            Application.Run(new Login());
-
-            DataStorageHandler.SaveChanges();
+            DataStorageHandler.Init(Properties.Resources.DataStorage);
+            Application.Run(new Form1());
+            // change Form to Login 
         }
     }
 }
