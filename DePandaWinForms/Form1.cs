@@ -1,4 +1,5 @@
-﻿using DePandaWinForms.Pages;
+﻿using DePandaLib.DAL;
+using DePandaWinForms.Pages;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -14,13 +15,18 @@ namespace DePandaWinForms
 {
     public partial class Form1 : Form
     {
-        public Form1()
+        public Form1(bool Maxed)
         {
             InitializeComponent();
             this.FormBorderStyle = FormBorderStyle.None;
             this.DoubleBuffered = true;
             this.SetStyle(ControlStyles.ResizeRedraw, true);
             this.CenterToScreen();
+            if (Maxed)
+            {
+                this.WindowState = FormWindowState.Maximized;
+            }
+            
         }
 
         private void Close_MouseHover(object sender, EventArgs e)
@@ -32,6 +38,7 @@ namespace DePandaWinForms
         private bool closeHover = false;
         private bool maxHover = false;
         private bool minHover = false;
+    
 
         private void Maximize_MouseHover(object sender, EventArgs e)
         {
@@ -49,8 +56,7 @@ namespace DePandaWinForms
         {
             Application.Exit();
         }
-
-        private void Maximize_Click(object sender, EventArgs e)
+        private void ChangeWinState()
         {
             if (this.WindowState == FormWindowState.Maximized)
             {
@@ -60,22 +66,25 @@ namespace DePandaWinForms
             {
                 this.WindowState = FormWindowState.Maximized;
             }
-            foreach (Control ctrl in PagePanel.Controls)
-            {
-                ctrl.Location = new Point((PagePanel.Size.Width / 2) - (ctrl.Size.Width / 2), 0);
-            }
         }
+
+            private void Maximize_Click(object sender, EventArgs e)
+        {
+            ChangeWinState();
+                //foreach (Control ctrl in PagePanel.Controls)
+                //{
+                //    ctrl.Location = new Point((PagePanel.Size.Width / 2) - (ctrl.Size.Width / 2), 0);
+
+                //}
+            }
+           
+
+
+ 
 
         private void Minimize_Click(object sender, EventArgs e)
         {
-            if (this.WindowState == FormWindowState.Minimized)
-            {
-                this.WindowState = FormWindowState.Normal;
-            }
-            else
-            {
-                this.WindowState = FormWindowState.Minimized;
-            }
+            ChangeWinState();
         }
 
         #region Code for dragging window and showing shadow
@@ -171,9 +180,22 @@ namespace DePandaWinForms
 
         private void panel3_Click(object sender, EventArgs e)
         {
+
             this.Hide();
-            Form form = new Login();
-            form.Show();
+ 
+            if (this.WindowState == FormWindowState.Maximized)
+            {
+              
+                Form form = new Login(true);
+                form.Show();
+            }
+            else
+            {
+                Form form = new Login(false);
+                form.Show();
+            }
+            
+            
         }
 
         private void button1_Click(object sender, EventArgs e)

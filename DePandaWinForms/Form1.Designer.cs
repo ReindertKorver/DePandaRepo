@@ -46,7 +46,7 @@
             this.Close = new System.Windows.Forms.PictureBox();
             this.panel2 = new System.Windows.Forms.Panel();
             this.listView1 = new System.Windows.Forms.ListView();
-            this.panel3 = new System.Windows.Forms.Panel();
+            this.LogoutLabel = new System.Windows.Forms.Panel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
             this.PagePanel = new System.Windows.Forms.Panel();
@@ -55,7 +55,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.Maximize)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Close)).BeginInit();
             this.panel2.SuspendLayout();
-            this.panel3.SuspendLayout();
+            this.LogoutLabel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -138,7 +138,7 @@
             // 
             this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(45)))), ((int)(((byte)(51)))));
             this.panel2.Controls.Add(this.listView1);
-            this.panel2.Controls.Add(this.panel3);
+            this.panel2.Controls.Add(this.LogoutLabel);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel2.Location = new System.Drawing.Point(0, 32);
             this.panel2.MinimumSize = new System.Drawing.Size(200, 0);
@@ -173,18 +173,18 @@
             this.listView1.ItemSelectionChanged += new System.Windows.Forms.ListViewItemSelectionChangedEventHandler(this.listView1_ItemSelectionChanged);
             this.listView1.SelectedIndexChanged += new System.EventHandler(this.listView1_SelectedIndexChanged);
             // 
-            // panel3
+            // LogoutLabel
             // 
-            this.panel3.Controls.Add(this.pictureBox1);
-            this.panel3.Controls.Add(this.label1);
-            this.panel3.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.panel3.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel3.Location = new System.Drawing.Point(0, 632);
-            this.panel3.Margin = new System.Windows.Forms.Padding(3, 25, 25, 3);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(200, 51);
-            this.panel3.TabIndex = 1;
-            this.panel3.Click += new System.EventHandler(this.panel3_Click);
+            this.LogoutLabel.Controls.Add(this.pictureBox1);
+            this.LogoutLabel.Controls.Add(this.label1);
+            this.LogoutLabel.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.LogoutLabel.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.LogoutLabel.Location = new System.Drawing.Point(0, 632);
+            this.LogoutLabel.Margin = new System.Windows.Forms.Padding(3, 25, 25, 3);
+            this.LogoutLabel.Name = "LogoutLabel";
+            this.LogoutLabel.Size = new System.Drawing.Size(200, 51);
+            this.LogoutLabel.TabIndex = 1;
+            this.LogoutLabel.Click += new System.EventHandler(this.panel3_Click);
             // 
             // pictureBox1
             // 
@@ -243,8 +243,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.Maximize)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Close)).EndInit();
             this.panel2.ResumeLayout(false);
-            this.panel3.ResumeLayout(false);
-            this.panel3.PerformLayout();
+            this.LogoutLabel.ResumeLayout(false);
+            this.LogoutLabel.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
@@ -258,7 +258,7 @@
         private System.Windows.Forms.PictureBox Minimize;
         private System.Windows.Forms.PictureBox Maximize;
         private System.Windows.Forms.PictureBox Close;
-        private System.Windows.Forms.Panel panel3;
+        private System.Windows.Forms.Panel LogoutLabel;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;

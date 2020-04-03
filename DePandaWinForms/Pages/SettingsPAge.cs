@@ -388,6 +388,7 @@ namespace DePandaWinForms.Pages
             this.ChangeBTN.TabIndex = 52;
             this.ChangeBTN.Text = "wijzigen";
             this.ChangeBTN.UseVisualStyleBackColor = false;
+            this.ChangeBTN.Click += new System.EventHandler(this.ChangeBTN_Click_1);
             // 
             // PincodeInput
             // 
@@ -400,6 +401,7 @@ namespace DePandaWinForms.Pages
             this.PincodeInput.Size = new System.Drawing.Size(130, 22);
             this.PincodeInput.TabIndex = 51;
             this.PincodeInput.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.PincodeInput.TextChanged += new System.EventHandler(this.PincodeInput_TextChanged);
             // 
             // PincodeText
             // 
@@ -469,14 +471,26 @@ namespace DePandaWinForms.Pages
 
         }
 
-        private void ChangeBTN_Click(object sender, EventArgs e)
-        {
-            DataStorageHandler.Storage.Settings.PinCode = PincodeInput.Text;
-        }
-
         private void FridayText_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void PincodeInput_TextChanged(object sender, EventArgs e)
+        {
+          
+        }
+
+        private void ChangeBTN_Click_1(object sender, EventArgs e)
+        {
+            if (PincodeInput.Text.All(char.IsDigit)) 
+            {
+                DataStorageHandler.Storage.Settings.PinCode = PincodeInput.Text;
+            }
+            else
+            {
+                MessageBox.Show("Een pincode mag alleen uit cijfers bestaan.");
+            }
         }
     }
 }
