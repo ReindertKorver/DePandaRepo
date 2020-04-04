@@ -1,31 +1,21 @@
-﻿using DePandaLib.DAL;
-using DePandaWinForms.Pages;
+﻿using DePandaWinForms.Pages;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
-using System.Linq;
 using System.Runtime.InteropServices;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace DePandaWinForms
 {
     public partial class Form1 : Form
     {
-        public Form1(bool Maxed)
+        public Form1(FormWindowState PreviousWinState)
         {
             InitializeComponent();
-            this.FormBorderStyle = FormBorderStyle.None;
-            this.DoubleBuffered = true;
+           
             this.SetStyle(ControlStyles.ResizeRedraw, true);
             this.CenterToScreen();
-            if (Maxed)
-            {
-                this.WindowState = FormWindowState.Maximized;
-            }
+            this.WindowState = PreviousWinState;
+           
             
         }
 
@@ -68,23 +58,9 @@ namespace DePandaWinForms
             }
         }
 
-            private void Maximize_Click(object sender, EventArgs e)
-        {
-            ChangeWinState();
-                //foreach (Control ctrl in PagePanel.Controls)
-                //{
-                //    ctrl.Location = new Point((PagePanel.Size.Width / 2) - (ctrl.Size.Width / 2), 0);
-
-                //}
-            }
-           
-
-
- 
-
         private void Minimize_Click(object sender, EventArgs e)
         {
-            ChangeWinState();
+            this.WindowState = FormWindowState.Minimized;
         }
 
         #region Code for dragging window and showing shadow
@@ -131,14 +107,12 @@ namespace DePandaWinForms
 
         #endregion Code for dragging window and showing shadow
 
-        private void label1_Click(object sender, EventArgs e)
-        {
-        }
+        
 
         private void label2_Click(object sender, EventArgs e)
         {
         }
-
+        private string page = "None";
         private void listView1_ItemSelectionChanged(object sender, ListViewItemSelectionChangedEventArgs e)
         {
             Form form = null;
@@ -146,22 +120,27 @@ namespace DePandaWinForms
             {
                 case "Menu":
                     form = new MenuPage();
+                    page = "Menupage";
                     break;
 
                 case "Reserveringen":
                     form = new ReservationPage();
+                    page = "ReservationPage";
                     break;
 
                 case "Bestellingen":
                     form = new OrdersPage();
+                    page = "OrdersPage";
                     break;
 
                 case "Betalingen":
                     form = new PaymentPage();
+                    page = "PaymentPage";
                     break;
 
                 case "Instellingen":
                     form = new SettingsPage();
+                    page = "SettingsPage";
                     break;
 
                 default:
@@ -178,29 +157,61 @@ namespace DePandaWinForms
             }
         }
 
+        private void Maximize_Click(object sender, EventArgs e)
+        {
+            Form form = null;
+            // tijdelijke fix om het scherm dat eroverheen geplakt is ook mee te rekken met het volledige scherm
+            ChangeWinState();
+            if (page == "MenuPage")
+            {
+                 form = new MenuPage();
+                
+            }
+            if (page == "ReservationPage")
+            {
+                 form = new ReservationPage();
+
+            }
+            if (page == "OrdersPage")
+            {
+                 form = new OrdersPage();
+
+            }
+            if (page == "PaymentPage")
+            {
+                 form = new PaymentPage();
+
+            }
+            if (page == "SettingsPage")
+            {
+                 form = new SettingsPage();
+
+            }
+            if (form != null)
+            {
+                form.TopLevel = false;
+                form.AutoScroll = true;
+                form.Size = new Size(PagePanel.Size.Width, PagePanel.Size.Height);
+                PagePanel.Controls.Clear();
+                PagePanel.Controls.Add(form);
+                form.Show();
+            }
+
+
+            //foreach (Control ctrl in PagePanel.Controls)
+            //{
+            //    ctrl.Location = new Point((PagePanel.Size.Width / 2) - (ctrl.Size.Width / 2), 0);
+
+            //}
+        }
+
         private void panel3_Click(object sender, EventArgs e)
         {
-
             this.Hide();
- 
-            if (this.WindowState == FormWindowState.Maximized)
-            {
-              
-                Form form = new Login(true);
-                form.Show();
-            }
-            else
-            {
-                Form form = new Login(false);
-                form.Show();
-            }
-            
-            
+            Form form = new Login(this.WindowState);      
+            form.Show();
         }
 
-        private void button1_Click(object sender, EventArgs e)
-        {
-        }
 
         private void listView1_SelectedIndexChanged(object sender, EventArgs e)
         {

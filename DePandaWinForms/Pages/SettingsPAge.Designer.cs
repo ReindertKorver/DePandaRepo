@@ -54,5 +54,6 @@
         private System.Windows.Forms.Button ChangeBTN;
         private System.Windows.Forms.TextBox PincodeInput;
         private System.Windows.Forms.Label PincodeText;
+        private System.Windows.Forms.Label label3;
     }
 }

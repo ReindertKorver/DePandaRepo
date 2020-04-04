@@ -13,41 +13,25 @@ namespace DePandaWinForms.Pages
 {
     public partial class Login : Form
     {
-        public Login(bool Maxed)
+        public Login(FormWindowState PreviousWinState)
         {
             InitializeComponent();
-            if (Maxed)
-            {
-                this.WindowState = FormWindowState.Maximized;
-            }
-           
+            this.WindowState = PreviousWinState;          
         }
-
-        
-
         private bool closeHover = false;
         private bool maxHover = false;
         private bool minHover = false;
-        public bool Maxed = false;
+       
         private void LoginEvent()
         {
             if (PinInput.Text == DataStorageHandler.Storage.Settings.PinCode) // 00000
             {
-
-                if (this.WindowState == FormWindowState.Maximized)
-                {
-                    Maxed = true;
-                }
-
                 this.Hide();
-                Form mainScreen = new Form1(Maxed);
+                Form mainScreen = new Form1(this.WindowState);
                 mainScreen.Show();
-
-
             }
             else if (PinInput.Text.Length == DataStorageHandler.Storage.Settings.PinCode.Length && PinInput.Text != DataStorageHandler.Storage.Settings.PinCode)
-            {
-
+            { 
                 MessageBox.Show("U heeft een verkeerde pincode ingevuld");
             }
         }
@@ -98,7 +82,7 @@ namespace DePandaWinForms.Pages
 
         private void Minimize_Click(object sender, EventArgs e)
         {
-            ChangeWinState(); 
+            this.WindowState = FormWindowState.Minimized; 
             
         }
 
@@ -107,11 +91,7 @@ namespace DePandaWinForms.Pages
             LoginEvent();
         }
 
-        private void pictureBox2_Click(object sender, EventArgs e)
-        {
-
-        }
-
+     
        
     }
 }
