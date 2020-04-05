@@ -31,7 +31,6 @@
         private System.Windows.Forms.TextBox ThursDayClosed;
         private System.Windows.Forms.TextBox ThursDayOpen;
         private System.Windows.Forms.TextBox WednesDayOpen;
-        private System.Windows.Forms.TextBox WednesDayClosed;
         private System.Windows.Forms.TextBox TuesDayClosed;
         private System.Windows.Forms.TextBox TuesDayOpen;
         private System.Windows.Forms.TextBox MondayClosed;
@@ -54,6 +53,8 @@
         private System.Windows.Forms.Button ChangeBTN;
         private System.Windows.Forms.TextBox PincodeInput;
         private System.Windows.Forms.Label PincodeText;
+        private System.Windows.Forms.TextBox WednesDayClosed;
         private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.TableLayoutPanel Opentimes;
     }
 }

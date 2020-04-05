@@ -15,6 +15,7 @@ namespace DePandaWinForms
             this.SetStyle(ControlStyles.ResizeRedraw, true);
             this.CenterToScreen();
             this.WindowState = PreviousWinState;
+            this.KeyPreview = true;
            
             
         }
@@ -204,7 +205,13 @@ namespace DePandaWinForms
 
             //}
         }
-
+        private void KeyBindFullScreen(object sender, KeyEventArgs e)
+        {
+            if (e.Modifiers == Keys.Control && e.KeyCode == Keys.F)
+            {
+                ChangeWinState();
+            }
+        }
         private void panel3_Click(object sender, EventArgs e)
         {
             this.Hide();

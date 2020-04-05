@@ -16,7 +16,8 @@ namespace DePandaWinForms.Pages
         public Login(FormWindowState PreviousWinState)
         {
             InitializeComponent();
-            this.WindowState = PreviousWinState;          
+            this.WindowState = PreviousWinState;
+            this.KeyPreview = true; // shortcuts
         }
         private bool closeHover = false;
         private bool maxHover = false;
@@ -80,6 +81,13 @@ namespace DePandaWinForms.Pages
             ChangeWinState();
         }
 
+        private void KeyBindFullScreen(object sender, KeyEventArgs e)
+        {
+            if (e.Modifiers == Keys.Control && e.KeyCode == Keys.F)
+            {
+                ChangeWinState();
+            }
+        }
         private void Minimize_Click(object sender, EventArgs e)
         {
             this.WindowState = FormWindowState.Minimized; 
