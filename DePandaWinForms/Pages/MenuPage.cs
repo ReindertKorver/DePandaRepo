@@ -34,7 +34,6 @@ namespace DePandaWinForms.Pages
             foreach (var menuItem in MenuItems)
             {
                 MenuItemsList.Items.Add(menuItem.Name);
-                Console.WriteLine(menuItem.Name);
             }
         }
 
@@ -42,22 +41,30 @@ namespace DePandaWinForms.Pages
         {
         }
 
-        private void textBox1_TextChanged(object sender, EventArgs e)
-        {
-        }
-
         private void AddMenuItemButton_Click(object sender, EventArgs e)
         {
-            CultureInfo cultures = new CultureInfo("en-US");
+            if(NewMenuItemGroupBox.Visible == false)
+            {
+                NewMenuItemGroupBox.Visible = true;
+            }
 
-            decimal Price = Convert.ToDecimal(PriceInput.Text, cultures);
+            if(NewMenuItemGroupBox.Visible == true)
+            {
+                CultureInfo cultures = new CultureInfo("en-US");
 
-            DataStorageHandler.Storage.StockDishes.Add(new DePandaLib.Entities.Dish() { Name = NameInput.Text, Price = Price });
+                decimal Price = Convert.ToDecimal(PriceNewMenuItemInput.Text, cultures);
 
-            MenuItemsList.Items.Clear();
+                DataStorageHandler.Storage.StockDishes.Add(new DePandaLib.Entities.Dish() { Name = NameNewMenuItemInput.Text, Price = Price });
 
-            LoadInMenuItems();
-            DataStorageHandler.SaveChanges();
+                MenuItemsList.Items.Clear();
+
+                LoadInMenuItems();
+                DataStorageHandler.SaveChanges();
+
+                NewMenuItemGroupBox.Visible = false;
+            }
+
+            
         }
     }
 }

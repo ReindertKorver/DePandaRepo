@@ -10,7 +10,7 @@ namespace DePandaLib.Entities
     {
         public List<Dish> Dishes { get; set; }
 
-        public double GetTotal()
+        public decimal GetTotal()
         {
             return Dishes.Sum(d => d.Price);
         }

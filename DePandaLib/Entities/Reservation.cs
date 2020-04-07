@@ -16,7 +16,7 @@ namespace DePandaLib.Entities
         public List<RestaurantTable> Tables { get; set; }
         public List<Order> Orders { get; set; }
 
-        public double GetReservationTotal()
+        public decimal GetReservationTotal()
         {
             return Orders.Sum(order => order.GetTotal());
         }
