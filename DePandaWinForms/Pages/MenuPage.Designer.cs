@@ -31,6 +31,10 @@
             this.Pincode = new System.Windows.Forms.Label();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.MenuGrid = new System.Windows.Forms.DataGridView();
+            this.MenuItemsList = new System.Windows.Forms.ListBox();
+            this.AddMenuItemButton = new System.Windows.Forms.Button();
+            this.NameInput = new System.Windows.Forms.TextBox();
+            this.PriceInput = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.MenuGrid)).BeginInit();
             this.SuspendLayout();
             // 
@@ -69,11 +73,47 @@
             this.MenuGrid.Size = new System.Drawing.Size(800, 404);
             this.MenuGrid.TabIndex = 15;
             // 
+            // MenuItemsList
+            // 
+            this.MenuItemsList.FormattingEnabled = true;
+            this.MenuItemsList.Location = new System.Drawing.Point(0, 46);
+            this.MenuItemsList.Name = "MenuItemsList";
+            this.MenuItemsList.Size = new System.Drawing.Size(232, 355);
+            this.MenuItemsList.TabIndex = 16;
+            // 
+            // AddMenuItemButton
+            // 
+            this.AddMenuItemButton.Location = new System.Drawing.Point(157, 415);
+            this.AddMenuItemButton.Name = "AddMenuItemButton";
+            this.AddMenuItemButton.Size = new System.Drawing.Size(75, 23);
+            this.AddMenuItemButton.TabIndex = 17;
+            this.AddMenuItemButton.Text = "button1";
+            this.AddMenuItemButton.UseVisualStyleBackColor = true;
+            this.AddMenuItemButton.Click += new System.EventHandler(this.AddMenuItemButton_Click);
+            // 
+            // NameInput
+            // 
+            this.NameInput.Location = new System.Drawing.Point(297, 340);
+            this.NameInput.Name = "NameInput";
+            this.NameInput.Size = new System.Drawing.Size(100, 20);
+            this.NameInput.TabIndex = 18;
+            // 
+            // PriceInput
+            // 
+            this.PriceInput.Location = new System.Drawing.Point(297, 380);
+            this.PriceInput.Name = "PriceInput";
+            this.PriceInput.Size = new System.Drawing.Size(100, 20);
+            this.PriceInput.TabIndex = 19;
+            // 
             // MenuPage
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.PriceInput);
+            this.Controls.Add(this.NameInput);
+            this.Controls.Add(this.AddMenuItemButton);
+            this.Controls.Add(this.MenuItemsList);
             this.Controls.Add(this.MenuGrid);
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.Pincode);
@@ -91,5 +131,9 @@
         private System.Windows.Forms.Label Pincode;
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.DataGridView MenuGrid;
+        private System.Windows.Forms.ListBox MenuItemsList;
+        private System.Windows.Forms.Button AddMenuItemButton;
+        private System.Windows.Forms.TextBox NameInput;
+        private System.Windows.Forms.TextBox PriceInput;
     }
 }
