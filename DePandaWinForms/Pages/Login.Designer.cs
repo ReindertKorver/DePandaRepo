@@ -33,6 +33,7 @@
             this.Minimize = new System.Windows.Forms.PictureBox();
             this.Close = new System.Windows.Forms.PictureBox();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.Maximize = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
             this.panel4 = new System.Windows.Forms.Panel();
@@ -42,16 +43,15 @@
             this.label3 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.MenuGrid = new System.Windows.Forms.DataGridView();
-            this.Maximize = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.Minimize)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Close)).BeginInit();
             this.panel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.Maximize)).BeginInit();
             this.panel3.SuspendLayout();
             this.panel4.SuspendLayout();
             this.panel5.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.MenuGrid)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.Maximize)).BeginInit();
             this.SuspendLayout();
             // 
             // label2
@@ -111,6 +111,22 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(800, 32);
             this.panel2.TabIndex = 8;
+            // 
+            // Maximize
+            // 
+            this.Maximize.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.Maximize.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.Maximize.Image = global::DePandaWinForms.Properties.Resources.max;
+            this.Maximize.Location = new System.Drawing.Point(748, 3);
+            this.Maximize.Margin = new System.Windows.Forms.Padding(0);
+            this.Maximize.Name = "Maximize";
+            this.Maximize.Size = new System.Drawing.Size(26, 26);
+            this.Maximize.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.Maximize.TabIndex = 8;
+            this.Maximize.TabStop = false;
+            this.Maximize.Click += new System.EventHandler(this.Maximize_Click);
+            this.Maximize.MouseEnter += new System.EventHandler(this.Maximize_MouseHover);
+            this.Maximize.MouseLeave += new System.EventHandler(this.Maximize_MouseHover);
             // 
             // label1
             // 
@@ -224,22 +240,6 @@
             this.MenuGrid.Size = new System.Drawing.Size(800, 404);
             this.MenuGrid.TabIndex = 19;
             // 
-            // Maximize
-            // 
-            this.Maximize.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.Maximize.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.Maximize.Image = global::DePandaWinForms.Properties.Resources.max;
-            this.Maximize.Location = new System.Drawing.Point(748, 3);
-            this.Maximize.Margin = new System.Windows.Forms.Padding(0);
-            this.Maximize.Name = "Maximize";
-            this.Maximize.Size = new System.Drawing.Size(26, 26);
-            this.Maximize.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.Maximize.TabIndex = 8;
-            this.Maximize.TabStop = false;
-            this.Maximize.Click += new System.EventHandler(this.Maximize_Click);
-            this.Maximize.MouseEnter += new System.EventHandler(this.Maximize_MouseHover);
-            this.Maximize.MouseLeave += new System.EventHandler(this.Maximize_MouseHover);
-            // 
             // Login
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -255,17 +255,18 @@
             this.Name = "Login";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Test";
+            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.KeyBindFullScreen);
             ((System.ComponentModel.ISupportInitialize)(this.Minimize)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Close)).EndInit();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.Maximize)).EndInit();
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
             this.panel4.ResumeLayout(false);
             this.panel5.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.MenuGrid)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.Maximize)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

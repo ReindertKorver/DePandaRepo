@@ -1,4 +1,5 @@
-﻿using System;
+﻿using DePandaLib.DAL;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -8,17 +9,26 @@ namespace DePandaClassLib.Entities
 {
     public class AlternativeDate
     {
+        public AlternativeDate(DateTime start, DateTime end)
+        {
+            this.StartDate = start;
+            this.EndDate = end;
+        }
+
         public DateTime StartDate { get; set; }
         public DateTime EndDate { get; set; }
+        public string DateString { get { return StartDate.ToString("dd-MM-yyyy"); } }
+        public string EndTimeString { get { return EndDate.ToString("HH:mm"); } }
+        public string StartTimeString { get { return StartDate.ToString("HH:mm"); } }
 
-        /// <summary>
-        /// Returns the start and end date in the form of a tuple
-        /// Example of result: result.Item1= 02-04-2020, result.Item2= 10:00, result.Item3= 13:00
-        /// </summary>
-        /// <returns></returns>
-        public (string, string, string) ToTupleString()
+        public static void Example()
         {
-            return (StartDate.ToString("dd-MM-yyyy"), StartDate.ToString("hh:mm"), EndDate.ToString("hh:mm"));
+            if (DataStorageHandler.Storage.Settings.AlternativeDates.Count == 0)
+            {
+                var newAltDate = new DePandaClassLib.Entities.AlternativeDate(new DateTime(2020, 04, 07, 11, 0, 0), new DateTime(2020, 04, 07, 11, 0, 0));
+
+                DataStorageHandler.Storage.Settings.AlternativeDates.Add(newAltDate);
+            }
         }
     }
 }
