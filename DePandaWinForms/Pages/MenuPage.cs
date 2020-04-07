@@ -4,9 +4,11 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using DePandaLib.DAL;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using DePandaLib.Entities;
 
 namespace DePandaWinForms.Pages
 {
@@ -15,6 +17,13 @@ namespace DePandaWinForms.Pages
         public MenuPage()
         {
             InitializeComponent();
+
+            List<Dish> dishes = new List<Dish>();
+
+            //DataStorageHandler.Storage.StockDishes;
+
+
+
         }
 
         private void Pincode_Click(object sender, EventArgs e)
@@ -24,5 +33,8 @@ namespace DePandaWinForms.Pages
         private void textBox1_TextChanged(object sender, EventArgs e)
         {
         }
+
+
+
     }
 }
