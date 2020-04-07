@@ -43,28 +43,88 @@ namespace DePandaWinForms.Pages
 
         private void AddMenuItemButton_Click(object sender, EventArgs e)
         {
-            if(NewMenuItemGroupBox.Visible == false)
+            
+
+            
+        }
+
+        private void ShowCreateMenuItemPanel_Click(object sender, EventArgs e)
+        {
+            if (NewMenuItemGroupBox.Visible == false)
             {
                 NewMenuItemGroupBox.Visible = true;
             }
+            else
+            {
+                NewMenuItemGroupBox.Visible = false;
+            }
 
-            if(NewMenuItemGroupBox.Visible == true)
+        
+        }
+
+        private void CreateNewMenuItem_Click(object sender, EventArgs e)
+        {
+            if (NewMenuItemGroupBox.Visible == true)
             {
                 CultureInfo cultures = new CultureInfo("en-US");
 
                 decimal Price = Convert.ToDecimal(PriceNewMenuItemInput.Text, cultures);
 
-                DataStorageHandler.Storage.StockDishes.Add(new DePandaLib.Entities.Dish() { Name = NameNewMenuItemInput.Text, Price = Price });
+                DataStorageHandler.Storage.StockDishes.Add(new DePandaLib.Entities.Dish() { Name = NameNewMenuItemInput.Text, Price = Price, Description = DescriptionNewMenuItemInput.Text });
 
                 MenuItemsList.Items.Clear();
 
                 LoadInMenuItems();
                 DataStorageHandler.SaveChanges();
+            }
+        }
 
-                NewMenuItemGroupBox.Visible = false;
+       
+        private void SearchMenuItems(object sender, EventArgs e)
+        {
+            var MenuItems = DataStorageHandler.Storage.StockDishes;
+
+            MenuItemsList.Items.Clear();
+
+            if(SearchMenuItemsList.Text.Length > 0)
+            {
+                foreach (var menuItem in MenuItems)
+                {
+                    if(menuItem.Name.ToLower().Contains(SearchMenuItemsList.Text.ToLower()))
+                    {
+                        MenuItemsList.Items.Add(menuItem.Name);
+                    }
+
+                }
+            }
+            else
+            {
+                LoadInMenuItems();
             }
 
             
+        }
+
+        private void MenuItemsList_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            var MenuItems = DataStorageHandler.Storage.StockDishes;
+
+            foreach (var menuItem in MenuItems)
+            {
+                if(menuItem.Name == MenuItemsList.SelectedItem) 
+                {
+                    SelectedMenuItemText.Visible = true;
+                    
+                    DescriptionSelectedMenuItem.Text = menuItem.Description;
+                    PriceSelectedMenuItem.Text = menuItem.Price.ToString();
+                    NameSelectedMenuItem.Text = menuItem.Name;
+                }
+            }
+        }
+
+        private void CloseSelectedMenuItem_Click(object sender, EventArgs e)
+        {
+            SelectedMenuItemText.Visible = false;
         }
     }
 }

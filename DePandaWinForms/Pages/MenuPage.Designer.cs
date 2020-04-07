@@ -32,16 +32,28 @@
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.MenuGrid = new System.Windows.Forms.DataGridView();
             this.MenuItemsList = new System.Windows.Forms.ListBox();
-            this.AddMenuItemButton = new System.Windows.Forms.Button();
+            this.ShowCreateMenuItemPanel = new System.Windows.Forms.Button();
             this.NameNewMenuItemInput = new System.Windows.Forms.TextBox();
             this.PriceNewMenuItemInput = new System.Windows.Forms.TextBox();
             this.NewMenuItemGroupBox = new System.Windows.Forms.GroupBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
+            this.DescriptionNewMenuItemInput = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.NotitionNewMenuItemInput = new System.Windows.Forms.TextBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.CreateNewMenuItem = new System.Windows.Forms.Button();
+            this.SearchMenuItemsList = new System.Windows.Forms.TextBox();
+            this.label4 = new System.Windows.Forms.Label();
+            this.SelectedMenuItemText = new System.Windows.Forms.GroupBox();
+            this.label5 = new System.Windows.Forms.Label();
+            this.DescriptionSelectedMenuItem = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
+            this.NameSelectedMenuItem = new System.Windows.Forms.Label();
+            this.PriceSelectedMenuItem = new System.Windows.Forms.Label();
+            this.CloseSelectedMenuItem = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.MenuGrid)).BeginInit();
             this.NewMenuItemGroupBox.SuspendLayout();
+            this.SelectedMenuItemText.SuspendLayout();
             this.SuspendLayout();
             // 
             // Pincode
@@ -83,20 +95,21 @@
             // MenuItemsList
             // 
             this.MenuItemsList.FormattingEnabled = true;
-            this.MenuItemsList.Location = new System.Drawing.Point(0, 46);
+            this.MenuItemsList.Location = new System.Drawing.Point(0, 98);
             this.MenuItemsList.Name = "MenuItemsList";
-            this.MenuItemsList.Size = new System.Drawing.Size(232, 355);
+            this.MenuItemsList.Size = new System.Drawing.Size(232, 303);
             this.MenuItemsList.TabIndex = 16;
+            this.MenuItemsList.SelectedIndexChanged += new System.EventHandler(this.MenuItemsList_SelectedIndexChanged);
             // 
-            // AddMenuItemButton
+            // ShowCreateMenuItemPanel
             // 
-            this.AddMenuItemButton.Location = new System.Drawing.Point(108, 415);
-            this.AddMenuItemButton.Name = "AddMenuItemButton";
-            this.AddMenuItemButton.Size = new System.Drawing.Size(124, 23);
-            this.AddMenuItemButton.TabIndex = 17;
-            this.AddMenuItemButton.Text = "Menu item aanmaken";
-            this.AddMenuItemButton.UseVisualStyleBackColor = true;
-            this.AddMenuItemButton.Click += new System.EventHandler(this.AddMenuItemButton_Click);
+            this.ShowCreateMenuItemPanel.Location = new System.Drawing.Point(77, 415);
+            this.ShowCreateMenuItemPanel.Name = "ShowCreateMenuItemPanel";
+            this.ShowCreateMenuItemPanel.Size = new System.Drawing.Size(155, 23);
+            this.ShowCreateMenuItemPanel.TabIndex = 17;
+            this.ShowCreateMenuItemPanel.Text = "Menu item aanmaken";
+            this.ShowCreateMenuItemPanel.UseVisualStyleBackColor = true;
+            this.ShowCreateMenuItemPanel.Click += new System.EventHandler(this.ShowCreateMenuItemPanel_Click);
             // 
             // NameNewMenuItemInput
             // 
@@ -114,13 +127,14 @@
             // 
             // NewMenuItemGroupBox
             // 
-            this.NewMenuItemGroupBox.Controls.Add(this.NotitionNewMenuItemInput);
+            this.NewMenuItemGroupBox.Controls.Add(this.CreateNewMenuItem);
+            this.NewMenuItemGroupBox.Controls.Add(this.DescriptionNewMenuItemInput);
             this.NewMenuItemGroupBox.Controls.Add(this.label3);
             this.NewMenuItemGroupBox.Controls.Add(this.PriceNewMenuItemInput);
             this.NewMenuItemGroupBox.Controls.Add(this.label2);
             this.NewMenuItemGroupBox.Controls.Add(this.NameNewMenuItemInput);
             this.NewMenuItemGroupBox.Controls.Add(this.label1);
-            this.NewMenuItemGroupBox.Location = new System.Drawing.Point(327, 92);
+            this.NewMenuItemGroupBox.Location = new System.Drawing.Point(327, 46);
             this.NewMenuItemGroupBox.Name = "NewMenuItemGroupBox";
             this.NewMenuItemGroupBox.Size = new System.Drawing.Size(423, 227);
             this.NewMenuItemGroupBox.TabIndex = 20;
@@ -128,23 +142,12 @@
             this.NewMenuItemGroupBox.Text = "Menu item aanmaken";
             this.NewMenuItemGroupBox.Visible = false;
             // 
-            // label1
+            // DescriptionNewMenuItemInput
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(7, 31);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(35, 13);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Naam";
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(7, 71);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(26, 13);
-            this.label2.TabIndex = 1;
-            this.label2.Text = "Prijs";
+            this.DescriptionNewMenuItemInput.Location = new System.Drawing.Point(74, 114);
+            this.DescriptionNewMenuItemInput.Name = "DescriptionNewMenuItemInput";
+            this.DescriptionNewMenuItemInput.Size = new System.Drawing.Size(326, 20);
+            this.DescriptionNewMenuItemInput.TabIndex = 20;
             // 
             // label3
             // 
@@ -155,20 +158,142 @@
             this.label3.TabIndex = 2;
             this.label3.Text = "Notities";
             // 
-            // NotitionNewMenuItemInput
+            // label2
             // 
-            this.NotitionNewMenuItemInput.Location = new System.Drawing.Point(74, 114);
-            this.NotitionNewMenuItemInput.Name = "NotitionNewMenuItemInput";
-            this.NotitionNewMenuItemInput.Size = new System.Drawing.Size(326, 20);
-            this.NotitionNewMenuItemInput.TabIndex = 20;
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(7, 71);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(26, 13);
+            this.label2.TabIndex = 1;
+            this.label2.Text = "Prijs";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(7, 31);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(35, 13);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "Naam";
+            // 
+            // CreateNewMenuItem
+            // 
+            this.CreateNewMenuItem.Location = new System.Drawing.Point(74, 154);
+            this.CreateNewMenuItem.Name = "CreateNewMenuItem";
+            this.CreateNewMenuItem.Size = new System.Drawing.Size(97, 23);
+            this.CreateNewMenuItem.TabIndex = 21;
+            this.CreateNewMenuItem.Text = "Creer";
+            this.CreateNewMenuItem.UseVisualStyleBackColor = true;
+            this.CreateNewMenuItem.Click += new System.EventHandler(this.CreateNewMenuItem_Click);
+            // 
+            // SearchMenuItemsList
+            // 
+            this.SearchMenuItemsList.Location = new System.Drawing.Point(60, 59);
+            this.SearchMenuItemsList.Name = "SearchMenuItemsList";
+            this.SearchMenuItemsList.Size = new System.Drawing.Size(172, 20);
+            this.SearchMenuItemsList.TabIndex = 21;
+            this.SearchMenuItemsList.TextChanged += new System.EventHandler(this.SearchMenuItems);
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(12, 62);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(32, 13);
+            this.label4.TabIndex = 22;
+            this.label4.Text = "Zoek";
+            // 
+            // SelectedMenuItemText
+            // 
+            this.SelectedMenuItemText.Controls.Add(this.CloseSelectedMenuItem);
+            this.SelectedMenuItemText.Controls.Add(this.PriceSelectedMenuItem);
+            this.SelectedMenuItemText.Controls.Add(this.NameSelectedMenuItem);
+            this.SelectedMenuItemText.Controls.Add(this.label7);
+            this.SelectedMenuItemText.Controls.Add(this.label6);
+            this.SelectedMenuItemText.Controls.Add(this.DescriptionSelectedMenuItem);
+            this.SelectedMenuItemText.Controls.Add(this.label5);
+            this.SelectedMenuItemText.Location = new System.Drawing.Point(327, 279);
+            this.SelectedMenuItemText.Name = "SelectedMenuItemText";
+            this.SelectedMenuItemText.Size = new System.Drawing.Size(433, 159);
+            this.SelectedMenuItemText.TabIndex = 23;
+            this.SelectedMenuItemText.TabStop = false;
+            this.SelectedMenuItemText.Text = "Informatie geselecteerde menu item";
+            this.SelectedMenuItemText.Visible = false;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(18, 120);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(51, 13);
+            this.label5.TabIndex = 0;
+            this.label5.Text = "Extra info";
+            // 
+            // DescriptionSelectedMenuItem
+            // 
+            this.DescriptionSelectedMenuItem.AutoSize = true;
+            this.DescriptionSelectedMenuItem.Location = new System.Drawing.Point(105, 120);
+            this.DescriptionSelectedMenuItem.Name = "DescriptionSelectedMenuItem";
+            this.DescriptionSelectedMenuItem.Size = new System.Drawing.Size(35, 13);
+            this.DescriptionSelectedMenuItem.TabIndex = 1;
+            this.DescriptionSelectedMenuItem.Text = "label6";
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(21, 84);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(26, 13);
+            this.label6.TabIndex = 2;
+            this.label6.Text = "Prijs";
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(21, 44);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(38, 13);
+            this.label7.TabIndex = 3;
+            this.label7.Text = "Naam ";
+            // 
+            // NameSelectedMenuItem
+            // 
+            this.NameSelectedMenuItem.AutoSize = true;
+            this.NameSelectedMenuItem.Location = new System.Drawing.Point(105, 43);
+            this.NameSelectedMenuItem.Name = "NameSelectedMenuItem";
+            this.NameSelectedMenuItem.Size = new System.Drawing.Size(35, 13);
+            this.NameSelectedMenuItem.TabIndex = 4;
+            this.NameSelectedMenuItem.Text = "label8";
+            // 
+            // PriceSelectedMenuItem
+            // 
+            this.PriceSelectedMenuItem.AutoSize = true;
+            this.PriceSelectedMenuItem.Location = new System.Drawing.Point(105, 84);
+            this.PriceSelectedMenuItem.Name = "PriceSelectedMenuItem";
+            this.PriceSelectedMenuItem.Size = new System.Drawing.Size(35, 13);
+            this.PriceSelectedMenuItem.TabIndex = 5;
+            this.PriceSelectedMenuItem.Text = "label9";
+            // 
+            // CloseSelectedMenuItem
+            // 
+            this.CloseSelectedMenuItem.Location = new System.Drawing.Point(341, 120);
+            this.CloseSelectedMenuItem.Name = "CloseSelectedMenuItem";
+            this.CloseSelectedMenuItem.Size = new System.Drawing.Size(85, 23);
+            this.CloseSelectedMenuItem.TabIndex = 6;
+            this.CloseSelectedMenuItem.Text = "Sluit scherm";
+            this.CloseSelectedMenuItem.UseVisualStyleBackColor = true;
+            this.CloseSelectedMenuItem.Click += new System.EventHandler(this.CloseSelectedMenuItem_Click);
             // 
             // MenuPage
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.SelectedMenuItemText);
+            this.Controls.Add(this.label4);
+            this.Controls.Add(this.SearchMenuItemsList);
             this.Controls.Add(this.NewMenuItemGroupBox);
-            this.Controls.Add(this.AddMenuItemButton);
+            this.Controls.Add(this.ShowCreateMenuItemPanel);
             this.Controls.Add(this.MenuItemsList);
             this.Controls.Add(this.MenuGrid);
             this.Controls.Add(this.textBox1);
@@ -179,6 +304,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.MenuGrid)).EndInit();
             this.NewMenuItemGroupBox.ResumeLayout(false);
             this.NewMenuItemGroupBox.PerformLayout();
+            this.SelectedMenuItemText.ResumeLayout(false);
+            this.SelectedMenuItemText.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -190,13 +317,24 @@
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.DataGridView MenuGrid;
         private System.Windows.Forms.ListBox MenuItemsList;
-        private System.Windows.Forms.Button AddMenuItemButton;
+        private System.Windows.Forms.Button ShowCreateMenuItemPanel;
         private System.Windows.Forms.TextBox NameNewMenuItemInput;
         private System.Windows.Forms.TextBox PriceNewMenuItemInput;
         private System.Windows.Forms.GroupBox NewMenuItemGroupBox;
-        private System.Windows.Forms.TextBox NotitionNewMenuItemInput;
+        private System.Windows.Forms.TextBox DescriptionNewMenuItemInput;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Button CreateNewMenuItem;
+        private System.Windows.Forms.TextBox SearchMenuItemsList;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.GroupBox SelectedMenuItemText;
+        private System.Windows.Forms.Label DescriptionSelectedMenuItem;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label PriceSelectedMenuItem;
+        private System.Windows.Forms.Label NameSelectedMenuItem;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Button CloseSelectedMenuItem;
     }
 }
