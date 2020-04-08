@@ -1,6 +1,6 @@
 ﻿namespace DePandaWinForms.Pages
 {
-    partial class MenuPage
+    partial class MenuPageJelmar
     {
         /// <summary>
         /// Required designer variable.
@@ -284,7 +284,7 @@
             this.button6.Text = "Opslaan";
             this.button6.UseVisualStyleBackColor = true;
             // 
-            // MenuPage
+            // MenuPageJelmar
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -298,7 +298,7 @@
             this.Controls.Add(this.Pincode);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Margin = new System.Windows.Forms.Padding(6);
-            this.Name = "MenuPage";
+            this.Name = "MenuPageJelmar";
             this.Text = "Reservations";
             ((System.ComponentModel.ISupportInitialize)(this.MenuGrid)).EndInit();
             this.flowLayoutPanel1.ResumeLayout(false);

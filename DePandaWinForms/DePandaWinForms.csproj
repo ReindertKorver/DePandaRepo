@@ -71,11 +71,11 @@
     <Compile Include="Pages\PaymentPage.Designer.cs">
       <DependentUpon>PaymentPage.cs</DependentUpon>
     </Compile>
-    <Compile Include="Pages\MenuPage.cs">
+    <Compile Include="Pages\MenuPageJelmar.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Pages\MenuPage.Designer.cs">
-      <DependentUpon>MenuPage.cs</DependentUpon>
+    <Compile Include="Pages\MenuPageJelmar.Designer.cs">
+      <DependentUpon>MenuPageJelmar.cs</DependentUpon>
     </Compile>
     <Compile Include="Pages\ReservationPage.cs">
       <SubType>Form</SubType>
@@ -115,8 +115,8 @@
     <EmbeddedResource Include="Pages\PaymentPage.resx">
       <DependentUpon>PaymentPage.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Pages\MenuPage.resx">
-      <DependentUpon>MenuPage.cs</DependentUpon>
+    <EmbeddedResource Include="Pages\MenuPageJelmar.resx">
+      <DependentUpon>MenuPageJelmar.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Pages\ReservationPage.resx">
       <DependentUpon>ReservationPage.cs</DependentUpon>

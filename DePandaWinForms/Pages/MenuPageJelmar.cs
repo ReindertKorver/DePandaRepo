@@ -11,9 +11,9 @@ using DePandaLib.DAL;
 
 namespace DePandaWinForms.Pages
 {
-    public partial class MenuPage : Form
+    public partial class MenuPageJelmar : Form
     {
-        public MenuPage()
+        public MenuPageJelmar()
         {
             InitializeComponent();
         }

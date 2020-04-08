@@ -136,7 +136,7 @@ namespace DePandaWinForms
             switch (e.Item.Text)
             {
                 case "Menu":
-                    form = new MenuPage();
+                    form = new MenuPageJelmar();
                     break;
 
                 case "Reserveringen":
