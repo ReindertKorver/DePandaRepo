@@ -62,7 +62,7 @@
             this.Title.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(45)))), ((int)(((byte)(51)))));
             this.Title.Location = new System.Drawing.Point(0, 0);
             this.Title.Margin = new System.Windows.Forms.Padding(3, 25, 3, 0);
-            this.Title.Name = "Pincode";
+            
             this.Title.Size = new System.Drawing.Size(800, 37);
             this.Title.TabIndex = 13;
             this.Title.Text = "Menu";
