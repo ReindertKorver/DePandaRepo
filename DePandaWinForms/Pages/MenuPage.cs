@@ -8,7 +8,7 @@ using DePandaLib.DAL;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-//using DePandaLib.Entities;
+using DePandaLib.Entities;
 
 using System.Globalization;
 
@@ -18,8 +18,7 @@ namespace DePandaWinForms.Pages
     public partial class MenuPage : Form
     {
 
-        DataStorageHandler dataStorageHandler = new DataStorageHandler();
-
+        List<Dish> TempStockDishes;
 
         public MenuPage()
         {
@@ -29,24 +28,20 @@ namespace DePandaWinForms.Pages
 
         public void LoadInMenuItems()
         {
-            var MenuItems = DataStorageHandler.Storage.StockDishes;
+            TempStockDishes = DataStorageHandler.Storage.StockDishes;
 
-            foreach (var menuItem in MenuItems)
+            foreach (Dish menuItem in TempStockDishes)
             {
-                MenuItemsList.Items.Add(menuItem.Name);
+                MenuItemsList.Items.Add(menuItem);
             }
+
+            MenuItemsList.ValueMember = "ID";
+            MenuItemsList.DisplayMember = "Name";
         }
 
-        private void Pincode_Click(object sender, EventArgs e)
-        {
-        }
+      
 
-        private void AddMenuItemButton_Click(object sender, EventArgs e)
-        {
-            
-
-            
-        }
+       
 
         private void ShowCreateMenuItemPanel_Click(object sender, EventArgs e)
         {
@@ -70,25 +65,23 @@ namespace DePandaWinForms.Pages
 
                 decimal Price = Convert.ToDecimal(PriceNewMenuItemInput.Text, cultures);
 
-                DataStorageHandler.Storage.StockDishes.Add(new DePandaLib.Entities.Dish() { Name = NameNewMenuItemInput.Text, Price = Price, Description = DescriptionNewMenuItemInput.Text });
+                TempStockDishes.Add(new Dish() { Name = NameNewMenuItemInput.Text, Price = Price, Description = DescriptionNewMenuItemInput.Text });
 
                 MenuItemsList.Items.Clear();
 
                 LoadInMenuItems();
-                DataStorageHandler.SaveChanges();
+                
             }
         }
 
        
         private void SearchMenuItems(object sender, EventArgs e)
         {
-            var MenuItems = DataStorageHandler.Storage.StockDishes;
-
             MenuItemsList.Items.Clear();
 
             if(SearchMenuItemsList.Text.Length > 0)
             {
-                foreach (var menuItem in MenuItems)
+                foreach (var menuItem in TempStockDishes)
                 {
                     if(menuItem.Name.ToLower().Contains(SearchMenuItemsList.Text.ToLower()))
                     {
@@ -107,19 +100,17 @@ namespace DePandaWinForms.Pages
 
         private void MenuItemsList_SelectedIndexChanged(object sender, EventArgs e)
         {
-            var MenuItems = DataStorageHandler.Storage.StockDishes;
-
-            foreach (var menuItem in MenuItems)
-            {
-                if(menuItem.Name == MenuItemsList.SelectedItem) 
-                {
-                    SelectedMenuItemText.Visible = true;
-                    
-                    DescriptionSelectedMenuItem.Text = menuItem.Description;
-                    PriceSelectedMenuItem.Text = menuItem.Price.ToString();
-                    NameSelectedMenuItem.Text = menuItem.Name;
-                }
-            }
+            
+                
+            SelectedMenuItemText.Visible = true;
+            
+            Dish menuItem = MenuItemsList.SelectedItem as Dish;
+            
+            DescriptionSelectedMenuItem.Text = menuItem.Description;
+            PriceSelectedMenuItem.Text = menuItem.Price.ToString();
+            NameSelectedMenuItem.Text = menuItem.Name;
+                
+            
         }
 
         private void CloseSelectedMenuItem_Click(object sender, EventArgs e)
