@@ -55,7 +55,7 @@
             this.SelectedMenuItemText.SuspendLayout();
             this.SuspendLayout();
             // 
-            // Pincode
+            // Title
             // 
             this.Title.Dock = System.Windows.Forms.DockStyle.Top;
             this.Title.Font = new System.Drawing.Font("Segoe UI", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
