@@ -28,8 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.Pincode = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.Title = new System.Windows.Forms.Label();
             this.MenuGrid = new System.Windows.Forms.DataGridView();
             this.MenuItemsList = new System.Windows.Forms.ListBox();
             this.ShowCreateMenuItemPanel = new System.Windows.Forms.Button();
@@ -58,26 +57,16 @@
             // 
             // Pincode
             // 
-            this.Pincode.Dock = System.Windows.Forms.DockStyle.Top;
-            this.Pincode.Font = new System.Drawing.Font("Segoe UI", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Pincode.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(45)))), ((int)(((byte)(51)))));
-            this.Pincode.Location = new System.Drawing.Point(0, 0);
-            this.Pincode.Margin = new System.Windows.Forms.Padding(3, 25, 3, 0);
-            this.Pincode.Name = "Pincode";
-            this.Pincode.Size = new System.Drawing.Size(800, 37);
-            this.Pincode.TabIndex = 13;
-            this.Pincode.Text = "Menu";
-            this.Pincode.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.Pincode.Click += new System.EventHandler(this.Pincode_Click);
-            // 
-            // textBox1
-            // 
-            this.textBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textBox1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.Location = new System.Drawing.Point(627, 11);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(150, 29);
-            this.textBox1.TabIndex = 14;
+            this.Title.Dock = System.Windows.Forms.DockStyle.Top;
+            this.Title.Font = new System.Drawing.Font("Segoe UI", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Title.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(45)))), ((int)(((byte)(51)))));
+            this.Title.Location = new System.Drawing.Point(0, 0);
+            this.Title.Margin = new System.Windows.Forms.Padding(3, 25, 3, 0);
+            this.Title.Name = "Pincode";
+            this.Title.Size = new System.Drawing.Size(800, 37);
+            this.Title.TabIndex = 13;
+            this.Title.Text = "Menu";
+            this.Title.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // MenuGrid
             // 
@@ -296,8 +285,7 @@
             this.Controls.Add(this.ShowCreateMenuItemPanel);
             this.Controls.Add(this.MenuItemsList);
             this.Controls.Add(this.MenuGrid);
-            this.Controls.Add(this.textBox1);
-            this.Controls.Add(this.Pincode);
+            this.Controls.Add(this.Title);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "MenuPage";
             this.Text = "Reservations";
@@ -313,8 +301,7 @@
 
         #endregion
 
-        private System.Windows.Forms.Label Pincode;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.Label Title;
         private System.Windows.Forms.DataGridView MenuGrid;
         private System.Windows.Forms.ListBox MenuItemsList;
         private System.Windows.Forms.Button ShowCreateMenuItemPanel;
