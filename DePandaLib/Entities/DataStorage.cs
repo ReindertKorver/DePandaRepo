@@ -1,4 +1,5 @@
-﻿using System;
+﻿using DePandaClassLib.Entities;
+using System;
 using System.Collections.Generic;
 using System.Text;
 
@@ -6,8 +7,10 @@ namespace DePandaLib.Entities
 {
     public class DataStorage
     {
+        public Settings Settings { get; set; } = new Settings();
         public List<Dish> StockDishes { get; set; } = new List<Dish>();
         public List<RestaurantTable> AvailableTables { get; set; } = new List<RestaurantTable>();
         public List<Reservation> Reservations { get; set; } = new List<Reservation>();
+        public List<MenuItem> Menu { get; set; } = new List<MenuItem>();
     }
 }

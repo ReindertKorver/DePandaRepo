@@ -36,6 +36,9 @@
             "Bestellingen"}, -1, System.Drawing.Color.White, System.Drawing.Color.Empty, new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0))));
             System.Windows.Forms.ListViewItem listViewItem4 = new System.Windows.Forms.ListViewItem(new string[] {
             "Betalingen"}, -1, System.Drawing.Color.White, System.Drawing.Color.Empty, new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0))));
+            System.Windows.Forms.ListViewItem listViewItem5 = new System.Windows.Forms.ListViewItem(new string[] {
+            "Instellingen"}, -1, System.Drawing.Color.White, System.Drawing.Color.Empty, new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0))));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.panel1 = new System.Windows.Forms.Panel();
             this.label2 = new System.Windows.Forms.Label();
             this.Minimize = new System.Windows.Forms.PictureBox();
@@ -43,17 +46,16 @@
             this.Close = new System.Windows.Forms.PictureBox();
             this.panel2 = new System.Windows.Forms.Panel();
             this.listView1 = new System.Windows.Forms.ListView();
-            this.panel3 = new System.Windows.Forms.Panel();
+            this.LogoutLabel = new System.Windows.Forms.Panel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
             this.PagePanel = new System.Windows.Forms.Panel();
-            this.button1 = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Minimize)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Maximize)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Close)).BeginInit();
             this.panel2.SuspendLayout();
-            this.panel3.SuspendLayout();
+            this.LogoutLabel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -135,14 +137,13 @@
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(45)))), ((int)(((byte)(51)))));
-            this.panel2.Controls.Add(this.button1);
             this.panel2.Controls.Add(this.listView1);
-            this.panel2.Controls.Add(this.panel3);
+            this.panel2.Controls.Add(this.LogoutLabel);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel2.Location = new System.Drawing.Point(0, 32);
             this.panel2.MinimumSize = new System.Drawing.Size(200, 0);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(200, 688);
+            this.panel2.Size = new System.Drawing.Size(200, 683);
             this.panel2.TabIndex = 1;
             // 
             // listView1
@@ -152,34 +153,38 @@
             this.listView1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(45)))), ((int)(((byte)(51)))));
             this.listView1.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.listView1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.listView1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F);
             this.listView1.HideSelection = false;
             this.listView1.Items.AddRange(new System.Windows.Forms.ListViewItem[] {
             listViewItem1,
             listViewItem2,
             listViewItem3,
-            listViewItem4});
+            listViewItem4,
+            listViewItem5});
             this.listView1.Location = new System.Drawing.Point(0, 0);
             this.listView1.Margin = new System.Windows.Forms.Padding(20);
             this.listView1.MultiSelect = false;
             this.listView1.Name = "listView1";
-            this.listView1.Size = new System.Drawing.Size(200, 165);
+            this.listView1.Size = new System.Drawing.Size(200, 231);
             this.listView1.TabIndex = 0;
+            this.listView1.TileSize = new System.Drawing.Size(180, 44);
             this.listView1.UseCompatibleStateImageBehavior = false;
             this.listView1.View = System.Windows.Forms.View.Tile;
             this.listView1.ItemSelectionChanged += new System.Windows.Forms.ListViewItemSelectionChangedEventHandler(this.listView1_ItemSelectionChanged);
+            this.listView1.SelectedIndexChanged += new System.EventHandler(this.listView1_SelectedIndexChanged);
             // 
-            // panel3
+            // LogoutLabel
             // 
-            this.panel3.Controls.Add(this.pictureBox1);
-            this.panel3.Controls.Add(this.label1);
-            this.panel3.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.panel3.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel3.Location = new System.Drawing.Point(0, 637);
-            this.panel3.Margin = new System.Windows.Forms.Padding(3, 25, 25, 3);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(200, 51);
-            this.panel3.TabIndex = 1;
-            this.panel3.Click += new System.EventHandler(this.panel3_Click);
+            this.LogoutLabel.Controls.Add(this.pictureBox1);
+            this.LogoutLabel.Controls.Add(this.label1);
+            this.LogoutLabel.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.LogoutLabel.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.LogoutLabel.Location = new System.Drawing.Point(0, 632);
+            this.LogoutLabel.Margin = new System.Windows.Forms.Padding(3, 25, 25, 3);
+            this.LogoutLabel.Name = "LogoutLabel";
+            this.LogoutLabel.Size = new System.Drawing.Size(200, 51);
+            this.LogoutLabel.TabIndex = 1;
+            this.LogoutLabel.Click += new System.EventHandler(this.panel3_Click);
             // 
             // pictureBox1
             // 
@@ -200,53 +205,49 @@
             this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(96, 14);
+            this.label1.Location = new System.Drawing.Point(95, 12);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(48, 20);
+            this.label1.Size = new System.Drawing.Size(58, 21);
             this.label1.TabIndex = 8;
-            this.label1.Text = "Login";
+            this.label1.Text = "Log uit";
             this.label1.Click += new System.EventHandler(this.panel3_Click);
             // 
             // PagePanel
             // 
+            this.PagePanel.BackColor = System.Drawing.SystemColors.Control;
             this.PagePanel.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.PagePanel.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.5F);
             this.PagePanel.Location = new System.Drawing.Point(200, 32);
             this.PagePanel.Name = "PagePanel";
-            this.PagePanel.Size = new System.Drawing.Size(880, 688);
+            this.PagePanel.Size = new System.Drawing.Size(880, 683);
             this.PagePanel.TabIndex = 2;
-            // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(16, 347);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 2;
-            this.button1.Text = "button1";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.ClientSize = new System.Drawing.Size(1080, 720);
+            this.ClientSize = new System.Drawing.Size(1080, 715);
             this.Controls.Add(this.PagePanel);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
+            this.DoubleBuffered = true;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Form1";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form1";
+            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.KeyBindFullScreen);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Minimize)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Maximize)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Close)).EndInit();
             this.panel2.ResumeLayout(false);
-            this.panel3.ResumeLayout(false);
-            this.panel3.PerformLayout();
+            this.LogoutLabel.ResumeLayout(false);
+            this.LogoutLabel.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
@@ -260,12 +261,11 @@
         private System.Windows.Forms.PictureBox Minimize;
         private System.Windows.Forms.PictureBox Maximize;
         private System.Windows.Forms.PictureBox Close;
-        private System.Windows.Forms.Panel panel3;
+        private System.Windows.Forms.Panel LogoutLabel;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.ListView listView1;
-        private System.Windows.Forms.Button button1;
     }
 }
 

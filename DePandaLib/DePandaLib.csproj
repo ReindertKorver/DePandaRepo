@@ -46,20 +46,21 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="DAL\DataStorageHandler.cs" />
+    <Compile Include="Entities\AlternativeDate.cs" />
     <Compile Include="Entities\DataStorage.cs" />
     <Compile Include="Entities\Dish.cs" />
+    <Compile Include="Entities\Identifier.cs" />
+    <Compile Include="Entities\MenuItem.cs" />
     <Compile Include="Entities\Order.cs" />
     <Compile Include="Entities\Reservation.cs" />
     <Compile Include="Entities\RestaurantTable.cs" />
+    <Compile Include="Entities\Settings.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="ClassDiagram1.cd" />
     <None Include="packages.config" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="BLL\" />
-    <Folder Include="Interfaces\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

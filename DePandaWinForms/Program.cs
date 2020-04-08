@@ -1,4 +1,6 @@
-﻿using DePandaWinForms.Pages;
+﻿using DePandaLib.DAL;
+using DePandaLib.Entities;
+using DePandaWinForms.Pages;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -17,8 +19,13 @@ namespace DePandaWinForms
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
+            DataStorageHandler.StorageFileLocation = "DataStorage.json";
+            DataStorageHandler.Init();
 
-            Application.Run(new Form1());
+            //DataStorageHandler.Storage.StockDishes.Add();
+            Application.Run(new Form1(FormWindowState.Normal));
+            // change Form to Login Application.Run(new Login(false));
+            DataStorageHandler.SaveChanges();
         }
     }
 }

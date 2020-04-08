@@ -1,4 +1,5 @@
-﻿using System;
+﻿using DePandaLib.DAL;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -15,6 +16,7 @@ namespace DePandaWinForms.Pages
         public ReservationPage()
         {
             InitializeComponent();
+            //DataStorageHandler.Storage.Reservations.Add(new DePandaLib.Entities.Reservation() { });
         }
 
         private void label1_Click(object sender, EventArgs e)
