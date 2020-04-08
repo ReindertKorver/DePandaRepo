@@ -12,13 +12,11 @@ using DePandaLib.Entities;
 
 using System.Globalization;
 
-
 namespace DePandaWinForms.Pages
 {
     public partial class MenuPage : Form
     {
-
-        List<Dish> TempStockDishes;
+        private List<Dish> TempStockDishes;
 
         public MenuPage()
         {
@@ -39,10 +37,6 @@ namespace DePandaWinForms.Pages
             MenuItemsList.DisplayMember = "Name";
         }
 
-      
-
-       
-
         private void ShowCreateMenuItemPanel_Click(object sender, EventArgs e)
         {
             if (NewMenuItemGroupBox.Visible == false)
@@ -53,8 +47,6 @@ namespace DePandaWinForms.Pages
             {
                 NewMenuItemGroupBox.Visible = false;
             }
-
-        
         }
 
         private void CreateNewMenuItem_Click(object sender, EventArgs e)
@@ -70,48 +62,38 @@ namespace DePandaWinForms.Pages
                 MenuItemsList.Items.Clear();
 
                 LoadInMenuItems();
-                
             }
         }
 
-       
         private void SearchMenuItems(object sender, EventArgs e)
         {
             MenuItemsList.Items.Clear();
 
-            if(SearchMenuItemsList.Text.Length > 0)
+            if (SearchMenuItemsList.Text.Length > 0)
             {
                 foreach (var menuItem in TempStockDishes)
                 {
-                    if(menuItem.Name.ToLower().Contains(SearchMenuItemsList.Text.ToLower()))
+                    if (menuItem.Name.ToLower().Contains(SearchMenuItemsList.Text.ToLower()))
                     {
                         MenuItemsList.Items.Add(menuItem.Name);
                     }
-
                 }
             }
             else
             {
                 LoadInMenuItems();
-                Console.WriteLine("hpo");
             }
-
-            
         }
 
         private void MenuItemsList_SelectedIndexChanged(object sender, EventArgs e)
         {
-            
-                
             SelectedMenuItemText.Visible = true;
-            
+
             Dish menuItem = MenuItemsList.SelectedItem as Dish;
-            
+
             DescriptionSelectedMenuItem.Text = menuItem.Description;
             PriceSelectedMenuItem.Text = menuItem.Price.ToString();
             NameSelectedMenuItem.Text = menuItem.Name;
-                
-            
         }
 
         private void CloseSelectedMenuItem_Click(object sender, EventArgs e)
