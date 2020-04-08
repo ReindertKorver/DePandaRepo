@@ -93,6 +93,7 @@ namespace DePandaWinForms.Pages
             else
             {
                 LoadInMenuItems();
+                Console.WriteLine("hpo");
             }
 
             
