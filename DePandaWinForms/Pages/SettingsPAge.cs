@@ -58,7 +58,10 @@ namespace DePandaWinForms.Pages
             this.WednesDayClosed = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.Opentimes = new System.Windows.Forms.TableLayoutPanel();
+            this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
+            this.listBox1 = new System.Windows.Forms.ListBox();
             this.Opentimes.SuspendLayout();
+            this.tableLayoutPanel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // label1
@@ -79,7 +82,7 @@ namespace DePandaWinForms.Pages
             this.Pincode.Location = new System.Drawing.Point(0, 0);
             this.Pincode.Margin = new System.Windows.Forms.Padding(3, 25, 3, 0);
             this.Pincode.Name = "Pincode";
-            this.Pincode.Size = new System.Drawing.Size(880, 37);
+            this.Pincode.Size = new System.Drawing.Size(1683, 37);
             this.Pincode.TabIndex = 15;
             this.Pincode.Text = "Instellingen";
             this.Pincode.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -88,7 +91,7 @@ namespace DePandaWinForms.Pages
             // 
             this.SunDayClosed.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.SunDayClosed.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.SunDayClosed.Location = new System.Drawing.Point(365, 250);
+            this.SunDayClosed.Location = new System.Drawing.Point(270, 322);
             this.SunDayClosed.MaxLength = 5;
             this.SunDayClosed.Name = "SunDayClosed";
             this.SunDayClosed.Size = new System.Drawing.Size(114, 20);
@@ -99,7 +102,7 @@ namespace DePandaWinForms.Pages
             // SunDayOpen
             // 
             this.SunDayOpen.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.SunDayOpen.Location = new System.Drawing.Point(186, 250);
+            this.SunDayOpen.Location = new System.Drawing.Point(132, 322);
             this.SunDayOpen.MaxLength = 5;
             this.SunDayOpen.Name = "SunDayOpen";
             this.SunDayOpen.Size = new System.Drawing.Size(114, 20);
@@ -110,7 +113,7 @@ namespace DePandaWinForms.Pages
             // SaturDayOpen
             // 
             this.SaturDayOpen.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.SaturDayOpen.Location = new System.Drawing.Point(186, 210);
+            this.SaturDayOpen.Location = new System.Drawing.Point(132, 275);
             this.SaturDayOpen.MaxLength = 5;
             this.SaturDayOpen.Name = "SaturDayOpen";
             this.SaturDayOpen.Size = new System.Drawing.Size(114, 20);
@@ -122,7 +125,7 @@ namespace DePandaWinForms.Pages
             // 
             this.SaturDayClosed.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.SaturDayClosed.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.SaturDayClosed.Location = new System.Drawing.Point(365, 210);
+            this.SaturDayClosed.Location = new System.Drawing.Point(270, 275);
             this.SaturDayClosed.MaxLength = 5;
             this.SaturDayClosed.Name = "SaturDayClosed";
             this.SaturDayClosed.Size = new System.Drawing.Size(114, 20);
@@ -133,7 +136,7 @@ namespace DePandaWinForms.Pages
             // FridayOpen
             // 
             this.FridayOpen.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.FridayOpen.Location = new System.Drawing.Point(186, 170);
+            this.FridayOpen.Location = new System.Drawing.Point(132, 229);
             this.FridayOpen.MaxLength = 5;
             this.FridayOpen.Name = "FridayOpen";
             this.FridayOpen.Size = new System.Drawing.Size(114, 20);
@@ -145,7 +148,7 @@ namespace DePandaWinForms.Pages
             // 
             this.FridayClosed.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.FridayClosed.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.FridayClosed.Location = new System.Drawing.Point(365, 170);
+            this.FridayClosed.Location = new System.Drawing.Point(270, 229);
             this.FridayClosed.MaxLength = 5;
             this.FridayClosed.Name = "FridayClosed";
             this.FridayClosed.Size = new System.Drawing.Size(114, 20);
@@ -157,7 +160,7 @@ namespace DePandaWinForms.Pages
             // 
             this.ThursDayClosed.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.ThursDayClosed.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.ThursDayClosed.Location = new System.Drawing.Point(365, 130);
+            this.ThursDayClosed.Location = new System.Drawing.Point(270, 183);
             this.ThursDayClosed.MaxLength = 5;
             this.ThursDayClosed.Name = "ThursDayClosed";
             this.ThursDayClosed.Size = new System.Drawing.Size(114, 20);
@@ -168,7 +171,7 @@ namespace DePandaWinForms.Pages
             // ThursDayOpen
             // 
             this.ThursDayOpen.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.ThursDayOpen.Location = new System.Drawing.Point(186, 130);
+            this.ThursDayOpen.Location = new System.Drawing.Point(132, 183);
             this.ThursDayOpen.MaxLength = 5;
             this.ThursDayOpen.Name = "ThursDayOpen";
             this.ThursDayOpen.Size = new System.Drawing.Size(114, 20);
@@ -179,7 +182,7 @@ namespace DePandaWinForms.Pages
             // WednesDayOpen
             // 
             this.WednesDayOpen.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.WednesDayOpen.Location = new System.Drawing.Point(186, 90);
+            this.WednesDayOpen.Location = new System.Drawing.Point(132, 137);
             this.WednesDayOpen.MaxLength = 5;
             this.WednesDayOpen.Name = "WednesDayOpen";
             this.WednesDayOpen.Size = new System.Drawing.Size(114, 20);
@@ -191,7 +194,7 @@ namespace DePandaWinForms.Pages
             // 
             this.TuesDayClosed.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.TuesDayClosed.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.TuesDayClosed.Location = new System.Drawing.Point(365, 50);
+            this.TuesDayClosed.Location = new System.Drawing.Point(270, 91);
             this.TuesDayClosed.MaxLength = 5;
             this.TuesDayClosed.Name = "TuesDayClosed";
             this.TuesDayClosed.Size = new System.Drawing.Size(114, 20);
@@ -202,7 +205,7 @@ namespace DePandaWinForms.Pages
             // TuesDayOpen
             // 
             this.TuesDayOpen.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.TuesDayOpen.Location = new System.Drawing.Point(186, 50);
+            this.TuesDayOpen.Location = new System.Drawing.Point(132, 91);
             this.TuesDayOpen.MaxLength = 5;
             this.TuesDayOpen.Name = "TuesDayOpen";
             this.TuesDayOpen.Size = new System.Drawing.Size(114, 20);
@@ -215,7 +218,7 @@ namespace DePandaWinForms.Pages
             this.MondayClosed.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.MondayClosed.BackColor = System.Drawing.SystemColors.Window;
             this.MondayClosed.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.MondayClosed.Location = new System.Drawing.Point(365, 10);
+            this.MondayClosed.Location = new System.Drawing.Point(270, 45);
             this.MondayClosed.MaxLength = 5;
             this.MondayClosed.Name = "MondayClosed";
             this.MondayClosed.Size = new System.Drawing.Size(114, 20);
@@ -227,7 +230,7 @@ namespace DePandaWinForms.Pages
             // MondayOpen
             // 
             this.MondayOpen.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.MondayOpen.Location = new System.Drawing.Point(186, 10);
+            this.MondayOpen.Location = new System.Drawing.Point(132, 45);
             this.MondayOpen.MaxLength = 5;
             this.MondayOpen.Name = "MondayOpen";
             this.MondayOpen.Size = new System.Drawing.Size(114, 20);
@@ -239,7 +242,7 @@ namespace DePandaWinForms.Pages
             // 
             this.ThursDayDot.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.ThursDayDot.AutoSize = true;
-            this.ThursDayDot.Location = new System.Drawing.Point(327, 133);
+            this.ThursDayDot.Location = new System.Drawing.Point(252, 186);
             this.ThursDayDot.Name = "ThursDayDot";
             this.ThursDayDot.Size = new System.Drawing.Size(10, 13);
             this.ThursDayDot.TabIndex = 67;
@@ -249,7 +252,7 @@ namespace DePandaWinForms.Pages
             // 
             this.SunDayDot.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.SunDayDot.AutoSize = true;
-            this.SunDayDot.Location = new System.Drawing.Point(327, 254);
+            this.SunDayDot.Location = new System.Drawing.Point(252, 326);
             this.SunDayDot.Name = "SunDayDot";
             this.SunDayDot.Size = new System.Drawing.Size(10, 13);
             this.SunDayDot.TabIndex = 66;
@@ -259,7 +262,7 @@ namespace DePandaWinForms.Pages
             // 
             this.SaturDayDot.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.SaturDayDot.AutoSize = true;
-            this.SaturDayDot.Location = new System.Drawing.Point(327, 213);
+            this.SaturDayDot.Location = new System.Drawing.Point(252, 278);
             this.SaturDayDot.Name = "SaturDayDot";
             this.SaturDayDot.Size = new System.Drawing.Size(10, 13);
             this.SaturDayDot.TabIndex = 65;
@@ -269,7 +272,7 @@ namespace DePandaWinForms.Pages
             // 
             this.FridayDot.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.FridayDot.AutoSize = true;
-            this.FridayDot.Location = new System.Drawing.Point(327, 173);
+            this.FridayDot.Location = new System.Drawing.Point(252, 232);
             this.FridayDot.Name = "FridayDot";
             this.FridayDot.Size = new System.Drawing.Size(10, 13);
             this.FridayDot.TabIndex = 64;
@@ -279,7 +282,7 @@ namespace DePandaWinForms.Pages
             // 
             this.WednesDayDot.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.WednesDayDot.AutoSize = true;
-            this.WednesDayDot.Location = new System.Drawing.Point(327, 93);
+            this.WednesDayDot.Location = new System.Drawing.Point(252, 140);
             this.WednesDayDot.Name = "WednesDayDot";
             this.WednesDayDot.Size = new System.Drawing.Size(10, 13);
             this.WednesDayDot.TabIndex = 63;
@@ -289,7 +292,7 @@ namespace DePandaWinForms.Pages
             // 
             this.TuesDayDot.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.TuesDayDot.AutoSize = true;
-            this.TuesDayDot.Location = new System.Drawing.Point(327, 53);
+            this.TuesDayDot.Location = new System.Drawing.Point(252, 94);
             this.TuesDayDot.Name = "TuesDayDot";
             this.TuesDayDot.Size = new System.Drawing.Size(10, 13);
             this.TuesDayDot.TabIndex = 62;
@@ -299,7 +302,7 @@ namespace DePandaWinForms.Pages
             // 
             this.MondayDot.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.MondayDot.AutoSize = true;
-            this.MondayDot.Location = new System.Drawing.Point(327, 13);
+            this.MondayDot.Location = new System.Drawing.Point(252, 48);
             this.MondayDot.Name = "MondayDot";
             this.MondayDot.Size = new System.Drawing.Size(10, 13);
             this.MondayDot.TabIndex = 61;
@@ -311,9 +314,9 @@ namespace DePandaWinForms.Pages
             this.SunDayText.Dock = System.Windows.Forms.DockStyle.Fill;
             this.SunDayText.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
             this.SunDayText.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(112)))), ((int)(((byte)(112)))), ((int)(((byte)(112)))));
-            this.SunDayText.Location = new System.Drawing.Point(3, 240);
+            this.SunDayText.Location = new System.Drawing.Point(3, 308);
             this.SunDayText.Name = "SunDayText";
-            this.SunDayText.Size = new System.Drawing.Size(156, 41);
+            this.SunDayText.Size = new System.Drawing.Size(123, 49);
             this.SunDayText.TabIndex = 60;
             this.SunDayText.Text = "Zondag";
             this.SunDayText.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -324,9 +327,9 @@ namespace DePandaWinForms.Pages
             this.SaturDayText.Dock = System.Windows.Forms.DockStyle.Fill;
             this.SaturDayText.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
             this.SaturDayText.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(112)))), ((int)(((byte)(112)))), ((int)(((byte)(112)))));
-            this.SaturDayText.Location = new System.Drawing.Point(3, 200);
+            this.SaturDayText.Location = new System.Drawing.Point(3, 262);
             this.SaturDayText.Name = "SaturDayText";
-            this.SaturDayText.Size = new System.Drawing.Size(156, 40);
+            this.SaturDayText.Size = new System.Drawing.Size(123, 46);
             this.SaturDayText.TabIndex = 59;
             this.SaturDayText.Text = "Zaterdag";
             this.SaturDayText.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -337,9 +340,9 @@ namespace DePandaWinForms.Pages
             this.FridayText.Dock = System.Windows.Forms.DockStyle.Fill;
             this.FridayText.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
             this.FridayText.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(112)))), ((int)(((byte)(112)))), ((int)(((byte)(112)))));
-            this.FridayText.Location = new System.Drawing.Point(3, 160);
+            this.FridayText.Location = new System.Drawing.Point(3, 216);
             this.FridayText.Name = "FridayText";
-            this.FridayText.Size = new System.Drawing.Size(156, 40);
+            this.FridayText.Size = new System.Drawing.Size(123, 46);
             this.FridayText.TabIndex = 58;
             this.FridayText.Text = "Vrijdag";
             this.FridayText.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -351,9 +354,9 @@ namespace DePandaWinForms.Pages
             this.ThursDayText.Dock = System.Windows.Forms.DockStyle.Fill;
             this.ThursDayText.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
             this.ThursDayText.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(112)))), ((int)(((byte)(112)))), ((int)(((byte)(112)))));
-            this.ThursDayText.Location = new System.Drawing.Point(3, 120);
+            this.ThursDayText.Location = new System.Drawing.Point(3, 170);
             this.ThursDayText.Name = "ThursDayText";
-            this.ThursDayText.Size = new System.Drawing.Size(156, 40);
+            this.ThursDayText.Size = new System.Drawing.Size(123, 46);
             this.ThursDayText.TabIndex = 57;
             this.ThursDayText.Text = "Donderdag";
             this.ThursDayText.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -364,9 +367,9 @@ namespace DePandaWinForms.Pages
             this.WednesDayText.Dock = System.Windows.Forms.DockStyle.Fill;
             this.WednesDayText.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
             this.WednesDayText.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(112)))), ((int)(((byte)(112)))), ((int)(((byte)(112)))));
-            this.WednesDayText.Location = new System.Drawing.Point(3, 80);
+            this.WednesDayText.Location = new System.Drawing.Point(3, 124);
             this.WednesDayText.Name = "WednesDayText";
-            this.WednesDayText.Size = new System.Drawing.Size(156, 40);
+            this.WednesDayText.Size = new System.Drawing.Size(123, 46);
             this.WednesDayText.TabIndex = 56;
             this.WednesDayText.Text = "Woensdag";
             this.WednesDayText.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -377,9 +380,9 @@ namespace DePandaWinForms.Pages
             this.TuesDayText.Dock = System.Windows.Forms.DockStyle.Fill;
             this.TuesDayText.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
             this.TuesDayText.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(112)))), ((int)(((byte)(112)))), ((int)(((byte)(112)))));
-            this.TuesDayText.Location = new System.Drawing.Point(3, 40);
+            this.TuesDayText.Location = new System.Drawing.Point(3, 78);
             this.TuesDayText.Name = "TuesDayText";
-            this.TuesDayText.Size = new System.Drawing.Size(156, 40);
+            this.TuesDayText.Size = new System.Drawing.Size(123, 46);
             this.TuesDayText.TabIndex = 55;
             this.TuesDayText.Text = "Dinsdag";
             this.TuesDayText.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -390,34 +393,35 @@ namespace DePandaWinForms.Pages
             this.MondayText.Dock = System.Windows.Forms.DockStyle.Fill;
             this.MondayText.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
             this.MondayText.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(112)))), ((int)(((byte)(112)))), ((int)(((byte)(112)))));
-            this.MondayText.Location = new System.Drawing.Point(3, 0);
+            this.MondayText.Location = new System.Drawing.Point(3, 32);
             this.MondayText.Name = "MondayText";
-            this.MondayText.Size = new System.Drawing.Size(156, 40);
+            this.MondayText.Size = new System.Drawing.Size(123, 46);
             this.MondayText.TabIndex = 54;
             this.MondayText.Text = "Maandag";
             this.MondayText.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // label2
             // 
-            this.label2.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
             this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(112)))), ((int)(((byte)(112)))), ((int)(((byte)(112)))));
-            this.label2.Location = new System.Drawing.Point(52, 262);
+            this.label2.Location = new System.Drawing.Point(3, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(111, 17);
+            this.label2.Size = new System.Drawing.Size(123, 32);
             this.label2.TabIndex = 53;
             this.label2.Text = "Openingstijden: ";
+            this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // ChangeBTN
             // 
-            this.ChangeBTN.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.ChangeBTN.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.ChangeBTN.BackColor = System.Drawing.Color.White;
             this.ChangeBTN.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(72)))), ((int)(((byte)(142)))), ((int)(((byte)(149)))));
             this.ChangeBTN.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.ChangeBTN.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ChangeBTN.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(72)))), ((int)(((byte)(142)))), ((int)(((byte)(149)))));
-            this.ChangeBTN.Location = new System.Drawing.Point(55, 202);
+            this.ChangeBTN.Location = new System.Drawing.Point(0, 75);
             this.ChangeBTN.Margin = new System.Windows.Forms.Padding(0);
             this.ChangeBTN.Name = "ChangeBTN";
             this.ChangeBTN.Size = new System.Drawing.Size(130, 26);
@@ -428,10 +432,10 @@ namespace DePandaWinForms.Pages
             // 
             // PincodeInput
             // 
-            this.PincodeInput.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.PincodeInput.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.PincodeInput.BackColor = System.Drawing.Color.White;
             this.PincodeInput.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.PincodeInput.Location = new System.Drawing.Point(55, 167);
+            this.PincodeInput.Location = new System.Drawing.Point(3, 41);
             this.PincodeInput.MaxLength = 5;
             this.PincodeInput.Multiline = true;
             this.PincodeInput.Name = "PincodeInput";
@@ -442,11 +446,11 @@ namespace DePandaWinForms.Pages
             // 
             // PincodeText
             // 
-            this.PincodeText.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.PincodeText.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.PincodeText.AutoSize = true;
             this.PincodeText.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
             this.PincodeText.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(112)))), ((int)(((byte)(112)))), ((int)(((byte)(112)))));
-            this.PincodeText.Location = new System.Drawing.Point(52, 136);
+            this.PincodeText.Location = new System.Drawing.Point(3, 7);
             this.PincodeText.Name = "PincodeText";
             this.PincodeText.Size = new System.Drawing.Size(70, 20);
             this.PincodeText.TabIndex = 50;
@@ -456,7 +460,7 @@ namespace DePandaWinForms.Pages
             // 
             this.WednesDayClosed.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.WednesDayClosed.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.WednesDayClosed.Location = new System.Drawing.Point(365, 90);
+            this.WednesDayClosed.Location = new System.Drawing.Point(270, 137);
             this.WednesDayClosed.MaxLength = 5;
             this.WednesDayClosed.Name = "WednesDayClosed";
             this.WednesDayClosed.Size = new System.Drawing.Size(114, 20);
@@ -468,7 +472,7 @@ namespace DePandaWinForms.Pages
             // 
             this.label3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(764, 618);
+            this.label3.Location = new System.Drawing.Point(1567, 1035);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(35, 13);
             this.label3.TabIndex = 82;
@@ -476,75 +480,106 @@ namespace DePandaWinForms.Pages
             // 
             // Opentimes
             // 
-            this.Opentimes.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.Opentimes.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.Opentimes.ColumnCount = 4;
-            this.Opentimes.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
-            this.Opentimes.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
             this.Opentimes.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
-            this.Opentimes.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
-            this.Opentimes.Controls.Add(this.WednesDayClosed, 3, 2);
-            this.Opentimes.Controls.Add(this.SunDayDot, 2, 6);
-            this.Opentimes.Controls.Add(this.ThursDayDot, 2, 3);
-            this.Opentimes.Controls.Add(this.SaturDayDot, 2, 5);
-            this.Opentimes.Controls.Add(this.TuesDayOpen, 1, 1);
-            this.Opentimes.Controls.Add(this.FridayDot, 2, 4);
-            this.Opentimes.Controls.Add(this.MondayDot, 2, 0);
-            this.Opentimes.Controls.Add(this.WednesDayOpen, 1, 2);
-            this.Opentimes.Controls.Add(this.ThursDayOpen, 1, 3);
-            this.Opentimes.Controls.Add(this.WednesDayDot, 2, 2);
-            this.Opentimes.Controls.Add(this.FridayOpen, 1, 4);
-            this.Opentimes.Controls.Add(this.SaturDayOpen, 1, 5);
-            this.Opentimes.Controls.Add(this.TuesDayDot, 2, 1);
-            this.Opentimes.Controls.Add(this.SunDayClosed, 3, 6);
-            this.Opentimes.Controls.Add(this.MondayOpen, 1, 0);
-            this.Opentimes.Controls.Add(this.MondayText, 0, 0);
-            this.Opentimes.Controls.Add(this.TuesDayText, 0, 1);
-            this.Opentimes.Controls.Add(this.SaturDayClosed, 3, 5);
-            this.Opentimes.Controls.Add(this.WednesDayText, 0, 2);
-            this.Opentimes.Controls.Add(this.ThursDayText, 0, 3);
-            this.Opentimes.Controls.Add(this.FridayClosed, 3, 4);
-            this.Opentimes.Controls.Add(this.FridayText, 0, 4);
-            this.Opentimes.Controls.Add(this.SaturDayText, 0, 5);
-            this.Opentimes.Controls.Add(this.SunDayText, 0, 6);
-            this.Opentimes.Controls.Add(this.TuesDayClosed, 3, 1);
-            this.Opentimes.Controls.Add(this.SunDayOpen, 1, 6);
-            this.Opentimes.Controls.Add(this.ThursDayClosed, 3, 3);
-            this.Opentimes.Controls.Add(this.MondayClosed, 3, 0);
+            this.Opentimes.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
+            this.Opentimes.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
+            this.Opentimes.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
+            this.Opentimes.Controls.Add(this.WednesDayClosed, 3, 3);
+            this.Opentimes.Controls.Add(this.SunDayDot, 2, 7);
+            this.Opentimes.Controls.Add(this.ThursDayDot, 2, 4);
+            this.Opentimes.Controls.Add(this.SaturDayDot, 2, 6);
+            this.Opentimes.Controls.Add(this.TuesDayOpen, 1, 2);
+            this.Opentimes.Controls.Add(this.label2, 0, 0);
+            this.Opentimes.Controls.Add(this.FridayDot, 2, 5);
+            this.Opentimes.Controls.Add(this.MondayDot, 2, 1);
+            this.Opentimes.Controls.Add(this.WednesDayOpen, 1, 3);
+            this.Opentimes.Controls.Add(this.ThursDayOpen, 1, 4);
+            this.Opentimes.Controls.Add(this.WednesDayDot, 2, 3);
+            this.Opentimes.Controls.Add(this.FridayOpen, 1, 5);
+            this.Opentimes.Controls.Add(this.SaturDayOpen, 1, 6);
+            this.Opentimes.Controls.Add(this.TuesDayDot, 2, 2);
+            this.Opentimes.Controls.Add(this.SunDayClosed, 3, 7);
+            this.Opentimes.Controls.Add(this.MondayOpen, 1, 1);
+            this.Opentimes.Controls.Add(this.MondayText, 0, 1);
+            this.Opentimes.Controls.Add(this.TuesDayText, 0, 2);
+            this.Opentimes.Controls.Add(this.SaturDayClosed, 3, 6);
+            this.Opentimes.Controls.Add(this.WednesDayText, 0, 3);
+            this.Opentimes.Controls.Add(this.ThursDayText, 0, 4);
+            this.Opentimes.Controls.Add(this.FridayClosed, 3, 5);
+            this.Opentimes.Controls.Add(this.FridayText, 0, 5);
+            this.Opentimes.Controls.Add(this.SaturDayText, 0, 6);
+            this.Opentimes.Controls.Add(this.SunDayText, 0, 7);
+            this.Opentimes.Controls.Add(this.TuesDayClosed, 3, 2);
+            this.Opentimes.Controls.Add(this.SunDayOpen, 1, 7);
+            this.Opentimes.Controls.Add(this.ThursDayClosed, 3, 4);
+            this.Opentimes.Controls.Add(this.MondayClosed, 3, 1);
             this.Opentimes.GrowStyle = System.Windows.Forms.TableLayoutPanelGrowStyle.AddColumns;
-            this.Opentimes.Location = new System.Drawing.Point(36, 341);
+            this.Opentimes.Location = new System.Drawing.Point(36, 239);
             this.Opentimes.Name = "Opentimes";
-            this.Opentimes.RowCount = 7;
-            this.Opentimes.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 14.28571F));
-            this.Opentimes.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 14.28571F));
-            this.Opentimes.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 14.28571F));
-            this.Opentimes.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 14.28571F));
-            this.Opentimes.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 14.28571F));
-            this.Opentimes.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 14.28571F));
-            this.Opentimes.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 14.28571F));
-            this.Opentimes.Size = new System.Drawing.Size(505, 281);
+            this.Opentimes.RowCount = 8;
+            this.Opentimes.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 9.09091F));
+            this.Opentimes.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 12.98701F));
+            this.Opentimes.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 12.98701F));
+            this.Opentimes.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 12.98701F));
+            this.Opentimes.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 12.98701F));
+            this.Opentimes.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 12.98701F));
+            this.Opentimes.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 12.98701F));
+            this.Opentimes.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 12.98701F));
+            this.Opentimes.Size = new System.Drawing.Size(390, 357);
             this.Opentimes.TabIndex = 83;
+            // 
+            // tableLayoutPanel1
+            // 
+            this.tableLayoutPanel1.ColumnCount = 1;
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableLayoutPanel1.Controls.Add(this.PincodeInput, 0, 1);
+            this.tableLayoutPanel1.Controls.Add(this.ChangeBTN, 0, 2);
+            this.tableLayoutPanel1.Controls.Add(this.PincodeText, 0, 0);
+            this.tableLayoutPanel1.Location = new System.Drawing.Point(36, 88);
+            this.tableLayoutPanel1.Name = "tableLayoutPanel1";
+            this.tableLayoutPanel1.RowCount = 3;
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(157, 107);
+            this.tableLayoutPanel1.TabIndex = 82;
+            // 
+            // listBox1
+            // 
+            this.listBox1.BackColor = System.Drawing.SystemColors.Control;
+            this.listBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.listBox1.FormattingEnabled = true;
+            this.listBox1.ItemHeight = 16;
+            this.listBox1.Items.AddRange(new object[] {
+            "Woensdag\t08-04-2020\t13.00\t19.00"});
+            this.listBox1.Location = new System.Drawing.Point(451, 239);
+            this.listBox1.Name = "listBox1";
+            this.listBox1.Size = new System.Drawing.Size(360, 356);
+            this.listBox1.TabIndex = 84;
             // 
             // SettingsPage
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
-            this.BackColor = System.Drawing.SystemColors.ActiveBorder;
-            this.ClientSize = new System.Drawing.Size(880, 683);
-            this.Controls.Add(this.PincodeText);
-            this.Controls.Add(this.PincodeInput);
+            this.BackColor = System.Drawing.SystemColors.Control;
+            this.ClientSize = new System.Drawing.Size(1683, 1100);
+            this.Controls.Add(this.listBox1);
             this.Controls.Add(this.Opentimes);
-            this.Controls.Add(this.ChangeBTN);
             this.Controls.Add(this.label3);
-            this.Controls.Add(this.label2);
             this.Controls.Add(this.Pincode);
             this.Controls.Add(this.label1);
+            this.Controls.Add(this.tableLayoutPanel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "SettingsPage";
             this.Text = "Settings";
             this.Opentimes.ResumeLayout(false);
             this.Opentimes.PerformLayout();
+            this.tableLayoutPanel1.ResumeLayout(false);
+            this.tableLayoutPanel1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -575,6 +610,7 @@ namespace DePandaWinForms.Pages
             if (PincodeInput.Text.All(char.IsDigit)) 
             {
                 DataStorageHandler.Storage.Settings.PinCode = PincodeInput.Text;
+                MessageBox.Show($"Uw pincode is gewijzigd naar {DataStorageHandler.Storage.Settings.PinCode}");
             }
             else
             {

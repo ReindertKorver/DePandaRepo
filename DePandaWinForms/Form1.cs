@@ -57,6 +57,16 @@ namespace DePandaWinForms
             {
                 this.WindowState = FormWindowState.Maximized;
             }
+            if (form != null)
+            {
+                form.TopLevel = false;
+                form.AutoScroll = true;
+                form.Size = new Size(PagePanel.Size.Width, PagePanel.Size.Height);
+                Console.WriteLine(form.Size);
+                PagePanel.Controls.Clear();
+                PagePanel.Controls.Add(form);
+                form.Show();
+            }
         }
 
         private void Minimize_Click(object sender, EventArgs e)
@@ -113,42 +123,39 @@ namespace DePandaWinForms
         private void label2_Click(object sender, EventArgs e)
         {
         }
-        private string page = "None";
-        private void listView1_ItemSelectionChanged(object sender, ListViewItemSelectionChangedEventArgs e)
-        {
-            Form form = null;
+       
+
+        private Form form = null;
+
+        public void listView1_ItemSelectionChanged(object sender, ListViewItemSelectionChangedEventArgs e)
+        {   
             switch (e.Item.Text)
             {
                 case "Menu":
-                    form = new MenuPage();
-                    page = "Menupage";
+                    form = new MenuPage();   
                     break;
 
                 case "Reserveringen":
-                    form = new ReservationPage();
-                    page = "ReservationPage";
+                    form = new ReservationPage();                
                     break;
 
                 case "Bestellingen":
                     form = new OrdersPage();
-                    page = "OrdersPage";
                     break;
 
                 case "Betalingen":
                     form = new PaymentPage();
-                    page = "PaymentPage";
                     break;
 
                 case "Instellingen":
-                    form = new SettingsPage();
-                    page = "SettingsPage";
+                    form = new SettingsPage();               
                     break;
-
                 default:
                     break;
             }
             if (form != null)
             {
+                
                 form.TopLevel = false;
                 form.AutoScroll = true;
                 form.Size = new Size(PagePanel.Size.Width, PagePanel.Size.Height);
@@ -158,52 +165,9 @@ namespace DePandaWinForms
             }
         }
 
-        private void Maximize_Click(object sender, EventArgs e)
-        {
-            Form form = null;
-            // tijdelijke fix om het scherm dat eroverheen geplakt is ook mee te rekken met het volledige scherm
+        public void Maximize_Click(object sender, EventArgs e)
+        {  
             ChangeWinState();
-            if (page == "MenuPage")
-            {
-                 form = new MenuPage();
-                
-            }
-            if (page == "ReservationPage")
-            {
-                 form = new ReservationPage();
-
-            }
-            if (page == "OrdersPage")
-            {
-                 form = new OrdersPage();
-
-            }
-            if (page == "PaymentPage")
-            {
-                 form = new PaymentPage();
-
-            }
-            if (page == "SettingsPage")
-            {
-                 form = new SettingsPage();
-
-            }
-            if (form != null)
-            {
-                form.TopLevel = false;
-                form.AutoScroll = true;
-                form.Size = new Size(PagePanel.Size.Width, PagePanel.Size.Height);
-                PagePanel.Controls.Clear();
-                PagePanel.Controls.Add(form);
-                form.Show();
-            }
-
-
-            //foreach (Control ctrl in PagePanel.Controls)
-            //{
-            //    ctrl.Location = new Point((PagePanel.Size.Width / 2) - (ctrl.Size.Width / 2), 0);
-
-            //}
         }
         private void KeyBindFullScreen(object sender, KeyEventArgs e)
         {

@@ -56,5 +56,7 @@
         private System.Windows.Forms.TextBox WednesDayClosed;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TableLayoutPanel Opentimes;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
+        private System.Windows.Forms.ListBox listBox1;
     }
 }
