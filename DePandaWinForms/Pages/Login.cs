@@ -26,6 +26,7 @@ namespace DePandaWinForms.Pages
         private void LoginEvent()
         {
             if (PinInput.Text == DataStorageHandler.Storage.Settings.PinCode) // 00000
+                
             {
                 this.Hide();
                 Form mainScreen = new Form1(this.WindowState);
@@ -97,9 +98,6 @@ namespace DePandaWinForms.Pages
         private void PinInput_TextChanged(object sender, EventArgs e)
         {
             LoginEvent();
-        }
-
-     
-       
+        }      
     }
 }
