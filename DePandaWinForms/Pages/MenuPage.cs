@@ -33,6 +33,7 @@ namespace DePandaWinForms.Pages
                 MenuItemsList.Items.Add(menuItem);
             }
 
+            Console.WriteLine("hoi");
             MenuItemsList.ValueMember = "ID";
             MenuItemsList.DisplayMember = "Name";
         }
@@ -45,6 +46,7 @@ namespace DePandaWinForms.Pages
             }
             else
             {
+                Console.WriteLine("hoi");
                 NewMenuItemGroupBox.Visible = false;
             }
         }
