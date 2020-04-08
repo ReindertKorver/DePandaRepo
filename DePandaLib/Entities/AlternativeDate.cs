@@ -25,8 +25,8 @@ namespace DePandaClassLib.Entities
         {
             if (DataStorageHandler.Storage.Settings.AlternativeDates.Count == 0)
             {
+                
                 var newAltDate = new DePandaClassLib.Entities.AlternativeDate(new DateTime(2020, 04, 07, 11, 0, 0), new DateTime(2020, 04, 07, 11, 0, 0));
-
                 DataStorageHandler.Storage.Settings.AlternativeDates.Add(newAltDate);
             }
         }
