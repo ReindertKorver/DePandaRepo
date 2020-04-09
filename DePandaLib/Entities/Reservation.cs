@@ -13,7 +13,7 @@ namespace DePandaLib.Entities
     {
         public string OnTheNameOf { get; set; }
         public int AmountOfPeople { get; set; }
-        public List<RestaurantTable> Tables { get; set; }
+        public RestaurantTable Tables { get; set; }
         public List<Order> Orders { get; set; }
 
         public decimal GetReservationTotal()
