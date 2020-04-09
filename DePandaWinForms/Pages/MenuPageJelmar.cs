@@ -14,35 +14,64 @@ namespace DePandaWinForms.Pages
 {
     public partial class MenuPageJelmar : Form
     {
+        string SelectedMenuItemId;
         public MenuPageJelmar()
         {
             InitializeComponent();
+            FillMenuItemList();
         }
 
-
-        private void Button5_Click(object sender, EventArgs e)
+        private void FillMenuItemList()
         {
-            panel1.Visible = true;
-        }
-
-        List<string> listcollection = new List<string>();
-        private void TextBox2_TextChanged(object sender, EventArgs e)
-        {
-            if (string.IsNullOrEmpty(textBox1.Text) == false)
+            MenuItemList.Controls.Clear();
+            foreach (Dish dish in DataStorageHandler.Storage.StockDishes)
             {
-                foreach (string str in listcollection)
-                {
-                    if (str.StartsWith(textBox1.Text))
-                    {
-                        //flowLayoutPanel1.
-                    }
-                }
+                Button btn = new Button();
+                btn.Text = dish.Name;
+                btn.Tag = dish;
+                btn.Size = new System.Drawing.Size(MenuItemList.Size.Width - 25, 63);
+                btn.Click += new System.EventHandler(this.MenuItemClick);
+                MenuItemList.Controls.Add(btn);
             }
         }
-        
+        private void MenuItemClick(object sender, EventArgs e)
+        {
+            var dish = (sender as Button).Tag as Dish;
+            Console.WriteLine(dish.Price);
+            panel1.Visible = true;
+            NieuwMenuItemTekstbox.Text = dish.Name;
+            PrijsInput.Text = dish.Price.ToString();
+            NotitiesInput.Text = dish.Description;
+            SelectedMenuItemId = dish.ID;
+        }
+
+        private void NieuwMenuItemClick(object sender, EventArgs e)
+        {
+            panel1.Visible = true;
+            SelectedMenuItemId = null;
+            NieuwMenuItemTekstbox.Text = "Nieuw menu item";
+            PrijsInput.Text = "";
+            NotitiesInput.Text = "";
+        }
+
+        private void SearchBoxFlowPanel_TextChanged(object sender, EventArgs e)
+        {
+            var searchDishes = DataStorageHandler.Storage.StockDishes.Where(dish => dish.Name.ToLower().Contains(Searchbox.Text.ToLower()));
+            MenuItemList.Controls.Clear();
+            foreach (Dish dish in searchDishes)
+            {
+                Button btn = new Button();
+                btn.Text = dish.Name;
+                btn.Tag = dish;
+                btn.Size = new System.Drawing.Size(MenuItemList.Size.Width - 25, 63);
+                btn.Click += new System.EventHandler(this.MenuItemClick);
+                MenuItemList.Controls.Add(btn);
+            }
+        }
+
         private void textBox2_TextChanged_1(object sender, EventArgs e)
         {
-            if (NieuwMenuItemTekstbox.Text == "Nieuw menu item") 
+            if (NieuwMenuItemTekstbox.Text == "Nieuw menu item")
             {
                 NieuwMenuItemTekstbox.Text = "";
                 NieuwMenuItemTekstbox.ForeColor = Color.Black;
@@ -51,11 +80,31 @@ namespace DePandaWinForms.Pages
 
         private void OpslaanButton_Click(object sender, EventArgs e)
         {
-            Dish dish = new Dish();
-            dish.Name = NieuwMenuItemTekstbox.Text;
-            dish.Price = Convert.ToDecimal(PrijsInput.Text);
-            DataStorageHandler.Storage.StockDishes.Add(dish);
+            if (SelectedMenuItemId == null)
+            {
+                Dish dish = new Dish();
+                dish.Name = NieuwMenuItemTekstbox.Text;
+                dish.Price = Convert.ToDecimal(PrijsInput.Text);
+                dish.Description = NotitiesInput.Text;
+                DataStorageHandler.Storage.StockDishes.Add(dish);
+            }
+            else
+            {
+                Dish dish = DataStorageHandler.Storage.StockDishes.Where(d => d.ID == SelectedMenuItemId).FirstOrDefault();
+                dish.Name = NieuwMenuItemTekstbox.Text;
+                dish.Price = Convert.ToDecimal(PrijsInput.Text);
+                dish.Description = NotitiesInput.Text;
+            }
             panel1.Visible = false;
+            FillMenuItemList();
+        }
+
+        private void DeleteButtonClick(object sender, EventArgs e)
+        {
+            if (SelectedMenuItemId != null)
+            {
+                DataStorageHandler.Storage.StockDishes.RemoveAll(dish => dish.ID == SelectedMenuItemId);
+            }
         }
     }
 }

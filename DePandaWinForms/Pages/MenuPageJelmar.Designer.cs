@@ -32,17 +32,8 @@
             this.Pincode = new System.Windows.Forms.Label();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.MenuGrid = new System.Windows.Forms.DataGridView();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
             this.NieuwItemButton = new System.Windows.Forms.Button();
-            this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
-            this.button8 = new System.Windows.Forms.Button();
-            this.button9 = new System.Windows.Forms.Button();
-            this.button10 = new System.Windows.Forms.Button();
-            this.button11 = new System.Windows.Forms.Button();
-            this.button12 = new System.Windows.Forms.Button();
+            this.MenuItemList = new System.Windows.Forms.FlowLayoutPanel();
             this.Searchbox = new System.Windows.Forms.TextBox();
             this.panel1 = new System.Windows.Forms.Panel();
             this.NotitiesInput = new System.Windows.Forms.TextBox();
@@ -50,13 +41,12 @@
             this.NieuwMenuItemTekstbox = new System.Windows.Forms.TextBox();
             this.NotitiesLabel = new System.Windows.Forms.Label();
             this.PrijsLabel = new System.Windows.Forms.Label();
-            this.button13 = new System.Windows.Forms.Button();
-            this.button7 = new System.Windows.Forms.Button();
             this.OpslaanButton = new System.Windows.Forms.Button();
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.DeleteButton = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.MenuGrid)).BeginInit();
-            this.flowLayoutPanel1.SuspendLayout();
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.DeleteButton)).BeginInit();
             this.SuspendLayout();
             // 
             // Pincode
@@ -95,42 +85,6 @@
             this.MenuGrid.Size = new System.Drawing.Size(1600, 777);
             this.MenuGrid.TabIndex = 15;
             // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(3, 3);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(312, 67);
-            this.button1.TabIndex = 16;
-            this.button1.Text = "Fou yong hai";
-            this.button1.UseVisualStyleBackColor = true;
-            // 
-            // button2
-            // 
-            this.button2.Location = new System.Drawing.Point(3, 76);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(312, 67);
-            this.button2.TabIndex = 17;
-            this.button2.Text = "Bami";
-            this.button2.UseVisualStyleBackColor = true;
-            // 
-            // button3
-            // 
-            this.button3.Location = new System.Drawing.Point(3, 149);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(312, 67);
-            this.button3.TabIndex = 18;
-            this.button3.Text = "Taufu";
-            this.button3.UseVisualStyleBackColor = true;
-            // 
-            // button4
-            // 
-            this.button4.Location = new System.Drawing.Point(3, 222);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(312, 70);
-            this.button4.TabIndex = 19;
-            this.button4.Text = "Water";
-            this.button4.UseVisualStyleBackColor = true;
-            // 
             // NieuwItemButton
             // 
             this.NieuwItemButton.Location = new System.Drawing.Point(260, 762);
@@ -139,69 +93,15 @@
             this.NieuwItemButton.TabIndex = 21;
             this.NieuwItemButton.Text = "Nieuw item";
             this.NieuwItemButton.UseVisualStyleBackColor = true;
-            this.NieuwItemButton.Click += new System.EventHandler(this.Button5_Click);
+            this.NieuwItemButton.Click += new System.EventHandler(this.NieuwMenuItemClick);
             // 
-            // flowLayoutPanel1
+            // MenuItemList
             // 
-            this.flowLayoutPanel1.AutoScroll = true;
-            this.flowLayoutPanel1.Controls.Add(this.button1);
-            this.flowLayoutPanel1.Controls.Add(this.button2);
-            this.flowLayoutPanel1.Controls.Add(this.button3);
-            this.flowLayoutPanel1.Controls.Add(this.button4);
-            this.flowLayoutPanel1.Controls.Add(this.button8);
-            this.flowLayoutPanel1.Controls.Add(this.button9);
-            this.flowLayoutPanel1.Controls.Add(this.button10);
-            this.flowLayoutPanel1.Controls.Add(this.button11);
-            this.flowLayoutPanel1.Controls.Add(this.button12);
-            this.flowLayoutPanel1.Location = new System.Drawing.Point(57, 210);
-            this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(425, 534);
-            this.flowLayoutPanel1.TabIndex = 22;
-            // 
-            // button8
-            // 
-            this.button8.Location = new System.Drawing.Point(3, 298);
-            this.button8.Name = "button8";
-            this.button8.Size = new System.Drawing.Size(312, 70);
-            this.button8.TabIndex = 20;
-            this.button8.Text = "Fanta";
-            this.button8.UseVisualStyleBackColor = true;
-            // 
-            // button9
-            // 
-            this.button9.Location = new System.Drawing.Point(3, 374);
-            this.button9.Name = "button9";
-            this.button9.Size = new System.Drawing.Size(312, 70);
-            this.button9.TabIndex = 21;
-            this.button9.Text = "...";
-            this.button9.UseVisualStyleBackColor = true;
-            // 
-            // button10
-            // 
-            this.button10.Location = new System.Drawing.Point(3, 450);
-            this.button10.Name = "button10";
-            this.button10.Size = new System.Drawing.Size(312, 70);
-            this.button10.TabIndex = 22;
-            this.button10.Text = "...";
-            this.button10.UseVisualStyleBackColor = true;
-            // 
-            // button11
-            // 
-            this.button11.Location = new System.Drawing.Point(3, 526);
-            this.button11.Name = "button11";
-            this.button11.Size = new System.Drawing.Size(312, 70);
-            this.button11.TabIndex = 23;
-            this.button11.Text = "...";
-            this.button11.UseVisualStyleBackColor = true;
-            // 
-            // button12
-            // 
-            this.button12.Location = new System.Drawing.Point(3, 602);
-            this.button12.Name = "button12";
-            this.button12.Size = new System.Drawing.Size(312, 70);
-            this.button12.TabIndex = 24;
-            this.button12.Text = "...";
-            this.button12.UseVisualStyleBackColor = true;
+            this.MenuItemList.AutoScroll = true;
+            this.MenuItemList.Location = new System.Drawing.Point(57, 210);
+            this.MenuItemList.Name = "MenuItemList";
+            this.MenuItemList.Size = new System.Drawing.Size(431, 534);
+            this.MenuItemList.TabIndex = 22;
             // 
             // Searchbox
             // 
@@ -209,18 +109,17 @@
             this.Searchbox.Name = "Searchbox";
             this.Searchbox.Size = new System.Drawing.Size(329, 31);
             this.Searchbox.TabIndex = 23;
-            this.Searchbox.TextChanged += new System.EventHandler(this.TextBox2_TextChanged);
+            this.Searchbox.TextChanged += new System.EventHandler(this.SearchBoxFlowPanel_TextChanged);
             // 
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.SystemColors.ControlDark;
+            this.panel1.Controls.Add(this.DeleteButton);
             this.panel1.Controls.Add(this.NotitiesInput);
             this.panel1.Controls.Add(this.PrijsInput);
             this.panel1.Controls.Add(this.NieuwMenuItemTekstbox);
             this.panel1.Controls.Add(this.NotitiesLabel);
             this.panel1.Controls.Add(this.PrijsLabel);
-            this.panel1.Controls.Add(this.button13);
-            this.panel1.Controls.Add(this.button7);
             this.panel1.Controls.Add(this.OpslaanButton);
             this.panel1.Location = new System.Drawing.Point(581, 153);
             this.panel1.Name = "panel1";
@@ -284,24 +183,6 @@
             this.PrijsLabel.TabIndex = 4;
             this.PrijsLabel.Text = "Prijs:";
             // 
-            // button13
-            // 
-            this.button13.Location = new System.Drawing.Point(56, 539);
-            this.button13.Name = "button13";
-            this.button13.Size = new System.Drawing.Size(47, 38);
-            this.button13.TabIndex = 2;
-            this.button13.Text = "button13";
-            this.button13.UseVisualStyleBackColor = true;
-            // 
-            // button7
-            // 
-            this.button7.Location = new System.Drawing.Point(3, 539);
-            this.button7.Name = "button7";
-            this.button7.Size = new System.Drawing.Size(47, 38);
-            this.button7.TabIndex = 1;
-            this.button7.Text = "button7";
-            this.button7.UseVisualStyleBackColor = true;
-            // 
             // OpslaanButton
             // 
             this.OpslaanButton.Location = new System.Drawing.Point(791, 520);
@@ -318,6 +199,17 @@
             this.contextMenuStrip1.Name = "contextMenuStrip1";
             this.contextMenuStrip1.Size = new System.Drawing.Size(61, 4);
             // 
+            // DeleteButton
+            // 
+            this.DeleteButton.Image = global::DePandaWinForms.Properties.Resources.closehover;
+            this.DeleteButton.Location = new System.Drawing.Point(3, 496);
+            this.DeleteButton.Name = "DeleteButton";
+            this.DeleteButton.Size = new System.Drawing.Size(102, 92);
+            this.DeleteButton.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.DeleteButton.TabIndex = 9;
+            this.DeleteButton.TabStop = false;
+            this.DeleteButton.Click += new System.EventHandler(this.DeleteButtonClick);
+            // 
             // MenuPageJelmar
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
@@ -325,7 +217,7 @@
             this.ClientSize = new System.Drawing.Size(1600, 865);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.Searchbox);
-            this.Controls.Add(this.flowLayoutPanel1);
+            this.Controls.Add(this.MenuItemList);
             this.Controls.Add(this.NieuwItemButton);
             this.Controls.Add(this.MenuGrid);
             this.Controls.Add(this.textBox1);
@@ -335,9 +227,9 @@
             this.Name = "MenuPageJelmar";
             this.Text = "Reservations";
             ((System.ComponentModel.ISupportInitialize)(this.MenuGrid)).EndInit();
-            this.flowLayoutPanel1.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.DeleteButton)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -348,27 +240,17 @@
         private System.Windows.Forms.Label Pincode;
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.DataGridView MenuGrid;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button4;
-        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
-        private System.Windows.Forms.Button button8;
-        private System.Windows.Forms.Button button9;
-        private System.Windows.Forms.Button button10;
-        private System.Windows.Forms.Button button11;
-        private System.Windows.Forms.Button button12;
+        private System.Windows.Forms.FlowLayoutPanel MenuItemList;
         private System.Windows.Forms.TextBox Searchbox;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label NotitiesLabel;
         private System.Windows.Forms.Label PrijsLabel;
-        private System.Windows.Forms.Button button13;
-        private System.Windows.Forms.Button button7;
         private System.Windows.Forms.Button OpslaanButton;
         private System.Windows.Forms.Button NieuwItemButton;
         private System.Windows.Forms.TextBox NieuwMenuItemTekstbox;
         private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
         private System.Windows.Forms.TextBox NotitiesInput;
         private System.Windows.Forms.TextBox PrijsInput;
+        private System.Windows.Forms.PictureBox DeleteButton;
     }
 }
