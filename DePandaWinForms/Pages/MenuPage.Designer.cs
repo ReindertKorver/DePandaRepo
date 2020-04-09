@@ -28,56 +28,39 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.Pincode = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.Title = new System.Windows.Forms.Label();
             this.MenuGrid = new System.Windows.Forms.DataGridView();
             this.MenuItemsList = new System.Windows.Forms.ListBox();
             this.ShowCreateMenuItemPanel = new System.Windows.Forms.Button();
-            this.NameNewMenuItemInput = new System.Windows.Forms.TextBox();
-            this.PriceNewMenuItemInput = new System.Windows.Forms.TextBox();
-            this.NewMenuItemGroupBox = new System.Windows.Forms.GroupBox();
+            this.NameMenuItemInput = new System.Windows.Forms.TextBox();
+            this.PriceMenuItemInput = new System.Windows.Forms.TextBox();
+            this.MenuItemGroupBox = new System.Windows.Forms.GroupBox();
+            this.CloseSelectedMenuItem = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
             this.CreateNewMenuItem = new System.Windows.Forms.Button();
-            this.DescriptionNewMenuItemInput = new System.Windows.Forms.TextBox();
+            this.button1 = new System.Windows.Forms.Button();
+            this.DescriptionMenuItemInput = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.SearchMenuItemsList = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
-            this.SelectedMenuItemText = new System.Windows.Forms.GroupBox();
-            this.CloseSelectedMenuItem = new System.Windows.Forms.Button();
-            this.PriceSelectedMenuItem = new System.Windows.Forms.Label();
-            this.NameSelectedMenuItem = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
-            this.DescriptionSelectedMenuItem = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.MenuGrid)).BeginInit();
-            this.NewMenuItemGroupBox.SuspendLayout();
-            this.SelectedMenuItemText.SuspendLayout();
+            this.MenuItemGroupBox.SuspendLayout();
             this.SuspendLayout();
             // 
-            // Pincode
+            // Title
             // 
-            this.Pincode.Dock = System.Windows.Forms.DockStyle.Top;
-            this.Pincode.Font = new System.Drawing.Font("Segoe UI", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Pincode.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(45)))), ((int)(((byte)(51)))));
-            this.Pincode.Location = new System.Drawing.Point(0, 0);
-            this.Pincode.Margin = new System.Windows.Forms.Padding(3, 25, 3, 0);
-            this.Pincode.Name = "Pincode";
-            this.Pincode.Size = new System.Drawing.Size(800, 37);
-            this.Pincode.TabIndex = 13;
-            this.Pincode.Text = "Menu";
-            this.Pincode.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.Pincode.Click += new System.EventHandler(this.Pincode_Click);
-            // 
-            // textBox1
-            // 
-            this.textBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textBox1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.Location = new System.Drawing.Point(627, 11);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(150, 29);
-            this.textBox1.TabIndex = 14;
+            this.Title.Dock = System.Windows.Forms.DockStyle.Top;
+            this.Title.Font = new System.Drawing.Font("Segoe UI", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Title.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(45)))), ((int)(((byte)(51)))));
+            this.Title.Location = new System.Drawing.Point(0, 0);
+            this.Title.Margin = new System.Windows.Forms.Padding(3, 25, 3, 0);
+            this.Title.Name = "Title";
+            this.Title.Size = new System.Drawing.Size(800, 37);
+            this.Title.TabIndex = 13;
+            this.Title.Text = "Menu";
+            this.Title.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // MenuGrid
             // 
@@ -109,38 +92,61 @@
             this.ShowCreateMenuItemPanel.TabIndex = 17;
             this.ShowCreateMenuItemPanel.Text = "Menu item aanmaken";
             this.ShowCreateMenuItemPanel.UseVisualStyleBackColor = true;
-            this.ShowCreateMenuItemPanel.Click += new System.EventHandler(this.ShowCreateMenuItemPanel_Click);
+            this.ShowCreateMenuItemPanel.Click += new System.EventHandler(this.ShowMenuItemPanel);
             // 
-            // NameNewMenuItemInput
+            // NameMenuItemInput
             // 
-            this.NameNewMenuItemInput.Location = new System.Drawing.Point(74, 28);
-            this.NameNewMenuItemInput.Name = "NameNewMenuItemInput";
-            this.NameNewMenuItemInput.Size = new System.Drawing.Size(326, 20);
-            this.NameNewMenuItemInput.TabIndex = 18;
+            this.NameMenuItemInput.Location = new System.Drawing.Point(74, 28);
+            this.NameMenuItemInput.Name = "NameMenuItemInput";
+            this.NameMenuItemInput.Size = new System.Drawing.Size(326, 20);
+            this.NameMenuItemInput.TabIndex = 18;
             // 
-            // PriceNewMenuItemInput
+            // PriceMenuItemInput
             // 
-            this.PriceNewMenuItemInput.Location = new System.Drawing.Point(74, 68);
-            this.PriceNewMenuItemInput.Name = "PriceNewMenuItemInput";
-            this.PriceNewMenuItemInput.Size = new System.Drawing.Size(326, 20);
-            this.PriceNewMenuItemInput.TabIndex = 19;
+            this.PriceMenuItemInput.Location = new System.Drawing.Point(74, 68);
+            this.PriceMenuItemInput.Name = "PriceMenuItemInput";
+            this.PriceMenuItemInput.Size = new System.Drawing.Size(326, 20);
+            this.PriceMenuItemInput.TabIndex = 19;
             // 
-            // NewMenuItemGroupBox
+            // MenuItemGroupBox
             // 
-            this.NewMenuItemGroupBox.Controls.Add(this.CreateNewMenuItem);
-            this.NewMenuItemGroupBox.Controls.Add(this.DescriptionNewMenuItemInput);
-            this.NewMenuItemGroupBox.Controls.Add(this.label3);
-            this.NewMenuItemGroupBox.Controls.Add(this.PriceNewMenuItemInput);
-            this.NewMenuItemGroupBox.Controls.Add(this.label2);
-            this.NewMenuItemGroupBox.Controls.Add(this.NameNewMenuItemInput);
-            this.NewMenuItemGroupBox.Controls.Add(this.label1);
-            this.NewMenuItemGroupBox.Location = new System.Drawing.Point(327, 46);
-            this.NewMenuItemGroupBox.Name = "NewMenuItemGroupBox";
-            this.NewMenuItemGroupBox.Size = new System.Drawing.Size(423, 227);
-            this.NewMenuItemGroupBox.TabIndex = 20;
-            this.NewMenuItemGroupBox.TabStop = false;
-            this.NewMenuItemGroupBox.Text = "Menu item aanmaken";
-            this.NewMenuItemGroupBox.Visible = false;
+            this.MenuItemGroupBox.Controls.Add(this.CloseSelectedMenuItem);
+            this.MenuItemGroupBox.Controls.Add(this.button2);
+            this.MenuItemGroupBox.Controls.Add(this.CreateNewMenuItem);
+            this.MenuItemGroupBox.Controls.Add(this.button1);
+            this.MenuItemGroupBox.Controls.Add(this.DescriptionMenuItemInput);
+            this.MenuItemGroupBox.Controls.Add(this.label3);
+            this.MenuItemGroupBox.Controls.Add(this.PriceMenuItemInput);
+            this.MenuItemGroupBox.Controls.Add(this.label2);
+            this.MenuItemGroupBox.Controls.Add(this.NameMenuItemInput);
+            this.MenuItemGroupBox.Controls.Add(this.label1);
+            this.MenuItemGroupBox.Location = new System.Drawing.Point(327, 46);
+            this.MenuItemGroupBox.Name = "MenuItemGroupBox";
+            this.MenuItemGroupBox.Size = new System.Drawing.Size(423, 237);
+            this.MenuItemGroupBox.TabIndex = 20;
+            this.MenuItemGroupBox.TabStop = false;
+            this.MenuItemGroupBox.Text = "Menu item ";
+            this.MenuItemGroupBox.Visible = false;
+            // 
+            // CloseSelectedMenuItem
+            // 
+            this.CloseSelectedMenuItem.Location = new System.Drawing.Point(273, 154);
+            this.CloseSelectedMenuItem.Name = "CloseSelectedMenuItem";
+            this.CloseSelectedMenuItem.Size = new System.Drawing.Size(85, 23);
+            this.CloseSelectedMenuItem.TabIndex = 6;
+            this.CloseSelectedMenuItem.Text = "Sluit scherm";
+            this.CloseSelectedMenuItem.UseVisualStyleBackColor = true;
+            this.CloseSelectedMenuItem.Click += new System.EventHandler(this.CloseMenuItemPanel);
+            // 
+            // button2
+            // 
+            this.button2.Location = new System.Drawing.Point(222, 154);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(45, 23);
+            this.button2.TabIndex = 8;
+            this.button2.Text = "Edit";
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.EditSelectedMenuItem);
             // 
             // CreateNewMenuItem
             // 
@@ -150,14 +156,24 @@
             this.CreateNewMenuItem.TabIndex = 21;
             this.CreateNewMenuItem.Text = "Creër";
             this.CreateNewMenuItem.UseVisualStyleBackColor = true;
-            this.CreateNewMenuItem.Click += new System.EventHandler(this.CreateNewMenuItem_Click);
+            this.CreateNewMenuItem.Click += new System.EventHandler(this.CreateMenuItem);
             // 
-            // DescriptionNewMenuItemInput
+            // button1
             // 
-            this.DescriptionNewMenuItemInput.Location = new System.Drawing.Point(74, 114);
-            this.DescriptionNewMenuItemInput.Name = "DescriptionNewMenuItemInput";
-            this.DescriptionNewMenuItemInput.Size = new System.Drawing.Size(326, 20);
-            this.DescriptionNewMenuItemInput.TabIndex = 20;
+            this.button1.Location = new System.Drawing.Point(177, 154);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(39, 23);
+            this.button1.TabIndex = 7;
+            this.button1.Text = "Del";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.DeleteSelectedMenuItem);
+            // 
+            // DescriptionMenuItemInput
+            // 
+            this.DescriptionMenuItemInput.Location = new System.Drawing.Point(74, 114);
+            this.DescriptionMenuItemInput.Name = "DescriptionMenuItemInput";
+            this.DescriptionMenuItemInput.Size = new System.Drawing.Size(326, 20);
+            this.DescriptionMenuItemInput.TabIndex = 20;
             // 
             // label3
             // 
@@ -203,109 +219,24 @@
             this.label4.TabIndex = 22;
             this.label4.Text = "Zoek";
             // 
-            // SelectedMenuItemText
-            // 
-            this.SelectedMenuItemText.Controls.Add(this.CloseSelectedMenuItem);
-            this.SelectedMenuItemText.Controls.Add(this.PriceSelectedMenuItem);
-            this.SelectedMenuItemText.Controls.Add(this.NameSelectedMenuItem);
-            this.SelectedMenuItemText.Controls.Add(this.label7);
-            this.SelectedMenuItemText.Controls.Add(this.label6);
-            this.SelectedMenuItemText.Controls.Add(this.DescriptionSelectedMenuItem);
-            this.SelectedMenuItemText.Controls.Add(this.label5);
-            this.SelectedMenuItemText.Location = new System.Drawing.Point(327, 279);
-            this.SelectedMenuItemText.Name = "SelectedMenuItemText";
-            this.SelectedMenuItemText.Size = new System.Drawing.Size(433, 159);
-            this.SelectedMenuItemText.TabIndex = 23;
-            this.SelectedMenuItemText.TabStop = false;
-            this.SelectedMenuItemText.Text = "Informatie geselecteerde menu item";
-            this.SelectedMenuItemText.Visible = false;
-            // 
-            // CloseSelectedMenuItem
-            // 
-            this.CloseSelectedMenuItem.Location = new System.Drawing.Point(341, 120);
-            this.CloseSelectedMenuItem.Name = "CloseSelectedMenuItem";
-            this.CloseSelectedMenuItem.Size = new System.Drawing.Size(85, 23);
-            this.CloseSelectedMenuItem.TabIndex = 6;
-            this.CloseSelectedMenuItem.Text = "Sluit scherm";
-            this.CloseSelectedMenuItem.UseVisualStyleBackColor = true;
-            this.CloseSelectedMenuItem.Click += new System.EventHandler(this.CloseSelectedMenuItem_Click);
-            // 
-            // PriceSelectedMenuItem
-            // 
-            this.PriceSelectedMenuItem.AutoSize = true;
-            this.PriceSelectedMenuItem.Location = new System.Drawing.Point(105, 84);
-            this.PriceSelectedMenuItem.Name = "PriceSelectedMenuItem";
-            this.PriceSelectedMenuItem.Size = new System.Drawing.Size(35, 13);
-            this.PriceSelectedMenuItem.TabIndex = 5;
-            this.PriceSelectedMenuItem.Text = "label9";
-            // 
-            // NameSelectedMenuItem
-            // 
-            this.NameSelectedMenuItem.AutoSize = true;
-            this.NameSelectedMenuItem.Location = new System.Drawing.Point(105, 43);
-            this.NameSelectedMenuItem.Name = "NameSelectedMenuItem";
-            this.NameSelectedMenuItem.Size = new System.Drawing.Size(35, 13);
-            this.NameSelectedMenuItem.TabIndex = 4;
-            this.NameSelectedMenuItem.Text = "label8";
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(21, 44);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(38, 13);
-            this.label7.TabIndex = 3;
-            this.label7.Text = "Naam ";
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(21, 84);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(26, 13);
-            this.label6.TabIndex = 2;
-            this.label6.Text = "Prijs";
-            // 
-            // DescriptionSelectedMenuItem
-            // 
-            this.DescriptionSelectedMenuItem.AutoSize = true;
-            this.DescriptionSelectedMenuItem.Location = new System.Drawing.Point(105, 120);
-            this.DescriptionSelectedMenuItem.Name = "DescriptionSelectedMenuItem";
-            this.DescriptionSelectedMenuItem.Size = new System.Drawing.Size(35, 13);
-            this.DescriptionSelectedMenuItem.TabIndex = 1;
-            this.DescriptionSelectedMenuItem.Text = "label6";
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(18, 120);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(51, 13);
-            this.label5.TabIndex = 0;
-            this.label5.Text = "Extra info";
-            // 
             // MenuPage
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.SelectedMenuItemText);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.SearchMenuItemsList);
-            this.Controls.Add(this.NewMenuItemGroupBox);
+            this.Controls.Add(this.MenuItemGroupBox);
             this.Controls.Add(this.ShowCreateMenuItemPanel);
             this.Controls.Add(this.MenuItemsList);
             this.Controls.Add(this.MenuGrid);
-            this.Controls.Add(this.textBox1);
-            this.Controls.Add(this.Pincode);
+            this.Controls.Add(this.Title);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "MenuPage";
             this.Text = "Reservations";
             ((System.ComponentModel.ISupportInitialize)(this.MenuGrid)).EndInit();
-            this.NewMenuItemGroupBox.ResumeLayout(false);
-            this.NewMenuItemGroupBox.PerformLayout();
-            this.SelectedMenuItemText.ResumeLayout(false);
-            this.SelectedMenuItemText.PerformLayout();
+            this.MenuItemGroupBox.ResumeLayout(false);
+            this.MenuItemGroupBox.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -313,28 +244,22 @@
 
         #endregion
 
-        private System.Windows.Forms.Label Pincode;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.Label Title;
         private System.Windows.Forms.DataGridView MenuGrid;
         private System.Windows.Forms.ListBox MenuItemsList;
         private System.Windows.Forms.Button ShowCreateMenuItemPanel;
-        private System.Windows.Forms.TextBox NameNewMenuItemInput;
-        private System.Windows.Forms.TextBox PriceNewMenuItemInput;
-        private System.Windows.Forms.GroupBox NewMenuItemGroupBox;
-        private System.Windows.Forms.TextBox DescriptionNewMenuItemInput;
+        private System.Windows.Forms.TextBox NameMenuItemInput;
+        private System.Windows.Forms.TextBox PriceMenuItemInput;
+        private System.Windows.Forms.GroupBox MenuItemGroupBox;
+        private System.Windows.Forms.TextBox DescriptionMenuItemInput;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button CreateNewMenuItem;
         private System.Windows.Forms.TextBox SearchMenuItemsList;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.GroupBox SelectedMenuItemText;
-        private System.Windows.Forms.Label DescriptionSelectedMenuItem;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Label PriceSelectedMenuItem;
-        private System.Windows.Forms.Label NameSelectedMenuItem;
-        private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Button CloseSelectedMenuItem;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button button2;
     }
 }
