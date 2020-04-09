@@ -32,14 +32,14 @@
             this.MenuGrid = new System.Windows.Forms.DataGridView();
             this.MenuItemsList = new System.Windows.Forms.ListBox();
             this.ShowCreateMenuItemPanel = new System.Windows.Forms.Button();
-            this.NameNewMenuItemInput = new System.Windows.Forms.TextBox();
-            this.PriceNewMenuItemInput = new System.Windows.Forms.TextBox();
+            this.NameMenuItemInput = new System.Windows.Forms.TextBox();
+            this.PriceMenuItemInput = new System.Windows.Forms.TextBox();
             this.MenuItemGroupBox = new System.Windows.Forms.GroupBox();
             this.CloseSelectedMenuItem = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.CreateNewMenuItem = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
-            this.DescriptionNewMenuItemInput = new System.Windows.Forms.TextBox();
+            this.DescriptionMenuItemInput = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
@@ -94,19 +94,19 @@
             this.ShowCreateMenuItemPanel.UseVisualStyleBackColor = true;
             this.ShowCreateMenuItemPanel.Click += new System.EventHandler(this.ShowMenuItemPanel);
             // 
-            // NameNewMenuItemInput
+            // NameMenuItemInput
             // 
-            this.NameNewMenuItemInput.Location = new System.Drawing.Point(74, 28);
-            this.NameNewMenuItemInput.Name = "NameNewMenuItemInput";
-            this.NameNewMenuItemInput.Size = new System.Drawing.Size(326, 20);
-            this.NameNewMenuItemInput.TabIndex = 18;
+            this.NameMenuItemInput.Location = new System.Drawing.Point(74, 28);
+            this.NameMenuItemInput.Name = "NameMenuItemInput";
+            this.NameMenuItemInput.Size = new System.Drawing.Size(326, 20);
+            this.NameMenuItemInput.TabIndex = 18;
             // 
-            // PriceNewMenuItemInput
+            // PriceMenuItemInput
             // 
-            this.PriceNewMenuItemInput.Location = new System.Drawing.Point(74, 68);
-            this.PriceNewMenuItemInput.Name = "PriceNewMenuItemInput";
-            this.PriceNewMenuItemInput.Size = new System.Drawing.Size(326, 20);
-            this.PriceNewMenuItemInput.TabIndex = 19;
+            this.PriceMenuItemInput.Location = new System.Drawing.Point(74, 68);
+            this.PriceMenuItemInput.Name = "PriceMenuItemInput";
+            this.PriceMenuItemInput.Size = new System.Drawing.Size(326, 20);
+            this.PriceMenuItemInput.TabIndex = 19;
             // 
             // MenuItemGroupBox
             // 
@@ -114,11 +114,11 @@
             this.MenuItemGroupBox.Controls.Add(this.button2);
             this.MenuItemGroupBox.Controls.Add(this.CreateNewMenuItem);
             this.MenuItemGroupBox.Controls.Add(this.button1);
-            this.MenuItemGroupBox.Controls.Add(this.DescriptionNewMenuItemInput);
+            this.MenuItemGroupBox.Controls.Add(this.DescriptionMenuItemInput);
             this.MenuItemGroupBox.Controls.Add(this.label3);
-            this.MenuItemGroupBox.Controls.Add(this.PriceNewMenuItemInput);
+            this.MenuItemGroupBox.Controls.Add(this.PriceMenuItemInput);
             this.MenuItemGroupBox.Controls.Add(this.label2);
-            this.MenuItemGroupBox.Controls.Add(this.NameNewMenuItemInput);
+            this.MenuItemGroupBox.Controls.Add(this.NameMenuItemInput);
             this.MenuItemGroupBox.Controls.Add(this.label1);
             this.MenuItemGroupBox.Location = new System.Drawing.Point(327, 46);
             this.MenuItemGroupBox.Name = "MenuItemGroupBox";
@@ -168,12 +168,12 @@
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.DeleteSelectedMenuItem);
             // 
-            // DescriptionNewMenuItemInput
+            // DescriptionMenuItemInput
             // 
-            this.DescriptionNewMenuItemInput.Location = new System.Drawing.Point(74, 114);
-            this.DescriptionNewMenuItemInput.Name = "DescriptionNewMenuItemInput";
-            this.DescriptionNewMenuItemInput.Size = new System.Drawing.Size(326, 20);
-            this.DescriptionNewMenuItemInput.TabIndex = 20;
+            this.DescriptionMenuItemInput.Location = new System.Drawing.Point(74, 114);
+            this.DescriptionMenuItemInput.Name = "DescriptionMenuItemInput";
+            this.DescriptionMenuItemInput.Size = new System.Drawing.Size(326, 20);
+            this.DescriptionMenuItemInput.TabIndex = 20;
             // 
             // label3
             // 
@@ -248,10 +248,10 @@
         private System.Windows.Forms.DataGridView MenuGrid;
         private System.Windows.Forms.ListBox MenuItemsList;
         private System.Windows.Forms.Button ShowCreateMenuItemPanel;
-        private System.Windows.Forms.TextBox NameNewMenuItemInput;
-        private System.Windows.Forms.TextBox PriceNewMenuItemInput;
+        private System.Windows.Forms.TextBox NameMenuItemInput;
+        private System.Windows.Forms.TextBox PriceMenuItemInput;
         private System.Windows.Forms.GroupBox MenuItemGroupBox;
-        private System.Windows.Forms.TextBox DescriptionNewMenuItemInput;
+        private System.Windows.Forms.TextBox DescriptionMenuItemInput;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;

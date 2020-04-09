@@ -49,9 +49,9 @@ namespace DePandaWinForms.Pages
             }
             else
             {
-                DescriptionNewMenuItemInput.Text = menuItem.Description;
-                PriceNewMenuItemInput.Text = menuItem.Price.ToString();
-                NameNewMenuItemInput.Text = menuItem.Name;
+                DescriptionMenuItemInput.Text = menuItem.Description;
+                PriceMenuItemInput.Text = menuItem.Price.ToString();
+                NameMenuItemInput.Text = menuItem.Name;
             }
         }
 
@@ -79,9 +79,9 @@ namespace DePandaWinForms.Pages
         {
             if (MenuItemGroupBox.Visible)
             {
-                NameNewMenuItemInput.Text = "";
-                DescriptionNewMenuItemInput.Text = "";
-                PriceNewMenuItemInput.Text = "";
+                NameMenuItemInput.Text = "";
+                DescriptionMenuItemInput.Text = "";
+                PriceMenuItemInput.Text = "";
 
                 CreateNewMenuItem.Visible = true;
             }
@@ -100,13 +100,42 @@ namespace DePandaWinForms.Pages
 
         private void CreateMenuItem(object sender, EventArgs e)
         {
-            decimal Price = Convert.ToDecimal(PriceNewMenuItemInput.Text);
+            string PriceToComma = PriceMenuItemInput.Text.Replace('.', ',');
+            decimal Price = Convert.ToDecimal(PriceToComma);
 
-            TempStockDishes.Add(new Dish() { Name = NameNewMenuItemInput.Text, Price = Price, Description = DescriptionNewMenuItemInput.Text });
+            TempStockDishes.Add(new Dish() { Name = NameMenuItemInput.Text, Price = Price, Description = DescriptionMenuItemInput.Text });
 
-            NameNewMenuItemInput.Text = "";
-            DescriptionNewMenuItemInput.Text = "";
-            PriceNewMenuItemInput.Text = "";
+            NameMenuItemInput.Text = "";
+            DescriptionMenuItemInput.Text = "";
+            PriceMenuItemInput.Text = "";
+
+            LoadInMenuItems();
+        }
+
+        private void DeleteSelectedMenuItem(object sender, EventArgs e)
+        {
+            Dish menuItem = (Dish)MenuItemsList.SelectedItem;
+
+            if (TempStockDishes.Count() >= 1)
+            {
+                TempStockDishes.RemoveAll(item => item.ID == menuItem.ID);
+                MenuItemGroupBox.Visible = false;
+                MenuItemsList.SelectedItem = false;
+                LoadInMenuItems();
+            }
+        }
+
+        private void EditSelectedMenuItem(object sender, EventArgs e)
+        {
+            Dish menuItem = (Dish)MenuItemsList.SelectedItem;
+
+            string PriceToComma = PriceMenuItemInput.Text.Replace('.', ',');
+
+            menuItem.Name = NameMenuItemInput.Text;
+            menuItem.Price = Convert.ToDecimal(PriceToComma);
+            menuItem.Description = DescriptionMenuItemInput.Text;
+
+            Console.WriteLine(menuItem.Price);
 
             LoadInMenuItems();
         }
@@ -115,27 +144,5 @@ namespace DePandaWinForms.Pages
         {
             MenuItemGroupBox.Visible = false;
         }
-       
-        private void DeleteSelectedMenuItem(object sender, EventArgs e)
-        {
-            Dish menuItem = (Dish)MenuItemsList.SelectedItem;
-
-            if(TempStockDishes.Count() >= 1)
-            {
-                TempStockDishes.RemoveAll(item => item.ID == menuItem.ID);
-                MenuItemGroupBox.Visible = false;
-                MenuItemsList.SelectedItem = false;
-                LoadInMenuItems();
-            }  
-        }
-
-        private void EditSelectedMenuItem(object sender, EventArgs e)
-        {
-            Dish menuItem = (Dish)MenuItemsList.SelectedItem;
-
-
-        }
-
-       
     }
 }
