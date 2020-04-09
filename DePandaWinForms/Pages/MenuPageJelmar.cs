@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using DePandaLib.DAL;
+using DePandaLib.Entities;
 
 namespace DePandaWinForms.Pages
 {
@@ -18,22 +19,10 @@ namespace DePandaWinForms.Pages
             InitializeComponent();
         }
 
-        private void Pincode_Click(object sender, EventArgs e)
-        {
-        }
-
-        private void textBox1_TextChanged(object sender, EventArgs e)
-        {
-        }
-
-        private void Button1_Click(object sender, EventArgs e)
-        {
-
-        }
 
         private void Button5_Click(object sender, EventArgs e)
         {
-            
+            panel1.Visible = true;
         }
 
         List<string> listcollection = new List<string>();
@@ -50,6 +39,23 @@ namespace DePandaWinForms.Pages
                 }
             }
         }
+        
+        private void textBox2_TextChanged_1(object sender, EventArgs e)
+        {
+            if (NieuwMenuItemTekstbox.Text == "Nieuw menu item") 
+            {
+                NieuwMenuItemTekstbox.Text = "";
+                NieuwMenuItemTekstbox.ForeColor = Color.Black;
+            }
+        }
 
+        private void OpslaanButton_Click(object sender, EventArgs e)
+        {
+            Dish dish = new Dish();
+            dish.Name = NieuwMenuItemTekstbox.Text;
+            dish.Price = Convert.ToDecimal(PrijsInput.Text);
+            DataStorageHandler.Storage.StockDishes.Add(dish);
+            panel1.Visible = false;
+        }
     }
 }
