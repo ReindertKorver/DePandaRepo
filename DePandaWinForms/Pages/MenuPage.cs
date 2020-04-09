@@ -10,7 +10,6 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using DePandaLib.Entities;
 
-
 namespace DePandaWinForms.Pages
 {
     public partial class MenuPage : Form
@@ -37,27 +36,22 @@ namespace DePandaWinForms.Pages
             MenuItemsList.DisplayMember = "Name";
         }
 
-        private void ShowCreateMenuItemPanel_Click(object sender, EventArgs e)
+        private void MenuItemsList_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (NewMenuItemGroupBox.Visible == false)
+            CreateNewMenuItem.Visible = false;
+            MenuItemGroupBox.Visible = true;
+
+            Dish menuItem = (Dish)MenuItemsList.SelectedItem;
+
+            if (menuItem == null)
             {
-                NewMenuItemGroupBox.Visible = true;
+                MenuItemGroupBox.Visible = false;
             }
             else
             {
-                NewMenuItemGroupBox.Visible = false;
-            }
-        }
-
-        private void CreateNewMenuItem_Click(object sender, EventArgs e)
-        {
-            if (NewMenuItemGroupBox.Visible == true)
-            { 
-                decimal Price = Convert.ToDecimal(PriceNewMenuItemInput.Text);
-
-                TempStockDishes.Add(new Dish() { Name = NameNewMenuItemInput.Text, Price = Price, Description = DescriptionNewMenuItemInput.Text });
-
-                LoadInMenuItems();
+                DescriptionNewMenuItemInput.Text = menuItem.Description;
+                PriceNewMenuItemInput.Text = menuItem.Price.ToString();
+                NameNewMenuItemInput.Text = menuItem.Name;
             }
         }
 
@@ -81,25 +75,47 @@ namespace DePandaWinForms.Pages
             }
         }
 
-        private void MenuItemsList_SelectedIndexChanged(object sender, EventArgs e)
+        private void ShowMenuItemPanel(object sender, EventArgs e)
         {
-            SelectedMenuItemText.Visible = true;
-
-            Dish menuItem = (Dish)MenuItemsList.SelectedItem;
-
-            if(menuItem != null)
+            if (MenuItemGroupBox.Visible)
             {
-                DescriptionSelectedMenuItem.Text = menuItem.Description;
-                PriceSelectedMenuItem.Text = menuItem.Price.ToString();
-                NameSelectedMenuItem.Text = menuItem.Name;
+                NameNewMenuItemInput.Text = "";
+                DescriptionNewMenuItemInput.Text = "";
+                PriceNewMenuItemInput.Text = "";
+
+                CreateNewMenuItem.Visible = true;
+            }
+            else
+            {
+                if (MenuItemGroupBox.Visible == false)
+                {
+                    MenuItemGroupBox.Visible = true;
+                }
+                else
+                {
+                    MenuItemGroupBox.Visible = false;
+                }
             }
         }
 
-        private void CloseSelectedMenuItem_Click(object sender, EventArgs e)
+        private void CreateMenuItem(object sender, EventArgs e)
         {
-            SelectedMenuItemText.Visible = false;
+            decimal Price = Convert.ToDecimal(PriceNewMenuItemInput.Text);
+
+            TempStockDishes.Add(new Dish() { Name = NameNewMenuItemInput.Text, Price = Price, Description = DescriptionNewMenuItemInput.Text });
+
+            NameNewMenuItemInput.Text = "";
+            DescriptionNewMenuItemInput.Text = "";
+            PriceNewMenuItemInput.Text = "";
+
+            LoadInMenuItems();
         }
 
+        private void CloseMenuItemPanel(object sender, EventArgs e)
+        {
+            MenuItemGroupBox.Visible = false;
+        }
+       
         private void DeleteSelectedMenuItem(object sender, EventArgs e)
         {
             Dish menuItem = (Dish)MenuItemsList.SelectedItem;
@@ -107,12 +123,19 @@ namespace DePandaWinForms.Pages
             if(TempStockDishes.Count() >= 1)
             {
                 TempStockDishes.RemoveAll(item => item.ID == menuItem.ID);
-                SelectedMenuItemText.Visible = false;
+                MenuItemGroupBox.Visible = false;
+                MenuItemsList.SelectedItem = false;
                 LoadInMenuItems();
-            }
-
-            
-            
+            }  
         }
+
+        private void EditSelectedMenuItem(object sender, EventArgs e)
+        {
+            Dish menuItem = (Dish)MenuItemsList.SelectedItem;
+
+
+        }
+
+       
     }
 }
