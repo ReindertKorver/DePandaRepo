@@ -13,86 +13,44 @@ namespace DePandaWinForms.Pages
 {
     public partial class SettingsPage : Form
     {
-        public SettingsPage()
+        public SettingsPage(FormWindowState previousWinstate)
         {
             InitializeComponent();
+            LoadALTDays();
+            MondayOpen.Text = WeekDayList[0].OpenTime;
+            MondayClosed.Text = WeekDayList[0].CloseTime;
 
-            LoadInMenuItems();
-            //Didnt work anymore
-            //if (previousWinstate == FormWindowState.Maximized)
-            //{
-            //    PanelALTDay.Location = new Point(500, 157);
-            //}
-            //else if (previousWinstate == FormWindowState.Normal)
-            //{
-            //    PanelALTDay.Location = new Point(12, 466);
-            //}
-            var Days = DataStorageHandler.Storage.Settings.WeekDays;
-            //DataStorageHandler.Storage.Settings.WeekDays.Clear();
+            TuesDayOpen.Text = WeekDayList[1].OpenTime;
+            TuesDayClosed.Text = WeekDayList[1].CloseTime;
 
-            Counter.Text = DataStorageHandler.Storage.Settings.WeekDays.Count.ToString();
-            MondayOpen.Text = Days[0].StartTime;
-            MondayClosed.Text = Days[0].EndTime;
-            TuesDayOpen.Text = Days[1].StartTime;
-            TuesDayClosed.Text = Days[1].EndTime;
-            WednesDayOpen.Text = Days[2].StartTime;
-            WednesDayClosed.Text = Days[2].EndTime;
-            ThursDayOpen.Text = Days[3].StartTime;
-            ThursDayClosed.Text = Days[3].EndTime;
-            FridayOpen.Text = Days[4].StartTime;
-            FridayClosed.Text = Days[4].EndTime;
-            SaturDayOpen.Text = Days[5].StartTime;
-            SaturDayClosed.Text = Days[5].EndTime;
-            SunDayOpen.Text = Days[6].StartTime;
-            SunDayOpen.Text = Days[6].EndTime;
-            SaveWeekDays();
-        }
+            WednesDayOpen.Text = WeekDayList[2].OpenTime;
+            WednesDayClosed.Text = WeekDayList[2].CloseTime;
 
-        public void SaveWeekDays()
-        {
-            var Days = DataStorageHandler.Storage.Settings.WeekDays;
+            ThursDayOpen.Text = WeekDayList[3].OpenTime;
+            ThursDayClosed.Text = WeekDayList[3].CloseTime;
 
-            //var Monday = new DePandaClassLib.Entities.WeekDay(MondayOpen.Text, MondayClosed.Text);
-            //DataStorageHandler.Storage.Settings.WeekDays.Add(Monday);
-            //var Tuesday = new DePandaClassLib.Entities.WeekDay(TuesDayOpen.Text, TuesDayOpen.Text);
-            //DataStorageHandler.Storage.Settings.WeekDays.Add(Tuesday);
-            //var Wednesday = new DePandaClassLib.Entities.WeekDay(WednesDayOpen.Text, WednesDayClosed.Text);
-            //DataStorageHandler.Storage.Settings.WeekDays.Add(Wednesday);
-            //var ThursDay = new DePandaClassLib.Entities.WeekDay(ThursDayOpen.Text, ThursDayClosed.Text);
-            //DataStorageHandler.Storage.Settings.WeekDays.Add(ThursDay);
+            FridayOpen.Text = WeekDayList[4].OpenTime;
+            FridayClosed.Text = WeekDayList[4].CloseTime;
 
-            //var friday = new DePandaClassLib.Entities.WeekDay(FridayOpen.Text, FridayClosed.Text);
-            //DataStorageHandler.Storage.Settings.WeekDays.Add(friday);
-            //var saturday = new DePandaClassLib.Entities.WeekDay(SaturDayOpen.Text, SaturDayClosed.Text);
-            //DataStorageHandler.Storage.Settings.WeekDays.Add(saturday);
-            //var sunday = new DePandaClassLib.Entities.WeekDay(SunDayOpen.Text, SunDayClosed.Text);
-            //DataStorageHandler.Storage.Settings.WeekDays.Add(sunday);
+            SaturDayOpen.Text = WeekDayList[5].OpenTime;
+            SaturDayClosed.Text = WeekDayList[5].CloseTime;
 
-            DataStorageHandler.Storage.Settings.WeekDays[0].StartTime = MondayOpen.Text;
-            Days[0].EndTime = MondayClosed.Text;
+            SunDayOpen.Text = WeekDayList[6].OpenTime;
+            SunDayClosed.Text = WeekDayList[6].CloseTime;
 
-            Days[1].StartTime = TuesDayOpen.Text;
-            Days[1].EndTime = TuesDayClosed.Text;
 
-            Days[2].StartTime = WednesDayOpen.Text;
-            Days[2].EndTime = WednesDayClosed.Text;
-
-            Days[3].StartTime = ThursDayOpen.Text;
-            Days[3].EndTime = ThursDayClosed.Text;
-
-            Days[4].StartTime = FridayOpen.Text;
-            Days[4].EndTime = FridayClosed.Text;
-
-            Days[5].StartTime = SaturDayOpen.Text;
-            Days[5].EndTime = SaturDayClosed.Text;
-
-            Days[6].StartTime = SunDayOpen.Text;
-            Days[6].EndTime = SunDayClosed.Text;
+            if (previousWinstate == FormWindowState.Maximized)
+            {
+                PanelALTDay.Location = new Point(500, 157);
+            }
+            else if (previousWinstate == FormWindowState.Normal)
+            {
+                PanelALTDay.Location = new Point(12, 466);
+            }
         }
 
         private Int32[] data;
-
-        private List<Int32> SplitStrings(string OpenTime, string ClosedTime)
+        private void SplitStrings(string OpenTime, string ClosedTime)
         {
             string[] OpenTimeList = OpenTime.Split(':');
             int HourOpen = Int32.Parse(OpenTimeList[0]);
@@ -102,10 +60,28 @@ namespace DePandaWinForms.Pages
             int HourClosed = Int32.Parse(OpenTimeList[0]);
             int MinuteClosed = Int32.Parse(ClosedTimeList[1]);
             List<Int32> data = new List<Int32> { HourOpen, MinuteOpen, HourClosed, MinuteClosed };
-
-            return data;
         }
 
+        private bool ValidString(string OpenTime, string ClosedTime)
+        {
+            string[] OpenTimeList = OpenTime.Split(':');
+            int HourOpen = Int32.Parse(OpenTimeList[0]);
+            int MinuteOpen = Int32.Parse(OpenTimeList[1]);
+
+            string[] ClosedTimeList = ClosedTime.Split(':');
+            int HourClosed = Int32.Parse(OpenTimeList[0]);
+            int MinuteClosed = Int32.Parse(ClosedTimeList[1]);
+            List<Int32> data = new List<Int32> { HourOpen, MinuteOpen, HourClosed, MinuteClosed };
+            bool allPositive = data.All(x => x > 0);
+            if ((HourOpen > 24 | HourClosed> 24 | MinuteOpen > 60 | MinuteClosed > 60) && allPositive)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
         private void AddALTDayFunc()
         {
             Int32 year = DatumPrikker.Value.Year;
@@ -116,7 +92,6 @@ namespace DePandaWinForms.Pages
             DataStorageHandler.Storage.Settings.AlternativeDates.Add(newAltDate);
             MessageBox.Show("Datum succesvol toegevoed");
         }
-
         private void AddAltDay_Click(object sender, EventArgs e)
         {
             if (listBox1.SelectedIndex == 0 | listBox1.SelectedItem == null)
@@ -127,14 +102,14 @@ namespace DePandaWinForms.Pages
             {
                 try
                 {
+
+                    foreach (DePandaClassLib.Entities.AlternativeDate date in days)
                     {
-                        foreach (DePandaClassLib.Entities.AlternativeDate date in days)
+                        if (listBox1.SelectedItem.ToString().Contains(date.DateString))
                         {
-                            if (listBox1.SelectedItem.ToString().Contains(date.DateString))
-                            {
-                                DelALTDayFunc(date);
-                                break;
-                            }
+                            DataStorageHandler.Storage.Settings.AlternativeDates.Remove(date);
+                            MessageBox.Show("Datum succesvol verwijdert");
+                            break;
                         }
                     }
                 }
@@ -142,25 +117,21 @@ namespace DePandaWinForms.Pages
             }
         }
 
-        private void DelALTDayFunc(DePandaClassLib.Entities.AlternativeDate date)
-        {
-            DataStorageHandler.Storage.Settings.AlternativeDates.Remove(date);
-            MessageBox.Show("Datum succesvol verwijdert");
-        }
-
-        private void dateTimePicker1_ValueChanged(object sender, EventArgs e)
-        {
-        }
-
         private List<DePandaClassLib.Entities.AlternativeDate> days = DataStorageHandler.Storage.Settings.AlternativeDates;
-
-        public void LoadInMenuItems()
+        public void LoadALTDays()
         {
+
             listBox1.Items.Add($"     Datum     Geopend     Gesloten");
             foreach (DePandaClassLib.Entities.AlternativeDate date in days)
             {
                 listBox1.Items.Add($"{date.DateString}     {date.StartTimeString}           {date.EndTimeString}");
             }
+            if (WeekDayList.Count > 7)
+            {
+                WeekDayList.RemoveRange(7, (WeekDayList.Count() - 7));
+            }
+            MessageBox.Show(WeekDayList.Count().ToString());
+          
         }
 
         private void listBox1_SelectedIndexChanged(object sender, EventArgs e)
@@ -173,6 +144,7 @@ namespace DePandaWinForms.Pages
             {
                 AddAltDay.Text = "Datum verwijderen";
             }
+
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -188,8 +160,60 @@ namespace DePandaWinForms.Pages
             }
         }
 
-        private void Counter_Click(object sender, EventArgs e)
+        List<DePandaClassLib.Entities.WeekDay> WeekDayList = DataStorageHandler.Storage.Settings.WeekDays;
+        private void DaysSave(object sender, EventArgs e)
         {
+            var maandag = new DePandaClassLib.Entities.WeekDay(MondayOpen.Text, MondayClosed.Text);
+            WeekDayList.RemoveAt(0);
+            WeekDayList.Insert(0, maandag);
+
+            var dinsdag = new DePandaClassLib.Entities.WeekDay(TuesDayOpen.Text, TuesDayClosed.Text);
+            WeekDayList.RemoveAt(1);
+            WeekDayList.Insert(1, dinsdag);
+
+            var woensdag = new DePandaClassLib.Entities.WeekDay(WednesDayOpen.Text, WednesDayClosed.Text);
+            WeekDayList.RemoveAt(2);
+            WeekDayList.Insert(2, woensdag);
+
+            var donderdag = new DePandaClassLib.Entities.WeekDay(ThursDayOpen.Text, ThursDayClosed.Text);
+            WeekDayList.RemoveAt(3);
+            WeekDayList.Insert(3, donderdag);
+
+            var vrijdag = new DePandaClassLib.Entities.WeekDay(FridayOpen.Text, FridayClosed.Text);
+            WeekDayList.RemoveAt(4);
+            WeekDayList.Insert(4, vrijdag);
+
+            var zaterdag = new DePandaClassLib.Entities.WeekDay(SaturDayOpen.Text, SaturDayClosed.Text);
+            WeekDayList.RemoveAt(5);
+            WeekDayList.Insert(5, zaterdag);
+
+            var zondag = new DePandaClassLib.Entities.WeekDay(SunDayOpen.Text, SunDayClosed.Text);
+            WeekDayList.RemoveAt(6);
+            WeekDayList.Insert(6, zondag);
+            MessageBox.Show("gelukt");
+        }
+
+        private void DayINP_leave(object sender, EventArgs e)
+        {
+            if ((sender as TextBox).Text == "")
+            {
+                (sender as TextBox).Text = "xx:xx";
+                (sender as TextBox).ForeColor = Color.Silver;
+            }
+        }
+
+        private void DayINP_Enter(object sender, EventArgs e)
+        {
+            if ((sender as TextBox).Text != "")
+            {
+                (sender as TextBox).Text = "";
+                (sender as TextBox).ForeColor = Color.Black;
+            }
         }
     }
 }
+
+
+
+
+

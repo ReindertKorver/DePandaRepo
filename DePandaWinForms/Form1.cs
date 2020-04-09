@@ -58,7 +58,7 @@ namespace DePandaWinForms
 
             if (page == "instellingen")
             {
-                form = new SettingsPage();
+                form = new SettingsPage(this.WindowState);
                 form.TopLevel = false;
                 form.Size = new Size(PagePanel.Size.Width, PagePanel.Size.Height);
                 PagePanel.Controls.Clear();
@@ -146,7 +146,7 @@ namespace DePandaWinForms
 
                 case "Instellingen":
                     page = "instellingen";
-                    form = new SettingsPage();
+                    form = new SettingsPage(this.WindowState);
                     break;
 
                 default:
