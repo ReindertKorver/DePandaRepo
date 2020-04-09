@@ -31,4 +31,18 @@ namespace DePandaClassLib.Entities
             }
         }
     }
+    public class WeekDay
+    {
+        public WeekDay(string start, string end)
+        {
+            this.StartTime = start;
+            this.EndTime = end;
+        }
+
+        public string StartTime { get; set; }
+        public string EndTime { get; set; }
+       
+        
+    }
+
 }

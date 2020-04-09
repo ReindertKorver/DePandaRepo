@@ -64,8 +64,11 @@
             this.ClosedALTINP = new System.Windows.Forms.TextBox();
             this.OpenAlt = new System.Windows.Forms.Label();
             this.ClosedAlt = new System.Windows.Forms.Label();
+            this.PanelALTDay = new System.Windows.Forms.Panel();
+            this.Counter = new System.Windows.Forms.Label();
             this.Opentimes.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
+            this.PanelALTDay.SuspendLayout();
             this.SuspendLayout();
             // 
             // label1
@@ -522,7 +525,7 @@
             this.listBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
             this.listBox1.FormattingEnabled = true;
             this.listBox1.ItemHeight = 20;
-            this.listBox1.Location = new System.Drawing.Point(7, 483);
+            this.listBox1.Location = new System.Drawing.Point(3, 3);
             this.listBox1.Name = "listBox1";
             this.listBox1.Size = new System.Drawing.Size(251, 324);
             this.listBox1.TabIndex = 84;
@@ -533,7 +536,7 @@
             this.AddAltDay.BackColor = System.Drawing.SystemColors.Control;
             this.AddAltDay.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.AddAltDay.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(72)))), ((int)(((byte)(142)))), ((int)(((byte)(149)))));
-            this.AddAltDay.Location = new System.Drawing.Point(282, 627);
+            this.AddAltDay.Location = new System.Drawing.Point(278, 147);
             this.AddAltDay.Name = "AddAltDay";
             this.AddAltDay.Size = new System.Drawing.Size(183, 44);
             this.AddAltDay.TabIndex = 87;
@@ -543,7 +546,7 @@
             // 
             // DatumPrikker
             // 
-            this.DatumPrikker.Location = new System.Drawing.Point(282, 483);
+            this.DatumPrikker.Location = new System.Drawing.Point(278, 3);
             this.DatumPrikker.Name = "DatumPrikker";
             this.DatumPrikker.Size = new System.Drawing.Size(183, 20);
             this.DatumPrikker.TabIndex = 91;
@@ -551,7 +554,7 @@
             // 
             // OpenALTINP
             // 
-            this.OpenALTINP.Location = new System.Drawing.Point(282, 572);
+            this.OpenALTINP.Location = new System.Drawing.Point(278, 92);
             this.OpenALTINP.Name = "OpenALTINP";
             this.OpenALTINP.Size = new System.Drawing.Size(76, 20);
             this.OpenALTINP.TabIndex = 92;
@@ -560,7 +563,7 @@
             // 
             // ClosedALTINP
             // 
-            this.ClosedALTINP.Location = new System.Drawing.Point(389, 572);
+            this.ClosedALTINP.Location = new System.Drawing.Point(385, 92);
             this.ClosedALTINP.Name = "ClosedALTINP";
             this.ClosedALTINP.Size = new System.Drawing.Size(76, 20);
             this.ClosedALTINP.TabIndex = 93;
@@ -569,7 +572,7 @@
             // 
             // OpenAlt
             // 
-            this.OpenAlt.Location = new System.Drawing.Point(279, 546);
+            this.OpenAlt.Location = new System.Drawing.Point(275, 66);
             this.OpenAlt.Name = "OpenAlt";
             this.OpenAlt.Size = new System.Drawing.Size(76, 23);
             this.OpenAlt.TabIndex = 94;
@@ -578,12 +581,36 @@
             // 
             // ClosedAlt
             // 
-            this.ClosedAlt.Location = new System.Drawing.Point(389, 546);
+            this.ClosedAlt.Location = new System.Drawing.Point(385, 66);
             this.ClosedAlt.Name = "ClosedAlt";
             this.ClosedAlt.Size = new System.Drawing.Size(76, 23);
             this.ClosedAlt.TabIndex = 95;
             this.ClosedAlt.Text = "Gesloten";
             this.ClosedAlt.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // PanelALTDay
+            // 
+            this.PanelALTDay.Controls.Add(this.listBox1);
+            this.PanelALTDay.Controls.Add(this.ClosedAlt);
+            this.PanelALTDay.Controls.Add(this.AddAltDay);
+            this.PanelALTDay.Controls.Add(this.OpenAlt);
+            this.PanelALTDay.Controls.Add(this.DatumPrikker);
+            this.PanelALTDay.Controls.Add(this.ClosedALTINP);
+            this.PanelALTDay.Controls.Add(this.OpenALTINP);
+            this.PanelALTDay.Location = new System.Drawing.Point(490, 114);
+            this.PanelALTDay.Name = "PanelALTDay";
+            this.PanelALTDay.Size = new System.Drawing.Size(471, 328);
+            this.PanelALTDay.TabIndex = 97;
+            // 
+            // Counter
+            // 
+            this.Counter.AutoSize = true;
+            this.Counter.Location = new System.Drawing.Point(381, 82);
+            this.Counter.Name = "Counter";
+            this.Counter.Size = new System.Drawing.Size(35, 13);
+            this.Counter.TabIndex = 98;
+            this.Counter.Text = "label3";
+            this.Counter.Click += new System.EventHandler(this.Counter_Click);
             // 
             // SettingsPage
             // 
@@ -591,13 +618,8 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             this.BackColor = System.Drawing.SystemColors.Control;
             this.ClientSize = new System.Drawing.Size(1067, 828);
-            this.Controls.Add(this.ClosedAlt);
-            this.Controls.Add(this.OpenAlt);
-            this.Controls.Add(this.ClosedALTINP);
-            this.Controls.Add(this.OpenALTINP);
-            this.Controls.Add(this.DatumPrikker);
-            this.Controls.Add(this.AddAltDay);
-            this.Controls.Add(this.listBox1);
+            this.Controls.Add(this.Counter);
+            this.Controls.Add(this.PanelALTDay);
             this.Controls.Add(this.Opentimes);
             this.Controls.Add(this.Pincode);
             this.Controls.Add(this.label1);
@@ -610,6 +632,8 @@
             this.Opentimes.PerformLayout();
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();
+            this.PanelALTDay.ResumeLayout(false);
+            this.PanelALTDay.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -657,5 +681,7 @@
         private System.Windows.Forms.TextBox ClosedALTINP;
         private System.Windows.Forms.Label OpenAlt;
         private System.Windows.Forms.Label ClosedAlt;
+        private System.Windows.Forms.Panel PanelALTDay;
+        private System.Windows.Forms.Label Counter;
     }
 }

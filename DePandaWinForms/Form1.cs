@@ -15,7 +15,7 @@ namespace DePandaWinForms
             this.SetStyle(ControlStyles.ResizeRedraw, true);
             this.CenterToScreen();
             this.WindowState = PreviousWinState;
-            this.KeyPreview = true;
+            this.KeyPreview = true; // shortcuts
            
             
         }
@@ -47,6 +47,7 @@ namespace DePandaWinForms
         {
             Application.Exit();
         }
+     
         private void ChangeWinState()
         {
             if (this.WindowState == FormWindowState.Maximized)
@@ -57,16 +58,21 @@ namespace DePandaWinForms
             {
                 this.WindowState = FormWindowState.Maximized;
             }
-            if (form != null)
+
+            
+            if (page == "instellingen")
             {
+                form = new SettingsPage(this.WindowState);
                 form.TopLevel = false;
-                form.AutoScroll = true;
+                
                 form.Size = new Size(PagePanel.Size.Width, PagePanel.Size.Height);
-                Console.WriteLine(form.Size);
                 PagePanel.Controls.Clear();
                 PagePanel.Controls.Add(form);
                 form.Show();
             }
+
+
+
         }
 
         private void Minimize_Click(object sender, EventArgs e)
@@ -126,9 +132,11 @@ namespace DePandaWinForms
        
 
         private Form form = null;
+        private string page = "none";
 
         public void listView1_ItemSelectionChanged(object sender, ListViewItemSelectionChangedEventArgs e)
-        {   
+        {
+            page = "none";
             switch (e.Item.Text)
             {
                 case "Menu":
@@ -148,7 +156,8 @@ namespace DePandaWinForms
                     break;
 
                 case "Instellingen":
-                    form = new SettingsPage();               
+                    form = new SettingsPage(this.WindowState);
+                    page = "instellingen";
                     break;
                 default:
                     break;
@@ -179,8 +188,8 @@ namespace DePandaWinForms
         private void panel3_Click(object sender, EventArgs e)
         {
             this.Hide();
-            Form form = new Login(this.WindowState);      
-            form.Show();
+
+            new Login(this.WindowState).Show();
         }
 
 

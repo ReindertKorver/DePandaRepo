@@ -12,5 +12,6 @@ namespace DePandaLib.Entities
         public List<RestaurantTable> AvailableTables { get; set; } = new List<RestaurantTable>();
         public List<Reservation> Reservations { get; set; } = new List<Reservation>();
         public List<MenuItem> Menu { get; set; } = new List<MenuItem>();
+        
     }
 }
