@@ -38,6 +38,11 @@ namespace DePandaWinForms.Pages
             MenuItemsList.DisplayMember = "Name";
         }
 
+        public void CreateCommitOne()
+        {
+
+        }
+
         private void ShowCreateMenuItemPanel_Click(object sender, EventArgs e)
         {
             if (NewMenuItemGroupBox.Visible == false)
