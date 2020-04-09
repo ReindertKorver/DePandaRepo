@@ -44,7 +44,7 @@ namespace DePandaWinForms
         }
 
         private void Close_Click(object sender, EventArgs e)
-        {
+        { 
             Application.Exit();
         }
      
@@ -59,20 +59,15 @@ namespace DePandaWinForms
                 this.WindowState = FormWindowState.Maximized;
             }
 
-            
             if (page == "instellingen")
             {
                 form = new SettingsPage(this.WindowState);
-                form.TopLevel = false;
-                
+                form.TopLevel = false;   
                 form.Size = new Size(PagePanel.Size.Width, PagePanel.Size.Height);
                 PagePanel.Controls.Clear();
                 PagePanel.Controls.Add(form);
                 form.Show();
             }
-
-
-
         }
 
         private void Minimize_Click(object sender, EventArgs e)
@@ -126,9 +121,6 @@ namespace DePandaWinForms
 
         
 
-        private void label2_Click(object sender, EventArgs e)
-        {
-        }
        
 
         private Form form = null;
