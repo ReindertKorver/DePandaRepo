@@ -91,8 +91,10 @@
             // 
             // SunDayClosed
             // 
+            this.SunDayClosed.BackColor = System.Drawing.Color.White;
             this.SunDayClosed.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.SunDayClosed.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.SunDayClosed.ForeColor = System.Drawing.Color.Black;
             this.SunDayClosed.Location = new System.Drawing.Point(268, 244);
             this.SunDayClosed.MaxLength = 5;
             this.SunDayClosed.Name = "SunDayClosed";
@@ -105,7 +107,9 @@
             // 
             // SunDayOpen
             // 
+            this.SunDayOpen.BackColor = System.Drawing.Color.White;
             this.SunDayOpen.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.SunDayOpen.ForeColor = System.Drawing.Color.Black;
             this.SunDayOpen.Location = new System.Drawing.Point(132, 244);
             this.SunDayOpen.MaxLength = 5;
             this.SunDayOpen.Name = "SunDayOpen";
@@ -118,7 +122,9 @@
             // 
             // SaturDayOpen
             // 
+            this.SaturDayOpen.BackColor = System.Drawing.Color.White;
             this.SaturDayOpen.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.SaturDayOpen.ForeColor = System.Drawing.Color.Black;
             this.SaturDayOpen.Location = new System.Drawing.Point(132, 208);
             this.SaturDayOpen.MaxLength = 5;
             this.SaturDayOpen.Name = "SaturDayOpen";
@@ -131,8 +137,10 @@
             // 
             // SaturDayClosed
             // 
+            this.SaturDayClosed.BackColor = System.Drawing.Color.White;
             this.SaturDayClosed.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.SaturDayClosed.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.SaturDayClosed.ForeColor = System.Drawing.Color.Black;
             this.SaturDayClosed.Location = new System.Drawing.Point(268, 208);
             this.SaturDayClosed.MaxLength = 5;
             this.SaturDayClosed.Name = "SaturDayClosed";
@@ -145,7 +153,9 @@
             // 
             // FridayOpen
             // 
+            this.FridayOpen.BackColor = System.Drawing.Color.White;
             this.FridayOpen.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.FridayOpen.ForeColor = System.Drawing.Color.Black;
             this.FridayOpen.Location = new System.Drawing.Point(132, 172);
             this.FridayOpen.MaxLength = 5;
             this.FridayOpen.Name = "FridayOpen";
@@ -158,8 +168,10 @@
             // 
             // FridayClosed
             // 
+            this.FridayClosed.BackColor = System.Drawing.Color.White;
             this.FridayClosed.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.FridayClosed.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.FridayClosed.ForeColor = System.Drawing.Color.Black;
             this.FridayClosed.Location = new System.Drawing.Point(268, 172);
             this.FridayClosed.MaxLength = 5;
             this.FridayClosed.Name = "FridayClosed";
@@ -172,8 +184,10 @@
             // 
             // ThursDayClosed
             // 
+            this.ThursDayClosed.BackColor = System.Drawing.Color.White;
             this.ThursDayClosed.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.ThursDayClosed.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.ThursDayClosed.ForeColor = System.Drawing.Color.Black;
             this.ThursDayClosed.Location = new System.Drawing.Point(268, 136);
             this.ThursDayClosed.MaxLength = 5;
             this.ThursDayClosed.Name = "ThursDayClosed";
@@ -186,7 +200,9 @@
             // 
             // ThursDayOpen
             // 
+            this.ThursDayOpen.BackColor = System.Drawing.Color.White;
             this.ThursDayOpen.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.ThursDayOpen.ForeColor = System.Drawing.Color.Black;
             this.ThursDayOpen.Location = new System.Drawing.Point(132, 136);
             this.ThursDayOpen.MaxLength = 5;
             this.ThursDayOpen.Name = "ThursDayOpen";
@@ -199,7 +215,9 @@
             // 
             // WednesDayOpen
             // 
+            this.WednesDayOpen.BackColor = System.Drawing.Color.White;
             this.WednesDayOpen.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.WednesDayOpen.ForeColor = System.Drawing.Color.Black;
             this.WednesDayOpen.Location = new System.Drawing.Point(132, 100);
             this.WednesDayOpen.MaxLength = 5;
             this.WednesDayOpen.Name = "WednesDayOpen";
@@ -212,8 +230,10 @@
             // 
             // TuesDayClosed
             // 
+            this.TuesDayClosed.BackColor = System.Drawing.Color.White;
             this.TuesDayClosed.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.TuesDayClosed.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.TuesDayClosed.ForeColor = System.Drawing.Color.Black;
             this.TuesDayClosed.Location = new System.Drawing.Point(268, 64);
             this.TuesDayClosed.MaxLength = 5;
             this.TuesDayClosed.Name = "TuesDayClosed";
@@ -226,7 +246,9 @@
             // 
             // TuesDayOpen
             // 
+            this.TuesDayOpen.BackColor = System.Drawing.Color.White;
             this.TuesDayOpen.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.TuesDayOpen.ForeColor = System.Drawing.Color.Black;
             this.TuesDayOpen.Location = new System.Drawing.Point(132, 64);
             this.TuesDayOpen.MaxLength = 5;
             this.TuesDayOpen.Name = "TuesDayOpen";
@@ -239,9 +261,10 @@
             // 
             // MondayClosed
             // 
-            this.MondayClosed.BackColor = System.Drawing.SystemColors.Window;
+            this.MondayClosed.BackColor = System.Drawing.Color.White;
             this.MondayClosed.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.MondayClosed.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.MondayClosed.ForeColor = System.Drawing.Color.Black;
             this.MondayClosed.Location = new System.Drawing.Point(268, 28);
             this.MondayClosed.MaxLength = 5;
             this.MondayClosed.Name = "MondayClosed";
@@ -254,12 +277,15 @@
             // 
             // MondayOpen
             // 
+            this.MondayOpen.BackColor = System.Drawing.Color.White;
             this.MondayOpen.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.MondayOpen.ForeColor = System.Drawing.Color.Black;
             this.MondayOpen.Location = new System.Drawing.Point(132, 28);
             this.MondayOpen.MaxLength = 5;
             this.MondayOpen.Name = "MondayOpen";
             this.MondayOpen.Size = new System.Drawing.Size(114, 23);
             this.MondayOpen.TabIndex = 68;
+            this.MondayOpen.Tag = "TestTagOpenMon";
             this.MondayOpen.Text = "13.00";
             this.MondayOpen.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.MondayOpen.Enter += new System.EventHandler(this.DayINP_Enter);
@@ -449,8 +475,10 @@
             // 
             // WednesDayClosed
             // 
+            this.WednesDayClosed.BackColor = System.Drawing.Color.White;
             this.WednesDayClosed.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.WednesDayClosed.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.WednesDayClosed.ForeColor = System.Drawing.Color.Black;
             this.WednesDayClosed.Location = new System.Drawing.Point(268, 100);
             this.WednesDayClosed.MaxLength = 5;
             this.WednesDayClosed.Name = "WednesDayClosed";
@@ -580,21 +608,29 @@
             // 
             // OpenALTINP
             // 
+            this.OpenALTINP.BackColor = System.Drawing.Color.White;
+            this.OpenALTINP.ForeColor = System.Drawing.Color.Black;
             this.OpenALTINP.Location = new System.Drawing.Point(278, 92);
             this.OpenALTINP.Name = "OpenALTINP";
             this.OpenALTINP.Size = new System.Drawing.Size(76, 20);
             this.OpenALTINP.TabIndex = 92;
-            this.OpenALTINP.Text = "13:21";
+            this.OpenALTINP.Text = "xx:xx";
             this.OpenALTINP.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.OpenALTINP.Enter += new System.EventHandler(this.DayINP_Enter);
+            this.OpenALTINP.Leave += new System.EventHandler(this.DayINP_leave);
             // 
             // ClosedALTINP
             // 
+            this.ClosedALTINP.BackColor = System.Drawing.Color.White;
+            this.ClosedALTINP.ForeColor = System.Drawing.Color.Black;
             this.ClosedALTINP.Location = new System.Drawing.Point(385, 92);
             this.ClosedALTINP.Name = "ClosedALTINP";
             this.ClosedALTINP.Size = new System.Drawing.Size(76, 20);
             this.ClosedALTINP.TabIndex = 93;
-            this.ClosedALTINP.Text = "13:21";
+            this.ClosedALTINP.Text = "xx:xx";
             this.ClosedALTINP.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.ClosedALTINP.Enter += new System.EventHandler(this.DayINP_Enter);
+            this.ClosedALTINP.Leave += new System.EventHandler(this.DayINP_leave);
             // 
             // OpenAlt
             // 

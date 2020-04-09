@@ -38,6 +38,9 @@ namespace DePandaWinForms.Pages
             SunDayOpen.Text = WeekDayList[6].OpenTime;
             SunDayClosed.Text = WeekDayList[6].CloseTime;
 
+           
+            
+
 
             if (previousWinstate == FormWindowState.Maximized)
             {
@@ -49,46 +52,55 @@ namespace DePandaWinForms.Pages
             }
         }
 
-        private Int32[] data;
-        private void SplitStrings(string OpenTime, string ClosedTime)
+        List<Int32> data;
+        private List<Int32> SplitStrings(string Time)
         {
-            string[] OpenTimeList = OpenTime.Split(':');
-            int HourOpen = Int32.Parse(OpenTimeList[0]);
-            int MinuteOpen = Int32.Parse(OpenTimeList[1]);
-
-            string[] ClosedTimeList = ClosedTime.Split(':');
-            int HourClosed = Int32.Parse(OpenTimeList[0]);
-            int MinuteClosed = Int32.Parse(ClosedTimeList[1]);
-            List<Int32> data = new List<Int32> { HourOpen, MinuteOpen, HourClosed, MinuteClosed };
+            string[] TimeList = Time.Split(':');
+            int Hour = Int32.Parse(TimeList[0]);
+            int Minute = Int32.Parse(TimeList[1]);
+            List<Int32> data  = new List<Int32> { Hour, Minute};
+            return data;
+           
         }
 
-        private bool ValidString(string OpenTime, string ClosedTime)
+        private bool ValidString(string Time)
         {
-            string[] OpenTimeList = OpenTime.Split(':');
-            int HourOpen = Int32.Parse(OpenTimeList[0]);
-            int MinuteOpen = Int32.Parse(OpenTimeList[1]);
-
-            string[] ClosedTimeList = ClosedTime.Split(':');
-            int HourClosed = Int32.Parse(OpenTimeList[0]);
-            int MinuteClosed = Int32.Parse(ClosedTimeList[1]);
-            List<Int32> data = new List<Int32> { HourOpen, MinuteOpen, HourClosed, MinuteClosed };
-            bool allPositive = data.All(x => x > 0);
-            if ((HourOpen > 24 | HourClosed> 24 | MinuteOpen > 60 | MinuteClosed > 60) && allPositive)
+            string[] TimeList = Time.Split(':');
+            if (TimeList.Length != 2)
             {
-                return true;
+                return false;
+            }
+            if (TimeList[0].All(char.IsDigit) && TimeList[1].All(char.IsDigit))
+            {
+                int Hour = Int32.Parse(TimeList[0]);
+                int Minute = Int32.Parse(TimeList[1]);
+
+                List<Int32> data = new List<Int32> { Hour, Minute };
+                bool allPositive = data.All(x => x > 0);
+                if (Hour < 24 && Minute < 60 && allPositive)
+                {
+                    return true;
+                }
+                else
+                {
+                    return false;
+                }
             }
             else
             {
                 return false;
             }
+            
+           
+            
         }
         private void AddALTDayFunc()
         {
+         
             Int32 year = DatumPrikker.Value.Year;
             Int32 day = DatumPrikker.Value.Day;
             Int32 month = DatumPrikker.Value.Month;
-            SplitStrings(OpenALTINP.Text, ClosedALTINP.Text);
-            var newAltDate = new DePandaClassLib.Entities.AlternativeDate(new DateTime(year, day, month, data[0], data[1], 0), new DateTime(year, day, month, data[2], data[3], 0));
+            var newAltDate = new DePandaClassLib.Entities.AlternativeDate(new DateTime(year, day, month, SplitStrings(OpenALTINP.Text)[0], SplitStrings(OpenALTINP.Text)[1], 0), new DateTime(year, day, month, SplitStrings(ClosedALTINP.Text)[0], SplitStrings(ClosedALTINP.Text)[1], 0));
             DataStorageHandler.Storage.Settings.AlternativeDates.Add(newAltDate);
             MessageBox.Show("Datum succesvol toegevoed");
         }
@@ -96,7 +108,16 @@ namespace DePandaWinForms.Pages
         {
             if (listBox1.SelectedIndex == 0 | listBox1.SelectedItem == null)
             {
-                AddALTDayFunc();
+                if (ValidString(OpenALTINP.Text) && ValidString(ClosedALTINP.Text))
+                {
+                    AddALTDayFunc();
+                }
+                else
+                {
+                    MessageBox.Show("U heeft geen correcte tijden ingevuld");
+                }
+                
+
             }
             else
             {
@@ -130,7 +151,6 @@ namespace DePandaWinForms.Pages
             {
                 WeekDayList.RemoveRange(7, (WeekDayList.Count() - 7));
             }
-            MessageBox.Show(WeekDayList.Count().ToString());
           
         }
 
@@ -190,26 +210,28 @@ namespace DePandaWinForms.Pages
             var zondag = new DePandaClassLib.Entities.WeekDay(SunDayOpen.Text, SunDayClosed.Text);
             WeekDayList.RemoveAt(6);
             WeekDayList.Insert(6, zondag);
-            MessageBox.Show("gelukt");
         }
+
 
         private void DayINP_leave(object sender, EventArgs e)
         {
-            if ((sender as TextBox).Text == "")
+            if (!ValidString((sender as TextBox).Text))
             {
                 (sender as TextBox).Text = "xx:xx";
-                (sender as TextBox).ForeColor = Color.Silver;
+                MessageBox.Show("De tijd die u heeft opgegeven is onjuist");
             }
+            
         }
 
         private void DayINP_Enter(object sender, EventArgs e)
         {
-            if ((sender as TextBox).Text != "")
+            if ((sender as TextBox).Text != "" | (sender as TextBox).Text != "xx:xx")
             {
                 (sender as TextBox).Text = "";
-                (sender as TextBox).ForeColor = Color.Black;
             }
         }
+
+        
     }
 }
 

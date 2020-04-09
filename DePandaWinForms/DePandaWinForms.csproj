@@ -129,6 +129,9 @@
     <EmbeddedResource Include="Pages\ReservationPage.resx">
       <DependentUpon>ReservationPage.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Pages\SettingsPAge.resx">
+      <DependentUpon>SettingsPage.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Pages\Tafel.resx">
       <DependentUpon>Tafel.cs</DependentUpon>
     </EmbeddedResource>
