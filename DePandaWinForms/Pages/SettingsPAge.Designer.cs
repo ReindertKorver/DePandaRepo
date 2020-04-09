@@ -19,6 +19,13 @@
             }
             base.Dispose(disposing);
         }
+
+        #region Windows Form Designer generated code
+
+        /// <summary>
+        /// Required method for Designer support - do not modify
+        /// the contents of this method with the code editor.
+        /// </summary>
         private void InitializeComponent()
         {
             this.label1 = new System.Windows.Forms.Label();
@@ -636,7 +643,6 @@
             this.PanelALTDay.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
-
         }
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label Pincode;
@@ -683,5 +689,6 @@
         private System.Windows.Forms.Label ClosedAlt;
         private System.Windows.Forms.Panel PanelALTDay;
         private System.Windows.Forms.Label Counter;
+        #endregion
     }
 }

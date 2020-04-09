@@ -44,7 +44,7 @@ namespace DePandaWinForms
         {
             Application.Exit();
         }
-        
+
         private void ChangeWinState()
         {
             if (this.WindowState == FormWindowState.Maximized)
@@ -56,20 +56,15 @@ namespace DePandaWinForms
                 this.WindowState = FormWindowState.Maximized;
             }
 
-            
             if (page == "instellingen")
             {
-                form = new SettingsPage(this.WindowState);
+                form = new SettingsPage();
                 form.TopLevel = false;
-                
                 form.Size = new Size(PagePanel.Size.Width, PagePanel.Size.Height);
                 PagePanel.Controls.Clear();
                 PagePanel.Controls.Add(form);
                 form.Show();
             }
-
-
-
         }
 
         private void Minimize_Click(object sender, EventArgs e)

@@ -10,6 +10,6 @@ namespace DePandaClassLib.Entities
     {
         public string PinCode { get; set; } = "00000";
         public List<AlternativeDate> AlternativeDates { get; set; } = new List<AlternativeDate>();
-        public List<WeekDay> WeekDays { get; set; } = new List<WeekDay>();
+        public List<WeekDay> WeekDays { get; set; } = new List<WeekDay>() { new WeekDay("", ""), new WeekDay("", ""), new WeekDay("", ""), new WeekDay("", ""), new WeekDay("", ""), new WeekDay("", ""), new WeekDay("", "") };
     }
 }
