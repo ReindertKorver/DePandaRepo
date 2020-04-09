@@ -33,17 +33,9 @@ namespace DePandaWinForms.Pages
                 MenuItemsList.Items.Add(menuItem);
             }
 
-            Console.WriteLine("hoi");
             MenuItemsList.ValueMember = "ID";
             MenuItemsList.DisplayMember = "Name";
         }
-
-        public void CreateCommitOne()
-        {
-
-        }
-
-      
 
         private void ShowCreateMenuItemPanel_Click(object sender, EventArgs e)
         {
@@ -53,7 +45,6 @@ namespace DePandaWinForms.Pages
             }
             else
             {
-                Console.WriteLine("hoi");
                 NewMenuItemGroupBox.Visible = false;
             }
         }
