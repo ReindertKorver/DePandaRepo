@@ -34,6 +34,11 @@ namespace DePandaWinForms.Pages
             }
 
             Console.WriteLine("hoi");
+            Console.WriteLine("Hoi");
+
+            Console.WriteLine("Hoi");
+
+
             MenuItemsList.ValueMember = "ID";
             MenuItemsList.DisplayMember = "Name";
         }
