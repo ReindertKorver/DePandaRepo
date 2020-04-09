@@ -43,6 +43,11 @@ namespace DePandaWinForms.Pages
 
         }
 
+        public void CreateCommitTwo()
+        {
+
+        }
+
         private void ShowCreateMenuItemPanel_Click(object sender, EventArgs e)
         {
             if (NewMenuItemGroupBox.Visible == false)
