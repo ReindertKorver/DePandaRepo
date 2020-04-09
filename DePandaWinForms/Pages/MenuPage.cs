@@ -10,7 +10,6 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using DePandaLib.Entities;
 
-using System.Globalization;
 
 namespace DePandaWinForms.Pages
 {
@@ -27,6 +26,7 @@ namespace DePandaWinForms.Pages
         public void LoadInMenuItems()
         {
             TempStockDishes = DataStorageHandler.Storage.StockDishes;
+            MenuItemsList.Items.Clear();
 
             foreach (Dish menuItem in TempStockDishes)
             {
@@ -52,14 +52,10 @@ namespace DePandaWinForms.Pages
         private void CreateNewMenuItem_Click(object sender, EventArgs e)
         {
             if (NewMenuItemGroupBox.Visible == true)
-            {
-                CultureInfo cultures = new CultureInfo("en-US");
-
-                decimal Price = Convert.ToDecimal(PriceNewMenuItemInput.Text, cultures);
+            { 
+                decimal Price = Convert.ToDecimal(PriceNewMenuItemInput.Text);
 
                 TempStockDishes.Add(new Dish() { Name = NameNewMenuItemInput.Text, Price = Price, Description = DescriptionNewMenuItemInput.Text });
-
-                MenuItemsList.Items.Clear();
 
                 LoadInMenuItems();
             }
@@ -89,16 +85,34 @@ namespace DePandaWinForms.Pages
         {
             SelectedMenuItemText.Visible = true;
 
-            Dish menuItem = MenuItemsList.SelectedItem as Dish;
+            Dish menuItem = (Dish)MenuItemsList.SelectedItem;
 
-            DescriptionSelectedMenuItem.Text = menuItem.Description;
-            PriceSelectedMenuItem.Text = menuItem.Price.ToString();
-            NameSelectedMenuItem.Text = menuItem.Name;
+            if(menuItem != null)
+            {
+                DescriptionSelectedMenuItem.Text = menuItem.Description;
+                PriceSelectedMenuItem.Text = menuItem.Price.ToString();
+                NameSelectedMenuItem.Text = menuItem.Name;
+            }
         }
 
         private void CloseSelectedMenuItem_Click(object sender, EventArgs e)
         {
             SelectedMenuItemText.Visible = false;
+        }
+
+        private void DeleteSelectedMenuItem(object sender, EventArgs e)
+        {
+            Dish menuItem = (Dish)MenuItemsList.SelectedItem;
+
+            if(TempStockDishes.Count() >= 1)
+            {
+                TempStockDishes.RemoveAll(item => item.ID == menuItem.ID);
+                SelectedMenuItemText.Visible = false;
+                LoadInMenuItems();
+            }
+
+            
+            
         }
     }
 }

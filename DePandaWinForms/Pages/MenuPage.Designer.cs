@@ -50,6 +50,7 @@
             this.label6 = new System.Windows.Forms.Label();
             this.DescriptionSelectedMenuItem = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
+            this.button1 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.MenuGrid)).BeginInit();
             this.NewMenuItemGroupBox.SuspendLayout();
             this.SelectedMenuItemText.SuspendLayout();
@@ -62,7 +63,7 @@
             this.Title.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(45)))), ((int)(((byte)(51)))));
             this.Title.Location = new System.Drawing.Point(0, 0);
             this.Title.Margin = new System.Windows.Forms.Padding(3, 25, 3, 0);
-            this.Title.Name = "Pincode";
+            this.Title.Name = "Title";
             this.Title.Size = new System.Drawing.Size(800, 37);
             this.Title.TabIndex = 13;
             this.Title.Text = "Menu";
@@ -194,6 +195,7 @@
             // 
             // SelectedMenuItemText
             // 
+            this.SelectedMenuItemText.Controls.Add(this.button1);
             this.SelectedMenuItemText.Controls.Add(this.CloseSelectedMenuItem);
             this.SelectedMenuItemText.Controls.Add(this.PriceSelectedMenuItem);
             this.SelectedMenuItemText.Controls.Add(this.NameSelectedMenuItem);
@@ -222,7 +224,7 @@
             // PriceSelectedMenuItem
             // 
             this.PriceSelectedMenuItem.AutoSize = true;
-            this.PriceSelectedMenuItem.Location = new System.Drawing.Point(105, 84);
+            this.PriceSelectedMenuItem.Location = new System.Drawing.Point(105, 60);
             this.PriceSelectedMenuItem.Name = "PriceSelectedMenuItem";
             this.PriceSelectedMenuItem.Size = new System.Drawing.Size(35, 13);
             this.PriceSelectedMenuItem.TabIndex = 5;
@@ -231,7 +233,7 @@
             // NameSelectedMenuItem
             // 
             this.NameSelectedMenuItem.AutoSize = true;
-            this.NameSelectedMenuItem.Location = new System.Drawing.Point(105, 43);
+            this.NameSelectedMenuItem.Location = new System.Drawing.Point(105, 29);
             this.NameSelectedMenuItem.Name = "NameSelectedMenuItem";
             this.NameSelectedMenuItem.Size = new System.Drawing.Size(35, 13);
             this.NameSelectedMenuItem.TabIndex = 4;
@@ -240,7 +242,7 @@
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(21, 44);
+            this.label7.Location = new System.Drawing.Point(21, 29);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(38, 13);
             this.label7.TabIndex = 3;
@@ -249,7 +251,7 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(21, 84);
+            this.label6.Location = new System.Drawing.Point(23, 60);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(26, 13);
             this.label6.TabIndex = 2;
@@ -258,7 +260,7 @@
             // DescriptionSelectedMenuItem
             // 
             this.DescriptionSelectedMenuItem.AutoSize = true;
-            this.DescriptionSelectedMenuItem.Location = new System.Drawing.Point(105, 120);
+            this.DescriptionSelectedMenuItem.Location = new System.Drawing.Point(105, 93);
             this.DescriptionSelectedMenuItem.Name = "DescriptionSelectedMenuItem";
             this.DescriptionSelectedMenuItem.Size = new System.Drawing.Size(35, 13);
             this.DescriptionSelectedMenuItem.TabIndex = 1;
@@ -267,11 +269,21 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(18, 120);
+            this.label5.Location = new System.Drawing.Point(21, 93);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(51, 13);
             this.label5.TabIndex = 0;
             this.label5.Text = "Extra info";
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(10, 120);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(39, 23);
+            this.button1.TabIndex = 7;
+            this.button1.Text = "Del";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.DeleteSelectedMenuItem);
             // 
             // MenuPage
             // 
@@ -323,5 +335,6 @@
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Button CloseSelectedMenuItem;
+        private System.Windows.Forms.Button button1;
     }
 }
