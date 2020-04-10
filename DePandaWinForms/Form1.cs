@@ -55,12 +55,12 @@ namespace DePandaWinForms
             {
                 this.WindowState = FormWindowState.Maximized;
             }
-            if (form != null)
+
+            if (page == "instellingen")
             {
+                form = new SettingsPage(this.WindowState);
                 form.TopLevel = false;
-                form.AutoScroll = true;
                 form.Size = new Size(PagePanel.Size.Width, PagePanel.Size.Height);
-                Console.WriteLine(form.Size);
                 PagePanel.Controls.Clear();
                 PagePanel.Controls.Add(form);
                 form.Show();
@@ -121,9 +121,11 @@ namespace DePandaWinForms
         }
 
         private Form form = null;
+        private string page = "none";
 
         public void listView1_ItemSelectionChanged(object sender, ListViewItemSelectionChangedEventArgs e)
         {
+            page = "none";
             switch (e.Item.Text)
             {
                 case "Menu":
@@ -143,7 +145,8 @@ namespace DePandaWinForms
                     break;
 
                 case "Instellingen":
-                    form = new SettingsPage();
+                    page = "instellingen";
+                    form = new SettingsPage(this.WindowState);
                     break;
 
                 default:
@@ -176,7 +179,9 @@ namespace DePandaWinForms
         private void panel3_Click(object sender, EventArgs e)
         {
             this.Hide();
-            Form form = new Login(this.WindowState);
+
+            new Login(this.WindowState).Show();
+
             form.Show();
         }
 

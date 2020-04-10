@@ -36,6 +36,7 @@
             this.MenuItemList = new System.Windows.Forms.FlowLayoutPanel();
             this.Searchbox = new System.Windows.Forms.TextBox();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.DeleteButton = new System.Windows.Forms.PictureBox();
             this.NotitiesInput = new System.Windows.Forms.TextBox();
             this.PrijsInput = new System.Windows.Forms.TextBox();
             this.NieuwMenuItemTekstbox = new System.Windows.Forms.TextBox();
@@ -43,7 +44,6 @@
             this.PrijsLabel = new System.Windows.Forms.Label();
             this.OpslaanButton = new System.Windows.Forms.Button();
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
-            this.DeleteButton = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.MenuGrid)).BeginInit();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DeleteButton)).BeginInit();
@@ -105,7 +105,7 @@
             // 
             // Searchbox
             // 
-            this.Searchbox.Location = new System.Drawing.Point(57, 173);
+            this.Searchbox.Location = new System.Drawing.Point(64, 173);
             this.Searchbox.Name = "Searchbox";
             this.Searchbox.Size = new System.Drawing.Size(329, 31);
             this.Searchbox.TabIndex = 23;
@@ -126,6 +126,17 @@
             this.panel1.Size = new System.Drawing.Size(940, 591);
             this.panel1.TabIndex = 24;
             this.panel1.Visible = false;
+            // 
+            // DeleteButton
+            // 
+            this.DeleteButton.Image = global::DePandaWinForms.Properties.Resources.closehover;
+            this.DeleteButton.Location = new System.Drawing.Point(3, 496);
+            this.DeleteButton.Name = "DeleteButton";
+            this.DeleteButton.Size = new System.Drawing.Size(102, 92);
+            this.DeleteButton.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.DeleteButton.TabIndex = 9;
+            this.DeleteButton.TabStop = false;
+            this.DeleteButton.Click += new System.EventHandler(this.DeleteButtonClick);
             // 
             // NotitiesInput
             // 
@@ -198,17 +209,6 @@
             this.contextMenuStrip1.ImageScalingSize = new System.Drawing.Size(32, 32);
             this.contextMenuStrip1.Name = "contextMenuStrip1";
             this.contextMenuStrip1.Size = new System.Drawing.Size(61, 4);
-            // 
-            // DeleteButton
-            // 
-            this.DeleteButton.Image = global::DePandaWinForms.Properties.Resources.closehover;
-            this.DeleteButton.Location = new System.Drawing.Point(3, 496);
-            this.DeleteButton.Name = "DeleteButton";
-            this.DeleteButton.Size = new System.Drawing.Size(102, 92);
-            this.DeleteButton.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.DeleteButton.TabIndex = 9;
-            this.DeleteButton.TabStop = false;
-            this.DeleteButton.Click += new System.EventHandler(this.DeleteButtonClick);
             // 
             // MenuPageJelmar
             // 
