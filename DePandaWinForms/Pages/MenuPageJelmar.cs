@@ -21,7 +21,47 @@ namespace DePandaWinForms.Pages
             FillMenuItemList();
         }
 
-        private void FillMenuItemList()
+        private bool ValidateInput()
+        {
+            bool CheckInput = true;
+
+            foreach (char c in PrijsInput.Text)
+            {
+
+                if (c < '0' || c > '9')
+                {
+                    CheckInput = false;
+
+
+                    bool CheckPunctuation = Char.IsPunctuation(c);
+                    if (CheckPunctuation)
+                    {
+                        CheckInput = true;
+                    }
+                }
+
+
+            }
+
+            return CheckInput;
+            //bool CheckInput = false;
+            //foreach (char c in PrijsInput.Text)
+            //{
+            //    if ((c == '0' ^ c == '1' ^ c == '2' ^ c == '3' ^ c == '4' ^ c == '5' ^ c == '6' ^ c == '7' ^ c == '8' ^ c == '9') || c == '.')
+            //    {
+            //        CheckInput = true;
+            //    }
+            //    else 
+            //    {
+            //        CheckInput = false;
+            //        return CheckInput;
+            //    }
+            //}
+            //return CheckInput;
+
+        }
+
+    private void FillMenuItemList()
         {
             MenuItemList.Controls.Clear();
             foreach (Dish dish in DataStorageHandler.Storage.StockDishes)
@@ -74,7 +114,7 @@ namespace DePandaWinForms.Pages
             if (NieuwMenuItemTekstbox.Text == "Nieuw menu item")
             {
                 NieuwMenuItemTekstbox.Text = "";
-                NieuwMenuItemTekstbox.ForeColor = Color.Black;
+                NieuwMenuItemTekstbox.ForeColor = Color.Teal;
             }
         }
 
@@ -82,18 +122,35 @@ namespace DePandaWinForms.Pages
         {
             if (SelectedMenuItemId == null)
             {
-                Dish dish = new Dish();
-                dish.Name = NieuwMenuItemTekstbox.Text;
-                dish.Price = Convert.ToDecimal(PrijsInput.Text);
-                dish.Description = NotitiesInput.Text;
-                DataStorageHandler.Storage.StockDishes.Add(dish);
+                if (ValidateInput())
+                {
+                    Dish dish = new Dish();
+                    dish.Name = NieuwMenuItemTekstbox.Text;
+                    string PriceToComma = PrijsInput.Text.Replace('.', ',');
+                    dish.Price = Convert.ToDecimal(PriceToComma);
+                    dish.Description = NotitiesInput.Text;
+                    DataStorageHandler.Storage.StockDishes.Add(dish);
+                }
+                else 
+                {
+                    MessageBox.Show("Vul alstublieft een geldige prijs in.");
+                }
+                
             }
             else
             {
-                Dish dish = DataStorageHandler.Storage.StockDishes.Where(d => d.ID == SelectedMenuItemId).FirstOrDefault();
-                dish.Name = NieuwMenuItemTekstbox.Text;
-                dish.Price = Convert.ToDecimal(PrijsInput.Text);
-                dish.Description = NotitiesInput.Text;
+                if (ValidateInput())
+                {
+                    Dish dish = DataStorageHandler.Storage.StockDishes.Where(d => d.ID == SelectedMenuItemId).FirstOrDefault();
+                    dish.Name = NieuwMenuItemTekstbox.Text;
+                    string PriceToComma = PrijsInput.Text.Replace('.', ',');
+                    dish.Price = Convert.ToDecimal(PriceToComma);
+                    dish.Description = NotitiesInput.Text;
+                }
+                else 
+                {
+                    MessageBox.Show("Vul alstublieft een geldige prijs in.");
+                }
             }
             panel1.Visible = false;
             FillMenuItemList();
