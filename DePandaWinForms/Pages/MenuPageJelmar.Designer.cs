@@ -30,7 +30,6 @@
         {
             this.components = new System.ComponentModel.Container();
             this.Pincode = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
             this.MenuGrid = new System.Windows.Forms.DataGridView();
             this.NieuwItemButton = new System.Windows.Forms.Button();
             this.MenuItemList = new System.Windows.Forms.FlowLayoutPanel();
@@ -61,16 +60,6 @@
             this.Pincode.TabIndex = 13;
             this.Pincode.Text = "Menu";
             this.Pincode.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // textBox1
-            // 
-            this.textBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textBox1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.Location = new System.Drawing.Point(1254, 21);
-            this.textBox1.Margin = new System.Windows.Forms.Padding(6);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(298, 50);
-            this.textBox1.TabIndex = 14;
             // 
             // MenuGrid
             // 
@@ -220,7 +209,6 @@
             this.Controls.Add(this.MenuItemList);
             this.Controls.Add(this.NieuwItemButton);
             this.Controls.Add(this.MenuGrid);
-            this.Controls.Add(this.textBox1);
             this.Controls.Add(this.Pincode);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Margin = new System.Windows.Forms.Padding(6);
@@ -238,7 +226,6 @@
         #endregion
 
         private System.Windows.Forms.Label Pincode;
-        private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.DataGridView MenuGrid;
         private System.Windows.Forms.FlowLayoutPanel MenuItemList;
         private System.Windows.Forms.TextBox Searchbox;

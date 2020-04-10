@@ -39,8 +39,6 @@ namespace DePandaWinForms.Pages
                         CheckInput = true;
                     }
                 }
-
-
             }
 
             return CheckInput;
