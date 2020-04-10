@@ -101,15 +101,45 @@ namespace DePandaWinForms.Pages
         private void CreateMenuItem(object sender, EventArgs e)
         {
             string PriceToComma = PriceMenuItemInput.Text.Replace('.', ',');
-            decimal Price = Convert.ToDecimal(PriceToComma);
+            
+            if (ValidateInput(PriceToComma))
+            {
+                Console.WriteLine(PriceToComma);
+                decimal Price = Convert.ToDecimal(PriceToComma);
 
-            TempStockDishes.Add(new Dish() { Name = NameMenuItemInput.Text, Price = Price, Description = DescriptionMenuItemInput.Text });
+                TempStockDishes.Add(new Dish() { Name = NameMenuItemInput.Text, Price = Price, Description = DescriptionMenuItemInput.Text });
 
-            NameMenuItemInput.Text = "";
-            DescriptionMenuItemInput.Text = "";
-            PriceMenuItemInput.Text = "";
+                NameMenuItemInput.Text = "";
+                DescriptionMenuItemInput.Text = "";
+                PriceMenuItemInput.Text = "";
 
-            LoadInMenuItems();
+                LoadInMenuItems();
+            }
+            else
+            {
+                MessageBox.Show("U mag alleen cijfers cijfers invoeren");
+            }
+        }
+
+        private bool ValidateInput(string checkString)
+        {
+            bool CheckInput = true;
+
+            foreach(char c in PriceMenuItemInput.Text)
+            {
+
+                if (c < '0' || c > '9')
+                {
+                    CheckInput = false;
+
+                    bool CheckPunctuation = Char.IsPunctuation(c);
+                    if (CheckPunctuation)
+                    {
+                        CheckInput = true;
+                    }
+                }                
+            }
+            return CheckInput;
         }
 
         private void DeleteSelectedMenuItem(object sender, EventArgs e)
@@ -131,12 +161,17 @@ namespace DePandaWinForms.Pages
 
             string PriceToComma = PriceMenuItemInput.Text.Replace('.', ',');
 
-            menuItem.Name = NameMenuItemInput.Text;
-            menuItem.Price = Convert.ToDecimal(PriceToComma);
-            menuItem.Description = DescriptionMenuItemInput.Text;
-
-            Console.WriteLine(menuItem.Price);
-
+            if (ValidateInput(PriceToComma))
+            {
+                menuItem.Name = NameMenuItemInput.Text;
+                menuItem.Price = Convert.ToDecimal(PriceToComma);
+                menuItem.Description = DescriptionMenuItemInput.Text;
+            }
+            else
+            {
+                MessageBox.Show("U mag alleen cijfers cijfers invoeren");
+            }
+            
             LoadInMenuItems();
         }
 
