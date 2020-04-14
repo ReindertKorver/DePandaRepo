@@ -102,8 +102,6 @@
             this.SunDayClosed.TabIndex = 81;
             this.SunDayClosed.Text = "20.00";
             this.SunDayClosed.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.SunDayClosed.Enter += new System.EventHandler(this.DayINP_Enter);
-            this.SunDayClosed.Leave += new System.EventHandler(this.DayINP_leave);
             // 
             // SunDayOpen
             // 
@@ -117,8 +115,6 @@
             this.SunDayOpen.TabIndex = 80;
             this.SunDayOpen.Text = "13.00";
             this.SunDayOpen.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.SunDayOpen.Enter += new System.EventHandler(this.DayINP_Enter);
-            this.SunDayOpen.Leave += new System.EventHandler(this.DayINP_leave);
             // 
             // SaturDayOpen
             // 
@@ -132,8 +128,6 @@
             this.SaturDayOpen.TabIndex = 79;
             this.SaturDayOpen.Text = "13.00";
             this.SaturDayOpen.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.SaturDayOpen.Enter += new System.EventHandler(this.DayINP_Enter);
-            this.SaturDayOpen.Leave += new System.EventHandler(this.DayINP_leave);
             // 
             // SaturDayClosed
             // 
@@ -148,8 +142,6 @@
             this.SaturDayClosed.TabIndex = 78;
             this.SaturDayClosed.Text = "20.00";
             this.SaturDayClosed.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.SaturDayClosed.Enter += new System.EventHandler(this.DayINP_Enter);
-            this.SaturDayClosed.Leave += new System.EventHandler(this.DayINP_leave);
             // 
             // FridayOpen
             // 
@@ -163,8 +155,6 @@
             this.FridayOpen.TabIndex = 77;
             this.FridayOpen.Text = "13.00";
             this.FridayOpen.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.FridayOpen.Enter += new System.EventHandler(this.DayINP_Enter);
-            this.FridayOpen.Leave += new System.EventHandler(this.DayINP_leave);
             // 
             // FridayClosed
             // 
@@ -179,8 +169,6 @@
             this.FridayClosed.TabIndex = 76;
             this.FridayClosed.Text = "20.00";
             this.FridayClosed.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.FridayClosed.Enter += new System.EventHandler(this.DayINP_Enter);
-            this.FridayClosed.Leave += new System.EventHandler(this.DayINP_leave);
             // 
             // ThursDayClosed
             // 
@@ -195,8 +183,6 @@
             this.ThursDayClosed.TabIndex = 75;
             this.ThursDayClosed.Text = "20.00";
             this.ThursDayClosed.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.ThursDayClosed.Enter += new System.EventHandler(this.DayINP_Enter);
-            this.ThursDayClosed.Leave += new System.EventHandler(this.DayINP_leave);
             // 
             // ThursDayOpen
             // 
@@ -210,8 +196,6 @@
             this.ThursDayOpen.TabIndex = 74;
             this.ThursDayOpen.Text = "13.00";
             this.ThursDayOpen.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.ThursDayOpen.Enter += new System.EventHandler(this.DayINP_Enter);
-            this.ThursDayOpen.Leave += new System.EventHandler(this.DayINP_leave);
             // 
             // WednesDayOpen
             // 
@@ -225,8 +209,6 @@
             this.WednesDayOpen.TabIndex = 73;
             this.WednesDayOpen.Text = "13.00";
             this.WednesDayOpen.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.WednesDayOpen.Enter += new System.EventHandler(this.DayINP_Enter);
-            this.WednesDayOpen.Leave += new System.EventHandler(this.DayINP_leave);
             // 
             // TuesDayClosed
             // 
@@ -241,8 +223,6 @@
             this.TuesDayClosed.TabIndex = 71;
             this.TuesDayClosed.Text = "20.00";
             this.TuesDayClosed.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.TuesDayClosed.Enter += new System.EventHandler(this.DayINP_Enter);
-            this.TuesDayClosed.Leave += new System.EventHandler(this.DayINP_leave);
             // 
             // TuesDayOpen
             // 
@@ -256,8 +236,6 @@
             this.TuesDayOpen.TabIndex = 70;
             this.TuesDayOpen.Text = "13.00";
             this.TuesDayOpen.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.TuesDayOpen.Enter += new System.EventHandler(this.DayINP_Enter);
-            this.TuesDayOpen.Leave += new System.EventHandler(this.DayINP_leave);
             // 
             // MondayClosed
             // 
@@ -272,8 +250,6 @@
             this.MondayClosed.TabIndex = 69;
             this.MondayClosed.Text = "20.00";
             this.MondayClosed.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.MondayClosed.Enter += new System.EventHandler(this.DayINP_Enter);
-            this.MondayClosed.Leave += new System.EventHandler(this.DayINP_leave);
             // 
             // MondayOpen
             // 
@@ -288,8 +264,6 @@
             this.MondayOpen.Tag = "TestTagOpenMon";
             this.MondayOpen.Text = "13.00";
             this.MondayOpen.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.MondayOpen.Enter += new System.EventHandler(this.DayINP_Enter);
-            this.MondayOpen.Leave += new System.EventHandler(this.DayINP_leave);
             // 
             // ThursDayDot
             // 
@@ -486,8 +460,6 @@
             this.WednesDayClosed.TabIndex = 72;
             this.WednesDayClosed.Text = "20.00";
             this.WednesDayClosed.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.WednesDayClosed.Enter += new System.EventHandler(this.DayINP_Enter);
-            this.WednesDayClosed.Leave += new System.EventHandler(this.DayINP_leave);
             // 
             // Opentimes
             // 
@@ -616,8 +588,6 @@
             this.OpenALTINP.TabIndex = 92;
             this.OpenALTINP.Text = "xx:xx";
             this.OpenALTINP.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.OpenALTINP.Enter += new System.EventHandler(this.DayINP_Enter);
-            this.OpenALTINP.Leave += new System.EventHandler(this.DayINP_leave);
             // 
             // ClosedALTINP
             // 
@@ -629,8 +599,6 @@
             this.ClosedALTINP.TabIndex = 93;
             this.ClosedALTINP.Text = "xx:xx";
             this.ClosedALTINP.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.ClosedALTINP.Enter += new System.EventHandler(this.DayINP_Enter);
-            this.ClosedALTINP.Leave += new System.EventHandler(this.DayINP_leave);
             // 
             // OpenAlt
             // 
