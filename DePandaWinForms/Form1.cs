@@ -11,13 +11,11 @@ namespace DePandaWinForms
         public Form1(FormWindowState PreviousWinState)
         {
             InitializeComponent();
-           
+
             this.SetStyle(ControlStyles.ResizeRedraw, true);
             this.CenterToScreen();
             this.WindowState = PreviousWinState;
             this.KeyPreview = true;
-           
-            
         }
 
         private void Close_MouseHover(object sender, EventArgs e)
@@ -29,7 +27,6 @@ namespace DePandaWinForms
         private bool closeHover = false;
         private bool maxHover = false;
         private bool minHover = false;
-    
 
         private void Maximize_MouseHover(object sender, EventArgs e)
         {
@@ -47,6 +44,7 @@ namespace DePandaWinForms
         {
             Application.Exit();
         }
+
         private void ChangeWinState()
         {
             if (this.WindowState == FormWindowState.Maximized)
@@ -57,12 +55,12 @@ namespace DePandaWinForms
             {
                 this.WindowState = FormWindowState.Maximized;
             }
-            if (form != null)
+
+            if (page == "instellingen")
             {
+                form = new SettingsPage(this.WindowState);
                 form.TopLevel = false;
-                form.AutoScroll = true;
                 form.Size = new Size(PagePanel.Size.Width, PagePanel.Size.Height);
-                Console.WriteLine(form.Size);
                 PagePanel.Controls.Clear();
                 PagePanel.Controls.Add(form);
                 form.Show();
@@ -118,25 +116,24 @@ namespace DePandaWinForms
 
         #endregion Code for dragging window and showing shadow
 
-        
-
         private void label2_Click(object sender, EventArgs e)
         {
         }
-       
 
         private Form form = null;
+        private string page = "none";
 
         public void listView1_ItemSelectionChanged(object sender, ListViewItemSelectionChangedEventArgs e)
-        {   
+        {
+            page = "none";
             switch (e.Item.Text)
             {
                 case "Menu":
-                    form = new MenuPage();   
+                    form = new MenuPage();
                     break;
 
                 case "Reserveringen":
-                    form = new ReservationPage();                
+                    form = new ReservationPage();
                     break;
 
                 case "Bestellingen":
@@ -148,14 +145,15 @@ namespace DePandaWinForms
                     break;
 
                 case "Instellingen":
-                    form = new SettingsPage();               
+                    page = "instellingen";
+                    form = new SettingsPage(this.WindowState);
                     break;
+
                 default:
                     break;
             }
             if (form != null)
             {
-                
                 form.TopLevel = false;
                 form.AutoScroll = true;
                 form.Size = new Size(PagePanel.Size.Width, PagePanel.Size.Height);
@@ -166,9 +164,10 @@ namespace DePandaWinForms
         }
 
         public void Maximize_Click(object sender, EventArgs e)
-        {  
+        {
             ChangeWinState();
         }
+
         private void KeyBindFullScreen(object sender, KeyEventArgs e)
         {
             if (e.Modifiers == Keys.Control && e.KeyCode == Keys.F)
@@ -176,16 +175,29 @@ namespace DePandaWinForms
                 ChangeWinState();
             }
         }
+
         private void panel3_Click(object sender, EventArgs e)
         {
             this.Hide();
-            Form form = new Login(this.WindowState);      
+
+            new Login(this.WindowState).Show();
+
             form.Show();
         }
 
-
         private void listView1_SelectedIndexChanged(object sender, EventArgs e)
         {
+        }
+
+        private void MenuJelmar_Click(object sender, EventArgs e)
+        {
+            form = new MenuPageJelmar();
+            form.TopLevel = false;
+            form.AutoScroll = true;
+            form.Size = new Size(PagePanel.Size.Width, PagePanel.Size.Height);
+            PagePanel.Controls.Clear();
+            PagePanel.Controls.Add(form);
+            form.Show();
         }
     }
 }

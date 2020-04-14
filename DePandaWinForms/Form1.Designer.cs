@@ -50,6 +50,7 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
             this.PagePanel = new System.Windows.Forms.Panel();
+            this.MenuJelmar = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Minimize)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Maximize)).BeginInit();
@@ -137,6 +138,7 @@
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(45)))), ((int)(((byte)(51)))));
+            this.panel2.Controls.Add(this.MenuJelmar);
             this.panel2.Controls.Add(this.listView1);
             this.panel2.Controls.Add(this.LogoutLabel);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Left;
@@ -224,6 +226,16 @@
             this.PagePanel.Size = new System.Drawing.Size(880, 683);
             this.PagePanel.TabIndex = 2;
             // 
+            // MenuJelmar
+            // 
+            this.MenuJelmar.Location = new System.Drawing.Point(118, 18);
+            this.MenuJelmar.Name = "MenuJelmar";
+            this.MenuJelmar.Size = new System.Drawing.Size(75, 23);
+            this.MenuJelmar.TabIndex = 2;
+            this.MenuJelmar.Text = "JelmarMenu";
+            this.MenuJelmar.UseVisualStyleBackColor = true;
+            this.MenuJelmar.Click += new System.EventHandler(this.MenuJelmar_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -266,6 +278,7 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.ListView listView1;
+        private System.Windows.Forms.Button MenuJelmar;
     }
 }
 

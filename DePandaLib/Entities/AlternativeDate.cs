@@ -25,10 +25,24 @@ namespace DePandaClassLib.Entities
         {
             if (DataStorageHandler.Storage.Settings.AlternativeDates.Count == 0)
             {
+                
                 var newAltDate = new DePandaClassLib.Entities.AlternativeDate(new DateTime(2020, 04, 07, 11, 0, 0), new DateTime(2020, 04, 07, 11, 0, 0));
-
                 DataStorageHandler.Storage.Settings.AlternativeDates.Add(newAltDate);
             }
         }
     }
+    public class WeekDay
+    {
+        public WeekDay(string start, string end)
+        {
+            this.OpenTime = start;
+            this.CloseTime = end;
+        }
+
+        public string OpenTime { get; set; }
+        public string CloseTime { get; set; }
+       
+        
+    }
+
 }
