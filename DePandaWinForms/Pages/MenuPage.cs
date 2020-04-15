@@ -101,8 +101,10 @@ namespace DePandaWinForms.Pages
         private void CreateMenuItem(object sender, EventArgs e)
         {
             string PriceToComma = PriceMenuItemInput.Text.Replace('.', ',');
-            
-            if (ValidateInput(PriceToComma))
+
+            PriceToComma.Validate
+      
+            if (ValidateInput("1234567890,", PriceToComma))
             {
                 Console.WriteLine(PriceToComma);
                 decimal Price = Convert.ToDecimal(PriceToComma);
@@ -117,29 +119,20 @@ namespace DePandaWinForms.Pages
             }
             else
             {
-                MessageBox.Show("U mag alleen cijfers cijfers invoeren");
+                MessageBox.Show("U mag alleen cijfers invoeren");
             }
         }
 
-        private bool ValidateInput(string checkString)
+        private bool ValidateInput(string mayContains, string input)
         {
-            bool CheckInput = true;
-
-            foreach(char c in PriceMenuItemInput.Text)
+            foreach(char c in input)
             {
-
-                if (c < '0' || c > '9')
+                if(!mayContains.Contains(c))
                 {
-                    CheckInput = false;
-
-                    bool CheckPunctuation = Char.IsPunctuation(c);
-                    if (CheckPunctuation)
-                    {
-                        CheckInput = true;
-                    }
-                }                
+                    return false;
+                }
             }
-            return CheckInput;
+            return true;
         }
 
         private void DeleteSelectedMenuItem(object sender, EventArgs e)
@@ -161,7 +154,7 @@ namespace DePandaWinForms.Pages
 
             string PriceToComma = PriceMenuItemInput.Text.Replace('.', ',');
 
-            if (ValidateInput(PriceToComma))
+            if (ValidateInput("1234567890,", PriceToComma))
             {
                 menuItem.Name = NameMenuItemInput.Text;
                 menuItem.Price = Convert.ToDecimal(PriceToComma);
