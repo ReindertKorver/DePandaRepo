@@ -21,7 +21,6 @@ namespace DePandaWinForms.Pages
             InitializeComponent();
             LoadInMenuItems();
         }
-
         public void LoadInMenuItems()
         {
             TempStockDishes = DataStorageHandler.Storage.StockDishes;
@@ -101,8 +100,6 @@ namespace DePandaWinForms.Pages
         private void CreateMenuItem(object sender, EventArgs e)
         {
             string PriceToComma = PriceMenuItemInput.Text.Replace('.', ',');
-
-            PriceToComma.Validate
       
             if (ValidateInput("1234567890,", PriceToComma))
             {
