@@ -17,6 +17,34 @@ namespace DePandaWinForms.Pages
         {
             InitializeComponent();
             LoadALTDays();
+
+            if (WeekDayList.Count != 7)
+            {
+                WeekDayList.Clear();
+                for (int i = 0; i <7; i++)
+                {
+                    WeekDayList.Add(new DePandaClassLib.Entities.WeekDay("xx:xx", "xx:xx"));
+                }
+            }
+            
+
+                LoadWeekDays();
+
+            if (previousWinstate == FormWindowState.Maximized)
+            {
+                PanelALTDay.Location = new Point(500, 157);
+            }
+            else if (previousWinstate == FormWindowState.Normal)
+            {
+                PanelALTDay.Location = new Point(12, 466);
+            }
+            
+        }
+
+        private List<int> data;
+
+        private void LoadWeekDays()
+        {
             MondayOpen.Text = WeekDayList[0].OpenTime;
             MondayClosed.Text = WeekDayList[0].CloseTime;
 
@@ -37,86 +65,94 @@ namespace DePandaWinForms.Pages
 
             SunDayOpen.Text = WeekDayList[6].OpenTime;
             SunDayClosed.Text = WeekDayList[6].CloseTime;
-
-           
-            
-
-
-            if (previousWinstate == FormWindowState.Maximized)
-            {
-                PanelALTDay.Location = new Point(500, 157);
-            }
-            else if (previousWinstate == FormWindowState.Normal)
-            {
-                PanelALTDay.Location = new Point(12, 466);
-            }
         }
 
-        List<Int32> data;
-        private List<Int32> SplitStrings(string Time)
+        private bool ValidString(string OpenTime, string ClosedTime)
         {
-            string[] TimeList = Time.Split(':');
-            int Hour = Int32.Parse(TimeList[0]);
-            int Minute = Int32.Parse(TimeList[1]);
-            List<Int32> data  = new List<Int32> { Hour, Minute};
-            return data;
-           
-        }
 
-        private bool ValidString(string Time)
-        {
-            string[] TimeList = Time.Split(':');
-            if (TimeList.Length != 2)
+            string[] OpenTimeList = OpenTime.Split(':');
+            string[] ClosedTimeList = ClosedTime.Split(':');
+            if (OpenTimeList[0].All(Char.IsDigit) && OpenTimeList[1].All(Char.IsDigit) && ClosedTimeList[0].All(Char.IsDigit) && ClosedTimeList[1].All(Char.IsDigit))
             {
-                return false;
-            }
-            if (TimeList[0].All(char.IsDigit) && TimeList[1].All(char.IsDigit))
-            {
-                int Hour = Int32.Parse(TimeList[0]);
-                int Minute = Int32.Parse(TimeList[1]);
+                int HourOpen = int.Parse(OpenTimeList[0]);
+                int MinuteOpen = int.Parse(OpenTimeList[1]);
 
-                List<Int32> data = new List<Int32> { Hour, Minute };
-                bool allPositive = data.All(x => x > 0);
-                if (Hour < 24 && Minute < 60 && allPositive)
+                int HourClosed = int.Parse(OpenTimeList[0]);
+                int MinuteClosed = int.Parse(ClosedTimeList[1]);
+
+                data = new List<int> { HourOpen, MinuteOpen, HourClosed, MinuteClosed };
+                bool allNegative = data.All(x => x < 0);
+                if ((HourOpen >= 24 | HourClosed >= 24 | MinuteOpen >= 60 | MinuteClosed >= 60) | allNegative)
                 {
-                    return true;
+                    MessageBox.Show("De tijd die u heeft ingevoerd kan niet worden verwerkt.");
+                    return false;
                 }
                 else
                 {
-                    return false;
+                    return true;
                 }
             }
             else
             {
+                MessageBox.Show("De tijd die u heeft ingevoerd kan niet worden verwerkt.");
                 return false;
             }
-            
-           
-            
         }
-        private void AddALTDayFunc()
+
+        private bool SingleValidString(string Time)
         {
-         
-            Int32 year = DatumPrikker.Value.Year;
-            Int32 day = DatumPrikker.Value.Day;
-            Int32 month = DatumPrikker.Value.Month;
-            var newAltDate = new DePandaClassLib.Entities.AlternativeDate(new DateTime(year, day, month, SplitStrings(OpenALTINP.Text)[0], SplitStrings(OpenALTINP.Text)[1], 0), new DateTime(year, day, month, SplitStrings(ClosedALTINP.Text)[0], SplitStrings(ClosedALTINP.Text)[1], 0));
-            DataStorageHandler.Storage.Settings.AlternativeDates.Add(newAltDate);
-            MessageBox.Show("Datum succesvol toegevoed");
+
+            string[] TimeList = Time.Split(':');
+            if (TimeList.Length  != 2)
+            {
+                MessageBox.Show("De tijd die u heeft ingevoerd kan niet worden verwerkt.");
+                return false;
+            }
+            if (TimeList[0].All(Char.IsDigit) && TimeList[1].All(Char.IsDigit))
+            {
+                int Hour = int.Parse(TimeList[0]);
+                int Minute = int.Parse(TimeList[1]);
+                data = new List<int> { Hour, Minute };
+                bool allNegative = data.All(x => x < 0);
+                if ((Hour >= 24 | Minute >= 60 | allNegative))
+                {
+                    MessageBox.Show("De tijd die u heeft ingevoerd kan niet worden verwerkt.");
+                    return false;
+                }
+                else
+                {
+                    return true;
+                }
+            }
+            else
+            {
+                MessageBox.Show("De tijd die u heeft ingevoerd kan niet worden verwerkt.");
+                return false;
+            }
         }
+
+
         private void AddAltDay_Click(object sender, EventArgs e)
         {
             if (listBox1.SelectedIndex == 0 | listBox1.SelectedItem == null)
             {
-                if (ValidString(OpenALTINP.Text) && ValidString(ClosedALTINP.Text))
+                if (ValidString(OpenALTINP.Text, ClosedALTINP.Text))
                 {
-                    AddALTDayFunc();
+                    int year = DatumPrikker.Value.Year;
+                    int day = DatumPrikker.Value.Day;
+                    int month = DatumPrikker.Value.Month;
+                    ValidString(OpenALTINP.Text, ClosedALTINP.Text);
+                    var opentijd = new DateTime(year, month, day, data[0], data[1], 0);
+                    var geslotenTijd = new DateTime(year, month, day, data[2], data[3], 0);
+                    var newAltDate = new DePandaClassLib.Entities.AlternativeDate(opentijd, geslotenTijd);
+                    DataStorageHandler.Storage.Settings.AlternativeDates.Add(newAltDate);
+                    MessageBox.Show("Datum succesvol toegevoed");
+                    LoadALTDays();
                 }
                 else
                 {
                     MessageBox.Show("U heeft geen correcte tijden ingevuld");
                 }
-                
 
             }
             else
@@ -130,6 +166,7 @@ namespace DePandaWinForms.Pages
                         {
                             DataStorageHandler.Storage.Settings.AlternativeDates.Remove(date);
                             MessageBox.Show("Datum succesvol verwijdert");
+                            LoadALTDays();
                             break;
                         }
                     }
@@ -138,10 +175,11 @@ namespace DePandaWinForms.Pages
             }
         }
 
+
         private List<DePandaClassLib.Entities.AlternativeDate> days = DataStorageHandler.Storage.Settings.AlternativeDates;
         public void LoadALTDays()
         {
-
+            listBox1.Items.Clear();
             listBox1.Items.Add($"     Datum     Geopend     Gesloten");
             foreach (DePandaClassLib.Entities.AlternativeDate date in days)
             {
@@ -151,7 +189,7 @@ namespace DePandaWinForms.Pages
             {
                 WeekDayList.RemoveRange(7, (WeekDayList.Count() - 7));
             }
-          
+
         }
 
         private void listBox1_SelectedIndexChanged(object sender, EventArgs e)
@@ -181,7 +219,7 @@ namespace DePandaWinForms.Pages
         }
 
         List<DePandaClassLib.Entities.WeekDay> WeekDayList = DataStorageHandler.Storage.Settings.WeekDays;
-        private void DaysSave(object sender, EventArgs e)
+        private void DaysSave()
         {
             var maandag = new DePandaClassLib.Entities.WeekDay(MondayOpen.Text, MondayClosed.Text);
             WeekDayList.RemoveAt(0);
@@ -210,32 +248,25 @@ namespace DePandaWinForms.Pages
             var zondag = new DePandaClassLib.Entities.WeekDay(SunDayOpen.Text, SunDayClosed.Text);
             WeekDayList.RemoveAt(6);
             WeekDayList.Insert(6, zondag);
+            LoadWeekDays();
         }
 
-
-        private void DayINP_leave(object sender, EventArgs e)
+        private void TimeChange_Leave(object sender, EventArgs e)
         {
-            if (!ValidString((sender as TextBox).Text))
+            if (!SingleValidString((sender as TextBox).Text))
             {
                 (sender as TextBox).Text = "xx:xx";
-                MessageBox.Show("De tijd die u heeft opgegeven is onjuist");
             }
-            
         }
 
-        private void DayINP_Enter(object sender, EventArgs e)
+        private void TimeChange_Enter(object sender, EventArgs e)
         {
-            if ((sender as TextBox).Text != "" | (sender as TextBox).Text != "xx:xx")
-            {
-                (sender as TextBox).Text = "";
-            }
+            (sender as TextBox).Text = "";
         }
 
-        
+        private void Page_Leave(object sender, EventArgs e)
+        {
+            DaysSave();
+        }
     }
 }
-
-
-
-
-
