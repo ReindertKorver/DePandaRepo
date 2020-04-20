@@ -28,7 +28,7 @@ namespace DePandaWinForms.Pages
             {
                 ListViewItem item = new ListViewItem(reservation.OnTheNameOf);
                 item.SubItems.Add(reservation.Date.ToString("dd-MM-yyyy"));
-                item.SubItems.Add(reservation.Time.ToString("HH:mm"));
+                item.SubItems.Add(reservation.Date.ToString("HH:mm") + " - " + (reservation.Date + reservation.Time).ToString("HH:mm"));
                 item.SubItems.Add(reservation.AmountOfPeople.ToString());
                 item.SubItems.Add(reservation.Table);
                 item.SubItems.Add(reservation.Specifications);
@@ -44,8 +44,8 @@ namespace DePandaWinForms.Pages
                 if (dateTimePicker1.Value.DayOfWeek == days[i])
                 {
                     var time = dateTimePicker2.Value.TimeOfDay;
-                    var time2 = dateTimePicker2.Value.AddHours(1.99).TimeOfDay;
-                    if (time < DataStorageHandler.Storage.Settings.WeekDays[i].OpenTime.TimeOfDay || time2 > DataStorageHandler.Storage.Settings.WeekDays[i].CloseTime.TimeOfDay)
+                    var time2 = dateTimePicker3.Value.TimeOfDay;
+                    if (time < DataStorageHandler.Storage.Settings.WeekDays[i].OpenTime.TimeOfDay || time2 > DataStorageHandler.Storage.Settings.WeekDays[i].CloseTime.AddMinutes(1).TimeOfDay)
                     {
                         return false;
                     }
@@ -75,15 +75,16 @@ namespace DePandaWinForms.Pages
                 MessageBox.Show("Vul een geldige tijd in");
                 return;
             }
+            
 
-            DataStorageHandler.Storage.Reservations.Add(new DePandaLib.Entities.Reservation(){ OnTheNameOf = txtNaam.Text, Date = dateTimePicker1.Value.Date, Time = dateTimePicker2.Value, AmountOfPeople = int.Parse(txtPersonen.Text), Table = txtTafelnr.Text, Specifications = txtBijzonder.Text });
+            DateTime dateTime = new DateTime(dateTimePicker1.Value.Year, dateTimePicker1.Value.Month, dateTimePicker1.Value.Day, dateTimePicker2.Value.Hour, dateTimePicker2.Value.Minute, dateTimePicker2.Value.Second);
+            TimeSpan timeSpan = new TimeSpan(dateTimePicker3.Value.Hour - dateTimePicker2.Value.Hour, dateTimePicker3.Value.Minute - dateTimePicker2.Value.Minute, 0);
+
+            DataStorageHandler.Storage.Reservations.Add(new DePandaLib.Entities.Reservation(){ OnTheNameOf = txtNaam.Text, Date = dateTime, Time = timeSpan, AmountOfPeople = int.Parse(txtPersonen.Text), Table = txtTafelnr.Text, Specifications = txtBijzonder.Text });
             listView.Items.Clear();
             LoadExistingReservations();
 
-            txtNaam.Clear();
-            txtPersonen.Clear();
-            txtTafelnr.Clear();
-            txtBijzonder.Clear();
+            txtNaam.Clear(); txtPersonen.Clear(); txtTafelnr.Clear(); txtBijzonder.Clear();
             
         }
 
