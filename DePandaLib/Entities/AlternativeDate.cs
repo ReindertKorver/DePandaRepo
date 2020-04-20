@@ -33,14 +33,14 @@ namespace DePandaClassLib.Entities
     }
     public class WeekDay
     {
-        public WeekDay(string start, string end)
+        public WeekDay(DateTime start, DateTime end)
         {
             this.OpenTime = start;
             this.CloseTime = end;
         }
 
-        public string OpenTime { get; set; }
-        public string CloseTime { get; set; }
+        public DateTime OpenTime { get; set; }
+        public DateTime CloseTime { get; set; }
        
         
     }
