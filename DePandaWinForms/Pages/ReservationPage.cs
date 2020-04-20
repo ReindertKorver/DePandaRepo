@@ -15,7 +15,6 @@ namespace DePandaWinForms.Pages
     {
         public ReservationPage()
         {
-
             InitializeComponent();
             //DataStorageHandler.Storage.Reservations.Add(new DePandaLib.Entities.Reservation() { });
             LoadExistingReservations();
@@ -37,6 +36,25 @@ namespace DePandaWinForms.Pages
             }
         }
 
+        public bool ReservationTimeCheck()
+        {
+            DayOfWeek[] days = { DayOfWeek.Monday, DayOfWeek.Tuesday, DayOfWeek.Wednesday, DayOfWeek.Thursday, DayOfWeek.Friday, DayOfWeek.Saturday, DayOfWeek.Sunday };
+            for (int i = 0; i < days.Length - 1; i++)
+            {
+                if (dateTimePicker1.Value.DayOfWeek == days[i])
+                {
+                    var time = dateTimePicker2.Value.TimeOfDay;
+                    var time2 = dateTimePicker2.Value.AddHours(1.99).TimeOfDay;
+                    if (time < DataStorageHandler.Storage.Settings.WeekDays[i].OpenTime.TimeOfDay || time2 > DataStorageHandler.Storage.Settings.WeekDays[i].CloseTime.TimeOfDay)
+                    {
+                        return false;
+                    }
+                    return true;
+                }
+            }
+            return true;
+        }
+
         // add reservation
         private void button1_Click(object sender, EventArgs e)
         {
@@ -50,27 +68,23 @@ namespace DePandaWinForms.Pages
                 MessageBox.Show("Vul een geldige datum in");
                 return;
             }
-            
-            var time = dateTimePicker2.Value.TimeOfDay;
-            if (dateTimePicker1.Value.DayOfWeek == DayOfWeek.Monday)
-            {
-                //if(time < ... && time > ...){
-                //    MessageBox.Show("Vul een geldige tijd in");
-                //    return;
-                //}
-            }
 
+            bool x = ReservationTimeCheck();
+            if (x == false)
+            {
+                MessageBox.Show("Vul een geldige tijd in");
+                return;
+            }
 
             DataStorageHandler.Storage.Reservations.Add(new DePandaLib.Entities.Reservation(){ OnTheNameOf = txtNaam.Text, Date = dateTimePicker1.Value.Date, Time = dateTimePicker2.Value, AmountOfPeople = int.Parse(txtPersonen.Text), Table = txtTafelnr.Text, Specifications = txtBijzonder.Text });
             listView.Items.Clear();
             LoadExistingReservations();
 
             txtNaam.Clear();
-            
             txtPersonen.Clear();
             txtTafelnr.Clear();
             txtBijzonder.Clear();
-
+            
         }
 
         // remove reservation
