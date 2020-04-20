@@ -15,7 +15,7 @@ namespace DePandaLib.Entities
 
         public string OnTheNameOf { get; set; }
         public DateTime Date { get; set; }
-        public string Time { get; set; }
+        public DateTime Time { get; set; }
         public int AmountOfPeople { get; set; }
         public string Table { get; set; }
         //public List<RestaurantTable> Tables { get; set; }

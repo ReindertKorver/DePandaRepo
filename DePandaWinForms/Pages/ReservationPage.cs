@@ -28,8 +28,8 @@ namespace DePandaWinForms.Pages
             foreach (var reservation in Reservations)
             {
                 ListViewItem item = new ListViewItem(reservation.OnTheNameOf);
-                item.SubItems.Add(reservation.Date.Day + "-" + reservation.Date.Month + "-" + reservation.Date.Year.ToString());
-                item.SubItems.Add(reservation.Time);
+                item.SubItems.Add(reservation.Date.ToString("dd-MM-yyyy"));
+                item.SubItems.Add(reservation.Time.ToString("HH:mm"));
                 item.SubItems.Add(reservation.AmountOfPeople.ToString());
                 item.SubItems.Add(reservation.Table);
                 item.SubItems.Add(reservation.Specifications);
@@ -40,18 +40,33 @@ namespace DePandaWinForms.Pages
         // add reservation
         private void button1_Click(object sender, EventArgs e)
         {
-            if (string.IsNullOrEmpty(txtNaam.Text) || string.IsNullOrEmpty(txtTijd.Text) || string.IsNullOrEmpty(txtPersonen.Text) || string.IsNullOrEmpty(txtTafelnr.Text) || string.IsNullOrEmpty(txtBijzonder.Text))
+            if (string.IsNullOrEmpty(txtNaam.Text) || string.IsNullOrEmpty(txtPersonen.Text) || string.IsNullOrEmpty(txtTafelnr.Text))
             {
                 MessageBox.Show("Vul alle velden in");
                 return;
             }
+            if (dateTimePicker1.Value < DateTime.Today)
+            {
+                MessageBox.Show("Vul een geldige datum in");
+                return;
+            }
+            
+            var time = dateTimePicker2.Value.TimeOfDay;
+            if (dateTimePicker1.Value.DayOfWeek == DayOfWeek.Monday)
+            {
+                //if(time < ... && time > ...){
+                //    MessageBox.Show("Vul een geldige tijd in");
+                //    return;
+                //}
+            }
 
-            DataStorageHandler.Storage.Reservations.Add(new DePandaLib.Entities.Reservation(){ OnTheNameOf = txtNaam.Text, Date = dateTimePicker1.Value, Time = txtTijd.Text, AmountOfPeople = int.Parse(txtPersonen.Text), Table = txtTafelnr.Text, Specifications = txtBijzonder.Text });
+
+            DataStorageHandler.Storage.Reservations.Add(new DePandaLib.Entities.Reservation(){ OnTheNameOf = txtNaam.Text, Date = dateTimePicker1.Value.Date, Time = dateTimePicker2.Value, AmountOfPeople = int.Parse(txtPersonen.Text), Table = txtTafelnr.Text, Specifications = txtBijzonder.Text });
             listView.Items.Clear();
             LoadExistingReservations();
 
             txtNaam.Clear();
-            txtTijd.Clear();
+            
             txtPersonen.Clear();
             txtTafelnr.Clear();
             txtBijzonder.Clear();
