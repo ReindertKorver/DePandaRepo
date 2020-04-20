@@ -80,6 +80,7 @@
             this.MenuItemsList.FormattingEnabled = true;
             this.MenuItemsList.Location = new System.Drawing.Point(0, 98);
             this.MenuItemsList.Name = "MenuItemsList";
+            this.MenuItemsList.ScrollAlwaysVisible = true;
             this.MenuItemsList.Size = new System.Drawing.Size(232, 303);
             this.MenuItemsList.TabIndex = 16;
             this.MenuItemsList.SelectedIndexChanged += new System.EventHandler(this.MenuItemsList_SelectedIndexChanged);
