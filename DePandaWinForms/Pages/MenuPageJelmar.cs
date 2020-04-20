@@ -59,7 +59,7 @@ namespace DePandaWinForms.Pages
 
         }
 
-    private void FillMenuItemList()
+        private void FillMenuItemList()
         {
             MenuItemList.Controls.Clear();
             foreach (Dish dish in DataStorageHandler.Storage.StockDishes)
@@ -72,6 +72,7 @@ namespace DePandaWinForms.Pages
                 MenuItemList.Controls.Add(btn);
             }
         }
+
         private void MenuItemClick(object sender, EventArgs e)
         {
             var dish = (sender as Button).Tag as Dish;

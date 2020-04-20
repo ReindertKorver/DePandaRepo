@@ -50,7 +50,6 @@
     <Compile Include="Entities\DataStorage.cs" />
     <Compile Include="Entities\Dish.cs" />
     <Compile Include="Entities\Identifier.cs" />
-    <Compile Include="Entities\MenuItem.cs" />
     <Compile Include="Entities\Order.cs" />
     <Compile Include="Entities\Reservation.cs" />
     <Compile Include="Entities\RestaurantTable.cs" />
