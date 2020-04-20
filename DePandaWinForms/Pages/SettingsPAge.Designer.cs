@@ -33,11 +33,13 @@
             this.OpenAlternative = new System.Windows.Forms.Label();
             this.ClosedAlternative = new System.Windows.Forms.Label();
             this.PanelAlternativeDay = new System.Windows.Forms.Panel();
+            this.AlternativeDayClosedPicker = new System.Windows.Forms.DateTimePicker();
+            this.AlternativeDayOpenPicker = new System.Windows.Forms.DateTimePicker();
             this.DeleteAlternativeDay = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
             this.MondayClosedCheck = new System.Windows.Forms.CheckBox();
-            this.checkBox1 = new System.Windows.Forms.CheckBox();
-            this.checkBox2 = new System.Windows.Forms.CheckBox();
+            this.TuesdayClosedCheck = new System.Windows.Forms.CheckBox();
+            this.WednesdayClosedCheck = new System.Windows.Forms.CheckBox();
             this.SundayText = new System.Windows.Forms.Label();
             this.SaturdayText = new System.Windows.Forms.Label();
             this.FridayText = new System.Windows.Forms.Label();
@@ -68,8 +70,10 @@
             this.SaturdayClosedPicker = new System.Windows.Forms.DateTimePicker();
             this.SundayOpenPicker = new System.Windows.Forms.DateTimePicker();
             this.SundayClosedPicker = new System.Windows.Forms.DateTimePicker();
-            this.AlternativeDayOpenPicker = new System.Windows.Forms.DateTimePicker();
-            this.AlternativeDayClosedPicker = new System.Windows.Forms.DateTimePicker();
+            this.ThursdayClosedCheck = new System.Windows.Forms.CheckBox();
+            this.FridayClosedCheck = new System.Windows.Forms.CheckBox();
+            this.SaturdayClosedCheck = new System.Windows.Forms.CheckBox();
+            this.SundayClosedCheck = new System.Windows.Forms.CheckBox();
             this.tableLayoutPanel1.SuspendLayout();
             this.PanelAlternativeDay.SuspendLayout();
             this.Opentimes.SuspendLayout();
@@ -210,10 +214,32 @@
             this.PanelAlternativeDay.Controls.Add(this.AddAlternativeDay);
             this.PanelAlternativeDay.Controls.Add(this.OpenAlternative);
             this.PanelAlternativeDay.Controls.Add(this.DatePlanner);
-            this.PanelAlternativeDay.Location = new System.Drawing.Point(576, 82);
+            this.PanelAlternativeDay.Location = new System.Drawing.Point(525, 82);
             this.PanelAlternativeDay.Name = "PanelAlternativeDay";
             this.PanelAlternativeDay.Size = new System.Drawing.Size(471, 356);
             this.PanelAlternativeDay.TabIndex = 97;
+            // 
+            // AlternativeDayClosedPicker
+            // 
+            this.AlternativeDayClosedPicker.CustomFormat = "HH:mm";
+            this.AlternativeDayClosedPicker.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.AlternativeDayClosedPicker.Location = new System.Drawing.Point(388, 99);
+            this.AlternativeDayClosedPicker.Name = "AlternativeDayClosedPicker";
+            this.AlternativeDayClosedPicker.ShowUpDown = true;
+            this.AlternativeDayClosedPicker.Size = new System.Drawing.Size(73, 20);
+            this.AlternativeDayClosedPicker.TabIndex = 116;
+            this.AlternativeDayClosedPicker.Value = new System.DateTime(2020, 4, 20, 0, 0, 0, 0);
+            // 
+            // AlternativeDayOpenPicker
+            // 
+            this.AlternativeDayOpenPicker.CustomFormat = "HH:mm";
+            this.AlternativeDayOpenPicker.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.AlternativeDayOpenPicker.Location = new System.Drawing.Point(278, 99);
+            this.AlternativeDayOpenPicker.Name = "AlternativeDayOpenPicker";
+            this.AlternativeDayOpenPicker.ShowUpDown = true;
+            this.AlternativeDayOpenPicker.Size = new System.Drawing.Size(73, 20);
+            this.AlternativeDayOpenPicker.TabIndex = 115;
+            this.AlternativeDayOpenPicker.Value = new System.DateTime(2020, 4, 20, 0, 0, 0, 0);
             // 
             // DeleteAlternativeDay
             // 
@@ -233,7 +259,7 @@
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
             this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(112)))), ((int)(((byte)(112)))), ((int)(((byte)(112)))));
-            this.label3.Location = new System.Drawing.Point(3, 20);
+            this.label3.Location = new System.Drawing.Point(3, 19);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(204, 20);
             this.label3.TabIndex = 98;
@@ -242,35 +268,39 @@
             // MondayClosedCheck
             // 
             this.MondayClosedCheck.AutoSize = true;
+            this.MondayClosedCheck.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.MondayClosedCheck.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.MondayClosedCheck.Location = new System.Drawing.Point(406, 184);
+            this.MondayClosedCheck.Location = new System.Drawing.Point(325, 185);
             this.MondayClosedCheck.Name = "MondayClosedCheck";
-            this.MondayClosedCheck.Size = new System.Drawing.Size(164, 24);
+            this.MondayClosedCheck.Size = new System.Drawing.Size(93, 24);
             this.MondayClosedCheck.TabIndex = 98;
-            this.MondayClosedCheck.Text = "Maandag Gesloten";
+            this.MondayClosedCheck.Text = "Gesloten";
             this.MondayClosedCheck.UseVisualStyleBackColor = true;
+            this.MondayClosedCheck.Click += new System.EventHandler(this.CheckBox);
             // 
-            // checkBox1
+            // TuesdayClosedCheck
             // 
-            this.checkBox1.AutoSize = true;
-            this.checkBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.checkBox1.Location = new System.Drawing.Point(406, 220);
-            this.checkBox1.Name = "checkBox1";
-            this.checkBox1.Size = new System.Drawing.Size(164, 24);
-            this.checkBox1.TabIndex = 99;
-            this.checkBox1.Text = "Maandag Gesloten";
-            this.checkBox1.UseVisualStyleBackColor = true;
+            this.TuesdayClosedCheck.AutoSize = true;
+            this.TuesdayClosedCheck.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.TuesdayClosedCheck.Location = new System.Drawing.Point(325, 221);
+            this.TuesdayClosedCheck.Name = "TuesdayClosedCheck";
+            this.TuesdayClosedCheck.Size = new System.Drawing.Size(93, 24);
+            this.TuesdayClosedCheck.TabIndex = 99;
+            this.TuesdayClosedCheck.Text = "Gesloten";
+            this.TuesdayClosedCheck.UseVisualStyleBackColor = true;
+            this.TuesdayClosedCheck.Click += new System.EventHandler(this.CheckBox);
             // 
-            // checkBox2
+            // WednesdayClosedCheck
             // 
-            this.checkBox2.AutoSize = true;
-            this.checkBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.checkBox2.Location = new System.Drawing.Point(406, 255);
-            this.checkBox2.Name = "checkBox2";
-            this.checkBox2.Size = new System.Drawing.Size(164, 24);
-            this.checkBox2.TabIndex = 100;
-            this.checkBox2.Text = "Maandag Gesloten";
-            this.checkBox2.UseVisualStyleBackColor = true;
+            this.WednesdayClosedCheck.AutoSize = true;
+            this.WednesdayClosedCheck.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.WednesdayClosedCheck.Location = new System.Drawing.Point(325, 257);
+            this.WednesdayClosedCheck.Name = "WednesdayClosedCheck";
+            this.WednesdayClosedCheck.Size = new System.Drawing.Size(93, 24);
+            this.WednesdayClosedCheck.TabIndex = 100;
+            this.WednesdayClosedCheck.Text = "Gesloten";
+            this.WednesdayClosedCheck.UseVisualStyleBackColor = true;
+            this.WednesdayClosedCheck.Click += new System.EventHandler(this.CheckBox);
             // 
             // SundayText
             // 
@@ -492,6 +522,7 @@
             this.MondayOpenPicker.ShowUpDown = true;
             this.MondayOpenPicker.Size = new System.Drawing.Size(73, 20);
             this.MondayOpenPicker.TabIndex = 101;
+            this.MondayOpenPicker.KeyUp += new System.Windows.Forms.KeyEventHandler(this.TimeChanged);
             // 
             // MondayClosedPicker
             // 
@@ -502,6 +533,7 @@
             this.MondayClosedPicker.ShowUpDown = true;
             this.MondayClosedPicker.Size = new System.Drawing.Size(73, 20);
             this.MondayClosedPicker.TabIndex = 102;
+            this.MondayClosedPicker.KeyUp += new System.Windows.Forms.KeyEventHandler(this.TimeChanged);
             // 
             // TuesdayOpenPicker
             // 
@@ -512,6 +544,7 @@
             this.TuesdayOpenPicker.ShowUpDown = true;
             this.TuesdayOpenPicker.Size = new System.Drawing.Size(73, 20);
             this.TuesdayOpenPicker.TabIndex = 103;
+            this.TuesdayOpenPicker.KeyUp += new System.Windows.Forms.KeyEventHandler(this.TimeChanged);
             // 
             // TuesdayClosedPicker
             // 
@@ -522,6 +555,7 @@
             this.TuesdayClosedPicker.ShowUpDown = true;
             this.TuesdayClosedPicker.Size = new System.Drawing.Size(73, 20);
             this.TuesdayClosedPicker.TabIndex = 104;
+            this.TuesdayClosedPicker.KeyUp += new System.Windows.Forms.KeyEventHandler(this.TimeChanged);
             // 
             // WednesdayOpenPicker
             // 
@@ -532,6 +566,7 @@
             this.WednesdayOpenPicker.ShowUpDown = true;
             this.WednesdayOpenPicker.Size = new System.Drawing.Size(73, 20);
             this.WednesdayOpenPicker.TabIndex = 105;
+            this.WednesdayOpenPicker.KeyUp += new System.Windows.Forms.KeyEventHandler(this.TimeChanged);
             // 
             // WednesdayClosedPicker
             // 
@@ -542,6 +577,7 @@
             this.WednesdayClosedPicker.ShowUpDown = true;
             this.WednesdayClosedPicker.Size = new System.Drawing.Size(73, 20);
             this.WednesdayClosedPicker.TabIndex = 106;
+            this.WednesdayClosedPicker.KeyUp += new System.Windows.Forms.KeyEventHandler(this.TimeChanged);
             // 
             // ThursdayOpenPicker
             // 
@@ -552,6 +588,7 @@
             this.ThursdayOpenPicker.ShowUpDown = true;
             this.ThursdayOpenPicker.Size = new System.Drawing.Size(73, 20);
             this.ThursdayOpenPicker.TabIndex = 107;
+            this.ThursdayOpenPicker.KeyUp += new System.Windows.Forms.KeyEventHandler(this.TimeChanged);
             // 
             // ThursdayClosedPicker
             // 
@@ -562,6 +599,7 @@
             this.ThursdayClosedPicker.ShowUpDown = true;
             this.ThursdayClosedPicker.Size = new System.Drawing.Size(73, 20);
             this.ThursdayClosedPicker.TabIndex = 108;
+            this.ThursdayClosedPicker.KeyUp += new System.Windows.Forms.KeyEventHandler(this.TimeChanged);
             // 
             // FridayOpenPicker
             // 
@@ -572,6 +610,7 @@
             this.FridayOpenPicker.ShowUpDown = true;
             this.FridayOpenPicker.Size = new System.Drawing.Size(73, 20);
             this.FridayOpenPicker.TabIndex = 109;
+            this.FridayOpenPicker.KeyUp += new System.Windows.Forms.KeyEventHandler(this.TimeChanged);
             // 
             // FridayClosedPicker
             // 
@@ -582,6 +621,7 @@
             this.FridayClosedPicker.ShowUpDown = true;
             this.FridayClosedPicker.Size = new System.Drawing.Size(73, 20);
             this.FridayClosedPicker.TabIndex = 110;
+            this.FridayClosedPicker.KeyUp += new System.Windows.Forms.KeyEventHandler(this.TimeChanged);
             // 
             // SaturdayOpenPicker
             // 
@@ -592,6 +632,7 @@
             this.SaturdayOpenPicker.ShowUpDown = true;
             this.SaturdayOpenPicker.Size = new System.Drawing.Size(73, 20);
             this.SaturdayOpenPicker.TabIndex = 111;
+            this.SaturdayOpenPicker.KeyUp += new System.Windows.Forms.KeyEventHandler(this.TimeChanged);
             // 
             // SaturdayClosedPicker
             // 
@@ -602,6 +643,7 @@
             this.SaturdayClosedPicker.ShowUpDown = true;
             this.SaturdayClosedPicker.Size = new System.Drawing.Size(73, 20);
             this.SaturdayClosedPicker.TabIndex = 112;
+            this.SaturdayClosedPicker.KeyUp += new System.Windows.Forms.KeyEventHandler(this.TimeChanged);
             // 
             // SundayOpenPicker
             // 
@@ -612,6 +654,7 @@
             this.SundayOpenPicker.ShowUpDown = true;
             this.SundayOpenPicker.Size = new System.Drawing.Size(73, 20);
             this.SundayOpenPicker.TabIndex = 113;
+            this.SundayOpenPicker.KeyUp += new System.Windows.Forms.KeyEventHandler(this.TimeChanged);
             // 
             // SundayClosedPicker
             // 
@@ -622,28 +665,55 @@
             this.SundayClosedPicker.ShowUpDown = true;
             this.SundayClosedPicker.Size = new System.Drawing.Size(73, 20);
             this.SundayClosedPicker.TabIndex = 114;
+            this.SundayClosedPicker.KeyUp += new System.Windows.Forms.KeyEventHandler(this.TimeChanged);
             // 
-            // AlternativeDayOpenPicker
+            // ThursdayClosedCheck
             // 
-            this.AlternativeDayOpenPicker.CustomFormat = "HH:mm";
-            this.AlternativeDayOpenPicker.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.AlternativeDayOpenPicker.Location = new System.Drawing.Point(278, 99);
-            this.AlternativeDayOpenPicker.Name = "AlternativeDayOpenPicker";
-            this.AlternativeDayOpenPicker.ShowUpDown = true;
-            this.AlternativeDayOpenPicker.Size = new System.Drawing.Size(73, 20);
-            this.AlternativeDayOpenPicker.TabIndex = 115;
-            this.AlternativeDayOpenPicker.Value = new System.DateTime(2020, 4, 20, 0, 0, 0, 0);
+            this.ThursdayClosedCheck.AutoSize = true;
+            this.ThursdayClosedCheck.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.ThursdayClosedCheck.Location = new System.Drawing.Point(325, 293);
+            this.ThursdayClosedCheck.Name = "ThursdayClosedCheck";
+            this.ThursdayClosedCheck.Size = new System.Drawing.Size(93, 24);
+            this.ThursdayClosedCheck.TabIndex = 101;
+            this.ThursdayClosedCheck.Text = "Gesloten";
+            this.ThursdayClosedCheck.UseVisualStyleBackColor = true;
+            this.ThursdayClosedCheck.Click += new System.EventHandler(this.CheckBox);
             // 
-            // AlternativeDayClosedPicker
+            // FridayClosedCheck
             // 
-            this.AlternativeDayClosedPicker.CustomFormat = "HH:mm";
-            this.AlternativeDayClosedPicker.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.AlternativeDayClosedPicker.Location = new System.Drawing.Point(388, 99);
-            this.AlternativeDayClosedPicker.Name = "AlternativeDayClosedPicker";
-            this.AlternativeDayClosedPicker.ShowUpDown = true;
-            this.AlternativeDayClosedPicker.Size = new System.Drawing.Size(73, 20);
-            this.AlternativeDayClosedPicker.TabIndex = 116;
-            this.AlternativeDayClosedPicker.Value = new System.DateTime(2020, 4, 20, 0, 0, 0, 0);
+            this.FridayClosedCheck.AutoSize = true;
+            this.FridayClosedCheck.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.FridayClosedCheck.Location = new System.Drawing.Point(325, 329);
+            this.FridayClosedCheck.Name = "FridayClosedCheck";
+            this.FridayClosedCheck.Size = new System.Drawing.Size(93, 24);
+            this.FridayClosedCheck.TabIndex = 102;
+            this.FridayClosedCheck.Text = "Gesloten";
+            this.FridayClosedCheck.UseVisualStyleBackColor = true;
+            this.FridayClosedCheck.Click += new System.EventHandler(this.CheckBox);
+            // 
+            // SaturdayClosedCheck
+            // 
+            this.SaturdayClosedCheck.AutoSize = true;
+            this.SaturdayClosedCheck.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.SaturdayClosedCheck.Location = new System.Drawing.Point(325, 365);
+            this.SaturdayClosedCheck.Name = "SaturdayClosedCheck";
+            this.SaturdayClosedCheck.Size = new System.Drawing.Size(93, 24);
+            this.SaturdayClosedCheck.TabIndex = 103;
+            this.SaturdayClosedCheck.Text = "Gesloten";
+            this.SaturdayClosedCheck.UseVisualStyleBackColor = true;
+            this.SaturdayClosedCheck.Click += new System.EventHandler(this.CheckBox);
+            // 
+            // SundayClosedCheck
+            // 
+            this.SundayClosedCheck.AutoSize = true;
+            this.SundayClosedCheck.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.SundayClosedCheck.Location = new System.Drawing.Point(325, 401);
+            this.SundayClosedCheck.Name = "SundayClosedCheck";
+            this.SundayClosedCheck.Size = new System.Drawing.Size(93, 24);
+            this.SundayClosedCheck.TabIndex = 104;
+            this.SundayClosedCheck.Text = "Gesloten";
+            this.SundayClosedCheck.UseVisualStyleBackColor = true;
+            this.SundayClosedCheck.Click += new System.EventHandler(this.CheckBox);
             // 
             // SettingsPage
             // 
@@ -651,8 +721,12 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             this.BackColor = System.Drawing.SystemColors.Control;
             this.ClientSize = new System.Drawing.Size(1067, 828);
-            this.Controls.Add(this.checkBox2);
-            this.Controls.Add(this.checkBox1);
+            this.Controls.Add(this.SundayClosedCheck);
+            this.Controls.Add(this.SaturdayClosedCheck);
+            this.Controls.Add(this.FridayClosedCheck);
+            this.Controls.Add(this.ThursdayClosedCheck);
+            this.Controls.Add(this.WednesdayClosedCheck);
+            this.Controls.Add(this.TuesdayClosedCheck);
             this.Controls.Add(this.MondayClosedCheck);
             this.Controls.Add(this.PanelAlternativeDay);
             this.Controls.Add(this.Opentimes);
@@ -689,8 +763,8 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Button DeleteAlternativeDay;
         private System.Windows.Forms.CheckBox MondayClosedCheck;
-        private System.Windows.Forms.CheckBox checkBox1;
-        private System.Windows.Forms.CheckBox checkBox2;
+        private System.Windows.Forms.CheckBox TuesdayClosedCheck;
+        private System.Windows.Forms.CheckBox WednesdayClosedCheck;
         private System.Windows.Forms.Label SundayText;
         private System.Windows.Forms.Label SaturdayText;
         private System.Windows.Forms.Label FridayText;
@@ -723,5 +797,9 @@
         private System.Windows.Forms.DateTimePicker SundayClosedPicker;
         private System.Windows.Forms.DateTimePicker AlternativeDayClosedPicker;
         private System.Windows.Forms.DateTimePicker AlternativeDayOpenPicker;
+        private System.Windows.Forms.CheckBox ThursdayClosedCheck;
+        private System.Windows.Forms.CheckBox FridayClosedCheck;
+        private System.Windows.Forms.CheckBox SaturdayClosedCheck;
+        private System.Windows.Forms.CheckBox SundayClosedCheck;
     }
 }

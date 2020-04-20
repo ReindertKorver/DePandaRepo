@@ -14,8 +14,7 @@ namespace DePandaWinForms.Pages
         {
             InitializeComponent();
             LoadAlternativeDays();
-
-
+            
             if (WeekDayList.Count != 7)
             {
                 WeekDayList.Clear();
@@ -24,11 +23,10 @@ namespace DePandaWinForms.Pages
                     WeekDayList.Add(new DePandaClassLib.Entities.WeekDay(new DateTime(2020, 04, 07, 11, 0, 0), new DateTime(2020, 04, 07, 11, 0, 0)));
                 }
             }
-            LoadWeekDays();
-
+            ChangeCheckedState();
             if (previousWinstate == FormWindowState.Maximized)
             {
-                PanelAlternativeDay.Location = new Point(493, 82);
+                PanelAlternativeDay.Location = new Point(525, 82);
             }
             else if (previousWinstate == FormWindowState.Normal)
             {
@@ -37,8 +35,6 @@ namespace DePandaWinForms.Pages
 
         }
         List<DePandaClassLib.Entities.WeekDay> WeekDayList = DataStorageHandler.Storage.Settings.WeekDays;
-        private List<int> data = new List<int>();
-
         private void LoadWeekDays()
         {
             MondayOpenPicker.Text = WeekDayList[0].OpenTime.ToString("HH:mm");
@@ -63,6 +59,7 @@ namespace DePandaWinForms.Pages
             SundayClosedPicker.Text = WeekDayList[6].CloseTime.ToString("HH:mm");
         }
 
+       
         private void AddAlternativeDay_Click(object sender, EventArgs e)
         {
             int year = DatePlanner.Value.Year;
@@ -96,6 +93,7 @@ namespace DePandaWinForms.Pages
 
         private void SaveRegularDays()
         {
+            
             var maandag = new DePandaClassLib.Entities.WeekDay(MondayOpenPicker.Value, MondayClosedPicker.Value);
             WeekDayList.RemoveAt(0);
             WeekDayList.Insert(0, maandag);
@@ -126,9 +124,6 @@ namespace DePandaWinForms.Pages
             LoadWeekDays();
         }
 
-
-
-
         private void DeleteAlternativeDayClick(object sender, EventArgs e)
         {
             foreach (DePandaClassLib.Entities.AlternativeDate date in ListOfAlternativeDates)
@@ -136,8 +131,7 @@ namespace DePandaWinForms.Pages
                 if (ListOfAlternativeDays.SelectedItem.ToString().Contains(date.DateString))
                 {
                     DataStorageHandler.Storage.Settings.AlternativeDates.Remove(date);
-                    MessageBox.Show("Datum succesvol verwijdert");
-                    LoadAlternativeDays();              
+                    LoadAlternativeDays();
                     break;
                 }
             }
@@ -159,6 +153,111 @@ namespace DePandaWinForms.Pages
         private void PageLeave(object sender, EventArgs e)
         {
             SaveRegularDays();
+        }
+
+        private void CheckBox(object sender, EventArgs e)
+        {
+            string day = ((sender as CheckBox).Name).ToString().Replace("ClosedCheck", "");
+
+            if ((sender as CheckBox).Checked == true)
+            { 
+                int i = 0;
+                if (day == "Monday")
+                    i = 0;
+                if (day == "Tuesday")
+                    i = 1;
+                if (day == "Wednesday")
+                    i = 2;
+                if (day == "Thursday")
+                    i = 3;
+                if (day == "Friday")
+                    i = 4;
+                if (day == "Saturday")
+                    i = 5;
+                if (day == "Sunday")
+                    i = 6;
+
+                var ClosedDay = new DePandaClassLib.Entities.WeekDay(new DateTime(2020, 04, 07, 0, 0, 0), new DateTime(2020, 05, 07, 0, 0, 0));
+                WeekDayList.RemoveAt(i);
+                WeekDayList.Insert(i, ClosedDay);
+                LoadWeekDays();
+            }
+
+        }
+
+        private void TimeChanged(object sender, KeyEventArgs e)
+        {
+            SaveRegularDays();
+            ChangeCheckedState();
+        }
+        private void ChangeCheckedState()
+        {
+            for (int i = 0; i < WeekDayList.Count(); i++)
+            {
+                if (WeekDayList[i].OpenTime.Hour.Equals(WeekDayList[i].CloseTime.Hour) && WeekDayList[i].OpenTime.Minute.Equals(WeekDayList[i].CloseTime.Minute))
+                {
+                    if (i == 0)
+                    {
+                        MondayClosedCheck.Checked = true;
+                    }
+                    else if (i == 1)
+                    {
+                        TuesdayClosedCheck.Checked = true;
+                    }
+                    else if (i == 2)
+                    {
+                        WednesdayClosedCheck.Checked = true;
+                    }
+                    else if (i == 3)
+                    {
+                        ThursdayClosedCheck.Checked = true;
+                    }
+                    else if (i == 4)
+                    {
+                        FridayClosedCheck.Checked = true;
+                    }
+                    else if (i == 5)
+                    {
+                        SaturdayClosedCheck.Checked = true;
+                    }
+                    else if (i == 6)
+                    {
+                        SundayClosedCheck.Checked = true;
+                    }
+                }
+                else
+                {
+                    if (i == 0)
+                    {
+                        MondayClosedCheck.Checked = false;
+                    }
+                    else if (i == 1)
+                    {
+                        TuesdayClosedCheck.Checked = false;
+                    }
+                    else if (i == 2)
+                    {
+                        WednesdayClosedCheck.Checked = false;
+                    }
+                    else if (i == 3)
+                    {
+                        ThursdayClosedCheck.Checked = false;
+                    }
+                    else if (i == 4)
+                    {
+                        FridayClosedCheck.Checked = false;
+                    }
+                    else if (i == 5)
+                    {
+                        SaturdayClosedCheck.Checked = false;
+                    }
+                    else if (i == 6)
+                    {
+                        SundayClosedCheck.Checked = false;
+                    }
+                }
+            }
+            LoadWeekDays();
         }
     }
 }
