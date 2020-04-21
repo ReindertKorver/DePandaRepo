@@ -1,4 +1,6 @@
-﻿using DePandaWinForms.Design;
+﻿using DePandaLib.Entities;
+using DePandaWinForms.Design;
+using DePandaWinForms.Pages.OrderPage;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -14,31 +16,67 @@ namespace DePandaWinForms.Pages
 {
     public partial class OrdersPage : Form
     {
+        public Order CurrentOrder;
+
         public OrdersPage()
         {
             InitializeComponent();
-
-            //LeftPanel.Size =
         }
 
-        protected override void OnSizeChanged(EventArgs e)
+        private void NewOrderBtn_Click(object sender, EventArgs e)
         {
-            base.OnSizeChanged(e);
-            MainPanel.Size = this.Size;
-            LeftPanel.Size = new Size(MainPanel.Size.Width / 3, MainPanel.Size.Height);
+            CheckOrderAndContinue(NewOrder);
         }
 
-        private void LeftEditPanel_Paint(object sender, PaintEventArgs e)
+        private void CheckOrderAndContinue(Action continueation)
         {
-            Graphics g = e.Graphics;
-            g.SmoothingMode = SmoothingMode.AntiAlias;
-            g.FillRoundedRectangle(new SolidBrush(Color.White), 10, 10, this.Width - 40, this.Height - 60, 10);
-            SolidBrush brush = new SolidBrush(
-                Color.White
-                );
-            g.FillRoundedRectangle(brush, 12, 12, this.Width - 44, this.Height - 64, 10);
-            g.DrawRoundedRectangle(new Pen(ControlPaint.Light(Color.White, 0.00f)), 12, 12, this.Width - 44, this.Height - 64, 10);
-            g.FillRoundedRectangle(new SolidBrush(Color.White), 12, 12 + ((this.Height - 64) / 2), this.Width - 44, (this.Height - 64) / 2, 10);
+            if (CurrentOrder != null)
+            {
+                DialogResult res = MessageBox.Show("U bent al een bestelling aan het aanmaken/wijzigen, wilt u doorgaan zonder op te slaan?", "Let op!", MessageBoxButtons.YesNo);
+                if (res == DialogResult.Yes)
+                {
+                    continueation();
+                }
+            }
+            else
+            {
+                continueation();
+            }
+        }
+
+        public void NewOrder()
+        {
+            RightEditPanel.Controls.Clear();
+            CurrentOrder = new Order();
+
+            NewOrder newOrder = new NewOrder(ref CurrentOrder);
+            newOrder.TopLevel = false;
+            newOrder.Dock = DockStyle.Fill;
+            RightEditPanel.Controls.Add(newOrder);
+            newOrder.Show();
+        }
+
+        public void EditOrder()
+        {
+            if (CurrentOrder == null)
+            {
+                //Almost impossible
+                MessageBox.Show("U hebt geen bestelling geselecteerd", "Let op!");
+            }
+            else
+            {
+                RightEditPanel.Controls.Clear();
+                EditOrder editOrder = new EditOrder(ref CurrentOrder);
+                editOrder.TopLevel = false;
+                editOrder.Dock = DockStyle.Fill;
+                RightEditPanel.Controls.Add(editOrder);
+                editOrder.Show();
+            }
+        }
+
+        private void OrderListView_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            CheckOrderAndContinue(EditOrder);
         }
     }
 }

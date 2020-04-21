@@ -38,9 +38,13 @@ namespace DePandaWinForms.Pages
             this.LeftPanel = new System.Windows.Forms.Panel();
             this.RightEditPanel = new DePandaWinForms.Design.PPanel();
             this.LeftEditPanel = new DePandaWinForms.Design.PPanel();
+            this.NewOrderBtn = new System.Windows.Forms.Button();
+            this.OrderListView = new System.Windows.Forms.ListView();
+            this.textBox1 = new System.Windows.Forms.TextBox();
             this.MainPanel.SuspendLayout();
             this.panel2.SuspendLayout();
             this.LeftPanel.SuspendLayout();
+            this.LeftEditPanel.SuspendLayout();
             this.SuspendLayout();
             // 
             // Title
@@ -98,6 +102,7 @@ namespace DePandaWinForms.Pages
             this.RightEditPanel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.RightEditPanel.Location = new System.Drawing.Point(5, 10);
             this.RightEditPanel.Name = "RightEditPanel";
+            this.RightEditPanel.Padding = new System.Windows.Forms.Padding(10);
             this.RightEditPanel.Size = new System.Drawing.Size(535, 393);
             this.RightEditPanel.TabIndex = 0;
             // 
@@ -105,12 +110,57 @@ namespace DePandaWinForms.Pages
             // 
             this.LeftEditPanel.BackColor = System.Drawing.Color.White;
             this.LeftEditPanel.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.LeftEditPanel.Controls.Add(this.NewOrderBtn);
+            this.LeftEditPanel.Controls.Add(this.OrderListView);
+            this.LeftEditPanel.Controls.Add(this.textBox1);
             this.LeftEditPanel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.LeftEditPanel.Location = new System.Drawing.Point(10, 10);
             this.LeftEditPanel.Name = "LeftEditPanel";
+            this.LeftEditPanel.Padding = new System.Windows.Forms.Padding(10);
             this.LeftEditPanel.Size = new System.Drawing.Size(235, 393);
             this.LeftEditPanel.TabIndex = 0;
-            this.LeftEditPanel.Paint += new System.Windows.Forms.PaintEventHandler(this.LeftEditPanel_Paint);
+            // 
+            // NewOrderBtn
+            // 
+            this.NewOrderBtn.BackColor = System.Drawing.Color.Transparent;
+            this.NewOrderBtn.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.NewOrderBtn.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(137)))), ((int)(((byte)(145)))));
+            this.NewOrderBtn.FlatAppearance.BorderSize = 2;
+            this.NewOrderBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.NewOrderBtn.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.NewOrderBtn.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(137)))), ((int)(((byte)(145)))));
+            this.NewOrderBtn.Location = new System.Drawing.Point(10, 355);
+            this.NewOrderBtn.Name = "NewOrderBtn";
+            this.NewOrderBtn.Size = new System.Drawing.Size(215, 28);
+            this.NewOrderBtn.TabIndex = 13;
+            this.NewOrderBtn.Text = "Nieuwe bestelling";
+            this.NewOrderBtn.UseVisualStyleBackColor = false;
+            this.NewOrderBtn.Click += new System.EventHandler(this.NewOrderBtn_Click);
+            // 
+            // OrderListView
+            // 
+            this.OrderListView.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(235)))), ((int)(((byte)(235)))));
+            this.OrderListView.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.OrderListView.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.OrderListView.HideSelection = false;
+            this.OrderListView.Location = new System.Drawing.Point(10, 43);
+            this.OrderListView.Name = "OrderListView";
+            this.OrderListView.Size = new System.Drawing.Size(215, 340);
+            this.OrderListView.TabIndex = 1;
+            this.OrderListView.UseCompatibleStateImageBehavior = false;
+            this.OrderListView.SelectedIndexChanged += new System.EventHandler(this.OrderListView_SelectedIndexChanged);
+            // 
+            // textBox1
+            // 
+            this.textBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(235)))), ((int)(((byte)(235)))));
+            this.textBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.textBox1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.textBox1.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox1.Location = new System.Drawing.Point(10, 10);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(215, 33);
+            this.textBox1.TabIndex = 0;
+            this.textBox1.Text = "Zoeken...";
             // 
             // OrdersPage
             // 
@@ -125,6 +175,8 @@ namespace DePandaWinForms.Pages
             this.MainPanel.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
             this.LeftPanel.ResumeLayout(false);
+            this.LeftEditPanel.ResumeLayout(false);
+            this.LeftEditPanel.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -137,5 +189,8 @@ namespace DePandaWinForms.Pages
         private System.Windows.Forms.Panel LeftPanel;
         private PPanel RightEditPanel;
         private PPanel LeftEditPanel;
+        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.ListView OrderListView;
+        private System.Windows.Forms.Button NewOrderBtn;
     }
 }

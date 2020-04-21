@@ -12,16 +12,16 @@ namespace DePandaLib.Entities
 
     public class Reservation : Identifier
     {
-
         public string OnTheNameOf { get; set; }
         public DateTime Date { get; set; }
         public string Time { get; set; }
         public int AmountOfPeople { get; set; }
         public string Table { get; set; }
+
         //public List<RestaurantTable> Tables { get; set; }
         public string Specifications { get; set; }
-        public List<Order> Orders { get; set; }
 
+        public List<Order> Orders { get; set; }
 
         public decimal GetReservationTotal()
         {
