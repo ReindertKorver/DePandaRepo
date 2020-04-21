@@ -37,9 +37,6 @@
             this.AlternativeDayOpenPicker = new System.Windows.Forms.DateTimePicker();
             this.DeleteAlternativeDay = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
-            this.MondayClosedCheck = new System.Windows.Forms.CheckBox();
-            this.TuesdayClosedCheck = new System.Windows.Forms.CheckBox();
-            this.WednesdayClosedCheck = new System.Windows.Forms.CheckBox();
             this.SundayText = new System.Windows.Forms.Label();
             this.SaturdayText = new System.Windows.Forms.Label();
             this.FridayText = new System.Windows.Forms.Label();
@@ -70,10 +67,14 @@
             this.SaturdayClosedPicker = new System.Windows.Forms.DateTimePicker();
             this.SundayOpenPicker = new System.Windows.Forms.DateTimePicker();
             this.SundayClosedPicker = new System.Windows.Forms.DateTimePicker();
-            this.ThursdayClosedCheck = new System.Windows.Forms.CheckBox();
-            this.FridayClosedCheck = new System.Windows.Forms.CheckBox();
-            this.SaturdayClosedCheck = new System.Windows.Forms.CheckBox();
-            this.SundayClosedCheck = new System.Windows.Forms.CheckBox();
+            this.MondayClosedButton = new System.Windows.Forms.Button();
+            this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
+            this.TuesdayClosedButton = new System.Windows.Forms.Button();
+            this.WednesdayClosedButton = new System.Windows.Forms.Button();
+            this.ThursdayClosedButton = new System.Windows.Forms.Button();
+            this.FridayClosedButton = new System.Windows.Forms.Button();
+            this.SaturdayClosedButton = new System.Windows.Forms.Button();
+            this.SundayClosedButton = new System.Windows.Forms.Button();
             this.tableLayoutPanel1.SuspendLayout();
             this.PanelAlternativeDay.SuspendLayout();
             this.Opentimes.SuspendLayout();
@@ -264,43 +265,6 @@
             this.label3.Size = new System.Drawing.Size(204, 20);
             this.label3.TabIndex = 98;
             this.label3.Text = "Alternatieve openingstijden:";
-            // 
-            // MondayClosedCheck
-            // 
-            this.MondayClosedCheck.AutoSize = true;
-            this.MondayClosedCheck.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.MondayClosedCheck.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.MondayClosedCheck.Location = new System.Drawing.Point(325, 185);
-            this.MondayClosedCheck.Name = "MondayClosedCheck";
-            this.MondayClosedCheck.Size = new System.Drawing.Size(93, 24);
-            this.MondayClosedCheck.TabIndex = 98;
-            this.MondayClosedCheck.Text = "Gesloten";
-            this.MondayClosedCheck.UseVisualStyleBackColor = true;
-            this.MondayClosedCheck.Click += new System.EventHandler(this.CheckBox);
-            // 
-            // TuesdayClosedCheck
-            // 
-            this.TuesdayClosedCheck.AutoSize = true;
-            this.TuesdayClosedCheck.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.TuesdayClosedCheck.Location = new System.Drawing.Point(325, 221);
-            this.TuesdayClosedCheck.Name = "TuesdayClosedCheck";
-            this.TuesdayClosedCheck.Size = new System.Drawing.Size(93, 24);
-            this.TuesdayClosedCheck.TabIndex = 99;
-            this.TuesdayClosedCheck.Text = "Gesloten";
-            this.TuesdayClosedCheck.UseVisualStyleBackColor = true;
-            this.TuesdayClosedCheck.Click += new System.EventHandler(this.CheckBox);
-            // 
-            // WednesdayClosedCheck
-            // 
-            this.WednesdayClosedCheck.AutoSize = true;
-            this.WednesdayClosedCheck.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.WednesdayClosedCheck.Location = new System.Drawing.Point(325, 257);
-            this.WednesdayClosedCheck.Name = "WednesdayClosedCheck";
-            this.WednesdayClosedCheck.Size = new System.Drawing.Size(93, 24);
-            this.WednesdayClosedCheck.TabIndex = 100;
-            this.WednesdayClosedCheck.Text = "Gesloten";
-            this.WednesdayClosedCheck.UseVisualStyleBackColor = true;
-            this.WednesdayClosedCheck.Click += new System.EventHandler(this.CheckBox);
             // 
             // SundayText
             // 
@@ -667,53 +631,96 @@
             this.SundayClosedPicker.TabIndex = 114;
             this.SundayClosedPicker.KeyUp += new System.Windows.Forms.KeyEventHandler(this.TimeChanged);
             // 
-            // ThursdayClosedCheck
+            // MondayClosedButton
             // 
-            this.ThursdayClosedCheck.AutoSize = true;
-            this.ThursdayClosedCheck.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.ThursdayClosedCheck.Location = new System.Drawing.Point(325, 293);
-            this.ThursdayClosedCheck.Name = "ThursdayClosedCheck";
-            this.ThursdayClosedCheck.Size = new System.Drawing.Size(93, 24);
-            this.ThursdayClosedCheck.TabIndex = 101;
-            this.ThursdayClosedCheck.Text = "Gesloten";
-            this.ThursdayClosedCheck.UseVisualStyleBackColor = true;
-            this.ThursdayClosedCheck.Click += new System.EventHandler(this.CheckBox);
+            this.MondayClosedButton.BackColor = System.Drawing.Color.White;
+            this.MondayClosedButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.MondayClosedButton.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(72)))), ((int)(((byte)(142)))), ((int)(((byte)(149)))));
+            this.MondayClosedButton.Location = new System.Drawing.Point(325, 182);
+            this.MondayClosedButton.Name = "MondayClosedButton";
+            this.MondayClosedButton.Size = new System.Drawing.Size(75, 23);
+            this.MondayClosedButton.TabIndex = 98;
+            this.MondayClosedButton.Text = "Gesloten";
+            this.MondayClosedButton.UseVisualStyleBackColor = false;
+            this.MondayClosedButton.Click += new System.EventHandler(this.MondayClosedClick);
             // 
-            // FridayClosedCheck
+            // TuesdayClosedButton
             // 
-            this.FridayClosedCheck.AutoSize = true;
-            this.FridayClosedCheck.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.FridayClosedCheck.Location = new System.Drawing.Point(325, 329);
-            this.FridayClosedCheck.Name = "FridayClosedCheck";
-            this.FridayClosedCheck.Size = new System.Drawing.Size(93, 24);
-            this.FridayClosedCheck.TabIndex = 102;
-            this.FridayClosedCheck.Text = "Gesloten";
-            this.FridayClosedCheck.UseVisualStyleBackColor = true;
-            this.FridayClosedCheck.Click += new System.EventHandler(this.CheckBox);
+            this.TuesdayClosedButton.BackColor = System.Drawing.Color.White;
+            this.TuesdayClosedButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.TuesdayClosedButton.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(72)))), ((int)(((byte)(142)))), ((int)(((byte)(149)))));
+            this.TuesdayClosedButton.Location = new System.Drawing.Point(325, 218);
+            this.TuesdayClosedButton.Name = "TuesdayClosedButton";
+            this.TuesdayClosedButton.Size = new System.Drawing.Size(75, 23);
+            this.TuesdayClosedButton.TabIndex = 99;
+            this.TuesdayClosedButton.Text = "Gesloten";
+            this.TuesdayClosedButton.UseVisualStyleBackColor = false;
+            this.TuesdayClosedButton.Click += new System.EventHandler(this.TuesdayClosedClick);
             // 
-            // SaturdayClosedCheck
+            // WednesdayClosedButton
             // 
-            this.SaturdayClosedCheck.AutoSize = true;
-            this.SaturdayClosedCheck.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.SaturdayClosedCheck.Location = new System.Drawing.Point(325, 365);
-            this.SaturdayClosedCheck.Name = "SaturdayClosedCheck";
-            this.SaturdayClosedCheck.Size = new System.Drawing.Size(93, 24);
-            this.SaturdayClosedCheck.TabIndex = 103;
-            this.SaturdayClosedCheck.Text = "Gesloten";
-            this.SaturdayClosedCheck.UseVisualStyleBackColor = true;
-            this.SaturdayClosedCheck.Click += new System.EventHandler(this.CheckBox);
+            this.WednesdayClosedButton.BackColor = System.Drawing.Color.White;
+            this.WednesdayClosedButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.WednesdayClosedButton.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(72)))), ((int)(((byte)(142)))), ((int)(((byte)(149)))));
+            this.WednesdayClosedButton.Location = new System.Drawing.Point(325, 254);
+            this.WednesdayClosedButton.Name = "WednesdayClosedButton";
+            this.WednesdayClosedButton.Size = new System.Drawing.Size(75, 23);
+            this.WednesdayClosedButton.TabIndex = 100;
+            this.WednesdayClosedButton.Text = "Gesloten";
+            this.WednesdayClosedButton.UseVisualStyleBackColor = false;
+            this.WednesdayClosedButton.Click += new System.EventHandler(this.WednesdayClosedClick);
             // 
-            // SundayClosedCheck
+            // ThursdayClosedButton
             // 
-            this.SundayClosedCheck.AutoSize = true;
-            this.SundayClosedCheck.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.SundayClosedCheck.Location = new System.Drawing.Point(325, 401);
-            this.SundayClosedCheck.Name = "SundayClosedCheck";
-            this.SundayClosedCheck.Size = new System.Drawing.Size(93, 24);
-            this.SundayClosedCheck.TabIndex = 104;
-            this.SundayClosedCheck.Text = "Gesloten";
-            this.SundayClosedCheck.UseVisualStyleBackColor = true;
-            this.SundayClosedCheck.Click += new System.EventHandler(this.CheckBox);
+            this.ThursdayClosedButton.BackColor = System.Drawing.Color.White;
+            this.ThursdayClosedButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.ThursdayClosedButton.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(72)))), ((int)(((byte)(142)))), ((int)(((byte)(149)))));
+            this.ThursdayClosedButton.Location = new System.Drawing.Point(325, 290);
+            this.ThursdayClosedButton.Name = "ThursdayClosedButton";
+            this.ThursdayClosedButton.Size = new System.Drawing.Size(75, 23);
+            this.ThursdayClosedButton.TabIndex = 101;
+            this.ThursdayClosedButton.Text = "Gesloten";
+            this.ThursdayClosedButton.UseVisualStyleBackColor = false;
+            this.ThursdayClosedButton.Click += new System.EventHandler(this.ThursdayClosedClick);
+            // 
+            // FridayClosedButton
+            // 
+            this.FridayClosedButton.BackColor = System.Drawing.Color.White;
+            this.FridayClosedButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.FridayClosedButton.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(72)))), ((int)(((byte)(142)))), ((int)(((byte)(149)))));
+            this.FridayClosedButton.Location = new System.Drawing.Point(325, 325);
+            this.FridayClosedButton.Name = "FridayClosedButton";
+            this.FridayClosedButton.Size = new System.Drawing.Size(75, 25);
+            this.FridayClosedButton.TabIndex = 102;
+            this.FridayClosedButton.Text = "Gesloten";
+            this.FridayClosedButton.UseVisualStyleBackColor = false;
+            this.FridayClosedButton.Click += new System.EventHandler(this.FridayClosedClick);
+            // 
+            // SaturdayClosedButton
+            // 
+            this.SaturdayClosedButton.BackColor = System.Drawing.Color.White;
+            this.SaturdayClosedButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.SaturdayClosedButton.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(72)))), ((int)(((byte)(142)))), ((int)(((byte)(149)))));
+            this.SaturdayClosedButton.Location = new System.Drawing.Point(325, 361);
+            this.SaturdayClosedButton.Name = "SaturdayClosedButton";
+            this.SaturdayClosedButton.Size = new System.Drawing.Size(75, 25);
+            this.SaturdayClosedButton.TabIndex = 103;
+            this.SaturdayClosedButton.Text = "Gesloten";
+            this.SaturdayClosedButton.UseVisualStyleBackColor = false;
+            this.SaturdayClosedButton.Click += new System.EventHandler(this.SaturdayClosedClick);
+            // 
+            // SundayClosedButton
+            // 
+            this.SundayClosedButton.BackColor = System.Drawing.Color.White;
+            this.SundayClosedButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.SundayClosedButton.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(72)))), ((int)(((byte)(142)))), ((int)(((byte)(149)))));
+            this.SundayClosedButton.Location = new System.Drawing.Point(325, 397);
+            this.SundayClosedButton.Name = "SundayClosedButton";
+            this.SundayClosedButton.Size = new System.Drawing.Size(75, 25);
+            this.SundayClosedButton.TabIndex = 104;
+            this.SundayClosedButton.Text = "Gesloten";
+            this.SundayClosedButton.UseVisualStyleBackColor = false;
+            this.SundayClosedButton.Click += new System.EventHandler(this.SundayClosedClick);
             // 
             // SettingsPage
             // 
@@ -721,13 +728,13 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             this.BackColor = System.Drawing.SystemColors.Control;
             this.ClientSize = new System.Drawing.Size(1067, 828);
-            this.Controls.Add(this.SundayClosedCheck);
-            this.Controls.Add(this.SaturdayClosedCheck);
-            this.Controls.Add(this.FridayClosedCheck);
-            this.Controls.Add(this.ThursdayClosedCheck);
-            this.Controls.Add(this.WednesdayClosedCheck);
-            this.Controls.Add(this.TuesdayClosedCheck);
-            this.Controls.Add(this.MondayClosedCheck);
+            this.Controls.Add(this.SundayClosedButton);
+            this.Controls.Add(this.SaturdayClosedButton);
+            this.Controls.Add(this.FridayClosedButton);
+            this.Controls.Add(this.ThursdayClosedButton);
+            this.Controls.Add(this.WednesdayClosedButton);
+            this.Controls.Add(this.TuesdayClosedButton);
+            this.Controls.Add(this.MondayClosedButton);
             this.Controls.Add(this.PanelAlternativeDay);
             this.Controls.Add(this.Opentimes);
             this.Controls.Add(this.Pincode);
@@ -745,7 +752,6 @@
             this.Opentimes.ResumeLayout(false);
             this.Opentimes.PerformLayout();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
         private System.Windows.Forms.Label label1;
@@ -762,9 +768,6 @@
         private System.Windows.Forms.Panel PanelAlternativeDay;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Button DeleteAlternativeDay;
-        private System.Windows.Forms.CheckBox MondayClosedCheck;
-        private System.Windows.Forms.CheckBox TuesdayClosedCheck;
-        private System.Windows.Forms.CheckBox WednesdayClosedCheck;
         private System.Windows.Forms.Label SundayText;
         private System.Windows.Forms.Label SaturdayText;
         private System.Windows.Forms.Label FridayText;
@@ -797,9 +800,13 @@
         private System.Windows.Forms.DateTimePicker SundayClosedPicker;
         private System.Windows.Forms.DateTimePicker AlternativeDayClosedPicker;
         private System.Windows.Forms.DateTimePicker AlternativeDayOpenPicker;
-        private System.Windows.Forms.CheckBox ThursdayClosedCheck;
-        private System.Windows.Forms.CheckBox FridayClosedCheck;
-        private System.Windows.Forms.CheckBox SaturdayClosedCheck;
-        private System.Windows.Forms.CheckBox SundayClosedCheck;
+        private System.Windows.Forms.Button MondayClosedButton;
+        private System.ComponentModel.BackgroundWorker backgroundWorker1;
+        private System.Windows.Forms.Button TuesdayClosedButton;
+        private System.Windows.Forms.Button WednesdayClosedButton;
+        private System.Windows.Forms.Button ThursdayClosedButton;
+        private System.Windows.Forms.Button FridayClosedButton;
+        private System.Windows.Forms.Button SaturdayClosedButton;
+        private System.Windows.Forms.Button SundayClosedButton;
     }
 }
