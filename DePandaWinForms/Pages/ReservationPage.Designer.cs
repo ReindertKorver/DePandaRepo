@@ -38,7 +38,6 @@
             this.Bijzonderheden = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.button1 = new System.Windows.Forms.Button();
             this.txtNaam = new System.Windows.Forms.TextBox();
-            this.txtTijd = new System.Windows.Forms.TextBox();
             this.txtPersonen = new System.Windows.Forms.TextBox();
             this.txtTafelnr = new System.Windows.Forms.TextBox();
             this.txtBijzonder = new System.Windows.Forms.TextBox();
@@ -51,8 +50,11 @@
             this.label6 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.label8 = new System.Windows.Forms.Label();
+            this.dateTimePicker3 = new System.Windows.Forms.DateTimePicker();
+            this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+            this.label8 = new System.Windows.Forms.Label();
+            this.label9 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -134,13 +136,6 @@
             this.txtNaam.Name = "txtNaam";
             this.txtNaam.Size = new System.Drawing.Size(118, 20);
             this.txtNaam.TabIndex = 3;
-            // 
-            // txtTijd
-            // 
-            this.txtTijd.Location = new System.Drawing.Point(73, 112);
-            this.txtTijd.Name = "txtTijd";
-            this.txtTijd.Size = new System.Drawing.Size(118, 20);
-            this.txtTijd.TabIndex = 5;
             // 
             // txtPersonen
             // 
@@ -240,6 +235,9 @@
             // 
             this.panel1.BackColor = System.Drawing.SystemColors.Control;
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel1.Controls.Add(this.label9);
+            this.panel1.Controls.Add(this.dateTimePicker3);
+            this.panel1.Controls.Add(this.dateTimePicker2);
             this.panel1.Controls.Add(this.dateTimePicker1);
             this.panel1.Controls.Add(this.txtPersonen);
             this.panel1.Controls.Add(this.label7);
@@ -247,7 +245,6 @@
             this.panel1.Controls.Add(this.button1);
             this.panel1.Controls.Add(this.label6);
             this.panel1.Controls.Add(this.label5);
-            this.panel1.Controls.Add(this.txtTijd);
             this.panel1.Controls.Add(this.label4);
             this.panel1.Controls.Add(this.txtTafelnr);
             this.panel1.Controls.Add(this.label3);
@@ -255,8 +252,37 @@
             this.panel1.Controls.Add(this.label2);
             this.panel1.Location = new System.Drawing.Point(20, 52);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(679, 156);
+            this.panel1.Size = new System.Drawing.Size(850, 156);
             this.panel1.TabIndex = 18;
+            // 
+            // dateTimePicker3
+            // 
+            this.dateTimePicker3.CustomFormat = "HH:mm";
+            this.dateTimePicker3.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dateTimePicker3.Location = new System.Drawing.Point(148, 112);
+            this.dateTimePicker3.Name = "dateTimePicker3";
+            this.dateTimePicker3.ShowUpDown = true;
+            this.dateTimePicker3.Size = new System.Drawing.Size(59, 20);
+            this.dateTimePicker3.TabIndex = 20;
+            // 
+            // dateTimePicker2
+            // 
+            this.dateTimePicker2.CustomFormat = "HH:mm";
+            this.dateTimePicker2.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dateTimePicker2.Location = new System.Drawing.Point(73, 112);
+            this.dateTimePicker2.Name = "dateTimePicker2";
+            this.dateTimePicker2.ShowUpDown = true;
+            this.dateTimePicker2.Size = new System.Drawing.Size(59, 20);
+            this.dateTimePicker2.TabIndex = 20;
+            // 
+            // dateTimePicker1
+            // 
+            this.dateTimePicker1.CustomFormat = "dd-MM-yyyy";
+            this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dateTimePicker1.Location = new System.Drawing.Point(73, 69);
+            this.dateTimePicker1.Name = "dateTimePicker1";
+            this.dateTimePicker1.Size = new System.Drawing.Size(118, 20);
+            this.dateTimePicker1.TabIndex = 20;
             // 
             // label8
             // 
@@ -267,14 +293,15 @@
             this.label8.TabIndex = 19;
             this.label8.Text = "Zoeken";
             // 
-            // dateTimePicker1
+            // label9
             // 
-            this.dateTimePicker1.CustomFormat = "dd-MM-yyyy";
-            this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dateTimePicker1.Location = new System.Drawing.Point(73, 69);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(118, 20);
-            this.dateTimePicker1.TabIndex = 20;
+            this.label9.AutoSize = true;
+            this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label9.Location = new System.Drawing.Point(133, 111);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(14, 20);
+            this.label9.TabIndex = 20;
+            this.label9.Text = "-";
             // 
             // ReservationPage
             // 
@@ -308,7 +335,6 @@
         private System.Windows.Forms.ColumnHeader Tafelnummer;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.TextBox txtNaam;
-        private System.Windows.Forms.TextBox txtTijd;
         private System.Windows.Forms.TextBox txtPersonen;
         private System.Windows.Forms.TextBox txtTafelnr;
         private System.Windows.Forms.ColumnHeader Bijzonderheden;
@@ -324,5 +350,8 @@
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.DateTimePicker dateTimePicker1;
+        private System.Windows.Forms.DateTimePicker dateTimePicker2;
+        private System.Windows.Forms.DateTimePicker dateTimePicker3;
+        private System.Windows.Forms.Label label9;
     }
 }

@@ -15,7 +15,6 @@ namespace DePandaWinForms.Pages
     {
         public ReservationPage()
         {
-
             InitializeComponent();
             //DataStorageHandler.Storage.Reservations.Add(new DePandaLib.Entities.Reservation() { });
             LoadExistingReservations();
@@ -28,8 +27,8 @@ namespace DePandaWinForms.Pages
             foreach (var reservation in Reservations)
             {
                 ListViewItem item = new ListViewItem(reservation.OnTheNameOf);
-                item.SubItems.Add(reservation.Date.Day + "-" + reservation.Date.Month + "-" + reservation.Date.Year.ToString());
-                item.SubItems.Add(reservation.Time);
+                item.SubItems.Add(reservation.Date.ToString("dd-MM-yyyy"));
+                item.SubItems.Add(reservation.Date.ToString("HH:mm") + " - " + (reservation.Date + reservation.Time).ToString("HH:mm"));
                 item.SubItems.Add(reservation.AmountOfPeople.ToString());
                 item.SubItems.Add(reservation.Table);
                 item.SubItems.Add(reservation.Specifications);
@@ -37,25 +36,56 @@ namespace DePandaWinForms.Pages
             }
         }
 
+        public bool ReservationTimeCheck()
+        {
+            DayOfWeek[] days = { DayOfWeek.Monday, DayOfWeek.Tuesday, DayOfWeek.Wednesday, DayOfWeek.Thursday, DayOfWeek.Friday, DayOfWeek.Saturday, DayOfWeek.Sunday };
+            for (int i = 0; i < days.Length - 1; i++)
+            {
+                if (dateTimePicker1.Value.DayOfWeek == days[i])
+                {
+                    var time = dateTimePicker2.Value.TimeOfDay;
+                    var time2 = dateTimePicker3.Value.TimeOfDay;
+                    if (time < DataStorageHandler.Storage.Settings.WeekDays[i].OpenTime.TimeOfDay || time2 > DataStorageHandler.Storage.Settings.WeekDays[i].CloseTime.AddMinutes(1).TimeOfDay)
+                    {
+                        return false;
+                    }
+                    return true;
+                }
+            }
+            return true;
+        }
+
         // add reservation
         private void button1_Click(object sender, EventArgs e)
         {
-            if (string.IsNullOrEmpty(txtNaam.Text) || string.IsNullOrEmpty(txtTijd.Text) || string.IsNullOrEmpty(txtPersonen.Text) || string.IsNullOrEmpty(txtTafelnr.Text) || string.IsNullOrEmpty(txtBijzonder.Text))
+            if (string.IsNullOrEmpty(txtNaam.Text) || string.IsNullOrEmpty(txtPersonen.Text) || string.IsNullOrEmpty(txtTafelnr.Text))
             {
                 MessageBox.Show("Vul alle velden in");
                 return;
             }
+            if (dateTimePicker1.Value < DateTime.Today)
+            {
+                MessageBox.Show("Vul een geldige datum in");
+                return;
+            }
 
-            DataStorageHandler.Storage.Reservations.Add(new DePandaLib.Entities.Reservation(){ OnTheNameOf = txtNaam.Text, Date = dateTimePicker1.Value, Time = txtTijd.Text, AmountOfPeople = int.Parse(txtPersonen.Text), Table = txtTafelnr.Text, Specifications = txtBijzonder.Text });
+            bool x = ReservationTimeCheck();
+            if (x == false)
+            {
+                MessageBox.Show("Vul een geldige tijd in");
+                return;
+            }
+            
+
+            DateTime dateTime = new DateTime(dateTimePicker1.Value.Year, dateTimePicker1.Value.Month, dateTimePicker1.Value.Day, dateTimePicker2.Value.Hour, dateTimePicker2.Value.Minute, dateTimePicker2.Value.Second);
+            TimeSpan timeSpan = new TimeSpan(dateTimePicker3.Value.Hour - dateTimePicker2.Value.Hour, dateTimePicker3.Value.Minute - dateTimePicker2.Value.Minute, 0);
+
+            DataStorageHandler.Storage.Reservations.Add(new DePandaLib.Entities.Reservation(){ OnTheNameOf = txtNaam.Text, Date = dateTime, Time = timeSpan, AmountOfPeople = int.Parse(txtPersonen.Text), Table = txtTafelnr.Text, Specifications = txtBijzonder.Text });
             listView.Items.Clear();
             LoadExistingReservations();
 
-            txtNaam.Clear();
-            txtTijd.Clear();
-            txtPersonen.Clear();
-            txtTafelnr.Clear();
-            txtBijzonder.Clear();
-
+            txtNaam.Clear(); txtPersonen.Clear(); txtTafelnr.Clear(); txtBijzonder.Clear();
+            
         }
 
         // remove reservation

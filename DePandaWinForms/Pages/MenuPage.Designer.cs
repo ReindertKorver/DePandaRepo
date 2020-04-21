@@ -45,6 +45,8 @@
             this.label1 = new System.Windows.Forms.Label();
             this.SearchMenuItemsList = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.AmountMenuItemInput = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.MenuGrid)).BeginInit();
             this.MenuItemGroupBox.SuspendLayout();
             this.SuspendLayout();
@@ -80,6 +82,7 @@
             this.MenuItemsList.FormattingEnabled = true;
             this.MenuItemsList.Location = new System.Drawing.Point(0, 98);
             this.MenuItemsList.Name = "MenuItemsList";
+            this.MenuItemsList.ScrollAlwaysVisible = true;
             this.MenuItemsList.Size = new System.Drawing.Size(232, 303);
             this.MenuItemsList.TabIndex = 16;
             this.MenuItemsList.SelectedIndexChanged += new System.EventHandler(this.MenuItemsList_SelectedIndexChanged);
@@ -110,6 +113,8 @@
             // 
             // MenuItemGroupBox
             // 
+            this.MenuItemGroupBox.Controls.Add(this.AmountMenuItemInput);
+            this.MenuItemGroupBox.Controls.Add(this.label5);
             this.MenuItemGroupBox.Controls.Add(this.CloseSelectedMenuItem);
             this.MenuItemGroupBox.Controls.Add(this.button2);
             this.MenuItemGroupBox.Controls.Add(this.CreateNewMenuItem);
@@ -130,7 +135,7 @@
             // 
             // CloseSelectedMenuItem
             // 
-            this.CloseSelectedMenuItem.Location = new System.Drawing.Point(273, 154);
+            this.CloseSelectedMenuItem.Location = new System.Drawing.Point(273, 177);
             this.CloseSelectedMenuItem.Name = "CloseSelectedMenuItem";
             this.CloseSelectedMenuItem.Size = new System.Drawing.Size(85, 23);
             this.CloseSelectedMenuItem.TabIndex = 6;
@@ -140,7 +145,7 @@
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(222, 154);
+            this.button2.Location = new System.Drawing.Point(222, 177);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(45, 23);
             this.button2.TabIndex = 8;
@@ -150,7 +155,7 @@
             // 
             // CreateNewMenuItem
             // 
-            this.CreateNewMenuItem.Location = new System.Drawing.Point(74, 154);
+            this.CreateNewMenuItem.Location = new System.Drawing.Point(74, 177);
             this.CreateNewMenuItem.Name = "CreateNewMenuItem";
             this.CreateNewMenuItem.Size = new System.Drawing.Size(97, 23);
             this.CreateNewMenuItem.TabIndex = 21;
@@ -160,7 +165,7 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(177, 154);
+            this.button1.Location = new System.Drawing.Point(177, 177);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(39, 23);
             this.button1.TabIndex = 7;
@@ -170,7 +175,7 @@
             // 
             // DescriptionMenuItemInput
             // 
-            this.DescriptionMenuItemInput.Location = new System.Drawing.Point(74, 114);
+            this.DescriptionMenuItemInput.Location = new System.Drawing.Point(74, 145);
             this.DescriptionMenuItemInput.Name = "DescriptionMenuItemInput";
             this.DescriptionMenuItemInput.Size = new System.Drawing.Size(326, 20);
             this.DescriptionMenuItemInput.TabIndex = 20;
@@ -178,7 +183,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(7, 114);
+            this.label3.Location = new System.Drawing.Point(7, 150);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(42, 13);
             this.label3.TabIndex = 2;
@@ -218,6 +223,22 @@
             this.label4.Size = new System.Drawing.Size(32, 13);
             this.label4.TabIndex = 22;
             this.label4.Text = "Zoek";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(7, 110);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(67, 13);
+            this.label5.TabIndex = 22;
+            this.label5.Text = "Hoeveelheid";
+            // 
+            // AmountMenuItemInput
+            // 
+            this.AmountMenuItemInput.Location = new System.Drawing.Point(74, 107);
+            this.AmountMenuItemInput.Name = "AmountMenuItemInput";
+            this.AmountMenuItemInput.Size = new System.Drawing.Size(326, 20);
+            this.AmountMenuItemInput.TabIndex = 23;
             // 
             // MenuPage
             // 
@@ -261,5 +282,7 @@
         private System.Windows.Forms.Button CloseSelectedMenuItem;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.TextBox AmountMenuItemInput;
+        private System.Windows.Forms.Label label5;
     }
 }
