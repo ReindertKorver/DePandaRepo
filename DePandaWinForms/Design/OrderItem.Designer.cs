@@ -44,10 +44,11 @@
             this.panel1.Controls.Add(this.OrderItemPanel);
             this.panel1.Controls.Add(this.Item);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel1.Location = new System.Drawing.Point(20, 20);
+            this.panel1.Location = new System.Drawing.Point(10, 10);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(356, 30);
+            this.panel1.Size = new System.Drawing.Size(280, 30);
             this.panel1.TabIndex = 11;
+            this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
             // Counter
             // 
@@ -56,7 +57,7 @@
             this.Counter.Dock = System.Windows.Forms.DockStyle.Right;
             this.Counter.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Counter.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(137)))), ((int)(((byte)(145)))));
-            this.Counter.Location = new System.Drawing.Point(292, 0);
+            this.Counter.Location = new System.Drawing.Point(216, 0);
             this.Counter.Name = "Counter";
             this.Counter.Size = new System.Drawing.Size(22, 25);
             this.Counter.TabIndex = 13;
@@ -67,7 +68,7 @@
             this.OrderItemPanel.Controls.Add(this.Min);
             this.OrderItemPanel.Controls.Add(this.Plus);
             this.OrderItemPanel.Dock = System.Windows.Forms.DockStyle.Right;
-            this.OrderItemPanel.Location = new System.Drawing.Point(314, 0);
+            this.OrderItemPanel.Location = new System.Drawing.Point(238, 0);
             this.OrderItemPanel.Name = "OrderItemPanel";
             this.OrderItemPanel.Padding = new System.Windows.Forms.Padding(2);
             this.OrderItemPanel.Size = new System.Drawing.Size(42, 30);
@@ -118,9 +119,10 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.panel1);
             this.Name = "OrderItem";
-            this.Padding = new System.Windows.Forms.Padding(20);
-            this.Size = new System.Drawing.Size(396, 70);
+            this.Padding = new System.Windows.Forms.Padding(10);
+            this.Size = new System.Drawing.Size(300, 50);
             this.Load += new System.EventHandler(this.OrderItem_Load);
+            this.Paint += new System.Windows.Forms.PaintEventHandler(this.OrderItem_Paint);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.OrderItemPanel.ResumeLayout(false);

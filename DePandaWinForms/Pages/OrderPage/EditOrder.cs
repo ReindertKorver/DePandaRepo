@@ -1,5 +1,6 @@
 ﻿using DePandaLib.DAL;
 using DePandaLib.Entities;
+using DePandaWinForms.Design;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -29,10 +30,11 @@ namespace DePandaWinForms.Pages.OrderPage
             {
                 if (CurrentOrder.Reservation != null && CurrentOrder.Reservation.ID != null)
                 {
-                    Reservation reservation = DataStorageHandler.Storage.Reservations.FirstOrDefault(r => r.ID == CurrentOrder.Reservation.ID);
-                    if (reservation != null)
+                    if (CurrentOrder.Reservation != null)
                     {
-                        TableNumberLBL.Text = reservation.Table;
+                        TableNumberTB.Text = CurrentOrder.Reservation.Table;
+                        OnTheNameOfTb.Text = CurrentOrder.Reservation.OnTheNameOf;
+                        DateTb.Text = CurrentOrder.OrderDate.ToString("dd/MM/yyyy HH:mm");
                     }
                     else
                     {
@@ -47,12 +49,25 @@ namespace DePandaWinForms.Pages.OrderPage
                 {
                     foreach (var dish in CurrentOrder.Dishes)
                     {
-                        ListViewItem item = new ListViewItem();
-                        item.Text = dish.Name;
-                        OrderMenuItemsView.Items.Add(item);
+                        OrderItem item = new OrderItem(dish, useDefaultAmount: true);
+                        MenuItemList.Controls.Add(item);
                     }
+                    decimal total = CurrentOrder.GetTotal();
+                    TotalLbl.Text = "Totaal: \t€ " + total;
                 }
             }
+        }
+
+        private void textBox2_TextChanged(object sender, EventArgs e)
+        {
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+        }
+
+        private void panel2_Paint(object sender, PaintEventArgs e)
+        {
         }
     }
 }

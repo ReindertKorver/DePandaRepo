@@ -36,23 +36,59 @@ namespace DePandaWinForms.Pages.OrderPage
 
         private void SaveOrderBtn_Click(object sender, EventArgs e)
         {
-            var now = DateTime.Now;
             //todo: change 2 to time of reservation
-            Reservation res = DataStorageHandler.Storage.Reservations.FirstOrDefault(r => r.Table == TableNumberTB.Text && (now.Hour >= r.Date.Hour && now.Hour <= r.Date.Hour + 2));
-            if (res != null)
-            {
-                CurrentOrder.Reservation = res;
-            }
-            else
+            Reservation res = DataStorageHandler.Storage.Reservations.FirstOrDefault(r => r.Table == TableNumberTB.Text && CheckResTime(r));
+            if (res == null)
             {
                 MessageBox.Show("Kan geen reservering vinden binnen tijdsbestek en bij dit tafelnummer, is de reservering goed aangemaakt?");
             }
-            if (MenuItemList.Controls != null && MenuItemList.Controls.Count != 0)
+            else
             {
-                OrderItem[] arr = new OrderItem[MenuItemList.Controls.Count];
-                MenuItemList.Controls.CopyTo(arr, 0);
-                var dishes = arr.Select(a => a.DishItem).Where(d => d.Amount > 0).ToList();
+                CurrentOrder.Reservation = res;
+                if (MenuItemList.Controls == null || MenuItemList.Controls.Count == 0)
+                {
+                }
+                else
+                {
+                    OrderItem[] arr = new OrderItem[MenuItemList.Controls.Count];
+                    MenuItemList.Controls.CopyTo(arr, 0);
+                    var dishes = arr.Select(a => a.DishItem).Where(d => d.Amount > 0).ToList();
+                    if (dishes == null || dishes.Count <= 0)
+                    {
+                        MessageBox.Show("Er zijn geen gerechten geselecteerd, selecteer 1 of meer gerechten.");
+                    }
+                    else
+                    {
+                        CurrentOrder.Dishes = dishes;
+                        //Save it to DataStorage
+                        if (res.Orders == null)
+                        {
+                            res.Orders = new List<Order>();
+                        }
+                        CurrentOrder.OrderDate = DateTime.Now;
+                        res.Orders.Add(CurrentOrder);
+                        MessageBox.Show("Bestelling is geplaatst");
+                        OrderSaved?.Invoke(this, EventArgs.Empty);
+                    }
+                }
             }
+        }
+
+        public event EventHandler OrderSaved;
+
+        private bool CheckResTime(Reservation r)
+        {
+            var now = DateTime.Now;
+            var first = r.Date;
+            var last = r.Date.Add(r.Time);
+            return now < last && now > first;
+        }
+
+        private void TableNumberTB_Leave(object sender, EventArgs e)
+        {
+            Reservation res = DataStorageHandler.Storage.Reservations.FirstOrDefault(r => r.Table == TableNumberTB.Text && CheckResTime(r));
+            if (res != null)
+                ReservationLBL.Text = res.OnTheNameOf + " " + res.Date.ToString("HH:mm") + " - " + res.Date.Add(res.Time).ToString("HH:mm");
         }
     }
 }

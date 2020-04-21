@@ -35,11 +35,11 @@ namespace DePandaWinForms.Pages
             this.Title = new System.Windows.Forms.Label();
             this.MainPanel = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.LeftPanel = new System.Windows.Forms.Panel();
             this.RightEditPanel = new DePandaWinForms.Design.PPanel();
+            this.LeftPanel = new System.Windows.Forms.Panel();
             this.LeftEditPanel = new DePandaWinForms.Design.PPanel();
+            this.OrderItemList = new System.Windows.Forms.FlowLayoutPanel();
             this.NewOrderBtn = new System.Windows.Forms.Button();
-            this.OrderListView = new System.Windows.Forms.ListView();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.MainPanel.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -83,6 +83,17 @@ namespace DePandaWinForms.Pages
             this.panel2.Size = new System.Drawing.Size(550, 413);
             this.panel2.TabIndex = 1;
             // 
+            // RightEditPanel
+            // 
+            this.RightEditPanel.BackColor = System.Drawing.Color.White;
+            this.RightEditPanel.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.RightEditPanel.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.RightEditPanel.Location = new System.Drawing.Point(5, 10);
+            this.RightEditPanel.Name = "RightEditPanel";
+            this.RightEditPanel.Padding = new System.Windows.Forms.Padding(10);
+            this.RightEditPanel.Size = new System.Drawing.Size(535, 393);
+            this.RightEditPanel.TabIndex = 0;
+            // 
             // LeftPanel
             // 
             this.LeftPanel.BackColor = System.Drawing.Color.White;
@@ -95,23 +106,12 @@ namespace DePandaWinForms.Pages
             this.LeftPanel.Size = new System.Drawing.Size(250, 413);
             this.LeftPanel.TabIndex = 0;
             // 
-            // RightEditPanel
-            // 
-            this.RightEditPanel.BackColor = System.Drawing.Color.White;
-            this.RightEditPanel.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.RightEditPanel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.RightEditPanel.Location = new System.Drawing.Point(5, 10);
-            this.RightEditPanel.Name = "RightEditPanel";
-            this.RightEditPanel.Padding = new System.Windows.Forms.Padding(10);
-            this.RightEditPanel.Size = new System.Drawing.Size(535, 393);
-            this.RightEditPanel.TabIndex = 0;
-            // 
             // LeftEditPanel
             // 
             this.LeftEditPanel.BackColor = System.Drawing.Color.White;
             this.LeftEditPanel.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.LeftEditPanel.Controls.Add(this.OrderItemList);
             this.LeftEditPanel.Controls.Add(this.NewOrderBtn);
-            this.LeftEditPanel.Controls.Add(this.OrderListView);
             this.LeftEditPanel.Controls.Add(this.textBox1);
             this.LeftEditPanel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.LeftEditPanel.Location = new System.Drawing.Point(10, 10);
@@ -119,6 +119,16 @@ namespace DePandaWinForms.Pages
             this.LeftEditPanel.Padding = new System.Windows.Forms.Padding(10);
             this.LeftEditPanel.Size = new System.Drawing.Size(235, 393);
             this.LeftEditPanel.TabIndex = 0;
+            // 
+            // OrderItemList
+            // 
+            this.OrderItemList.BackColor = System.Drawing.Color.Transparent;
+            this.OrderItemList.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.OrderItemList.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
+            this.OrderItemList.Location = new System.Drawing.Point(10, 43);
+            this.OrderItemList.Name = "OrderItemList";
+            this.OrderItemList.Size = new System.Drawing.Size(215, 312);
+            this.OrderItemList.TabIndex = 14;
             // 
             // NewOrderBtn
             // 
@@ -136,19 +146,6 @@ namespace DePandaWinForms.Pages
             this.NewOrderBtn.Text = "Nieuwe bestelling";
             this.NewOrderBtn.UseVisualStyleBackColor = false;
             this.NewOrderBtn.Click += new System.EventHandler(this.NewOrderBtn_Click);
-            // 
-            // OrderListView
-            // 
-            this.OrderListView.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(235)))), ((int)(((byte)(235)))));
-            this.OrderListView.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.OrderListView.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.OrderListView.HideSelection = false;
-            this.OrderListView.Location = new System.Drawing.Point(10, 43);
-            this.OrderListView.Name = "OrderListView";
-            this.OrderListView.Size = new System.Drawing.Size(215, 340);
-            this.OrderListView.TabIndex = 1;
-            this.OrderListView.UseCompatibleStateImageBehavior = false;
-            this.OrderListView.SelectedIndexChanged += new System.EventHandler(this.OrderListView_SelectedIndexChanged);
             // 
             // textBox1
             // 
@@ -190,7 +187,7 @@ namespace DePandaWinForms.Pages
         private PPanel RightEditPanel;
         private PPanel LeftEditPanel;
         private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.ListView OrderListView;
         private System.Windows.Forms.Button NewOrderBtn;
+        private System.Windows.Forms.FlowLayoutPanel OrderItemList;
     }
 }

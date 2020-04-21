@@ -8,12 +8,13 @@ namespace DePandaLib.Entities
 {
     public class Order : Identifier
     {
+        public DateTime OrderDate { get; set; }
         public Reservation Reservation { get; set; }
         public List<Dish> Dishes { get; set; }
 
         public decimal GetTotal()
         {
-            return Dishes.Sum(d => d.Price);
+            return Dishes.Sum(d => d.Price * d.Amount);
         }
     }
 }

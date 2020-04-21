@@ -30,7 +30,11 @@ namespace DePandaLib.DAL
 
         public static void SaveChanges()
         {
-            string res = JsonConvert.SerializeObject(Storage);
+            string res = JsonConvert.SerializeObject(Storage, Formatting.Indented,
+                        new JsonSerializerSettings()
+                        {
+                            ReferenceLoopHandling = ReferenceLoopHandling.Ignore
+                        });
             File.WriteAllText(StorageFileLocation, res);
         }
     }

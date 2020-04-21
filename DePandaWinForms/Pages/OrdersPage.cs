@@ -1,4 +1,5 @@
-﻿using DePandaLib.Entities;
+﻿using DePandaLib.DAL;
+using DePandaLib.Entities;
 using DePandaWinForms.Design;
 using DePandaWinForms.Pages.OrderPage;
 using System;
@@ -21,6 +22,33 @@ namespace DePandaWinForms.Pages
         public OrdersPage()
         {
             InitializeComponent();
+            FillList();
+        }
+
+        private void FillList()
+        {
+            List<Order> orders = DataStorageHandler.Storage.GetAllOrders();
+            if (orders != null && orders.Count != 0)
+            {
+                foreach (var order in orders)
+                {
+                    OrderItem item = new OrderItem(order);
+                    item.Size = new Size(OrderItemList.Size.Width - 1, 50);
+                    item.UseCounter = false;
+                    item.Click += Item_Click;
+                    OrderItemList.Controls.Add(item);
+                }
+            }
+        }
+
+        private void Item_Click(object sender, EventArgs e)
+        {
+            var order = (sender as OrderItem).Order;
+            if (order != null)
+            {
+                CurrentOrder = order;
+                EditOrder();
+            }
         }
 
         private void NewOrderBtn_Click(object sender, EventArgs e)
@@ -53,7 +81,17 @@ namespace DePandaWinForms.Pages
             newOrder.TopLevel = false;
             newOrder.Dock = DockStyle.Fill;
             RightEditPanel.Controls.Add(newOrder);
+            newOrder.OrderSaved += NewOrder_OrderSaved;
             newOrder.Show();
+        }
+
+        private void NewOrder_OrderSaved(object sender, EventArgs e)
+        {
+            var form = ((NewOrder)sender);
+            //Clear the listener so the garbagecollector can collect it
+            form.OrderSaved -= NewOrder_OrderSaved;
+            form.Hide();
+            form = null;
         }
 
         public void EditOrder()
