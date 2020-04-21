@@ -8,6 +8,7 @@ namespace DePandaLib.Entities
 {
     public class Order : Identifier
     {
+        public Reservation Reservation { get; set; }
         public List<Dish> Dishes { get; set; }
 
         public decimal GetTotal()

@@ -168,6 +168,15 @@ namespace DePandaWinForms
             ChangeWinState();
         }
 
+        protected override void OnResize(EventArgs e)
+        {
+            base.OnResize(e);
+            if (form != null)
+            {
+                form.Size = new Size(PagePanel.Size.Width, PagePanel.Size.Height);
+            }
+        }
+
         private void KeyBindFullScreen(object sender, KeyEventArgs e)
         {
             if (e.Modifiers == Keys.Control && e.KeyCode == Keys.F)
