@@ -72,6 +72,7 @@ namespace DePandaWinForms.Pages
                 MenuItemList.Controls.Add(btn);
             }
         }
+
         private void MenuItemClick(object sender, EventArgs e)
         {
             var dish = (sender as Button).Tag as Dish;

@@ -23,51 +23,61 @@
         {
             this.label1 = new System.Windows.Forms.Label();
             this.Pincode = new System.Windows.Forms.Label();
-            this.SunDayClosed = new System.Windows.Forms.TextBox();
-            this.SunDayOpen = new System.Windows.Forms.TextBox();
-            this.SaturDayOpen = new System.Windows.Forms.TextBox();
-            this.SaturDayClosed = new System.Windows.Forms.TextBox();
-            this.FridayOpen = new System.Windows.Forms.TextBox();
-            this.FridayClosed = new System.Windows.Forms.TextBox();
-            this.ThursDayClosed = new System.Windows.Forms.TextBox();
-            this.ThursDayOpen = new System.Windows.Forms.TextBox();
-            this.WednesDayOpen = new System.Windows.Forms.TextBox();
-            this.TuesDayClosed = new System.Windows.Forms.TextBox();
-            this.TuesDayOpen = new System.Windows.Forms.TextBox();
-            this.MondayClosed = new System.Windows.Forms.TextBox();
-            this.MondayOpen = new System.Windows.Forms.TextBox();
-            this.ThursDayDot = new System.Windows.Forms.Label();
-            this.SunDayDot = new System.Windows.Forms.Label();
-            this.SaturDayDot = new System.Windows.Forms.Label();
-            this.FridayDot = new System.Windows.Forms.Label();
-            this.WednesDayDot = new System.Windows.Forms.Label();
-            this.TuesDayDot = new System.Windows.Forms.Label();
-            this.MondayDot = new System.Windows.Forms.Label();
-            this.SunDayText = new System.Windows.Forms.Label();
-            this.SaturDayText = new System.Windows.Forms.Label();
-            this.FridayText = new System.Windows.Forms.Label();
-            this.ThursDayText = new System.Windows.Forms.Label();
-            this.WednesDayText = new System.Windows.Forms.Label();
-            this.TuesDayText = new System.Windows.Forms.Label();
-            this.MondayText = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
             this.PincodeInput = new System.Windows.Forms.TextBox();
             this.PincodeText = new System.Windows.Forms.Label();
-            this.WednesDayClosed = new System.Windows.Forms.TextBox();
-            this.Opentimes = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
-            this.button1 = new System.Windows.Forms.Button();
-            this.listBox1 = new System.Windows.Forms.ListBox();
-            this.AddAltDay = new System.Windows.Forms.Button();
-            this.DatumPrikker = new System.Windows.Forms.DateTimePicker();
-            this.OpenALTINP = new System.Windows.Forms.TextBox();
-            this.ClosedALTINP = new System.Windows.Forms.TextBox();
-            this.OpenAlt = new System.Windows.Forms.Label();
-            this.ClosedAlt = new System.Windows.Forms.Label();
-            this.PanelALTDay = new System.Windows.Forms.Panel();
-            this.Opentimes.SuspendLayout();
+            this.ChangePincodeButton = new System.Windows.Forms.Button();
+            this.ListOfAlternativeDays = new System.Windows.Forms.ListBox();
+            this.AddAlternativeDay = new System.Windows.Forms.Button();
+            this.DatePlanner = new System.Windows.Forms.DateTimePicker();
+            this.OpenAlternative = new System.Windows.Forms.Label();
+            this.ClosedAlternative = new System.Windows.Forms.Label();
+            this.PanelAlternativeDay = new System.Windows.Forms.Panel();
+            this.AlternativeDayClosedPicker = new System.Windows.Forms.DateTimePicker();
+            this.AlternativeDayOpenPicker = new System.Windows.Forms.DateTimePicker();
+            this.DeleteAlternativeDay = new System.Windows.Forms.Button();
+            this.label3 = new System.Windows.Forms.Label();
+            this.SundayText = new System.Windows.Forms.Label();
+            this.SaturdayText = new System.Windows.Forms.Label();
+            this.FridayText = new System.Windows.Forms.Label();
+            this.ThursdayText = new System.Windows.Forms.Label();
+            this.WednesdayText = new System.Windows.Forms.Label();
+            this.TuesdayText = new System.Windows.Forms.Label();
+            this.MondayText = new System.Windows.Forms.Label();
+            this.TuesdayDot = new System.Windows.Forms.Label();
+            this.WednesdayDot = new System.Windows.Forms.Label();
+            this.MondayDot = new System.Windows.Forms.Label();
+            this.FridayDot = new System.Windows.Forms.Label();
+            this.RegularTimesText = new System.Windows.Forms.Label();
+            this.SaturdayDot = new System.Windows.Forms.Label();
+            this.ThursdayDot = new System.Windows.Forms.Label();
+            this.SundayDot = new System.Windows.Forms.Label();
+            this.Opentimes = new System.Windows.Forms.TableLayoutPanel();
+            this.MondayOpenPicker = new System.Windows.Forms.DateTimePicker();
+            this.MondayClosedPicker = new System.Windows.Forms.DateTimePicker();
+            this.TuesdayOpenPicker = new System.Windows.Forms.DateTimePicker();
+            this.TuesdayClosedPicker = new System.Windows.Forms.DateTimePicker();
+            this.WednesdayOpenPicker = new System.Windows.Forms.DateTimePicker();
+            this.WednesdayClosedPicker = new System.Windows.Forms.DateTimePicker();
+            this.ThursdayOpenPicker = new System.Windows.Forms.DateTimePicker();
+            this.ThursdayClosedPicker = new System.Windows.Forms.DateTimePicker();
+            this.FridayOpenPicker = new System.Windows.Forms.DateTimePicker();
+            this.FridayClosedPicker = new System.Windows.Forms.DateTimePicker();
+            this.SaturdayOpenPicker = new System.Windows.Forms.DateTimePicker();
+            this.SaturdayClosedPicker = new System.Windows.Forms.DateTimePicker();
+            this.SundayOpenPicker = new System.Windows.Forms.DateTimePicker();
+            this.SundayClosedPicker = new System.Windows.Forms.DateTimePicker();
+            this.MondayClosedButton = new System.Windows.Forms.Button();
+            this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
+            this.TuesdayClosedButton = new System.Windows.Forms.Button();
+            this.WednesdayClosedButton = new System.Windows.Forms.Button();
+            this.ThursdayClosedButton = new System.Windows.Forms.Button();
+            this.FridayClosedButton = new System.Windows.Forms.Button();
+            this.SaturdayClosedButton = new System.Windows.Forms.Button();
+            this.SundayClosedButton = new System.Windows.Forms.Button();
             this.tableLayoutPanel1.SuspendLayout();
-            this.PanelALTDay.SuspendLayout();
+            this.PanelAlternativeDay.SuspendLayout();
+            this.Opentimes.SuspendLayout();
             this.SuspendLayout();
             // 
             // label1
@@ -88,367 +98,6 @@
             this.Pincode.TabIndex = 15;
             this.Pincode.Text = "Instellingen";
             this.Pincode.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // SunDayClosed
-            // 
-            this.SunDayClosed.BackColor = System.Drawing.Color.White;
-            this.SunDayClosed.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.SunDayClosed.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.SunDayClosed.ForeColor = System.Drawing.Color.Black;
-            this.SunDayClosed.Location = new System.Drawing.Point(268, 244);
-            this.SunDayClosed.MaxLength = 5;
-            this.SunDayClosed.Name = "SunDayClosed";
-            this.SunDayClosed.Size = new System.Drawing.Size(114, 23);
-            this.SunDayClosed.TabIndex = 81;
-            this.SunDayClosed.Text = "20.00";
-            this.SunDayClosed.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.SunDayClosed.Enter += new System.EventHandler(this.TimeChange_Enter);
-            this.SunDayClosed.Leave += new System.EventHandler(this.TimeChange_Leave);
-            // 
-            // SunDayOpen
-            // 
-            this.SunDayOpen.BackColor = System.Drawing.Color.White;
-            this.SunDayOpen.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.SunDayOpen.ForeColor = System.Drawing.Color.Black;
-            this.SunDayOpen.Location = new System.Drawing.Point(132, 244);
-            this.SunDayOpen.MaxLength = 5;
-            this.SunDayOpen.Name = "SunDayOpen";
-            this.SunDayOpen.Size = new System.Drawing.Size(114, 23);
-            this.SunDayOpen.TabIndex = 80;
-            this.SunDayOpen.Text = "13.00";
-            this.SunDayOpen.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.SunDayOpen.Enter += new System.EventHandler(this.TimeChange_Enter);
-            this.SunDayOpen.Leave += new System.EventHandler(this.TimeChange_Leave);
-            // 
-            // SaturDayOpen
-            // 
-            this.SaturDayOpen.BackColor = System.Drawing.Color.White;
-            this.SaturDayOpen.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.SaturDayOpen.ForeColor = System.Drawing.Color.Black;
-            this.SaturDayOpen.Location = new System.Drawing.Point(132, 208);
-            this.SaturDayOpen.MaxLength = 5;
-            this.SaturDayOpen.Name = "SaturDayOpen";
-            this.SaturDayOpen.Size = new System.Drawing.Size(114, 23);
-            this.SaturDayOpen.TabIndex = 79;
-            this.SaturDayOpen.Text = "13.00";
-            this.SaturDayOpen.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.SaturDayOpen.Enter += new System.EventHandler(this.TimeChange_Enter);
-            this.SaturDayOpen.Leave += new System.EventHandler(this.TimeChange_Leave);
-            // 
-            // SaturDayClosed
-            // 
-            this.SaturDayClosed.BackColor = System.Drawing.Color.White;
-            this.SaturDayClosed.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.SaturDayClosed.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.SaturDayClosed.ForeColor = System.Drawing.Color.Black;
-            this.SaturDayClosed.Location = new System.Drawing.Point(268, 208);
-            this.SaturDayClosed.MaxLength = 5;
-            this.SaturDayClosed.Name = "SaturDayClosed";
-            this.SaturDayClosed.Size = new System.Drawing.Size(114, 23);
-            this.SaturDayClosed.TabIndex = 78;
-            this.SaturDayClosed.Text = "20.00";
-            this.SaturDayClosed.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.SaturDayClosed.Enter += new System.EventHandler(this.TimeChange_Enter);
-            this.SaturDayClosed.Leave += new System.EventHandler(this.TimeChange_Leave);
-            // 
-            // FridayOpen
-            // 
-            this.FridayOpen.BackColor = System.Drawing.Color.White;
-            this.FridayOpen.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.FridayOpen.ForeColor = System.Drawing.Color.Black;
-            this.FridayOpen.Location = new System.Drawing.Point(132, 172);
-            this.FridayOpen.MaxLength = 5;
-            this.FridayOpen.Name = "FridayOpen";
-            this.FridayOpen.Size = new System.Drawing.Size(114, 23);
-            this.FridayOpen.TabIndex = 77;
-            this.FridayOpen.Text = "13.00";
-            this.FridayOpen.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.FridayOpen.Enter += new System.EventHandler(this.TimeChange_Enter);
-            this.FridayOpen.Leave += new System.EventHandler(this.TimeChange_Leave);
-            // 
-            // FridayClosed
-            // 
-            this.FridayClosed.BackColor = System.Drawing.Color.White;
-            this.FridayClosed.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.FridayClosed.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.FridayClosed.ForeColor = System.Drawing.Color.Black;
-            this.FridayClosed.Location = new System.Drawing.Point(268, 172);
-            this.FridayClosed.MaxLength = 5;
-            this.FridayClosed.Name = "FridayClosed";
-            this.FridayClosed.Size = new System.Drawing.Size(114, 23);
-            this.FridayClosed.TabIndex = 76;
-            this.FridayClosed.Text = "20.00";
-            this.FridayClosed.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.FridayClosed.Enter += new System.EventHandler(this.TimeChange_Enter);
-            this.FridayClosed.Leave += new System.EventHandler(this.TimeChange_Leave);
-            // 
-            // ThursDayClosed
-            // 
-            this.ThursDayClosed.BackColor = System.Drawing.Color.White;
-            this.ThursDayClosed.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.ThursDayClosed.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.ThursDayClosed.ForeColor = System.Drawing.Color.Black;
-            this.ThursDayClosed.Location = new System.Drawing.Point(268, 136);
-            this.ThursDayClosed.MaxLength = 5;
-            this.ThursDayClosed.Name = "ThursDayClosed";
-            this.ThursDayClosed.Size = new System.Drawing.Size(114, 23);
-            this.ThursDayClosed.TabIndex = 75;
-            this.ThursDayClosed.Text = "20.00";
-            this.ThursDayClosed.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.ThursDayClosed.Enter += new System.EventHandler(this.TimeChange_Enter);
-            this.ThursDayClosed.Leave += new System.EventHandler(this.TimeChange_Leave);
-            // 
-            // ThursDayOpen
-            // 
-            this.ThursDayOpen.BackColor = System.Drawing.Color.White;
-            this.ThursDayOpen.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.ThursDayOpen.ForeColor = System.Drawing.Color.Black;
-            this.ThursDayOpen.Location = new System.Drawing.Point(132, 136);
-            this.ThursDayOpen.MaxLength = 5;
-            this.ThursDayOpen.Name = "ThursDayOpen";
-            this.ThursDayOpen.Size = new System.Drawing.Size(114, 23);
-            this.ThursDayOpen.TabIndex = 74;
-            this.ThursDayOpen.Text = "13.00";
-            this.ThursDayOpen.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.ThursDayOpen.Enter += new System.EventHandler(this.TimeChange_Enter);
-            this.ThursDayOpen.Leave += new System.EventHandler(this.TimeChange_Leave);
-            // 
-            // WednesDayOpen
-            // 
-            this.WednesDayOpen.BackColor = System.Drawing.Color.White;
-            this.WednesDayOpen.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.WednesDayOpen.ForeColor = System.Drawing.Color.Black;
-            this.WednesDayOpen.Location = new System.Drawing.Point(132, 100);
-            this.WednesDayOpen.MaxLength = 5;
-            this.WednesDayOpen.Name = "WednesDayOpen";
-            this.WednesDayOpen.Size = new System.Drawing.Size(114, 23);
-            this.WednesDayOpen.TabIndex = 73;
-            this.WednesDayOpen.Text = "13.00";
-            this.WednesDayOpen.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.WednesDayOpen.Enter += new System.EventHandler(this.TimeChange_Enter);
-            this.WednesDayOpen.Leave += new System.EventHandler(this.TimeChange_Leave);
-            // 
-            // TuesDayClosed
-            // 
-            this.TuesDayClosed.BackColor = System.Drawing.Color.White;
-            this.TuesDayClosed.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.TuesDayClosed.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.TuesDayClosed.ForeColor = System.Drawing.Color.Black;
-            this.TuesDayClosed.Location = new System.Drawing.Point(268, 64);
-            this.TuesDayClosed.MaxLength = 5;
-            this.TuesDayClosed.Name = "TuesDayClosed";
-            this.TuesDayClosed.Size = new System.Drawing.Size(114, 23);
-            this.TuesDayClosed.TabIndex = 71;
-            this.TuesDayClosed.Text = "20.00";
-            this.TuesDayClosed.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.TuesDayClosed.Enter += new System.EventHandler(this.TimeChange_Enter);
-            this.TuesDayClosed.Leave += new System.EventHandler(this.TimeChange_Leave);
-            // 
-            // TuesDayOpen
-            // 
-            this.TuesDayOpen.BackColor = System.Drawing.Color.White;
-            this.TuesDayOpen.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.TuesDayOpen.ForeColor = System.Drawing.Color.Black;
-            this.TuesDayOpen.Location = new System.Drawing.Point(132, 64);
-            this.TuesDayOpen.MaxLength = 5;
-            this.TuesDayOpen.Name = "TuesDayOpen";
-            this.TuesDayOpen.Size = new System.Drawing.Size(114, 23);
-            this.TuesDayOpen.TabIndex = 70;
-            this.TuesDayOpen.Text = "13.00";
-            this.TuesDayOpen.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.TuesDayOpen.Enter += new System.EventHandler(this.TimeChange_Enter);
-            this.TuesDayOpen.Leave += new System.EventHandler(this.TimeChange_Leave);
-            // 
-            // MondayClosed
-            // 
-            this.MondayClosed.BackColor = System.Drawing.Color.White;
-            this.MondayClosed.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.MondayClosed.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.MondayClosed.ForeColor = System.Drawing.Color.Black;
-            this.MondayClosed.Location = new System.Drawing.Point(268, 28);
-            this.MondayClosed.MaxLength = 5;
-            this.MondayClosed.Name = "MondayClosed";
-            this.MondayClosed.Size = new System.Drawing.Size(114, 23);
-            this.MondayClosed.TabIndex = 69;
-            this.MondayClosed.Text = "20.00";
-            this.MondayClosed.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.MondayClosed.Enter += new System.EventHandler(this.TimeChange_Enter);
-            this.MondayClosed.Leave += new System.EventHandler(this.TimeChange_Leave);
-            // 
-            // MondayOpen
-            // 
-            this.MondayOpen.BackColor = System.Drawing.Color.White;
-            this.MondayOpen.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.MondayOpen.ForeColor = System.Drawing.Color.Black;
-            this.MondayOpen.Location = new System.Drawing.Point(132, 28);
-            this.MondayOpen.MaxLength = 5;
-            this.MondayOpen.Name = "MondayOpen";
-            this.MondayOpen.Size = new System.Drawing.Size(114, 23);
-            this.MondayOpen.TabIndex = 68;
-            this.MondayOpen.Tag = "TestTagOpenMon";
-            this.MondayOpen.Text = "13.00";
-            this.MondayOpen.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.MondayOpen.Enter += new System.EventHandler(this.TimeChange_Enter);
-            this.MondayOpen.Leave += new System.EventHandler(this.TimeChange_Leave);
-            // 
-            // ThursDayDot
-            // 
-            this.ThursDayDot.AutoSize = true;
-            this.ThursDayDot.Location = new System.Drawing.Point(252, 133);
-            this.ThursDayDot.Name = "ThursDayDot";
-            this.ThursDayDot.Size = new System.Drawing.Size(10, 13);
-            this.ThursDayDot.TabIndex = 67;
-            this.ThursDayDot.Text = "-";
-            // 
-            // SunDayDot
-            // 
-            this.SunDayDot.AutoSize = true;
-            this.SunDayDot.Location = new System.Drawing.Point(252, 241);
-            this.SunDayDot.Name = "SunDayDot";
-            this.SunDayDot.Size = new System.Drawing.Size(10, 13);
-            this.SunDayDot.TabIndex = 66;
-            this.SunDayDot.Text = "-";
-            // 
-            // SaturDayDot
-            // 
-            this.SaturDayDot.AutoSize = true;
-            this.SaturDayDot.Location = new System.Drawing.Point(252, 205);
-            this.SaturDayDot.Name = "SaturDayDot";
-            this.SaturDayDot.Size = new System.Drawing.Size(10, 13);
-            this.SaturDayDot.TabIndex = 65;
-            this.SaturDayDot.Text = "-";
-            // 
-            // FridayDot
-            // 
-            this.FridayDot.AutoSize = true;
-            this.FridayDot.Location = new System.Drawing.Point(252, 169);
-            this.FridayDot.Name = "FridayDot";
-            this.FridayDot.Size = new System.Drawing.Size(10, 13);
-            this.FridayDot.TabIndex = 64;
-            this.FridayDot.Text = "-";
-            // 
-            // WednesDayDot
-            // 
-            this.WednesDayDot.AutoSize = true;
-            this.WednesDayDot.Location = new System.Drawing.Point(252, 97);
-            this.WednesDayDot.Name = "WednesDayDot";
-            this.WednesDayDot.Size = new System.Drawing.Size(10, 13);
-            this.WednesDayDot.TabIndex = 63;
-            this.WednesDayDot.Text = "-";
-            // 
-            // TuesDayDot
-            // 
-            this.TuesDayDot.AutoSize = true;
-            this.TuesDayDot.Location = new System.Drawing.Point(252, 61);
-            this.TuesDayDot.Name = "TuesDayDot";
-            this.TuesDayDot.Size = new System.Drawing.Size(10, 13);
-            this.TuesDayDot.TabIndex = 62;
-            this.TuesDayDot.Text = "-";
-            // 
-            // MondayDot
-            // 
-            this.MondayDot.AutoSize = true;
-            this.MondayDot.Location = new System.Drawing.Point(252, 25);
-            this.MondayDot.Name = "MondayDot";
-            this.MondayDot.Size = new System.Drawing.Size(10, 13);
-            this.MondayDot.TabIndex = 61;
-            this.MondayDot.Text = "-";
-            // 
-            // SunDayText
-            // 
-            this.SunDayText.AutoSize = true;
-            this.SunDayText.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.SunDayText.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(112)))), ((int)(((byte)(112)))), ((int)(((byte)(112)))));
-            this.SunDayText.Location = new System.Drawing.Point(3, 241);
-            this.SunDayText.Name = "SunDayText";
-            this.SunDayText.Size = new System.Drawing.Size(64, 20);
-            this.SunDayText.TabIndex = 60;
-            this.SunDayText.Text = "Zondag";
-            this.SunDayText.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // SaturDayText
-            // 
-            this.SaturDayText.AutoSize = true;
-            this.SaturDayText.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.SaturDayText.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(112)))), ((int)(((byte)(112)))), ((int)(((byte)(112)))));
-            this.SaturDayText.Location = new System.Drawing.Point(3, 205);
-            this.SaturDayText.Name = "SaturDayText";
-            this.SaturDayText.Size = new System.Drawing.Size(74, 20);
-            this.SaturDayText.TabIndex = 59;
-            this.SaturDayText.Text = "Zaterdag";
-            this.SaturDayText.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // FridayText
-            // 
-            this.FridayText.AutoSize = true;
-            this.FridayText.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.FridayText.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(112)))), ((int)(((byte)(112)))), ((int)(((byte)(112)))));
-            this.FridayText.Location = new System.Drawing.Point(3, 169);
-            this.FridayText.Name = "FridayText";
-            this.FridayText.Size = new System.Drawing.Size(58, 20);
-            this.FridayText.TabIndex = 58;
-            this.FridayText.Text = "Vrijdag";
-            this.FridayText.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // ThursDayText
-            // 
-            this.ThursDayText.AutoSize = true;
-            this.ThursDayText.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.ThursDayText.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(112)))), ((int)(((byte)(112)))), ((int)(((byte)(112)))));
-            this.ThursDayText.Location = new System.Drawing.Point(3, 133);
-            this.ThursDayText.Name = "ThursDayText";
-            this.ThursDayText.Size = new System.Drawing.Size(89, 20);
-            this.ThursDayText.TabIndex = 57;
-            this.ThursDayText.Text = "Donderdag";
-            this.ThursDayText.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // WednesDayText
-            // 
-            this.WednesDayText.AutoSize = true;
-            this.WednesDayText.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.WednesDayText.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(112)))), ((int)(((byte)(112)))), ((int)(((byte)(112)))));
-            this.WednesDayText.Location = new System.Drawing.Point(3, 97);
-            this.WednesDayText.Name = "WednesDayText";
-            this.WednesDayText.Size = new System.Drawing.Size(86, 20);
-            this.WednesDayText.TabIndex = 56;
-            this.WednesDayText.Text = "Woensdag";
-            this.WednesDayText.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // TuesDayText
-            // 
-            this.TuesDayText.AutoSize = true;
-            this.TuesDayText.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.TuesDayText.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(112)))), ((int)(((byte)(112)))), ((int)(((byte)(112)))));
-            this.TuesDayText.Location = new System.Drawing.Point(3, 61);
-            this.TuesDayText.Name = "TuesDayText";
-            this.TuesDayText.Size = new System.Drawing.Size(68, 20);
-            this.TuesDayText.TabIndex = 55;
-            this.TuesDayText.Text = "Dinsdag";
-            this.TuesDayText.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // MondayText
-            // 
-            this.MondayText.AutoSize = true;
-            this.MondayText.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.MondayText.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(112)))), ((int)(((byte)(112)))), ((int)(((byte)(112)))));
-            this.MondayText.Location = new System.Drawing.Point(3, 25);
-            this.MondayText.Name = "MondayText";
-            this.MondayText.Size = new System.Drawing.Size(76, 20);
-            this.MondayText.TabIndex = 54;
-            this.MondayText.Text = "Maandag";
-            this.MondayText.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(112)))), ((int)(((byte)(112)))), ((int)(((byte)(112)))));
-            this.label2.Location = new System.Drawing.Point(3, 0);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(123, 20);
-            this.label2.TabIndex = 53;
-            this.label2.Text = "Openingstijden: ";
-            this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // PincodeInput
             // 
@@ -473,21 +122,308 @@
             this.PincodeText.TabIndex = 50;
             this.PincodeText.Text = "Pincode:";
             // 
-            // WednesDayClosed
+            // tableLayoutPanel1
             // 
-            this.WednesDayClosed.BackColor = System.Drawing.Color.White;
-            this.WednesDayClosed.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.WednesDayClosed.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.WednesDayClosed.ForeColor = System.Drawing.Color.Black;
-            this.WednesDayClosed.Location = new System.Drawing.Point(268, 100);
-            this.WednesDayClosed.MaxLength = 5;
-            this.WednesDayClosed.Name = "WednesDayClosed";
-            this.WednesDayClosed.Size = new System.Drawing.Size(114, 23);
-            this.WednesDayClosed.TabIndex = 72;
-            this.WednesDayClosed.Text = "20.00";
-            this.WednesDayClosed.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.WednesDayClosed.Enter += new System.EventHandler(this.TimeChange_Enter);
-            this.WednesDayClosed.Leave += new System.EventHandler(this.TimeChange_Leave);
+            this.tableLayoutPanel1.ColumnCount = 1;
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel1.Controls.Add(this.PincodeInput, 0, 1);
+            this.tableLayoutPanel1.Controls.Add(this.PincodeText, 0, 0);
+            this.tableLayoutPanel1.Controls.Add(this.ChangePincodeButton, 0, 2);
+            this.tableLayoutPanel1.Location = new System.Drawing.Point(12, 44);
+            this.tableLayoutPanel1.Name = "tableLayoutPanel1";
+            this.tableLayoutPanel1.RowCount = 3;
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(157, 107);
+            this.tableLayoutPanel1.TabIndex = 82;
+            // 
+            // ChangePincodeButton
+            // 
+            this.ChangePincodeButton.BackColor = System.Drawing.Color.White;
+            this.ChangePincodeButton.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(72)))), ((int)(((byte)(142)))), ((int)(((byte)(149)))));
+            this.ChangePincodeButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.ChangePincodeButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ChangePincodeButton.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(72)))), ((int)(((byte)(142)))), ((int)(((byte)(149)))));
+            this.ChangePincodeButton.Location = new System.Drawing.Point(0, 70);
+            this.ChangePincodeButton.Margin = new System.Windows.Forms.Padding(0);
+            this.ChangePincodeButton.Name = "ChangePincodeButton";
+            this.ChangePincodeButton.Size = new System.Drawing.Size(130, 29);
+            this.ChangePincodeButton.TabIndex = 53;
+            this.ChangePincodeButton.Text = "wijzigen";
+            this.ChangePincodeButton.UseVisualStyleBackColor = false;
+            this.ChangePincodeButton.Click += new System.EventHandler(this.ChangePincodeClick);
+            // 
+            // ListOfAlternativeDays
+            // 
+            this.ListOfAlternativeDays.BackColor = System.Drawing.SystemColors.Control;
+            this.ListOfAlternativeDays.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.ListOfAlternativeDays.FormattingEnabled = true;
+            this.ListOfAlternativeDays.ItemHeight = 20;
+            this.ListOfAlternativeDays.Location = new System.Drawing.Point(7, 43);
+            this.ListOfAlternativeDays.Name = "ListOfAlternativeDays";
+            this.ListOfAlternativeDays.Size = new System.Drawing.Size(251, 304);
+            this.ListOfAlternativeDays.TabIndex = 84;
+            // 
+            // AddAlternativeDay
+            // 
+            this.AddAlternativeDay.BackColor = System.Drawing.SystemColors.Control;
+            this.AddAlternativeDay.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.AddAlternativeDay.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(72)))), ((int)(((byte)(142)))), ((int)(((byte)(149)))));
+            this.AddAlternativeDay.Location = new System.Drawing.Point(278, 148);
+            this.AddAlternativeDay.Name = "AddAlternativeDay";
+            this.AddAlternativeDay.Size = new System.Drawing.Size(183, 44);
+            this.AddAlternativeDay.TabIndex = 87;
+            this.AddAlternativeDay.Text = "Datum toevoegen";
+            this.AddAlternativeDay.UseVisualStyleBackColor = false;
+            this.AddAlternativeDay.Click += new System.EventHandler(this.AddAlternativeDay_Click);
+            // 
+            // DatePlanner
+            // 
+            this.DatePlanner.Location = new System.Drawing.Point(278, 19);
+            this.DatePlanner.Name = "DatePlanner";
+            this.DatePlanner.Size = new System.Drawing.Size(183, 20);
+            this.DatePlanner.TabIndex = 91;
+            // 
+            // OpenAlternative
+            // 
+            this.OpenAlternative.Location = new System.Drawing.Point(275, 66);
+            this.OpenAlternative.Name = "OpenAlternative";
+            this.OpenAlternative.Size = new System.Drawing.Size(76, 23);
+            this.OpenAlternative.TabIndex = 94;
+            this.OpenAlternative.Text = "Geopend";
+            this.OpenAlternative.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // ClosedAlternative
+            // 
+            this.ClosedAlternative.Location = new System.Drawing.Point(385, 66);
+            this.ClosedAlternative.Name = "ClosedAlternative";
+            this.ClosedAlternative.Size = new System.Drawing.Size(76, 23);
+            this.ClosedAlternative.TabIndex = 95;
+            this.ClosedAlternative.Text = "Gesloten";
+            this.ClosedAlternative.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // PanelAlternativeDay
+            // 
+            this.PanelAlternativeDay.Controls.Add(this.AlternativeDayClosedPicker);
+            this.PanelAlternativeDay.Controls.Add(this.AlternativeDayOpenPicker);
+            this.PanelAlternativeDay.Controls.Add(this.DeleteAlternativeDay);
+            this.PanelAlternativeDay.Controls.Add(this.label3);
+            this.PanelAlternativeDay.Controls.Add(this.ListOfAlternativeDays);
+            this.PanelAlternativeDay.Controls.Add(this.ClosedAlternative);
+            this.PanelAlternativeDay.Controls.Add(this.AddAlternativeDay);
+            this.PanelAlternativeDay.Controls.Add(this.OpenAlternative);
+            this.PanelAlternativeDay.Controls.Add(this.DatePlanner);
+            this.PanelAlternativeDay.Location = new System.Drawing.Point(525, 82);
+            this.PanelAlternativeDay.Name = "PanelAlternativeDay";
+            this.PanelAlternativeDay.Size = new System.Drawing.Size(471, 356);
+            this.PanelAlternativeDay.TabIndex = 97;
+            // 
+            // AlternativeDayClosedPicker
+            // 
+            this.AlternativeDayClosedPicker.CustomFormat = "HH:mm";
+            this.AlternativeDayClosedPicker.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.AlternativeDayClosedPicker.Location = new System.Drawing.Point(388, 99);
+            this.AlternativeDayClosedPicker.Name = "AlternativeDayClosedPicker";
+            this.AlternativeDayClosedPicker.ShowUpDown = true;
+            this.AlternativeDayClosedPicker.Size = new System.Drawing.Size(73, 20);
+            this.AlternativeDayClosedPicker.TabIndex = 116;
+            this.AlternativeDayClosedPicker.Value = new System.DateTime(2020, 4, 20, 0, 0, 0, 0);
+            // 
+            // AlternativeDayOpenPicker
+            // 
+            this.AlternativeDayOpenPicker.CustomFormat = "HH:mm";
+            this.AlternativeDayOpenPicker.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.AlternativeDayOpenPicker.Location = new System.Drawing.Point(278, 99);
+            this.AlternativeDayOpenPicker.Name = "AlternativeDayOpenPicker";
+            this.AlternativeDayOpenPicker.ShowUpDown = true;
+            this.AlternativeDayOpenPicker.Size = new System.Drawing.Size(73, 20);
+            this.AlternativeDayOpenPicker.TabIndex = 115;
+            this.AlternativeDayOpenPicker.Value = new System.DateTime(2020, 4, 20, 0, 0, 0, 0);
+            // 
+            // DeleteAlternativeDay
+            // 
+            this.DeleteAlternativeDay.BackColor = System.Drawing.SystemColors.Control;
+            this.DeleteAlternativeDay.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.DeleteAlternativeDay.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(72)))), ((int)(((byte)(142)))), ((int)(((byte)(149)))));
+            this.DeleteAlternativeDay.Location = new System.Drawing.Point(278, 236);
+            this.DeleteAlternativeDay.Name = "DeleteAlternativeDay";
+            this.DeleteAlternativeDay.Size = new System.Drawing.Size(183, 44);
+            this.DeleteAlternativeDay.TabIndex = 99;
+            this.DeleteAlternativeDay.Text = "Datum verwijderen";
+            this.DeleteAlternativeDay.UseVisualStyleBackColor = false;
+            this.DeleteAlternativeDay.Click += new System.EventHandler(this.DeleteAlternativeDayClick);
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(112)))), ((int)(((byte)(112)))), ((int)(((byte)(112)))));
+            this.label3.Location = new System.Drawing.Point(3, 19);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(204, 20);
+            this.label3.TabIndex = 98;
+            this.label3.Text = "Alternatieve openingstijden:";
+            // 
+            // SundayText
+            // 
+            this.SundayText.AutoSize = true;
+            this.SundayText.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.SundayText.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(112)))), ((int)(((byte)(112)))), ((int)(((byte)(112)))));
+            this.SundayText.Location = new System.Drawing.Point(3, 241);
+            this.SundayText.Name = "SundayText";
+            this.SundayText.Size = new System.Drawing.Size(64, 20);
+            this.SundayText.TabIndex = 60;
+            this.SundayText.Text = "Zondag";
+            this.SundayText.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // SaturdayText
+            // 
+            this.SaturdayText.AutoSize = true;
+            this.SaturdayText.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.SaturdayText.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(112)))), ((int)(((byte)(112)))), ((int)(((byte)(112)))));
+            this.SaturdayText.Location = new System.Drawing.Point(3, 205);
+            this.SaturdayText.Name = "SaturdayText";
+            this.SaturdayText.Size = new System.Drawing.Size(74, 20);
+            this.SaturdayText.TabIndex = 59;
+            this.SaturdayText.Text = "Zaterdag";
+            this.SaturdayText.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // FridayText
+            // 
+            this.FridayText.AutoSize = true;
+            this.FridayText.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.FridayText.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(112)))), ((int)(((byte)(112)))), ((int)(((byte)(112)))));
+            this.FridayText.Location = new System.Drawing.Point(3, 169);
+            this.FridayText.Name = "FridayText";
+            this.FridayText.Size = new System.Drawing.Size(58, 20);
+            this.FridayText.TabIndex = 58;
+            this.FridayText.Text = "Vrijdag";
+            this.FridayText.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // ThursdayText
+            // 
+            this.ThursdayText.AutoSize = true;
+            this.ThursdayText.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.ThursdayText.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(112)))), ((int)(((byte)(112)))), ((int)(((byte)(112)))));
+            this.ThursdayText.Location = new System.Drawing.Point(3, 133);
+            this.ThursdayText.Name = "ThursdayText";
+            this.ThursdayText.Size = new System.Drawing.Size(89, 20);
+            this.ThursdayText.TabIndex = 57;
+            this.ThursdayText.Text = "Donderdag";
+            this.ThursdayText.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // WednesdayText
+            // 
+            this.WednesdayText.AutoSize = true;
+            this.WednesdayText.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.WednesdayText.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(112)))), ((int)(((byte)(112)))), ((int)(((byte)(112)))));
+            this.WednesdayText.Location = new System.Drawing.Point(3, 97);
+            this.WednesdayText.Name = "WednesdayText";
+            this.WednesdayText.Size = new System.Drawing.Size(86, 20);
+            this.WednesdayText.TabIndex = 56;
+            this.WednesdayText.Text = "Woensdag";
+            this.WednesdayText.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // TuesdayText
+            // 
+            this.TuesdayText.AutoSize = true;
+            this.TuesdayText.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.TuesdayText.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(112)))), ((int)(((byte)(112)))), ((int)(((byte)(112)))));
+            this.TuesdayText.Location = new System.Drawing.Point(3, 61);
+            this.TuesdayText.Name = "TuesdayText";
+            this.TuesdayText.Size = new System.Drawing.Size(68, 20);
+            this.TuesdayText.TabIndex = 55;
+            this.TuesdayText.Text = "Dinsdag";
+            this.TuesdayText.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // MondayText
+            // 
+            this.MondayText.AutoSize = true;
+            this.MondayText.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.MondayText.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(112)))), ((int)(((byte)(112)))), ((int)(((byte)(112)))));
+            this.MondayText.Location = new System.Drawing.Point(3, 25);
+            this.MondayText.Name = "MondayText";
+            this.MondayText.Size = new System.Drawing.Size(76, 20);
+            this.MondayText.TabIndex = 54;
+            this.MondayText.Text = "Maandag";
+            this.MondayText.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // TuesdayDot
+            // 
+            this.TuesdayDot.AutoSize = true;
+            this.TuesdayDot.Location = new System.Drawing.Point(211, 61);
+            this.TuesdayDot.Name = "TuesdayDot";
+            this.TuesdayDot.Size = new System.Drawing.Size(10, 13);
+            this.TuesdayDot.TabIndex = 62;
+            this.TuesdayDot.Text = "-";
+            // 
+            // WednesdayDot
+            // 
+            this.WednesdayDot.AutoSize = true;
+            this.WednesdayDot.Location = new System.Drawing.Point(211, 97);
+            this.WednesdayDot.Name = "WednesdayDot";
+            this.WednesdayDot.Size = new System.Drawing.Size(10, 13);
+            this.WednesdayDot.TabIndex = 63;
+            this.WednesdayDot.Text = "-";
+            // 
+            // MondayDot
+            // 
+            this.MondayDot.AutoSize = true;
+            this.MondayDot.Location = new System.Drawing.Point(211, 25);
+            this.MondayDot.Name = "MondayDot";
+            this.MondayDot.Size = new System.Drawing.Size(10, 13);
+            this.MondayDot.TabIndex = 61;
+            this.MondayDot.Text = "-";
+            // 
+            // FridayDot
+            // 
+            this.FridayDot.AutoSize = true;
+            this.FridayDot.Location = new System.Drawing.Point(211, 169);
+            this.FridayDot.Name = "FridayDot";
+            this.FridayDot.Size = new System.Drawing.Size(10, 13);
+            this.FridayDot.TabIndex = 64;
+            this.FridayDot.Text = "-";
+            // 
+            // RegularTimesText
+            // 
+            this.RegularTimesText.AutoSize = true;
+            this.RegularTimesText.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.RegularTimesText.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(112)))), ((int)(((byte)(112)))), ((int)(((byte)(112)))));
+            this.RegularTimesText.Location = new System.Drawing.Point(3, 0);
+            this.RegularTimesText.Name = "RegularTimesText";
+            this.RegularTimesText.Size = new System.Drawing.Size(123, 20);
+            this.RegularTimesText.TabIndex = 53;
+            this.RegularTimesText.Text = "Openingstijden: ";
+            this.RegularTimesText.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // SaturdayDot
+            // 
+            this.SaturdayDot.AutoSize = true;
+            this.SaturdayDot.Location = new System.Drawing.Point(211, 205);
+            this.SaturdayDot.Name = "SaturdayDot";
+            this.SaturdayDot.Size = new System.Drawing.Size(10, 13);
+            this.SaturdayDot.TabIndex = 65;
+            this.SaturdayDot.Text = "-";
+            // 
+            // ThursdayDot
+            // 
+            this.ThursdayDot.AutoSize = true;
+            this.ThursdayDot.Location = new System.Drawing.Point(211, 133);
+            this.ThursdayDot.Name = "ThursdayDot";
+            this.ThursdayDot.Size = new System.Drawing.Size(10, 13);
+            this.ThursdayDot.TabIndex = 67;
+            this.ThursdayDot.Text = "-";
+            // 
+            // SundayDot
+            // 
+            this.SundayDot.AutoSize = true;
+            this.SundayDot.Location = new System.Drawing.Point(211, 241);
+            this.SundayDot.Name = "SundayDot";
+            this.SundayDot.Size = new System.Drawing.Size(10, 13);
+            this.SundayDot.TabIndex = 66;
+            this.SundayDot.Text = "-";
             // 
             // Opentimes
             // 
@@ -497,35 +433,35 @@
             this.Opentimes.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
             this.Opentimes.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
             this.Opentimes.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
-            this.Opentimes.Controls.Add(this.WednesDayClosed, 3, 3);
-            this.Opentimes.Controls.Add(this.SunDayDot, 2, 7);
-            this.Opentimes.Controls.Add(this.ThursDayDot, 2, 4);
-            this.Opentimes.Controls.Add(this.SaturDayDot, 2, 6);
-            this.Opentimes.Controls.Add(this.TuesDayOpen, 1, 2);
-            this.Opentimes.Controls.Add(this.label2, 0, 0);
+            this.Opentimes.Controls.Add(this.MondayOpenPicker, 1, 1);
+            this.Opentimes.Controls.Add(this.SundayDot, 2, 7);
+            this.Opentimes.Controls.Add(this.ThursdayDot, 2, 4);
+            this.Opentimes.Controls.Add(this.SaturdayDot, 2, 6);
+            this.Opentimes.Controls.Add(this.RegularTimesText, 0, 0);
             this.Opentimes.Controls.Add(this.FridayDot, 2, 5);
             this.Opentimes.Controls.Add(this.MondayDot, 2, 1);
-            this.Opentimes.Controls.Add(this.WednesDayOpen, 1, 3);
-            this.Opentimes.Controls.Add(this.ThursDayOpen, 1, 4);
-            this.Opentimes.Controls.Add(this.WednesDayDot, 2, 3);
-            this.Opentimes.Controls.Add(this.FridayOpen, 1, 5);
-            this.Opentimes.Controls.Add(this.SaturDayOpen, 1, 6);
-            this.Opentimes.Controls.Add(this.TuesDayDot, 2, 2);
-            this.Opentimes.Controls.Add(this.SunDayClosed, 3, 7);
-            this.Opentimes.Controls.Add(this.MondayOpen, 1, 1);
+            this.Opentimes.Controls.Add(this.WednesdayDot, 2, 3);
+            this.Opentimes.Controls.Add(this.TuesdayDot, 2, 2);
             this.Opentimes.Controls.Add(this.MondayText, 0, 1);
-            this.Opentimes.Controls.Add(this.TuesDayText, 0, 2);
-            this.Opentimes.Controls.Add(this.SaturDayClosed, 3, 6);
-            this.Opentimes.Controls.Add(this.WednesDayText, 0, 3);
-            this.Opentimes.Controls.Add(this.ThursDayText, 0, 4);
-            this.Opentimes.Controls.Add(this.FridayClosed, 3, 5);
+            this.Opentimes.Controls.Add(this.TuesdayText, 0, 2);
+            this.Opentimes.Controls.Add(this.WednesdayText, 0, 3);
+            this.Opentimes.Controls.Add(this.ThursdayText, 0, 4);
             this.Opentimes.Controls.Add(this.FridayText, 0, 5);
-            this.Opentimes.Controls.Add(this.SaturDayText, 0, 6);
-            this.Opentimes.Controls.Add(this.SunDayText, 0, 7);
-            this.Opentimes.Controls.Add(this.TuesDayClosed, 3, 2);
-            this.Opentimes.Controls.Add(this.SunDayOpen, 1, 7);
-            this.Opentimes.Controls.Add(this.ThursDayClosed, 3, 4);
-            this.Opentimes.Controls.Add(this.MondayClosed, 3, 1);
+            this.Opentimes.Controls.Add(this.SaturdayText, 0, 6);
+            this.Opentimes.Controls.Add(this.SundayText, 0, 7);
+            this.Opentimes.Controls.Add(this.MondayClosedPicker, 3, 1);
+            this.Opentimes.Controls.Add(this.TuesdayOpenPicker, 1, 2);
+            this.Opentimes.Controls.Add(this.TuesdayClosedPicker, 3, 2);
+            this.Opentimes.Controls.Add(this.WednesdayOpenPicker, 1, 3);
+            this.Opentimes.Controls.Add(this.WednesdayClosedPicker, 3, 3);
+            this.Opentimes.Controls.Add(this.ThursdayOpenPicker, 1, 4);
+            this.Opentimes.Controls.Add(this.ThursdayClosedPicker, 3, 4);
+            this.Opentimes.Controls.Add(this.FridayOpenPicker, 1, 5);
+            this.Opentimes.Controls.Add(this.FridayClosedPicker, 3, 5);
+            this.Opentimes.Controls.Add(this.SaturdayOpenPicker, 1, 6);
+            this.Opentimes.Controls.Add(this.SaturdayClosedPicker, 3, 6);
+            this.Opentimes.Controls.Add(this.SundayOpenPicker, 1, 7);
+            this.Opentimes.Controls.Add(this.SundayClosedPicker, 3, 7);
             this.Opentimes.GrowStyle = System.Windows.Forms.TableLayoutPanelGrowStyle.AddColumns;
             this.Opentimes.Location = new System.Drawing.Point(12, 157);
             this.Opentimes.Name = "Opentimes";
@@ -538,131 +474,267 @@
             this.Opentimes.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 12.98701F));
             this.Opentimes.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 12.98701F));
             this.Opentimes.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 12.98701F));
-            this.Opentimes.Size = new System.Drawing.Size(390, 281);
+            this.Opentimes.Size = new System.Drawing.Size(307, 281);
             this.Opentimes.TabIndex = 83;
             // 
-            // tableLayoutPanel1
+            // MondayOpenPicker
             // 
-            this.tableLayoutPanel1.ColumnCount = 1;
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel1.Controls.Add(this.PincodeInput, 0, 1);
-            this.tableLayoutPanel1.Controls.Add(this.PincodeText, 0, 0);
-            this.tableLayoutPanel1.Controls.Add(this.button1, 0, 2);
-            this.tableLayoutPanel1.Location = new System.Drawing.Point(12, 44);
-            this.tableLayoutPanel1.Name = "tableLayoutPanel1";
-            this.tableLayoutPanel1.RowCount = 3;
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(157, 107);
-            this.tableLayoutPanel1.TabIndex = 82;
+            this.MondayOpenPicker.CustomFormat = "HH:mm";
+            this.MondayOpenPicker.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.MondayOpenPicker.Location = new System.Drawing.Point(132, 28);
+            this.MondayOpenPicker.Name = "MondayOpenPicker";
+            this.MondayOpenPicker.ShowUpDown = true;
+            this.MondayOpenPicker.Size = new System.Drawing.Size(73, 20);
+            this.MondayOpenPicker.TabIndex = 101;
+            this.MondayOpenPicker.ValueChanged += new System.EventHandler(this.ChangedValue);
+            this.MondayOpenPicker.Enter += new System.EventHandler(this.DateTimePickerEnter);
             // 
-            // button1
+            // MondayClosedPicker
             // 
-            this.button1.BackColor = System.Drawing.Color.White;
-            this.button1.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(72)))), ((int)(((byte)(142)))), ((int)(((byte)(149)))));
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(72)))), ((int)(((byte)(142)))), ((int)(((byte)(149)))));
-            this.button1.Location = new System.Drawing.Point(0, 70);
-            this.button1.Margin = new System.Windows.Forms.Padding(0);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(130, 29);
-            this.button1.TabIndex = 53;
-            this.button1.Text = "wijzigen";
-            this.button1.UseVisualStyleBackColor = false;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.MondayClosedPicker.CustomFormat = "HH:mm";
+            this.MondayClosedPicker.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.MondayClosedPicker.Location = new System.Drawing.Point(227, 28);
+            this.MondayClosedPicker.Name = "MondayClosedPicker";
+            this.MondayClosedPicker.ShowUpDown = true;
+            this.MondayClosedPicker.Size = new System.Drawing.Size(73, 20);
+            this.MondayClosedPicker.TabIndex = 102;
+            this.MondayClosedPicker.ValueChanged += new System.EventHandler(this.ChangedValue);
+            this.MondayClosedPicker.Enter += new System.EventHandler(this.DateTimePickerEnter);
             // 
-            // listBox1
+            // TuesdayOpenPicker
             // 
-            this.listBox1.BackColor = System.Drawing.SystemColors.Control;
-            this.listBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.listBox1.FormattingEnabled = true;
-            this.listBox1.ItemHeight = 20;
-            this.listBox1.Location = new System.Drawing.Point(3, 3);
-            this.listBox1.Name = "listBox1";
-            this.listBox1.Size = new System.Drawing.Size(251, 324);
-            this.listBox1.TabIndex = 84;
-            this.listBox1.SelectedIndexChanged += new System.EventHandler(this.listBox1_SelectedIndexChanged);
+            this.TuesdayOpenPicker.CustomFormat = "HH:mm";
+            this.TuesdayOpenPicker.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.TuesdayOpenPicker.Location = new System.Drawing.Point(132, 64);
+            this.TuesdayOpenPicker.Name = "TuesdayOpenPicker";
+            this.TuesdayOpenPicker.ShowUpDown = true;
+            this.TuesdayOpenPicker.Size = new System.Drawing.Size(73, 20);
+            this.TuesdayOpenPicker.TabIndex = 103;
+            this.TuesdayOpenPicker.ValueChanged += new System.EventHandler(this.ChangedValue);
+            this.TuesdayOpenPicker.Enter += new System.EventHandler(this.DateTimePickerEnter);
             // 
-            // AddAltDay
+            // TuesdayClosedPicker
             // 
-            this.AddAltDay.BackColor = System.Drawing.SystemColors.Control;
-            this.AddAltDay.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.AddAltDay.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(72)))), ((int)(((byte)(142)))), ((int)(((byte)(149)))));
-            this.AddAltDay.Location = new System.Drawing.Point(278, 147);
-            this.AddAltDay.Name = "AddAltDay";
-            this.AddAltDay.Size = new System.Drawing.Size(183, 44);
-            this.AddAltDay.TabIndex = 87;
-            this.AddAltDay.Text = "Datum toevoegen";
-            this.AddAltDay.UseVisualStyleBackColor = false;
-            this.AddAltDay.Click += new System.EventHandler(this.AddAltDay_Click);
+            this.TuesdayClosedPicker.CustomFormat = "HH:mm";
+            this.TuesdayClosedPicker.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.TuesdayClosedPicker.Location = new System.Drawing.Point(227, 64);
+            this.TuesdayClosedPicker.Name = "TuesdayClosedPicker";
+            this.TuesdayClosedPicker.ShowUpDown = true;
+            this.TuesdayClosedPicker.Size = new System.Drawing.Size(73, 20);
+            this.TuesdayClosedPicker.TabIndex = 104;
+            this.TuesdayClosedPicker.ValueChanged += new System.EventHandler(this.ChangedValue);
+            this.TuesdayClosedPicker.Enter += new System.EventHandler(this.DateTimePickerEnter);
             // 
-            // DatumPrikker
+            // WednesdayOpenPicker
             // 
-            this.DatumPrikker.Location = new System.Drawing.Point(278, 3);
-            this.DatumPrikker.Name = "DatumPrikker";
-            this.DatumPrikker.Size = new System.Drawing.Size(183, 20);
-            this.DatumPrikker.TabIndex = 91;
+            this.WednesdayOpenPicker.CustomFormat = "HH:mm";
+            this.WednesdayOpenPicker.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.WednesdayOpenPicker.Location = new System.Drawing.Point(132, 100);
+            this.WednesdayOpenPicker.Name = "WednesdayOpenPicker";
+            this.WednesdayOpenPicker.ShowUpDown = true;
+            this.WednesdayOpenPicker.Size = new System.Drawing.Size(73, 20);
+            this.WednesdayOpenPicker.TabIndex = 105;
+            this.WednesdayOpenPicker.ValueChanged += new System.EventHandler(this.ChangedValue);
+            this.WednesdayOpenPicker.Enter += new System.EventHandler(this.DateTimePickerEnter);
             // 
-            // OpenALTINP
+            // WednesdayClosedPicker
             // 
-            this.OpenALTINP.BackColor = System.Drawing.Color.White;
-            this.OpenALTINP.ForeColor = System.Drawing.Color.Black;
-            this.OpenALTINP.Location = new System.Drawing.Point(278, 92);
-            this.OpenALTINP.Name = "OpenALTINP";
-            this.OpenALTINP.Size = new System.Drawing.Size(76, 20);
-            this.OpenALTINP.TabIndex = 92;
-            this.OpenALTINP.Text = "xx:xx";
-            this.OpenALTINP.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.OpenALTINP.Enter += new System.EventHandler(this.TimeChange_Enter);
-            this.OpenALTINP.Leave += new System.EventHandler(this.TimeChange_Leave);
+            this.WednesdayClosedPicker.CustomFormat = "HH:mm";
+            this.WednesdayClosedPicker.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.WednesdayClosedPicker.Location = new System.Drawing.Point(227, 100);
+            this.WednesdayClosedPicker.Name = "WednesdayClosedPicker";
+            this.WednesdayClosedPicker.ShowUpDown = true;
+            this.WednesdayClosedPicker.Size = new System.Drawing.Size(73, 20);
+            this.WednesdayClosedPicker.TabIndex = 106;
+            this.WednesdayClosedPicker.ValueChanged += new System.EventHandler(this.ChangedValue);
+            this.WednesdayClosedPicker.Enter += new System.EventHandler(this.DateTimePickerEnter);
             // 
-            // ClosedALTINP
+            // ThursdayOpenPicker
             // 
-            this.ClosedALTINP.BackColor = System.Drawing.Color.White;
-            this.ClosedALTINP.ForeColor = System.Drawing.Color.Black;
-            this.ClosedALTINP.Location = new System.Drawing.Point(385, 92);
-            this.ClosedALTINP.Name = "ClosedALTINP";
-            this.ClosedALTINP.Size = new System.Drawing.Size(76, 20);
-            this.ClosedALTINP.TabIndex = 93;
-            this.ClosedALTINP.Text = "xx:xx";
-            this.ClosedALTINP.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.ClosedALTINP.Enter += new System.EventHandler(this.TimeChange_Enter);
-            this.ClosedALTINP.Leave += new System.EventHandler(this.TimeChange_Leave);
+            this.ThursdayOpenPicker.CustomFormat = "HH:mm";
+            this.ThursdayOpenPicker.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.ThursdayOpenPicker.Location = new System.Drawing.Point(132, 136);
+            this.ThursdayOpenPicker.Name = "ThursdayOpenPicker";
+            this.ThursdayOpenPicker.ShowUpDown = true;
+            this.ThursdayOpenPicker.Size = new System.Drawing.Size(73, 20);
+            this.ThursdayOpenPicker.TabIndex = 107;
+            this.ThursdayOpenPicker.ValueChanged += new System.EventHandler(this.ChangedValue);
+            this.ThursdayOpenPicker.Enter += new System.EventHandler(this.DateTimePickerEnter);
             // 
-            // OpenAlt
+            // ThursdayClosedPicker
             // 
-            this.OpenAlt.Location = new System.Drawing.Point(275, 66);
-            this.OpenAlt.Name = "OpenAlt";
-            this.OpenAlt.Size = new System.Drawing.Size(76, 23);
-            this.OpenAlt.TabIndex = 94;
-            this.OpenAlt.Text = "Geopend";
-            this.OpenAlt.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.ThursdayClosedPicker.CustomFormat = "HH:mm";
+            this.ThursdayClosedPicker.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.ThursdayClosedPicker.Location = new System.Drawing.Point(227, 136);
+            this.ThursdayClosedPicker.Name = "ThursdayClosedPicker";
+            this.ThursdayClosedPicker.ShowUpDown = true;
+            this.ThursdayClosedPicker.Size = new System.Drawing.Size(73, 20);
+            this.ThursdayClosedPicker.TabIndex = 108;
+            this.ThursdayClosedPicker.ValueChanged += new System.EventHandler(this.ChangedValue);
+            this.ThursdayClosedPicker.Enter += new System.EventHandler(this.DateTimePickerEnter);
             // 
-            // ClosedAlt
+            // FridayOpenPicker
             // 
-            this.ClosedAlt.Location = new System.Drawing.Point(385, 66);
-            this.ClosedAlt.Name = "ClosedAlt";
-            this.ClosedAlt.Size = new System.Drawing.Size(76, 23);
-            this.ClosedAlt.TabIndex = 95;
-            this.ClosedAlt.Text = "Gesloten";
-            this.ClosedAlt.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.FridayOpenPicker.CustomFormat = "HH:mm";
+            this.FridayOpenPicker.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.FridayOpenPicker.Location = new System.Drawing.Point(132, 172);
+            this.FridayOpenPicker.Name = "FridayOpenPicker";
+            this.FridayOpenPicker.ShowUpDown = true;
+            this.FridayOpenPicker.Size = new System.Drawing.Size(73, 20);
+            this.FridayOpenPicker.TabIndex = 109;
+            this.FridayOpenPicker.ValueChanged += new System.EventHandler(this.ChangedValue);
+            this.FridayOpenPicker.Enter += new System.EventHandler(this.DateTimePickerEnter);
             // 
-            // PanelALTDay
+            // FridayClosedPicker
             // 
-            this.PanelALTDay.Controls.Add(this.listBox1);
-            this.PanelALTDay.Controls.Add(this.ClosedAlt);
-            this.PanelALTDay.Controls.Add(this.AddAltDay);
-            this.PanelALTDay.Controls.Add(this.OpenAlt);
-            this.PanelALTDay.Controls.Add(this.DatumPrikker);
-            this.PanelALTDay.Controls.Add(this.ClosedALTINP);
-            this.PanelALTDay.Controls.Add(this.OpenALTINP);
-            this.PanelALTDay.Location = new System.Drawing.Point(490, 114);
-            this.PanelALTDay.Name = "PanelALTDay";
-            this.PanelALTDay.Size = new System.Drawing.Size(471, 328);
-            this.PanelALTDay.TabIndex = 97;
+            this.FridayClosedPicker.CustomFormat = "HH:mm";
+            this.FridayClosedPicker.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.FridayClosedPicker.Location = new System.Drawing.Point(227, 172);
+            this.FridayClosedPicker.Name = "FridayClosedPicker";
+            this.FridayClosedPicker.ShowUpDown = true;
+            this.FridayClosedPicker.Size = new System.Drawing.Size(73, 20);
+            this.FridayClosedPicker.TabIndex = 110;
+            this.FridayClosedPicker.ValueChanged += new System.EventHandler(this.ChangedValue);
+            this.FridayClosedPicker.Enter += new System.EventHandler(this.DateTimePickerEnter);
+            // 
+            // SaturdayOpenPicker
+            // 
+            this.SaturdayOpenPicker.CustomFormat = "HH:mm";
+            this.SaturdayOpenPicker.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.SaturdayOpenPicker.Location = new System.Drawing.Point(132, 208);
+            this.SaturdayOpenPicker.Name = "SaturdayOpenPicker";
+            this.SaturdayOpenPicker.ShowUpDown = true;
+            this.SaturdayOpenPicker.Size = new System.Drawing.Size(73, 20);
+            this.SaturdayOpenPicker.TabIndex = 111;
+            this.SaturdayOpenPicker.ValueChanged += new System.EventHandler(this.ChangedValue);
+            this.SaturdayOpenPicker.Enter += new System.EventHandler(this.DateTimePickerEnter);
+            // 
+            // SaturdayClosedPicker
+            // 
+            this.SaturdayClosedPicker.CustomFormat = "HH:mm";
+            this.SaturdayClosedPicker.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.SaturdayClosedPicker.Location = new System.Drawing.Point(227, 208);
+            this.SaturdayClosedPicker.Name = "SaturdayClosedPicker";
+            this.SaturdayClosedPicker.ShowUpDown = true;
+            this.SaturdayClosedPicker.Size = new System.Drawing.Size(73, 20);
+            this.SaturdayClosedPicker.TabIndex = 112;
+            this.SaturdayClosedPicker.ValueChanged += new System.EventHandler(this.ChangedValue);
+            this.SaturdayClosedPicker.Enter += new System.EventHandler(this.DateTimePickerEnter);
+            // 
+            // SundayOpenPicker
+            // 
+            this.SundayOpenPicker.CustomFormat = "HH:mm";
+            this.SundayOpenPicker.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.SundayOpenPicker.Location = new System.Drawing.Point(132, 244);
+            this.SundayOpenPicker.Name = "SundayOpenPicker";
+            this.SundayOpenPicker.ShowUpDown = true;
+            this.SundayOpenPicker.Size = new System.Drawing.Size(73, 20);
+            this.SundayOpenPicker.TabIndex = 113;
+            this.SundayOpenPicker.ValueChanged += new System.EventHandler(this.ChangedValue);
+            this.SundayOpenPicker.Enter += new System.EventHandler(this.DateTimePickerEnter);
+            // 
+            // SundayClosedPicker
+            // 
+            this.SundayClosedPicker.CustomFormat = "HH:mm";
+            this.SundayClosedPicker.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.SundayClosedPicker.Location = new System.Drawing.Point(227, 244);
+            this.SundayClosedPicker.Name = "SundayClosedPicker";
+            this.SundayClosedPicker.ShowUpDown = true;
+            this.SundayClosedPicker.Size = new System.Drawing.Size(73, 20);
+            this.SundayClosedPicker.TabIndex = 114;
+            this.SundayClosedPicker.ValueChanged += new System.EventHandler(this.ChangedValue);
+            this.SundayClosedPicker.Enter += new System.EventHandler(this.DateTimePickerEnter);
+            // 
+            // MondayClosedButton
+            // 
+            this.MondayClosedButton.BackColor = System.Drawing.Color.White;
+            this.MondayClosedButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.MondayClosedButton.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(72)))), ((int)(((byte)(142)))), ((int)(((byte)(149)))));
+            this.MondayClosedButton.Location = new System.Drawing.Point(325, 182);
+            this.MondayClosedButton.Name = "MondayClosedButton";
+            this.MondayClosedButton.Size = new System.Drawing.Size(75, 23);
+            this.MondayClosedButton.TabIndex = 98;
+            this.MondayClosedButton.Text = "Gesloten";
+            this.MondayClosedButton.UseVisualStyleBackColor = false;
+            this.MondayClosedButton.Click += new System.EventHandler(this.ClosedClick);
+            // 
+            // TuesdayClosedButton
+            // 
+            this.TuesdayClosedButton.BackColor = System.Drawing.Color.White;
+            this.TuesdayClosedButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.TuesdayClosedButton.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(72)))), ((int)(((byte)(142)))), ((int)(((byte)(149)))));
+            this.TuesdayClosedButton.Location = new System.Drawing.Point(325, 218);
+            this.TuesdayClosedButton.Name = "TuesdayClosedButton";
+            this.TuesdayClosedButton.Size = new System.Drawing.Size(75, 23);
+            this.TuesdayClosedButton.TabIndex = 99;
+            this.TuesdayClosedButton.Text = "Gesloten";
+            this.TuesdayClosedButton.UseVisualStyleBackColor = false;
+            this.TuesdayClosedButton.Click += new System.EventHandler(this.ClosedClick);
+            // 
+            // WednesdayClosedButton
+            // 
+            this.WednesdayClosedButton.BackColor = System.Drawing.Color.White;
+            this.WednesdayClosedButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.WednesdayClosedButton.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(72)))), ((int)(((byte)(142)))), ((int)(((byte)(149)))));
+            this.WednesdayClosedButton.Location = new System.Drawing.Point(325, 254);
+            this.WednesdayClosedButton.Name = "WednesdayClosedButton";
+            this.WednesdayClosedButton.Size = new System.Drawing.Size(75, 23);
+            this.WednesdayClosedButton.TabIndex = 100;
+            this.WednesdayClosedButton.Text = "Gesloten";
+            this.WednesdayClosedButton.UseVisualStyleBackColor = false;
+            this.WednesdayClosedButton.Click += new System.EventHandler(this.ClosedClick);
+            // 
+            // ThursdayClosedButton
+            // 
+            this.ThursdayClosedButton.BackColor = System.Drawing.Color.White;
+            this.ThursdayClosedButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.ThursdayClosedButton.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(72)))), ((int)(((byte)(142)))), ((int)(((byte)(149)))));
+            this.ThursdayClosedButton.Location = new System.Drawing.Point(325, 290);
+            this.ThursdayClosedButton.Name = "ThursdayClosedButton";
+            this.ThursdayClosedButton.Size = new System.Drawing.Size(75, 23);
+            this.ThursdayClosedButton.TabIndex = 101;
+            this.ThursdayClosedButton.Text = "Gesloten";
+            this.ThursdayClosedButton.UseVisualStyleBackColor = false;
+            this.ThursdayClosedButton.Click += new System.EventHandler(this.ClosedClick);
+            // 
+            // FridayClosedButton
+            // 
+            this.FridayClosedButton.BackColor = System.Drawing.Color.White;
+            this.FridayClosedButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.FridayClosedButton.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(72)))), ((int)(((byte)(142)))), ((int)(((byte)(149)))));
+            this.FridayClosedButton.Location = new System.Drawing.Point(325, 325);
+            this.FridayClosedButton.Name = "FridayClosedButton";
+            this.FridayClosedButton.Size = new System.Drawing.Size(75, 25);
+            this.FridayClosedButton.TabIndex = 102;
+            this.FridayClosedButton.Text = "Gesloten";
+            this.FridayClosedButton.UseVisualStyleBackColor = false;
+            this.FridayClosedButton.Click += new System.EventHandler(this.ClosedClick);
+            // 
+            // SaturdayClosedButton
+            // 
+            this.SaturdayClosedButton.BackColor = System.Drawing.Color.White;
+            this.SaturdayClosedButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.SaturdayClosedButton.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(72)))), ((int)(((byte)(142)))), ((int)(((byte)(149)))));
+            this.SaturdayClosedButton.Location = new System.Drawing.Point(325, 361);
+            this.SaturdayClosedButton.Name = "SaturdayClosedButton";
+            this.SaturdayClosedButton.Size = new System.Drawing.Size(75, 25);
+            this.SaturdayClosedButton.TabIndex = 103;
+            this.SaturdayClosedButton.Text = "Gesloten";
+            this.SaturdayClosedButton.UseVisualStyleBackColor = false;
+            this.SaturdayClosedButton.Click += new System.EventHandler(this.ClosedClick);
+            // 
+            // SundayClosedButton
+            // 
+            this.SundayClosedButton.BackColor = System.Drawing.Color.White;
+            this.SundayClosedButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.SundayClosedButton.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(72)))), ((int)(((byte)(142)))), ((int)(((byte)(149)))));
+            this.SundayClosedButton.Location = new System.Drawing.Point(325, 397);
+            this.SundayClosedButton.Name = "SundayClosedButton";
+            this.SundayClosedButton.Size = new System.Drawing.Size(75, 25);
+            this.SundayClosedButton.TabIndex = 104;
+            this.SundayClosedButton.Text = "Gesloten";
+            this.SundayClosedButton.UseVisualStyleBackColor = false;
+            this.SundayClosedButton.Click += new System.EventHandler(this.ClosedClick);
             // 
             // SettingsPage
             // 
@@ -670,7 +742,14 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             this.BackColor = System.Drawing.SystemColors.Control;
             this.ClientSize = new System.Drawing.Size(1067, 828);
-            this.Controls.Add(this.PanelALTDay);
+            this.Controls.Add(this.SundayClosedButton);
+            this.Controls.Add(this.SaturdayClosedButton);
+            this.Controls.Add(this.FridayClosedButton);
+            this.Controls.Add(this.ThursdayClosedButton);
+            this.Controls.Add(this.WednesdayClosedButton);
+            this.Controls.Add(this.TuesdayClosedButton);
+            this.Controls.Add(this.MondayClosedButton);
+            this.Controls.Add(this.PanelAlternativeDay);
             this.Controls.Add(this.Opentimes);
             this.Controls.Add(this.Pincode);
             this.Controls.Add(this.label1);
@@ -679,59 +758,68 @@
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "SettingsPage";
             this.Text = "Settings";
-            this.Leave += new System.EventHandler(this.Page_Leave);
-            this.Opentimes.ResumeLayout(false);
-            this.Opentimes.PerformLayout();
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();
-            this.PanelALTDay.ResumeLayout(false);
-            this.PanelALTDay.PerformLayout();
+            this.PanelAlternativeDay.ResumeLayout(false);
+            this.PanelAlternativeDay.PerformLayout();
+            this.Opentimes.ResumeLayout(false);
+            this.Opentimes.PerformLayout();
             this.ResumeLayout(false);
 
         }
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label Pincode;
-        private System.Windows.Forms.TextBox SunDayClosed;
-        private System.Windows.Forms.TextBox SunDayOpen;
-        private System.Windows.Forms.TextBox SaturDayOpen;
-        private System.Windows.Forms.TextBox SaturDayClosed;
-        private System.Windows.Forms.TextBox FridayOpen;
-        private System.Windows.Forms.TextBox FridayClosed;
-        private System.Windows.Forms.TextBox ThursDayClosed;
-        private System.Windows.Forms.TextBox ThursDayOpen;
-        private System.Windows.Forms.TextBox WednesDayOpen;
-        private System.Windows.Forms.TextBox TuesDayClosed;
-        private System.Windows.Forms.TextBox TuesDayOpen;
-        private System.Windows.Forms.TextBox MondayClosed;
-        private System.Windows.Forms.TextBox MondayOpen;
-        private System.Windows.Forms.Label ThursDayDot;
-        private System.Windows.Forms.Label SunDayDot;
-        private System.Windows.Forms.Label SaturDayDot;
-        private System.Windows.Forms.Label FridayDot;
-        private System.Windows.Forms.Label WednesDayDot;
-        private System.Windows.Forms.Label TuesDayDot;
-        private System.Windows.Forms.Label MondayDot;
-        private System.Windows.Forms.Label SunDayText;
-        private System.Windows.Forms.Label SaturDayText;
-        private System.Windows.Forms.Label FridayText;
-        private System.Windows.Forms.Label ThursDayText;
-        private System.Windows.Forms.Label WednesDayText;
-        private System.Windows.Forms.Label TuesDayText;
-        private System.Windows.Forms.Label MondayText;
-        private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox PincodeInput;
         private System.Windows.Forms.Label PincodeText;
-        private System.Windows.Forms.TextBox WednesDayClosed;
-        private System.Windows.Forms.TableLayoutPanel Opentimes;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
-        private System.Windows.Forms.ListBox listBox1;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button AddAltDay;
-        private System.Windows.Forms.DateTimePicker DatumPrikker;
-        private System.Windows.Forms.TextBox OpenALTINP;
-        private System.Windows.Forms.TextBox ClosedALTINP;
-        private System.Windows.Forms.Label OpenAlt;
-        private System.Windows.Forms.Label ClosedAlt;
-        private System.Windows.Forms.Panel PanelALTDay;
+        private System.Windows.Forms.ListBox ListOfAlternativeDays;
+        private System.Windows.Forms.Button ChangePincodeButton;
+        private System.Windows.Forms.Button AddAlternativeDay;
+        private System.Windows.Forms.DateTimePicker DatePlanner;
+        private System.Windows.Forms.Label OpenAlternative;
+        private System.Windows.Forms.Label ClosedAlternative;
+        private System.Windows.Forms.Panel PanelAlternativeDay;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Button DeleteAlternativeDay;
+        private System.Windows.Forms.Label SundayText;
+        private System.Windows.Forms.Label SaturdayText;
+        private System.Windows.Forms.Label FridayText;
+        private System.Windows.Forms.Label ThursdayText;
+        private System.Windows.Forms.Label WednesdayText;
+        private System.Windows.Forms.Label TuesdayText;
+        private System.Windows.Forms.Label MondayText;
+        private System.Windows.Forms.Label TuesdayDot;
+        private System.Windows.Forms.Label WednesdayDot;
+        private System.Windows.Forms.Label MondayDot;
+        private System.Windows.Forms.Label FridayDot;
+        private System.Windows.Forms.Label RegularTimesText;
+        private System.Windows.Forms.Label SaturdayDot;
+        private System.Windows.Forms.Label ThursdayDot;
+        private System.Windows.Forms.Label SundayDot;
+        private System.Windows.Forms.TableLayoutPanel Opentimes;
+        private System.Windows.Forms.DateTimePicker MondayOpenPicker;
+        private System.Windows.Forms.DateTimePicker MondayClosedPicker;
+        private System.Windows.Forms.DateTimePicker TuesdayOpenPicker;
+        private System.Windows.Forms.DateTimePicker TuesdayClosedPicker;
+        private System.Windows.Forms.DateTimePicker WednesdayOpenPicker;
+        private System.Windows.Forms.DateTimePicker WednesdayClosedPicker;
+        private System.Windows.Forms.DateTimePicker ThursdayOpenPicker;
+        private System.Windows.Forms.DateTimePicker ThursdayClosedPicker;
+        private System.Windows.Forms.DateTimePicker FridayOpenPicker;
+        private System.Windows.Forms.DateTimePicker FridayClosedPicker;
+        private System.Windows.Forms.DateTimePicker SaturdayOpenPicker;
+        private System.Windows.Forms.DateTimePicker SaturdayClosedPicker;
+        private System.Windows.Forms.DateTimePicker SundayOpenPicker;
+        private System.Windows.Forms.DateTimePicker SundayClosedPicker;
+        private System.Windows.Forms.DateTimePicker AlternativeDayClosedPicker;
+        private System.Windows.Forms.DateTimePicker AlternativeDayOpenPicker;
+        private System.Windows.Forms.Button MondayClosedButton;
+        private System.ComponentModel.BackgroundWorker backgroundWorker1;
+        private System.Windows.Forms.Button TuesdayClosedButton;
+        private System.Windows.Forms.Button WednesdayClosedButton;
+        private System.Windows.Forms.Button ThursdayClosedButton;
+        private System.Windows.Forms.Button FridayClosedButton;
+        private System.Windows.Forms.Button SaturdayClosedButton;
+        private System.Windows.Forms.Button SundayClosedButton;
     }
 }
