@@ -18,6 +18,7 @@ namespace DePandaWinForms.Pages
             InitializeComponent();
             //DataStorageHandler.Storage.Reservations.Add(new DePandaLib.Entities.Reservation() { });
             LoadExistingReservations();
+            dateTimePicker3.Value = dateTimePicker2.Value.AddHours(2);
         }
 
         // show reservations in listview
@@ -35,7 +36,7 @@ namespace DePandaWinForms.Pages
                 listView.Items.Add(item);
             }
         }
-
+        
         public bool ReservationTimeCheck()
         {
             DayOfWeek[] days = { DayOfWeek.Monday, DayOfWeek.Tuesday, DayOfWeek.Wednesday, DayOfWeek.Thursday, DayOfWeek.Friday, DayOfWeek.Saturday, DayOfWeek.Sunday };
@@ -58,7 +59,7 @@ namespace DePandaWinForms.Pages
         // add reservation
         private void button1_Click(object sender, EventArgs e)
         {
-            if (string.IsNullOrEmpty(txtNaam.Text) || string.IsNullOrEmpty(txtPersonen.Text) || string.IsNullOrEmpty(txtTafelnr.Text))
+            if (string.IsNullOrEmpty(txtNaam.Text) || string.IsNullOrEmpty(txtPersonen.Text))
             {
                 MessageBox.Show("Vul alle velden in");
                 return;
@@ -68,23 +69,27 @@ namespace DePandaWinForms.Pages
                 MessageBox.Show("Vul een geldige datum in");
                 return;
             }
+            if (tafelnr == "")
+            {
+                MessageBox.Show("Klik een tafel aan");
+                return;
+            }
 
             bool x = ReservationTimeCheck();
             if (x == false)
             {
-                MessageBox.Show("Vul een geldige tijd in");
+                MessageBox.Show("U kunt geen reservering plaatsen buiten de openingstijden");
                 return;
             }
-            
 
             DateTime dateTime = new DateTime(dateTimePicker1.Value.Year, dateTimePicker1.Value.Month, dateTimePicker1.Value.Day, dateTimePicker2.Value.Hour, dateTimePicker2.Value.Minute, dateTimePicker2.Value.Second);
             TimeSpan timeSpan = new TimeSpan(dateTimePicker3.Value.Hour - dateTimePicker2.Value.Hour, dateTimePicker3.Value.Minute - dateTimePicker2.Value.Minute, 0);
 
-            DataStorageHandler.Storage.Reservations.Add(new DePandaLib.Entities.Reservation(){ OnTheNameOf = txtNaam.Text, Date = dateTime, Time = timeSpan, AmountOfPeople = int.Parse(txtPersonen.Text), Table = txtTafelnr.Text, Specifications = txtBijzonder.Text });
+            DataStorageHandler.Storage.Reservations.Add(new DePandaLib.Entities.Reservation(){ OnTheNameOf = txtNaam.Text, Date = dateTime, Time = timeSpan, AmountOfPeople = int.Parse(txtPersonen.Text), Table = tafelnr, Specifications = txtBijzonder.Text });
             listView.Items.Clear();
             LoadExistingReservations();
 
-            txtNaam.Clear(); txtPersonen.Clear(); txtTafelnr.Clear(); txtBijzonder.Clear();
+            txtNaam.Clear(); txtPersonen.Clear(); txtBijzonder.Clear();
             
         }
 
@@ -122,6 +127,83 @@ namespace DePandaWinForms.Pages
             {
                 listView.Items.Clear();
                 LoadExistingReservations();
+            }
+        }
+
+        // Restaurant map under construction
+        string tafelnr = "";
+
+        private void panel14_MouseClick(object sender, MouseEventArgs e)
+        {
+            int CurX = e.X;
+            int CurY = e.Y;
+            Panel[] panels = new Panel[] { panel1, panel2, panel3, panel4, panel5, panel6, panel7, panel8, panel9, panel10, panel11, panel12 };
+
+
+            foreach(var panel in panels)
+            {
+                if (CurX > panel.Location.X && CurX < panel.Location.X + panel.Width && CurY > panel.Location.Y && CurY < panel.Location.Y + panel.Height)
+                {
+                    if (panel.BackColor == Color.Gray)
+                    {
+                        return;
+                    }
+                    if (panel.BackColor == Color.Gainsboro)
+                    {
+                        int TableSelected = 0;
+                        for(int i = 0; i < panels.Length; i++)
+                        {
+                            if (panels[i].BackColor == Color.Green)
+                            {
+                                TableSelected += 1;
+                            }
+                        }
+                        if (TableSelected == 0)
+                        {
+                            panel.BackColor = Color.Green;
+                            tafelnr = panel.TabIndex.ToString();
+                        }
+                    }
+                    else
+                    {
+                        panel.BackColor = Color.Gainsboro;
+                    }
+
+                }
+            }
+            
+        }
+        private void dateTimePicker2_ValueChanged(object sender, EventArgs e)
+        {
+            dateTimePicker3.Value = dateTimePicker2.Value.AddHours(2);
+            dateTimePicker3_ValueChanged(sender, e);
+        }
+
+        private void dateTimePicker3_ValueChanged(object sender, EventArgs e)
+        {
+            Panel[] panels = new Panel[] { panel1, panel2, panel3, panel4, panel5, panel6, panel7, panel8, panel9, panel10, panel11, panel12 };
+            var Reservations = DataStorageHandler.Storage.Reservations;
+            foreach (var reservation in Reservations)
+            {
+                DateTime dateTime = reservation.Date;
+                DateTime dateTime2 = reservation.Date + reservation.Time;
+                Panel panel = panels[int.Parse(reservation.Table)-1];
+
+                if (dateTime.Date == dateTimePicker1.Value.Date)
+                {
+                    if (dateTimePicker2.Value.TimeOfDay >= dateTime.TimeOfDay && dateTimePicker2.Value.TimeOfDay < dateTime2.TimeOfDay || dateTimePicker3.Value.TimeOfDay > dateTime.TimeOfDay && dateTimePicker3.Value.TimeOfDay <= dateTime2.TimeOfDay || dateTimePicker2.Value.TimeOfDay < dateTime.TimeOfDay && dateTimePicker3.Value.TimeOfDay > dateTime2.TimeOfDay)
+                    {
+                        panel.BackColor = Color.Gray;
+                    }
+                    else
+                    {
+                        panel.BackColor = Color.Gainsboro;
+                    }
+                }
+                else
+                {
+                    panel.BackColor = Color.Gainsboro;
+                }
             }
         }
     }
