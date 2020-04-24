@@ -19,7 +19,6 @@ namespace DePandaWinForms.Pages
             //DataStorageHandler.Storage.Reservations.Add(new DePandaLib.Entities.Reservation() { });
             LoadExistingReservations();
             dateTimePicker3.Value = dateTimePicker2.Value.AddHours(2);
-            Console.WriteLine(DateTime.Now);
         }
 
         // show reservations in listview
