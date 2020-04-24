@@ -35,8 +35,6 @@ namespace DePandaWinForms.Pages
                 item.SubItems.Add(reservation.Table);
                 item.SubItems.Add(reservation.Specifications);
                 listView.Items.Add(item);
-
-
             }
         }
         
@@ -102,11 +100,15 @@ namespace DePandaWinForms.Pages
         // remove reservation
         private void button2_Click(object sender, EventArgs e)
         {
+            Panel[] panels = new Panel[] { panel1, panel2, panel3, panel4, panel5, panel6, panel7, panel8, panel9, panel10, panel11, panel12 };
+            var Reservations = DataStorageHandler.Storage.Reservations;
+
             if (listView.SelectedItems.Count > 0)
             {
-                DataStorageHandler.Storage.Reservations.Remove(DataStorageHandler.Storage.Reservations[listView.SelectedItems[0].Index]);
+                int v = int.Parse(Reservations[listView.SelectedItems[0].Index].Table);
+                panels[v-1].BackColor = Color.Gainsboro;
+                Reservations.Remove(Reservations[listView.SelectedItems[0].Index]);
                 listView.Items.Remove(listView.SelectedItems[0]);
-                
             }
         }
 
