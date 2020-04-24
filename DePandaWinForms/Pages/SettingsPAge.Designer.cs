@@ -486,7 +486,8 @@
             this.MondayOpenPicker.ShowUpDown = true;
             this.MondayOpenPicker.Size = new System.Drawing.Size(73, 20);
             this.MondayOpenPicker.TabIndex = 101;
-            this.MondayOpenPicker.KeyUp += new System.Windows.Forms.KeyEventHandler(this.TimeChanged);
+            this.MondayOpenPicker.ValueChanged += new System.EventHandler(this.ChangedValue);
+            this.MondayOpenPicker.Enter += new System.EventHandler(this.DateTimePickerEnter);
             // 
             // MondayClosedPicker
             // 
@@ -497,7 +498,8 @@
             this.MondayClosedPicker.ShowUpDown = true;
             this.MondayClosedPicker.Size = new System.Drawing.Size(73, 20);
             this.MondayClosedPicker.TabIndex = 102;
-            this.MondayClosedPicker.KeyUp += new System.Windows.Forms.KeyEventHandler(this.TimeChanged);
+            this.MondayClosedPicker.ValueChanged += new System.EventHandler(this.ChangedValue);
+            this.MondayClosedPicker.Enter += new System.EventHandler(this.DateTimePickerEnter);
             // 
             // TuesdayOpenPicker
             // 
@@ -508,7 +510,8 @@
             this.TuesdayOpenPicker.ShowUpDown = true;
             this.TuesdayOpenPicker.Size = new System.Drawing.Size(73, 20);
             this.TuesdayOpenPicker.TabIndex = 103;
-            this.TuesdayOpenPicker.KeyUp += new System.Windows.Forms.KeyEventHandler(this.TimeChanged);
+            this.TuesdayOpenPicker.ValueChanged += new System.EventHandler(this.ChangedValue);
+            this.TuesdayOpenPicker.Enter += new System.EventHandler(this.DateTimePickerEnter);
             // 
             // TuesdayClosedPicker
             // 
@@ -519,7 +522,8 @@
             this.TuesdayClosedPicker.ShowUpDown = true;
             this.TuesdayClosedPicker.Size = new System.Drawing.Size(73, 20);
             this.TuesdayClosedPicker.TabIndex = 104;
-            this.TuesdayClosedPicker.KeyUp += new System.Windows.Forms.KeyEventHandler(this.TimeChanged);
+            this.TuesdayClosedPicker.ValueChanged += new System.EventHandler(this.ChangedValue);
+            this.TuesdayClosedPicker.Enter += new System.EventHandler(this.DateTimePickerEnter);
             // 
             // WednesdayOpenPicker
             // 
@@ -530,7 +534,8 @@
             this.WednesdayOpenPicker.ShowUpDown = true;
             this.WednesdayOpenPicker.Size = new System.Drawing.Size(73, 20);
             this.WednesdayOpenPicker.TabIndex = 105;
-            this.WednesdayOpenPicker.KeyUp += new System.Windows.Forms.KeyEventHandler(this.TimeChanged);
+            this.WednesdayOpenPicker.ValueChanged += new System.EventHandler(this.ChangedValue);
+            this.WednesdayOpenPicker.Enter += new System.EventHandler(this.DateTimePickerEnter);
             // 
             // WednesdayClosedPicker
             // 
@@ -541,7 +546,8 @@
             this.WednesdayClosedPicker.ShowUpDown = true;
             this.WednesdayClosedPicker.Size = new System.Drawing.Size(73, 20);
             this.WednesdayClosedPicker.TabIndex = 106;
-            this.WednesdayClosedPicker.KeyUp += new System.Windows.Forms.KeyEventHandler(this.TimeChanged);
+            this.WednesdayClosedPicker.ValueChanged += new System.EventHandler(this.ChangedValue);
+            this.WednesdayClosedPicker.Enter += new System.EventHandler(this.DateTimePickerEnter);
             // 
             // ThursdayOpenPicker
             // 
@@ -552,7 +558,8 @@
             this.ThursdayOpenPicker.ShowUpDown = true;
             this.ThursdayOpenPicker.Size = new System.Drawing.Size(73, 20);
             this.ThursdayOpenPicker.TabIndex = 107;
-            this.ThursdayOpenPicker.KeyUp += new System.Windows.Forms.KeyEventHandler(this.TimeChanged);
+            this.ThursdayOpenPicker.ValueChanged += new System.EventHandler(this.ChangedValue);
+            this.ThursdayOpenPicker.Enter += new System.EventHandler(this.DateTimePickerEnter);
             // 
             // ThursdayClosedPicker
             // 
@@ -563,7 +570,8 @@
             this.ThursdayClosedPicker.ShowUpDown = true;
             this.ThursdayClosedPicker.Size = new System.Drawing.Size(73, 20);
             this.ThursdayClosedPicker.TabIndex = 108;
-            this.ThursdayClosedPicker.KeyUp += new System.Windows.Forms.KeyEventHandler(this.TimeChanged);
+            this.ThursdayClosedPicker.ValueChanged += new System.EventHandler(this.ChangedValue);
+            this.ThursdayClosedPicker.Enter += new System.EventHandler(this.DateTimePickerEnter);
             // 
             // FridayOpenPicker
             // 
@@ -574,7 +582,8 @@
             this.FridayOpenPicker.ShowUpDown = true;
             this.FridayOpenPicker.Size = new System.Drawing.Size(73, 20);
             this.FridayOpenPicker.TabIndex = 109;
-            this.FridayOpenPicker.KeyUp += new System.Windows.Forms.KeyEventHandler(this.TimeChanged);
+            this.FridayOpenPicker.ValueChanged += new System.EventHandler(this.ChangedValue);
+            this.FridayOpenPicker.Enter += new System.EventHandler(this.DateTimePickerEnter);
             // 
             // FridayClosedPicker
             // 
@@ -585,7 +594,8 @@
             this.FridayClosedPicker.ShowUpDown = true;
             this.FridayClosedPicker.Size = new System.Drawing.Size(73, 20);
             this.FridayClosedPicker.TabIndex = 110;
-            this.FridayClosedPicker.KeyUp += new System.Windows.Forms.KeyEventHandler(this.TimeChanged);
+            this.FridayClosedPicker.ValueChanged += new System.EventHandler(this.ChangedValue);
+            this.FridayClosedPicker.Enter += new System.EventHandler(this.DateTimePickerEnter);
             // 
             // SaturdayOpenPicker
             // 
@@ -596,7 +606,8 @@
             this.SaturdayOpenPicker.ShowUpDown = true;
             this.SaturdayOpenPicker.Size = new System.Drawing.Size(73, 20);
             this.SaturdayOpenPicker.TabIndex = 111;
-            this.SaturdayOpenPicker.KeyUp += new System.Windows.Forms.KeyEventHandler(this.TimeChanged);
+            this.SaturdayOpenPicker.ValueChanged += new System.EventHandler(this.ChangedValue);
+            this.SaturdayOpenPicker.Enter += new System.EventHandler(this.DateTimePickerEnter);
             // 
             // SaturdayClosedPicker
             // 
@@ -607,7 +618,8 @@
             this.SaturdayClosedPicker.ShowUpDown = true;
             this.SaturdayClosedPicker.Size = new System.Drawing.Size(73, 20);
             this.SaturdayClosedPicker.TabIndex = 112;
-            this.SaturdayClosedPicker.KeyUp += new System.Windows.Forms.KeyEventHandler(this.TimeChanged);
+            this.SaturdayClosedPicker.ValueChanged += new System.EventHandler(this.ChangedValue);
+            this.SaturdayClosedPicker.Enter += new System.EventHandler(this.DateTimePickerEnter);
             // 
             // SundayOpenPicker
             // 
@@ -618,7 +630,8 @@
             this.SundayOpenPicker.ShowUpDown = true;
             this.SundayOpenPicker.Size = new System.Drawing.Size(73, 20);
             this.SundayOpenPicker.TabIndex = 113;
-            this.SundayOpenPicker.KeyUp += new System.Windows.Forms.KeyEventHandler(this.TimeChanged);
+            this.SundayOpenPicker.ValueChanged += new System.EventHandler(this.ChangedValue);
+            this.SundayOpenPicker.Enter += new System.EventHandler(this.DateTimePickerEnter);
             // 
             // SundayClosedPicker
             // 
@@ -629,7 +642,8 @@
             this.SundayClosedPicker.ShowUpDown = true;
             this.SundayClosedPicker.Size = new System.Drawing.Size(73, 20);
             this.SundayClosedPicker.TabIndex = 114;
-            this.SundayClosedPicker.KeyUp += new System.Windows.Forms.KeyEventHandler(this.TimeChanged);
+            this.SundayClosedPicker.ValueChanged += new System.EventHandler(this.ChangedValue);
+            this.SundayClosedPicker.Enter += new System.EventHandler(this.DateTimePickerEnter);
             // 
             // MondayClosedButton
             // 
@@ -642,7 +656,7 @@
             this.MondayClosedButton.TabIndex = 98;
             this.MondayClosedButton.Text = "Gesloten";
             this.MondayClosedButton.UseVisualStyleBackColor = false;
-            this.MondayClosedButton.Click += new System.EventHandler(this.MondayClosedClick);
+            this.MondayClosedButton.Click += new System.EventHandler(this.ClosedClick);
             // 
             // TuesdayClosedButton
             // 
@@ -655,7 +669,7 @@
             this.TuesdayClosedButton.TabIndex = 99;
             this.TuesdayClosedButton.Text = "Gesloten";
             this.TuesdayClosedButton.UseVisualStyleBackColor = false;
-            this.TuesdayClosedButton.Click += new System.EventHandler(this.TuesdayClosedClick);
+            this.TuesdayClosedButton.Click += new System.EventHandler(this.ClosedClick);
             // 
             // WednesdayClosedButton
             // 
@@ -668,7 +682,7 @@
             this.WednesdayClosedButton.TabIndex = 100;
             this.WednesdayClosedButton.Text = "Gesloten";
             this.WednesdayClosedButton.UseVisualStyleBackColor = false;
-            this.WednesdayClosedButton.Click += new System.EventHandler(this.WednesdayClosedClick);
+            this.WednesdayClosedButton.Click += new System.EventHandler(this.ClosedClick);
             // 
             // ThursdayClosedButton
             // 
@@ -681,7 +695,7 @@
             this.ThursdayClosedButton.TabIndex = 101;
             this.ThursdayClosedButton.Text = "Gesloten";
             this.ThursdayClosedButton.UseVisualStyleBackColor = false;
-            this.ThursdayClosedButton.Click += new System.EventHandler(this.ThursdayClosedClick);
+            this.ThursdayClosedButton.Click += new System.EventHandler(this.ClosedClick);
             // 
             // FridayClosedButton
             // 
@@ -694,7 +708,7 @@
             this.FridayClosedButton.TabIndex = 102;
             this.FridayClosedButton.Text = "Gesloten";
             this.FridayClosedButton.UseVisualStyleBackColor = false;
-            this.FridayClosedButton.Click += new System.EventHandler(this.FridayClosedClick);
+            this.FridayClosedButton.Click += new System.EventHandler(this.ClosedClick);
             // 
             // SaturdayClosedButton
             // 
@@ -707,7 +721,7 @@
             this.SaturdayClosedButton.TabIndex = 103;
             this.SaturdayClosedButton.Text = "Gesloten";
             this.SaturdayClosedButton.UseVisualStyleBackColor = false;
-            this.SaturdayClosedButton.Click += new System.EventHandler(this.SaturdayClosedClick);
+            this.SaturdayClosedButton.Click += new System.EventHandler(this.ClosedClick);
             // 
             // SundayClosedButton
             // 
@@ -720,7 +734,7 @@
             this.SundayClosedButton.TabIndex = 104;
             this.SundayClosedButton.Text = "Gesloten";
             this.SundayClosedButton.UseVisualStyleBackColor = false;
-            this.SundayClosedButton.Click += new System.EventHandler(this.SundayClosedClick);
+            this.SundayClosedButton.Click += new System.EventHandler(this.ClosedClick);
             // 
             // SettingsPage
             // 
@@ -744,7 +758,6 @@
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "SettingsPage";
             this.Text = "Settings";
-            this.Leave += new System.EventHandler(this.PageLeave);
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();
             this.PanelAlternativeDay.ResumeLayout(false);

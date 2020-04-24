@@ -36,6 +36,12 @@
     <Reference Include="Newtonsoft.Json, Version=12.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
       <HintPath>..\packages\Newtonsoft.Json.12.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
     </Reference>
+    <Reference Include="PdfSharp, Version=1.51.5185.0, Culture=neutral, PublicKeyToken=f94615aa0424f9eb, processorArchitecture=MSIL">
+      <HintPath>..\packages\PDFsharp.1.51.5185-beta\lib\net20\PdfSharp.dll</HintPath>
+    </Reference>
+    <Reference Include="PdfSharp.Charting, Version=1.51.5185.0, Culture=neutral, PublicKeyToken=f94615aa0424f9eb, processorArchitecture=MSIL">
+      <HintPath>..\packages\PDFsharp.1.51.5185-beta\lib\net20\PdfSharp.Charting.dll</HintPath>
+    </Reference>
     <Reference Include="PresentationFramework" />
     <Reference Include="System" />
     <Reference Include="System.Core" />
@@ -65,6 +71,12 @@
     </Compile>
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\JelmarOrder.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Pages\JelmarOrder.Designer.cs">
+      <DependentUpon>JelmarOrder.cs</DependentUpon>
     </Compile>
     <Compile Include="Pages\MenuPageJelmar.cs">
       <SubType>Form</SubType>
@@ -143,6 +155,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Pages\JelmarOrder.resx">
+      <DependentUpon>JelmarOrder.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Pages\MenuPageJelmar.resx">
       <DependentUpon>MenuPageJelmar.cs</DependentUpon>

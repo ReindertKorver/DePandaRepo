@@ -48,7 +48,6 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(280, 30);
             this.panel1.TabIndex = 11;
-            this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
             // Counter
             // 
@@ -112,16 +111,18 @@
             this.Item.Size = new System.Drawing.Size(49, 25);
             this.Item.TabIndex = 11;
             this.Item.Text = "Item";
+            this.Item.Click += new System.EventHandler(this.Item_Click);
             // 
             // OrderItem
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.panel1);
+            this.Cursor = System.Windows.Forms.Cursors.Hand;
             this.Name = "OrderItem";
             this.Padding = new System.Windows.Forms.Padding(10);
             this.Size = new System.Drawing.Size(300, 50);
-            this.Load += new System.EventHandler(this.OrderItem_Load);
+            this.Click += new System.EventHandler(this.Item_Click);
             this.Paint += new System.Windows.Forms.PaintEventHandler(this.OrderItem_Paint);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();

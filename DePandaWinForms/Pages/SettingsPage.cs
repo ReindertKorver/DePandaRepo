@@ -36,6 +36,9 @@ namespace DePandaWinForms.Pages
             LoadWeekDays();
         }
         List<DePandaClassLib.Entities.WeekDay> WeekDayList = DataStorageHandler.Storage.Settings.WeekDays;
+        List<DePandaClassLib.Entities.AlternativeDate> ListOfAlternativeDates = DataStorageHandler.Storage.Settings.AlternativeDates;
+        int TimesLoaded = 0;
+        DateTime ValueToCache;
         private void LoadWeekDays()
         {
             // sets the dislay to the most up to date values
@@ -79,7 +82,7 @@ namespace DePandaWinForms.Pages
             LoadAlternativeDays();
         }
 
-        private List<DePandaClassLib.Entities.AlternativeDate> ListOfAlternativeDates = DataStorageHandler.Storage.Settings.AlternativeDates;
+        
         public void LoadAlternativeDays()
         {
             // loads in the list of alternative days
@@ -97,7 +100,7 @@ namespace DePandaWinForms.Pages
             WeekDayList[0] = new DePandaClassLib.Entities.WeekDay(MondayOpenPicker.Value, MondayClosedPicker.Value);
             WeekDayList[1] = new DePandaClassLib.Entities.WeekDay(TuesdayOpenPicker.Value, TuesdayClosedPicker.Value);
             WeekDayList[2] = new DePandaClassLib.Entities.WeekDay(WednesdayOpenPicker.Value, WednesdayClosedPicker.Value);
-            WeekDayList[3] = new DePandaClassLib.Entities.WeekDay(ThursdayOpenPicker.Value, ThursdayClosedPicker.Value); 
+            WeekDayList[3] = new DePandaClassLib.Entities.WeekDay(ThursdayOpenPicker.Value, ThursdayClosedPicker.Value);
             WeekDayList[4] = new DePandaClassLib.Entities.WeekDay(FridayOpenPicker.Value, FridayClosedPicker.Value);
             WeekDayList[5] = new DePandaClassLib.Entities.WeekDay(SaturdayOpenPicker.Value, SaturdayClosedPicker.Value);
             WeekDayList[6] = new DePandaClassLib.Entities.WeekDay(SundayOpenPicker.Value, SundayClosedPicker.Value);
@@ -132,19 +135,6 @@ namespace DePandaWinForms.Pages
             }
         }
 
-       
-        private void PageLeave(object sender, EventArgs e)
-        {
-            // when the page has been left it will save
-            SaveRegularDays();
-        }
-
-        private void TimeChanged(object sender, KeyEventArgs e)
-        {
-            // when the times changed it will save
-            SaveRegularDays();
-        }
-
         private DateTime SetTimeClosed(DateTime day)
         {
             // gets daytime value and set time to 00:00 (for closing)
@@ -152,47 +142,64 @@ namespace DePandaWinForms.Pages
             return day.Date + NewTime; ;
         }
 
+        private void ClosedClick(object sender, EventArgs e)
         // When pressed on the closed button it will set the time to 00:00
-        private void MondayClosedClick(object sender, EventArgs e)
         {
-            WeekDayList[0] = new DePandaClassLib.Entities.WeekDay(SetTimeClosed(MondayOpenPicker.Value), SetTimeClosed(MondayClosedPicker.Value));
+            string Name = ((sender as Button).Name).Replace("ClosedButton", "");
+            if (Name == "Monday")
+                WeekDayList[0] = new DePandaClassLib.Entities.WeekDay(SetTimeClosed(MondayOpenPicker.Value), SetTimeClosed(MondayClosedPicker.Value));
+
+            else if (Name == "Tuesday")
+                WeekDayList[1] = new DePandaClassLib.Entities.WeekDay(SetTimeClosed(TuesdayOpenPicker.Value), SetTimeClosed(TuesdayClosedPicker.Value));
+
+            else if (Name == "Wednesday")
+                WeekDayList[2] = new DePandaClassLib.Entities.WeekDay(SetTimeClosed(WednesdayOpenPicker.Value), SetTimeClosed(WednesdayClosedPicker.Value));
+
+            else if (Name == "Thursday")
+                WeekDayList[3] = new DePandaClassLib.Entities.WeekDay(SetTimeClosed(ThursdayOpenPicker.Value), SetTimeClosed(ThursdayClosedPicker.Value));
+
+            else if (Name == "Friday")
+                WeekDayList[4] = new DePandaClassLib.Entities.WeekDay(SetTimeClosed(FridayOpenPicker.Value), SetTimeClosed(FridayClosedPicker.Value));
+
+            else if (Name == "Saturday")
+                WeekDayList[5] = new DePandaClassLib.Entities.WeekDay(SetTimeClosed(SaturdayOpenPicker.Value), SetTimeClosed(SaturdayClosedPicker.Value));
+
+            else if (Name == "Sunday")
+                WeekDayList[6] = new DePandaClassLib.Entities.WeekDay(SetTimeClosed(SundayOpenPicker.Value), SetTimeClosed(SundayClosedPicker.Value));
+
             LoadWeekDays();
         }
 
-        private void TuesdayClosedClick(object sender, EventArgs e)
+        
+        private void ChangedValue(object sender, EventArgs e)
         {
-            WeekDayList[1] = new DePandaClassLib.Entities.WeekDay(SetTimeClosed(TuesdayOpenPicker.Value), SetTimeClosed(TuesdayClosedPicker.Value));
-            LoadWeekDays();
-        }
+            TimesLoaded++;
 
-        private void WednesdayClosedClick(object sender, EventArgs e)
-        {
-            WeekDayList[2] = new DePandaClassLib.Entities.WeekDay(SetTimeClosed(WednesdayOpenPicker.Value), SetTimeClosed(WednesdayClosedPicker.Value));
-            LoadWeekDays();
-        }
+            if (TimesLoaded > 14)
+            {
+                // when the times changed it will save
+                bool MondayInvalid = DateTime.Compare(MondayOpenPicker.Value, MondayClosedPicker.Value) > 0;
+                bool TuesdayInvalid = DateTime.Compare(TuesdayOpenPicker.Value, TuesdayClosedPicker.Value) > 0;
+                bool WednesdayInvalid = DateTime.Compare(WednesdayOpenPicker.Value, WednesdayClosedPicker.Value) > 0;
+                bool ThursdayInvalid = DateTime.Compare(ThursdayOpenPicker.Value, ThursdayClosedPicker.Value) > 0;
+                bool FridayInvalid = DateTime.Compare(FridayOpenPicker.Value, FridayClosedPicker.Value) > 0;
+                bool SaturdayInvalid = DateTime.Compare(SaturdayOpenPicker.Value, SaturdayClosedPicker.Value) > 0;
+                bool SundayInvalid = DateTime.Compare(SundayOpenPicker.Value, SundayClosedPicker.Value) > 0;
 
-        private void ThursdayClosedClick(object sender, EventArgs e)
-        {
-            WeekDayList[3] = new DePandaClassLib.Entities.WeekDay(SetTimeClosed(ThursdayOpenPicker.Value), SetTimeClosed(ThursdayClosedPicker.Value));
-            LoadWeekDays();
+                if (MondayInvalid | TuesdayInvalid | WednesdayInvalid | ThursdayInvalid | FridayInvalid | SaturdayInvalid | SundayInvalid)
+                {
+                    MessageBox.Show("U heeft een verkeerde tijd ingevuld, kies een andere tijd");
+                    (sender as DateTimePicker).Value = ValueToCache;
+                    return;            
+                }
+                SaveRegularDays();
+            }
         }
+        
 
-        private void FridayClosedClick(object sender, EventArgs e)
+        private void DateTimePickerEnter(object sender, EventArgs e)
         {
-            WeekDayList[4] = new DePandaClassLib.Entities.WeekDay(SetTimeClosed(FridayOpenPicker.Value), SetTimeClosed(FridayClosedPicker.Value));
-            LoadWeekDays();
-        }
-
-        private void SaturdayClosedClick(object sender, EventArgs e)
-        {
-            WeekDayList[5] = new DePandaClassLib.Entities.WeekDay(SetTimeClosed(SaturdayOpenPicker.Value), SetTimeClosed(SaturdayClosedPicker.Value));
-            LoadWeekDays();
-        }
-
-        private void SundayClosedClick(object sender, EventArgs e)
-        {
-            WeekDayList[6] = new DePandaClassLib.Entities.WeekDay(SetTimeClosed(SundayOpenPicker.Value), SetTimeClosed(SundayClosedPicker.Value));
-            LoadWeekDays();
+            ValueToCache = (sender as DateTimePicker).Value;
         }
     }
 }

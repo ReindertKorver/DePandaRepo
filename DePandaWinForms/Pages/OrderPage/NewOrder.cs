@@ -86,9 +86,40 @@ namespace DePandaWinForms.Pages.OrderPage
 
         private void TableNumberTB_Leave(object sender, EventArgs e)
         {
-            Reservation res = DataStorageHandler.Storage.Reservations.FirstOrDefault(r => r.Table == TableNumberTB.Text && CheckResTime(r));
+        }
+
+        private async void TableNumberTB_TextChanged(object sender, EventArgs e)
+        {
+            Reservation res = await Task.Run(() =>
+            {
+                return DataStorageHandler.Storage.Reservations.FirstOrDefault(r => r.Table == TableNumberTB.Text && CheckResTime(r));
+            });
             if (res != null)
                 ReservationLBL.Text = res.OnTheNameOf + " " + res.Date.ToString("HH:mm") + " - " + res.Date.Add(res.Time).ToString("HH:mm");
+        }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+            CurrentOrder = null;
+            OrderSaved?.Invoke(this, EventArgs.Empty);
+        }
+
+        private void DeleteOrderBtn_Click(object sender, EventArgs e)
+        {
+            CurrentOrder = null;
+            TableNumberTB.Text = "";
+            CurrentOrder = new Order();
+            var dishes = DataStorageHandler.Storage.StockDishes;
+            MenuItemList.Controls.Clear();
+
+            if (dishes != null && dishes.Count != 0)
+            {
+                foreach (var dish in dishes)
+                {
+                    OrderItem item = new OrderItem(dish);
+                    MenuItemList.Controls.Add(item);
+                }
+            }
         }
     }
 }
