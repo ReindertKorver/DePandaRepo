@@ -30,6 +30,7 @@
         {
             this.label1 = new System.Windows.Forms.Label();
             this.pPanel2 = new DePandaWinForms.Design.PPanel();
+            this.PersonenBox = new System.Windows.Forms.NumericUpDown();
             this.panel14 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
             this.label102 = new System.Windows.Forms.Label();
@@ -63,7 +64,6 @@
             this.txtBijzonder = new System.Windows.Forms.TextBox();
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.label3 = new System.Windows.Forms.Label();
-            this.txtPersonen = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
@@ -79,6 +79,7 @@
             this.Tafelnummer = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.Bijzonderheden = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.pPanel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.PersonenBox)).BeginInit();
             this.panel14.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -109,6 +110,7 @@
             // 
             // pPanel2
             // 
+            this.pPanel2.Controls.Add(this.PersonenBox);
             this.pPanel2.Controls.Add(this.panel14);
             this.pPanel2.Controls.Add(this.label9);
             this.pPanel2.Controls.Add(this.button1);
@@ -118,7 +120,6 @@
             this.pPanel2.Controls.Add(this.txtBijzonder);
             this.pPanel2.Controls.Add(this.dateTimePicker1);
             this.pPanel2.Controls.Add(this.label3);
-            this.pPanel2.Controls.Add(this.txtPersonen);
             this.pPanel2.Controls.Add(this.label4);
             this.pPanel2.Controls.Add(this.label7);
             this.pPanel2.Controls.Add(this.label5);
@@ -127,6 +128,23 @@
             this.pPanel2.Name = "pPanel2";
             this.pPanel2.Size = new System.Drawing.Size(866, 198);
             this.pPanel2.TabIndex = 22;
+            // 
+            // PersonenBox
+            // 
+            this.PersonenBox.Location = new System.Drawing.Point(388, 39);
+            this.PersonenBox.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            this.PersonenBox.Name = "PersonenBox";
+            this.PersonenBox.Size = new System.Drawing.Size(118, 20);
+            this.PersonenBox.TabIndex = 21;
+            this.PersonenBox.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
             // 
             // panel14
             // 
@@ -514,15 +532,6 @@
             this.label3.TabIndex = 13;
             this.label3.Text = "Datum";
             // 
-            // txtPersonen
-            // 
-            this.txtPersonen.BackColor = System.Drawing.SystemColors.Window;
-            this.txtPersonen.ForeColor = System.Drawing.SystemColors.WindowText;
-            this.txtPersonen.Location = new System.Drawing.Point(388, 40);
-            this.txtPersonen.Name = "txtPersonen";
-            this.txtPersonen.Size = new System.Drawing.Size(118, 20);
-            this.txtPersonen.TabIndex = 6;
-            // 
             // label4
             // 
             this.label4.AutoSize = true;
@@ -662,6 +671,7 @@
             this.Text = "Reservations";
             this.pPanel2.ResumeLayout(false);
             this.pPanel2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.PersonenBox)).EndInit();
             this.panel14.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
@@ -705,7 +715,6 @@
         private System.Windows.Forms.ColumnHeader Tafelnummer;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.TextBox txtNaam;
-        private System.Windows.Forms.TextBox txtPersonen;
         private System.Windows.Forms.ColumnHeader Bijzonderheden;
         private System.Windows.Forms.TextBox txtBijzonder;
         private System.Windows.Forms.TextBox searchBox;
@@ -746,5 +755,6 @@
         private System.Windows.Forms.Label label21;
         private Design.PPanel pPanel1;
         private Design.PPanel pPanel2;
+        private System.Windows.Forms.NumericUpDown PersonenBox;
     }
 }

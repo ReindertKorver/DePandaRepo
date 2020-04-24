@@ -19,12 +19,14 @@ namespace DePandaWinForms.Pages
             //DataStorageHandler.Storage.Reservations.Add(new DePandaLib.Entities.Reservation() { });
             LoadExistingReservations();
             dateTimePicker3.Value = dateTimePicker2.Value.AddHours(2);
+            Console.WriteLine(DateTime.Now);
         }
 
         // show reservations in listview
         public void LoadExistingReservations()
         {
             var Reservations = DataStorageHandler.Storage.Reservations;
+
             foreach (var reservation in Reservations)
             {
                 ListViewItem item = new ListViewItem(reservation.OnTheNameOf);
@@ -34,6 +36,8 @@ namespace DePandaWinForms.Pages
                 item.SubItems.Add(reservation.Table);
                 item.SubItems.Add(reservation.Specifications);
                 listView.Items.Add(item);
+
+
             }
         }
         
@@ -59,14 +63,17 @@ namespace DePandaWinForms.Pages
         // add reservation
         private void button1_Click(object sender, EventArgs e)
         {
-            if (string.IsNullOrEmpty(txtNaam.Text) || string.IsNullOrEmpty(txtPersonen.Text))
+            DateTime dateTime = new DateTime(dateTimePicker1.Value.Year, dateTimePicker1.Value.Month, dateTimePicker1.Value.Day, dateTimePicker2.Value.Hour, dateTimePicker2.Value.Minute, dateTimePicker2.Value.Second);
+            TimeSpan timeSpan = new TimeSpan(dateTimePicker3.Value.Hour - dateTimePicker2.Value.Hour, dateTimePicker3.Value.Minute - dateTimePicker2.Value.Minute, 0);
+
+            if (string.IsNullOrEmpty(txtNaam.Text))
             {
                 MessageBox.Show("Vul alle velden in");
                 return;
             }
-            if (dateTimePicker1.Value < DateTime.Today)
+            if (dateTime.AddMinutes(1) < DateTime.Now)
             {
-                MessageBox.Show("Vul een geldige datum in");
+                MessageBox.Show("Vul een geldige datum en tijd in");
                 return;
             }
             if (tafelnr == "")
@@ -82,14 +89,14 @@ namespace DePandaWinForms.Pages
                 return;
             }
 
-            DateTime dateTime = new DateTime(dateTimePicker1.Value.Year, dateTimePicker1.Value.Month, dateTimePicker1.Value.Day, dateTimePicker2.Value.Hour, dateTimePicker2.Value.Minute, dateTimePicker2.Value.Second);
-            TimeSpan timeSpan = new TimeSpan(dateTimePicker3.Value.Hour - dateTimePicker2.Value.Hour, dateTimePicker3.Value.Minute - dateTimePicker2.Value.Minute, 0);
-
-            DataStorageHandler.Storage.Reservations.Add(new DePandaLib.Entities.Reservation(){ OnTheNameOf = txtNaam.Text, Date = dateTime, Time = timeSpan, AmountOfPeople = int.Parse(txtPersonen.Text), Table = tafelnr, Specifications = txtBijzonder.Text });
+            DataStorageHandler.Storage.Reservations.Add(new DePandaLib.Entities.Reservation(){ OnTheNameOf = txtNaam.Text, Date = dateTime, Time = timeSpan, AmountOfPeople = decimal.ToInt32(PersonenBox.Value), Table = tafelnr, Specifications = txtBijzonder.Text });
             listView.Items.Clear();
             LoadExistingReservations();
 
-            txtNaam.Clear(); txtPersonen.Clear(); txtBijzonder.Clear();
+            Cleartables();
+            PersonenBox.Value = 1;
+
+            txtNaam.Clear(); txtBijzonder.Clear();
             
         }
 
@@ -133,6 +140,18 @@ namespace DePandaWinForms.Pages
         // Restaurant map under construction
         string tafelnr = "";
 
+        private void Cleartables()
+        {
+            Panel[] panels = new Panel[] { panel1, panel2, panel3, panel4, panel5, panel6, panel7, panel8, panel9, panel10, panel11, panel12 };
+            for(int i = 0; i<panels.Length; i++)
+            {
+                if(panels[i].BackColor == Color.Green)
+                {
+                    panels[i].BackColor = Color.Gray;
+                }
+            }
+            tafelnr = "";
+        }
         private void panel14_MouseClick(object sender, MouseEventArgs e)
         {
             int CurX = e.X;
