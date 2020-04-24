@@ -29,15 +29,13 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
-            this.SaveOrderBtn = new System.Windows.Forms.Button();
-            this.EditOrderBtn = new System.Windows.Forms.PictureBox();
-            this.DeleteOrderBtn = new System.Windows.Forms.PictureBox();
-            this.PaymentBtn = new System.Windows.Forms.Button();
             this.TotalLbl = new System.Windows.Forms.Label();
+            this.PaymentBtn = new System.Windows.Forms.Button();
+            this.Spacer = new System.Windows.Forms.Panel();
+            this.EditOrderBtn = new System.Windows.Forms.PictureBox();
+            this.SaveOrderBtn = new System.Windows.Forms.Button();
+            this.DeleteOrderBtn = new System.Windows.Forms.PictureBox();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.panel5 = new System.Windows.Forms.Panel();
-            this.OnTheNameOfTb = new System.Windows.Forms.TextBox();
-            this.OnTheNameOfLbl = new System.Windows.Forms.Label();
             this.MenuItemList = new System.Windows.Forms.FlowLayoutPanel();
             this.MenuItemsLBL = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
@@ -46,19 +44,25 @@
             this.panel4 = new System.Windows.Forms.Panel();
             this.DateTb = new System.Windows.Forms.TextBox();
             this.DateLbl = new System.Windows.Forms.Label();
+            this.panel5 = new System.Windows.Forms.Panel();
+            this.OnTheNameOfTb = new System.Windows.Forms.TextBox();
+            this.OnTheNameOfLbl = new System.Windows.Forms.Label();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.EditOrderBtn)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.DeleteOrderBtn)).BeginInit();
             this.panel2.SuspendLayout();
-            this.panel5.SuspendLayout();
             this.panel3.SuspendLayout();
             this.panel4.SuspendLayout();
+            this.panel5.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
             // 
             this.panel1.Controls.Add(this.TotalLbl);
             this.panel1.Controls.Add(this.PaymentBtn);
+            this.panel1.Controls.Add(this.Spacer);
             this.panel1.Controls.Add(this.EditOrderBtn);
             this.panel1.Controls.Add(this.SaveOrderBtn);
             this.panel1.Controls.Add(this.DeleteOrderBtn);
@@ -68,6 +72,57 @@
             this.panel1.Padding = new System.Windows.Forms.Padding(10);
             this.panel1.Size = new System.Drawing.Size(800, 54);
             this.panel1.TabIndex = 12;
+            // 
+            // TotalLbl
+            // 
+            this.TotalLbl.AutoSize = true;
+            this.TotalLbl.Dock = System.Windows.Forms.DockStyle.Right;
+            this.TotalLbl.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TotalLbl.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(137)))), ((int)(((byte)(145)))));
+            this.TotalLbl.Location = new System.Drawing.Point(499, 10);
+            this.TotalLbl.Name = "TotalLbl";
+            this.TotalLbl.Padding = new System.Windows.Forms.Padding(0, 5, 0, 5);
+            this.TotalLbl.Size = new System.Drawing.Size(57, 31);
+            this.TotalLbl.TabIndex = 25;
+            this.TotalLbl.Text = "Totaal: ";
+            // 
+            // PaymentBtn
+            // 
+            this.PaymentBtn.BackColor = System.Drawing.Color.Transparent;
+            this.PaymentBtn.Dock = System.Windows.Forms.DockStyle.Right;
+            this.PaymentBtn.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(137)))), ((int)(((byte)(145)))));
+            this.PaymentBtn.FlatAppearance.BorderSize = 2;
+            this.PaymentBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.PaymentBtn.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.PaymentBtn.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(137)))), ((int)(((byte)(145)))));
+            this.PaymentBtn.Location = new System.Drawing.Point(556, 10);
+            this.PaymentBtn.Name = "PaymentBtn";
+            this.PaymentBtn.Size = new System.Drawing.Size(105, 34);
+            this.PaymentBtn.TabIndex = 24;
+            this.PaymentBtn.Text = "Afrekenen";
+            this.PaymentBtn.UseVisualStyleBackColor = false;
+            this.PaymentBtn.Click += new System.EventHandler(this.PaymentBtn_Click);
+            // 
+            // Spacer
+            // 
+            this.Spacer.Dock = System.Windows.Forms.DockStyle.Right;
+            this.Spacer.Location = new System.Drawing.Point(661, 10);
+            this.Spacer.Name = "Spacer";
+            this.Spacer.Size = new System.Drawing.Size(24, 34);
+            this.Spacer.TabIndex = 23;
+            // 
+            // EditOrderBtn
+            // 
+            this.EditOrderBtn.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.EditOrderBtn.Dock = System.Windows.Forms.DockStyle.Left;
+            this.EditOrderBtn.Image = global::DePandaWinForms.Properties.Resources.Edit;
+            this.EditOrderBtn.Location = new System.Drawing.Point(46, 10);
+            this.EditOrderBtn.Name = "EditOrderBtn";
+            this.EditOrderBtn.Size = new System.Drawing.Size(36, 34);
+            this.EditOrderBtn.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.EditOrderBtn.TabIndex = 15;
+            this.EditOrderBtn.TabStop = false;
+            this.EditOrderBtn.Click += new System.EventHandler(this.EditOrderBtn_Click);
             // 
             // SaveOrderBtn
             // 
@@ -84,20 +139,11 @@
             this.SaveOrderBtn.TabIndex = 14;
             this.SaveOrderBtn.Text = "Opslaan";
             this.SaveOrderBtn.UseVisualStyleBackColor = false;
-            // 
-            // EditOrderBtn
-            // 
-            this.EditOrderBtn.Dock = System.Windows.Forms.DockStyle.Left;
-            this.EditOrderBtn.Image = global::DePandaWinForms.Properties.Resources.Edit;
-            this.EditOrderBtn.Location = new System.Drawing.Point(46, 10);
-            this.EditOrderBtn.Name = "EditOrderBtn";
-            this.EditOrderBtn.Size = new System.Drawing.Size(36, 34);
-            this.EditOrderBtn.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.EditOrderBtn.TabIndex = 15;
-            this.EditOrderBtn.TabStop = false;
+            this.SaveOrderBtn.Click += new System.EventHandler(this.SaveOrderBtn_Click);
             // 
             // DeleteOrderBtn
             // 
+            this.DeleteOrderBtn.Cursor = System.Windows.Forms.Cursors.Hand;
             this.DeleteOrderBtn.Dock = System.Windows.Forms.DockStyle.Left;
             this.DeleteOrderBtn.Image = global::DePandaWinForms.Properties.Resources.Del;
             this.DeleteOrderBtn.Location = new System.Drawing.Point(10, 10);
@@ -106,35 +152,7 @@
             this.DeleteOrderBtn.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.DeleteOrderBtn.TabIndex = 0;
             this.DeleteOrderBtn.TabStop = false;
-            // 
-            // PaymentBtn
-            // 
-            this.PaymentBtn.BackColor = System.Drawing.Color.Transparent;
-            this.PaymentBtn.Dock = System.Windows.Forms.DockStyle.Right;
-            this.PaymentBtn.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(137)))), ((int)(((byte)(145)))));
-            this.PaymentBtn.FlatAppearance.BorderSize = 2;
-            this.PaymentBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.PaymentBtn.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.PaymentBtn.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(137)))), ((int)(((byte)(145)))));
-            this.PaymentBtn.Location = new System.Drawing.Point(580, 10);
-            this.PaymentBtn.Name = "PaymentBtn";
-            this.PaymentBtn.Size = new System.Drawing.Size(105, 34);
-            this.PaymentBtn.TabIndex = 16;
-            this.PaymentBtn.Text = "Afrekenen";
-            this.PaymentBtn.UseVisualStyleBackColor = false;
-            // 
-            // TotalLbl
-            // 
-            this.TotalLbl.AutoSize = true;
-            this.TotalLbl.Dock = System.Windows.Forms.DockStyle.Right;
-            this.TotalLbl.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TotalLbl.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(137)))), ((int)(((byte)(145)))));
-            this.TotalLbl.Location = new System.Drawing.Point(523, 10);
-            this.TotalLbl.Name = "TotalLbl";
-            this.TotalLbl.Padding = new System.Windows.Forms.Padding(0, 5, 0, 5);
-            this.TotalLbl.Size = new System.Drawing.Size(57, 31);
-            this.TotalLbl.TabIndex = 17;
-            this.TotalLbl.Text = "Totaal: ";
+            this.DeleteOrderBtn.Click += new System.EventHandler(this.DeleteOrderBtn_Click);
             // 
             // panel2
             // 
@@ -150,43 +168,6 @@
             this.panel2.Padding = new System.Windows.Forms.Padding(15);
             this.panel2.Size = new System.Drawing.Size(800, 396);
             this.panel2.TabIndex = 19;
-            this.panel2.Paint += new System.Windows.Forms.PaintEventHandler(this.panel2_Paint);
-            // 
-            // panel5
-            // 
-            this.panel5.Controls.Add(this.OnTheNameOfTb);
-            this.panel5.Controls.Add(this.OnTheNameOfLbl);
-            this.panel5.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel5.Location = new System.Drawing.Point(15, 15);
-            this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(770, 30);
-            this.panel5.TabIndex = 47;
-            // 
-            // OnTheNameOfTb
-            // 
-            this.OnTheNameOfTb.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.OnTheNameOfTb.Dock = System.Windows.Forms.DockStyle.Left;
-            this.OnTheNameOfTb.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.OnTheNameOfTb.Location = new System.Drawing.Point(125, 0);
-            this.OnTheNameOfTb.Margin = new System.Windows.Forms.Padding(10);
-            this.OnTheNameOfTb.MaxLength = 5;
-            this.OnTheNameOfTb.Name = "OnTheNameOfTb";
-            this.OnTheNameOfTb.Size = new System.Drawing.Size(177, 26);
-            this.OnTheNameOfTb.TabIndex = 35;
-            // 
-            // OnTheNameOfLbl
-            // 
-            this.OnTheNameOfLbl.AutoSize = true;
-            this.OnTheNameOfLbl.BackColor = System.Drawing.Color.Transparent;
-            this.OnTheNameOfLbl.Dock = System.Windows.Forms.DockStyle.Left;
-            this.OnTheNameOfLbl.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.OnTheNameOfLbl.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(137)))), ((int)(((byte)(145)))));
-            this.OnTheNameOfLbl.Location = new System.Drawing.Point(0, 0);
-            this.OnTheNameOfLbl.Name = "OnTheNameOfLbl";
-            this.OnTheNameOfLbl.Size = new System.Drawing.Size(125, 25);
-            this.OnTheNameOfLbl.TabIndex = 34;
-            this.OnTheNameOfLbl.Text = "Reserveerder:";
-            this.OnTheNameOfLbl.Click += new System.EventHandler(this.label1_Click);
             // 
             // MenuItemList
             // 
@@ -281,11 +262,60 @@
             this.DateLbl.TabIndex = 31;
             this.DateLbl.Text = "Datum:";
             // 
+            // panel5
+            // 
+            this.panel5.Controls.Add(this.OnTheNameOfTb);
+            this.panel5.Controls.Add(this.OnTheNameOfLbl);
+            this.panel5.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel5.Location = new System.Drawing.Point(15, 15);
+            this.panel5.Name = "panel5";
+            this.panel5.Size = new System.Drawing.Size(770, 30);
+            this.panel5.TabIndex = 47;
+            // 
+            // OnTheNameOfTb
+            // 
+            this.OnTheNameOfTb.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.OnTheNameOfTb.Dock = System.Windows.Forms.DockStyle.Left;
+            this.OnTheNameOfTb.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.OnTheNameOfTb.Location = new System.Drawing.Point(125, 0);
+            this.OnTheNameOfTb.Margin = new System.Windows.Forms.Padding(10);
+            this.OnTheNameOfTb.MaxLength = 5;
+            this.OnTheNameOfTb.Name = "OnTheNameOfTb";
+            this.OnTheNameOfTb.Size = new System.Drawing.Size(177, 26);
+            this.OnTheNameOfTb.TabIndex = 35;
+            // 
+            // OnTheNameOfLbl
+            // 
+            this.OnTheNameOfLbl.AutoSize = true;
+            this.OnTheNameOfLbl.BackColor = System.Drawing.Color.Transparent;
+            this.OnTheNameOfLbl.Dock = System.Windows.Forms.DockStyle.Left;
+            this.OnTheNameOfLbl.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.OnTheNameOfLbl.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(137)))), ((int)(((byte)(145)))));
+            this.OnTheNameOfLbl.Location = new System.Drawing.Point(0, 0);
+            this.OnTheNameOfLbl.Name = "OnTheNameOfLbl";
+            this.OnTheNameOfLbl.Size = new System.Drawing.Size(125, 25);
+            this.OnTheNameOfLbl.TabIndex = 34;
+            this.OnTheNameOfLbl.Text = "Reserveerder:";
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.pictureBox1.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pictureBox1.Image = global::DePandaWinForms.Properties.Resources.closehover;
+            this.pictureBox1.Location = new System.Drawing.Point(750, 0);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(51, 45);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 54;
+            this.pictureBox1.TabStop = false;
+            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
+            // 
             // EditOrder
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
@@ -297,12 +327,13 @@
             ((System.ComponentModel.ISupportInitialize)(this.DeleteOrderBtn)).EndInit();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
-            this.panel5.ResumeLayout(false);
-            this.panel5.PerformLayout();
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
             this.panel4.ResumeLayout(false);
             this.panel4.PerformLayout();
+            this.panel5.ResumeLayout(false);
+            this.panel5.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -313,8 +344,6 @@
         private System.Windows.Forms.PictureBox EditOrderBtn;
         private System.Windows.Forms.Button SaveOrderBtn;
         private System.Windows.Forms.PictureBox DeleteOrderBtn;
-        private System.Windows.Forms.Button PaymentBtn;
-        private System.Windows.Forms.Label TotalLbl;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Panel panel5;
         private System.Windows.Forms.TextBox OnTheNameOfTb;
@@ -327,5 +356,9 @@
         private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.TextBox DateTb;
         private System.Windows.Forms.Label DateLbl;
+        private System.Windows.Forms.Label TotalLbl;
+        private System.Windows.Forms.Button PaymentBtn;
+        private System.Windows.Forms.Panel Spacer;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }
