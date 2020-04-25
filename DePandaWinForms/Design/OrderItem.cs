@@ -16,6 +16,7 @@ namespace DePandaWinForms.Design
         public Dish DishItem { get; set; }
         public Order Order { get; set; }
         public bool UseCounter { get; set; } = true;
+
         private int count = 0;
 
         public int Count
@@ -84,18 +85,22 @@ namespace DePandaWinForms.Design
             }
         }
 
-        private void OrderItem_Load(object sender, EventArgs e)
+        protected override void OnPaintBackground(PaintEventArgs e)
         {
-        }
-
-        private void panel1_Paint(object sender, PaintEventArgs e)
-        {
+            base.OnPaintBackground(e);
         }
 
         private void OrderItem_Paint(object sender, PaintEventArgs e)
         {
             Graphics g = e.Graphics;
             g.DrawRoundedRectangle(new Pen(ControlPaint.Light(Color.Gray, 0.00f)), 0, 0, this.Width - 3, this.Height - 1, 10);
+        }
+
+        public event EventHandler ItemSelected;
+
+        private void Item_Click(object sender, EventArgs e)
+        {
+            ItemSelected?.Invoke(this, EventArgs.Empty);
         }
     }
 }

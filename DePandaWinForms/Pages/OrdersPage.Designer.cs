@@ -35,12 +35,12 @@ namespace DePandaWinForms.Pages
             this.Title = new System.Windows.Forms.Label();
             this.MainPanel = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.RightEditPanel = new DePandaWinForms.Design.PPanel();
             this.LeftPanel = new System.Windows.Forms.Panel();
+            this.RightEditPanel = new DePandaWinForms.Design.PPanel();
             this.LeftEditPanel = new DePandaWinForms.Design.PPanel();
             this.OrderItemList = new System.Windows.Forms.FlowLayoutPanel();
             this.NewOrderBtn = new System.Windows.Forms.Button();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.SearchBox = new System.Windows.Forms.TextBox();
             this.MainPanel.SuspendLayout();
             this.panel2.SuspendLayout();
             this.LeftPanel.SuspendLayout();
@@ -83,17 +83,6 @@ namespace DePandaWinForms.Pages
             this.panel2.Size = new System.Drawing.Size(550, 413);
             this.panel2.TabIndex = 1;
             // 
-            // RightEditPanel
-            // 
-            this.RightEditPanel.BackColor = System.Drawing.Color.White;
-            this.RightEditPanel.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.RightEditPanel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.RightEditPanel.Location = new System.Drawing.Point(5, 10);
-            this.RightEditPanel.Name = "RightEditPanel";
-            this.RightEditPanel.Padding = new System.Windows.Forms.Padding(10);
-            this.RightEditPanel.Size = new System.Drawing.Size(535, 393);
-            this.RightEditPanel.TabIndex = 0;
-            // 
             // LeftPanel
             // 
             this.LeftPanel.BackColor = System.Drawing.Color.White;
@@ -106,13 +95,24 @@ namespace DePandaWinForms.Pages
             this.LeftPanel.Size = new System.Drawing.Size(250, 413);
             this.LeftPanel.TabIndex = 0;
             // 
+            // RightEditPanel
+            // 
+            this.RightEditPanel.BackColor = System.Drawing.Color.White;
+            this.RightEditPanel.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.RightEditPanel.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.RightEditPanel.Location = new System.Drawing.Point(5, 10);
+            this.RightEditPanel.Name = "RightEditPanel";
+            this.RightEditPanel.Padding = new System.Windows.Forms.Padding(10);
+            this.RightEditPanel.Size = new System.Drawing.Size(535, 393);
+            this.RightEditPanel.TabIndex = 0;
+            // 
             // LeftEditPanel
             // 
             this.LeftEditPanel.BackColor = System.Drawing.Color.White;
             this.LeftEditPanel.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.LeftEditPanel.Controls.Add(this.OrderItemList);
             this.LeftEditPanel.Controls.Add(this.NewOrderBtn);
-            this.LeftEditPanel.Controls.Add(this.textBox1);
+            this.LeftEditPanel.Controls.Add(this.SearchBox);
             this.LeftEditPanel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.LeftEditPanel.Location = new System.Drawing.Point(10, 10);
             this.LeftEditPanel.Name = "LeftEditPanel";
@@ -122,6 +122,7 @@ namespace DePandaWinForms.Pages
             // 
             // OrderItemList
             // 
+            this.OrderItemList.AutoScroll = true;
             this.OrderItemList.BackColor = System.Drawing.Color.Transparent;
             this.OrderItemList.Dock = System.Windows.Forms.DockStyle.Fill;
             this.OrderItemList.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
@@ -129,6 +130,7 @@ namespace DePandaWinForms.Pages
             this.OrderItemList.Name = "OrderItemList";
             this.OrderItemList.Size = new System.Drawing.Size(215, 312);
             this.OrderItemList.TabIndex = 14;
+            this.OrderItemList.WrapContents = false;
             // 
             // NewOrderBtn
             // 
@@ -147,17 +149,21 @@ namespace DePandaWinForms.Pages
             this.NewOrderBtn.UseVisualStyleBackColor = false;
             this.NewOrderBtn.Click += new System.EventHandler(this.NewOrderBtn_Click);
             // 
-            // textBox1
+            // SearchBox
             // 
-            this.textBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(235)))), ((int)(((byte)(235)))));
-            this.textBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textBox1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.textBox1.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.Location = new System.Drawing.Point(10, 10);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(215, 33);
-            this.textBox1.TabIndex = 0;
-            this.textBox1.Text = "Zoeken...";
+            this.SearchBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(235)))), ((int)(((byte)(235)))));
+            this.SearchBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.SearchBox.Dock = System.Windows.Forms.DockStyle.Top;
+            this.SearchBox.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.SearchBox.Location = new System.Drawing.Point(10, 10);
+            this.SearchBox.Name = "SearchBox";
+            this.SearchBox.Size = new System.Drawing.Size(215, 33);
+            this.SearchBox.TabIndex = 0;
+            this.SearchBox.Text = "Zoeken...";
+            this.SearchBox.Click += new System.EventHandler(this.SearchBox_Click);
+            this.SearchBox.TextChanged += new System.EventHandler(this.SearchBox_TextChanged);
+            this.SearchBox.KeyDown += new System.Windows.Forms.KeyEventHandler(this.SearchBox_KeyDown);
+            this.SearchBox.Leave += new System.EventHandler(this.SearchBox_Leave);
             // 
             // OrdersPage
             // 
@@ -186,7 +192,7 @@ namespace DePandaWinForms.Pages
         private System.Windows.Forms.Panel LeftPanel;
         private PPanel RightEditPanel;
         private PPanel LeftEditPanel;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox SearchBox;
         private System.Windows.Forms.Button NewOrderBtn;
         private System.Windows.Forms.FlowLayoutPanel OrderItemList;
     }

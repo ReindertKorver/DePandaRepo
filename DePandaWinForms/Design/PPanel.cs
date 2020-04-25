@@ -11,17 +11,27 @@ namespace DePandaWinForms.Design
 {
     public class PPanel : Panel
     {
-        protected override void OnPaint(PaintEventArgs e)
+        public PPanel()
         {
+            this.SetStyle(
+                System.Windows.Forms.ControlStyles.UserPaint |
+                System.Windows.Forms.ControlStyles.AllPaintingInWmPaint |
+                System.Windows.Forms.ControlStyles.OptimizedDoubleBuffer,
+                true);
+        }
+
+        protected override void OnPaintBackground(PaintEventArgs e)
+        {
+            base.OnPaintBackground(e);
+
             Graphics g = e.Graphics;
             g.SmoothingMode = SmoothingMode.AntiAlias;
             g.FillRoundedRectangle(new SolidBrush(Color.FromArgb(235, 235, 235)), 1, 1, this.Width - 1, this.Height - 1, 15);
-            //    SolidBrush brush = new SolidBrush(
-            //        Color.White
-            //        );
-            //    g.FillRoundedRectangle(brush, 12, 12, this.Width - 44, this.Height - 64, 10);
-            //    g.DrawRoundedRectangle(new Pen(ControlPaint.Light(Color.White, 0.00f)), 12, 12, this.Width - 44, this.Height - 64, 10);
-            //    g.FillRoundedRectangle(new SolidBrush(Color.White), 12, 12 + ((this.Height - 64) / 2), this.Width - 44, (this.Height - 64) / 2, 10);
+        }
+
+        protected override void OnPaint(PaintEventArgs e)
+        {
+            base.OnPaint(e);
         }
     }
 }

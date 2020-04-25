@@ -39,10 +39,12 @@
             this.TableNumberTB = new System.Windows.Forms.TextBox();
             this.TableNumberLBL = new System.Windows.Forms.Label();
             this.NewOrderLbl = new System.Windows.Forms.Label();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DeleteOrderBtn)).BeginInit();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -83,6 +85,7 @@
             this.DeleteOrderBtn.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.DeleteOrderBtn.TabIndex = 0;
             this.DeleteOrderBtn.TabStop = false;
+            this.DeleteOrderBtn.Click += new System.EventHandler(this.DeleteOrderBtn_Click);
             // 
             // panel2
             // 
@@ -154,6 +157,7 @@
             this.TableNumberTB.Name = "TableNumberTB";
             this.TableNumberTB.Size = new System.Drawing.Size(88, 26);
             this.TableNumberTB.TabIndex = 33;
+            this.TableNumberTB.TextChanged += new System.EventHandler(this.TableNumberTB_TextChanged);
             // 
             // TableNumberLBL
             // 
@@ -181,12 +185,26 @@
             this.NewOrderLbl.TabIndex = 56;
             this.NewOrderLbl.Text = "Nieuwe bestelling";
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.pictureBox1.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pictureBox1.Image = global::DePandaWinForms.Properties.Resources.closehover;
+            this.pictureBox1.Location = new System.Drawing.Point(750, 0);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(51, 45);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 55;
+            this.pictureBox1.TabStop = false;
+            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
+            // 
             // NewOrder
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(235)))), ((int)(((byte)(235)))));
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
@@ -198,13 +216,13 @@
             this.panel2.PerformLayout();
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }
 
         #endregion
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.PictureBox DeleteOrderBtn;
         private System.Windows.Forms.Button SaveOrderBtn;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.FlowLayoutPanel MenuItemList;
@@ -214,5 +232,7 @@
         private System.Windows.Forms.TextBox TableNumberTB;
         private System.Windows.Forms.Label TableNumberLBL;
         private System.Windows.Forms.Label NewOrderLbl;
+        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.PictureBox DeleteOrderBtn;
     }
 }
