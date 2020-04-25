@@ -41,7 +41,7 @@ namespace DePandaWinForms.Pages
         public bool ReservationTimeCheck()
         {
             DayOfWeek[] days = { DayOfWeek.Monday, DayOfWeek.Tuesday, DayOfWeek.Wednesday, DayOfWeek.Thursday, DayOfWeek.Friday, DayOfWeek.Saturday, DayOfWeek.Sunday };
-            for (int i = 0; i < days.Length - 1; i++)
+            for (int i = 0; i < days.Length; i++)
             {
                 if (dateTimePicker1.Value.DayOfWeek == days[i])
                 {
@@ -138,7 +138,7 @@ namespace DePandaWinForms.Pages
             }
         }
 
-        // Restaurant map under construction
+        // restaurant tables
         string tafelnr = "";
 
         private void Cleartables()
@@ -203,17 +203,21 @@ namespace DePandaWinForms.Pages
         {
             Panel[] panels = new Panel[] { panel1, panel2, panel3, panel4, panel5, panel6, panel7, panel8, panel9, panel10, panel11, panel12 };
             var Reservations = DataStorageHandler.Storage.Reservations;
+            
             foreach (var reservation in Reservations)
             {
                 DateTime dateTime = reservation.Date;
                 DateTime dateTime2 = reservation.Date + reservation.Time;
                 Panel panel = panels[int.Parse(reservation.Table)-1];
-
+                
                 if (dateTime.Date == dateTimePicker1.Value.Date)
                 {
-                    if (dateTimePicker2.Value.TimeOfDay >= dateTime.TimeOfDay && dateTimePicker2.Value.TimeOfDay < dateTime2.TimeOfDay || dateTimePicker3.Value.TimeOfDay > dateTime.TimeOfDay && dateTimePicker3.Value.TimeOfDay <= dateTime2.TimeOfDay || dateTimePicker2.Value.TimeOfDay < dateTime.TimeOfDay && dateTimePicker3.Value.TimeOfDay > dateTime2.TimeOfDay)
+                    if (dateTimePicker2.Value.TimeOfDay >= dateTime.TimeOfDay && dateTimePicker2.Value.TimeOfDay < dateTime2.TimeOfDay || 
+                        dateTimePicker3.Value.TimeOfDay > dateTime.TimeOfDay && dateTimePicker3.Value.TimeOfDay <= dateTime2.TimeOfDay || 
+                        dateTimePicker2.Value.TimeOfDay < dateTime.TimeOfDay && dateTimePicker3.Value.TimeOfDay > dateTime2.TimeOfDay)
                     {
                         panel.BackColor = Color.Gray;
+                        break;
                     }
                     else
                     {
