@@ -107,6 +107,7 @@ namespace DePandaWinForms.Pages
             {
                 int v = int.Parse(Reservations[listView.SelectedItems[0].Index].Table);
                 panels[v-1].BackColor = Color.Gainsboro;
+
                 Reservations.Remove(Reservations[listView.SelectedItems[0].Index]);
                 listView.Items.Remove(listView.SelectedItems[0]);
             }
@@ -203,21 +204,27 @@ namespace DePandaWinForms.Pages
         {
             Panel[] panels = new Panel[] { panel1, panel2, panel3, panel4, panel5, panel6, panel7, panel8, panel9, panel10, panel11, panel12 };
             var Reservations = DataStorageHandler.Storage.Reservations;
-            
+            List<Panel> seen = new List<Panel>();
+
             foreach (var reservation in Reservations)
             {
                 DateTime dateTime = reservation.Date;
                 DateTime dateTime2 = reservation.Date + reservation.Time;
                 Panel panel = panels[int.Parse(reservation.Table)-1];
                 
+                if (seen.Contains(panel))
+                {
+                    continue;
+                }
+
                 if (dateTime.Date == dateTimePicker1.Value.Date)
                 {
-                    if (dateTimePicker2.Value.TimeOfDay >= dateTime.TimeOfDay && dateTimePicker2.Value.TimeOfDay < dateTime2.TimeOfDay || 
+                    if (dateTimePicker2.Value.TimeOfDay >= dateTime.TimeOfDay && dateTimePicker2.Value.AddMinutes(1).TimeOfDay < dateTime2.TimeOfDay || 
                         dateTimePicker3.Value.TimeOfDay > dateTime.TimeOfDay && dateTimePicker3.Value.TimeOfDay <= dateTime2.TimeOfDay || 
                         dateTimePicker2.Value.TimeOfDay < dateTime.TimeOfDay && dateTimePicker3.Value.TimeOfDay > dateTime2.TimeOfDay)
                     {
                         panel.BackColor = Color.Gray;
-                        break;
+                        seen.Add(panel);
                     }
                     else
                     {
@@ -227,6 +234,7 @@ namespace DePandaWinForms.Pages
                 else
                 {
                     panel.BackColor = Color.Gainsboro;
+                    
                 }
             }
         }
