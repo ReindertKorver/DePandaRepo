@@ -140,9 +140,6 @@ namespace DePandaWinForms
                     form = new OrdersPage();
                     break;
 
-                case "Betalingen":
-                    form = new PaymentPage();
-                    break;
 
                 case "Instellingen":
                     page = "instellingen";

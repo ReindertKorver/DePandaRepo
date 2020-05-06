@@ -35,8 +35,6 @@
             System.Windows.Forms.ListViewItem listViewItem3 = new System.Windows.Forms.ListViewItem(new string[] {
             "Bestellingen"}, -1, System.Drawing.Color.White, System.Drawing.Color.Empty, new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0))));
             System.Windows.Forms.ListViewItem listViewItem4 = new System.Windows.Forms.ListViewItem(new string[] {
-            "Betalingen"}, -1, System.Drawing.Color.White, System.Drawing.Color.Empty, new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0))));
-            System.Windows.Forms.ListViewItem listViewItem5 = new System.Windows.Forms.ListViewItem(new string[] {
             "Instellingen"}, -1, System.Drawing.Color.White, System.Drawing.Color.Empty, new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0))));
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.panel1 = new System.Windows.Forms.Panel();
@@ -50,7 +48,6 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
             this.PagePanel = new System.Windows.Forms.Panel();
-            this.MenuJelmar = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Minimize)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Maximize)).BeginInit();
@@ -138,7 +135,6 @@
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(45)))), ((int)(((byte)(51)))));
-            this.panel2.Controls.Add(this.MenuJelmar);
             this.panel2.Controls.Add(this.listView1);
             this.panel2.Controls.Add(this.LogoutLabel);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Left;
@@ -161,8 +157,7 @@
             listViewItem1,
             listViewItem2,
             listViewItem3,
-            listViewItem4,
-            listViewItem5});
+            listViewItem4});
             this.listView1.Location = new System.Drawing.Point(0, 0);
             this.listView1.Margin = new System.Windows.Forms.Padding(20);
             this.listView1.MultiSelect = false;
@@ -226,16 +221,6 @@
             this.PagePanel.Size = new System.Drawing.Size(880, 683);
             this.PagePanel.TabIndex = 2;
             // 
-            // MenuJelmar
-            // 
-            this.MenuJelmar.Location = new System.Drawing.Point(118, 18);
-            this.MenuJelmar.Name = "MenuJelmar";
-            this.MenuJelmar.Size = new System.Drawing.Size(75, 23);
-            this.MenuJelmar.TabIndex = 2;
-            this.MenuJelmar.Text = "JelmarMenu";
-            this.MenuJelmar.UseVisualStyleBackColor = true;
-            this.MenuJelmar.Click += new System.EventHandler(this.MenuJelmar_Click);
-            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -278,7 +263,6 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.ListView listView1;
-        private System.Windows.Forms.Button MenuJelmar;
     }
 }
 
