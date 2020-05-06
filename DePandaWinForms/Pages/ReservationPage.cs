@@ -42,12 +42,13 @@ namespace DePandaWinForms.Pages
         public bool ReservationTimeCheck()
         {
             DayOfWeek[] days = { DayOfWeek.Monday, DayOfWeek.Tuesday, DayOfWeek.Wednesday, DayOfWeek.Thursday, DayOfWeek.Friday, DayOfWeek.Saturday, DayOfWeek.Sunday };
+            TimeSpan time = dateTimePicker2.Value.TimeOfDay;
+            TimeSpan time2 = dateTimePicker3.Value.TimeOfDay;
             for (int i = 0; i < ListOfAlternativeDates.Count; i++)
             {
                 if (dateTimePicker1.Value.Date == ListOfAlternativeDates[i].StartDate.Date)
                 {
-                    var time = dateTimePicker2.Value.TimeOfDay;
-                    var time2 = dateTimePicker3.Value.TimeOfDay;
+                   
                     if (time < ListOfAlternativeDates[i].StartDate.TimeOfDay || time2 > ListOfAlternativeDates[i].EndDate.TimeOfDay)
                     {
                         return false;
@@ -60,17 +61,14 @@ namespace DePandaWinForms.Pages
             {
                 if (dateTimePicker1.Value.DayOfWeek == days[i])
                 {
-                    var time = dateTimePicker2.Value.TimeOfDay;
-                    var time2 = dateTimePicker3.Value.TimeOfDay;
+                   
                     if (time < DataStorageHandler.Storage.Settings.WeekDays[i].OpenTime.TimeOfDay || time2 > DataStorageHandler.Storage.Settings.WeekDays[i].CloseTime.AddMinutes(1).TimeOfDay)
                     {
                         return false;
                     }
                     return true;
                 }
-            }
-     
-            
+            }        
             return true;
         }
        
@@ -97,8 +95,7 @@ namespace DePandaWinForms.Pages
                 return;
             }
 
-            bool x = ReservationTimeCheck();
-            if (x == false)
+            if (!ReservationTimeCheck())
             {
                 MessageBox.Show("U kunt geen reservering plaatsen buiten de openingstijden");
                 return;
@@ -116,10 +113,11 @@ namespace DePandaWinForms.Pages
         }
 
         // remove reservation
+        List<DePandaLib.Entities.Reservation> Reservations = DataStorageHandler.Storage.Reservations;
         private void button2_Click(object sender, EventArgs e)
         {
             Panel[] panels = new Panel[] { panel1, panel2, panel3, panel4, panel5, panel6, panel7, panel8, panel9, panel10, panel11, panel12 };
-            var Reservations = DataStorageHandler.Storage.Reservations;
+           
 
             if (listView.SelectedItems.Count > 0)
             {
@@ -138,7 +136,7 @@ namespace DePandaWinForms.Pages
             {
                 for (int i = listView.Items.Count - 1; i >= 0; i--)
                 {
-                    var item = listView.Items[i];
+                    ListViewItem item = listView.Items[i];
                     if (item.Text.ToLower().Contains(searchBox.Text.ToLower()))
                     {
                         item.BackColor = SystemColors.Highlight;
@@ -179,7 +177,7 @@ namespace DePandaWinForms.Pages
             Panel[] panels = new Panel[] { panel1, panel2, panel3, panel4, panel5, panel6, panel7, panel8, panel9, panel10, panel11, panel12 };
 
 
-            foreach (var panel in panels)
+            foreach (Panel panel in panels)
             {
                 if (CurX > panel.Location.X && CurX < panel.Location.X + panel.Width && CurY > panel.Location.Y && CurY < panel.Location.Y + panel.Height)
                 {
@@ -221,7 +219,6 @@ namespace DePandaWinForms.Pages
         private void dateTimePicker3_ValueChanged(object sender, EventArgs e)
         {
             Panel[] panels = new Panel[] { panel1, panel2, panel3, panel4, panel5, panel6, panel7, panel8, panel9, panel10, panel11, panel12 };
-            var Reservations = DataStorageHandler.Storage.Reservations;
             List<Panel> seen = new List<Panel>();
 
             foreach (var reservation in Reservations)
