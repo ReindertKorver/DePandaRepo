@@ -186,7 +186,7 @@ namespace DePandaWinForms
         {
             this.Hide();
 
-            new Login(this.WindowState).Show();
+            form = new Login(this.WindowState);
 
             form.Show();
         }
