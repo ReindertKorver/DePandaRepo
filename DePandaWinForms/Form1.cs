@@ -146,6 +146,10 @@ namespace DePandaWinForms
                     form = new SettingsPage(this.WindowState);
                     break;
 
+                case "Statestieken":
+                    page = "statestieken";
+                    form = new StatisticsPage();
+                    break;
                 default:
                     break;
             }

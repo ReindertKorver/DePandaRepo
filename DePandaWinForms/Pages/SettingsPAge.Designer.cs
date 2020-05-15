@@ -657,6 +657,7 @@
             this.MondayClosedButton.Text = "Gesloten";
             this.MondayClosedButton.UseVisualStyleBackColor = false;
             this.MondayClosedButton.Click += new System.EventHandler(this.ClosedClick);
+            this.MondayClosedButton.MouseDown += new System.Windows.Forms.MouseEventHandler(this.ClosedClick);
             // 
             // TuesdayClosedButton
             // 

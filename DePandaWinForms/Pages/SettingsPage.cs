@@ -145,10 +145,13 @@ namespace DePandaWinForms.Pages
         private void ClosedClick(object sender, EventArgs e)
         // When pressed on the closed button it will set the time to 00:00
         {
+         
             string Name = ((sender as Button).Name).Replace("ClosedButton", "");
             if (Name == "Monday")
             {
-                WeekDayList[0] = new DePandaClassLib.Entities.WeekDay(SetTimeClosed(MondayOpenPicker.Value), SetTimeClosed(MondayClosedPicker.Value));
+                var opentime = SetTimeClosed(MondayOpenPicker.Value);
+                WeekDayList[0] = new DePandaClassLib.Entities.WeekDay(opentime, opentime);
+                WeekDayList[0] = new DePandaClassLib.Entities.WeekDay(opentime, opentime);
             }
 
 
@@ -203,6 +206,11 @@ namespace DePandaWinForms.Pages
         private void DateTimePickerEnter(object sender, EventArgs e)
         {
             ValueToCache = (sender as DateTimePicker).Value;
+        }
+
+        private void ClosedClick(object sender, MouseEventArgs e)
+        {
+
         }
     }
 }
