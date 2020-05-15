@@ -33,7 +33,7 @@ namespace DePandaWinForms
 
             //DataStorageHandler.Storage.StockDishes.Add();
 
-            Application.Run(new Form1(FormWindowState.Normal));
+            Application.Run(new Login(FormWindowState.Normal));
             // change Form to Login Application.Run(new Login(false));
 
             DataStorageHandler.SaveChanges();

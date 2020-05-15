@@ -162,7 +162,7 @@
             this.listView1.Margin = new System.Windows.Forms.Padding(20);
             this.listView1.MultiSelect = false;
             this.listView1.Name = "listView1";
-            this.listView1.Size = new System.Drawing.Size(200, 231);
+            this.listView1.Size = new System.Drawing.Size(200, 230);
             this.listView1.TabIndex = 0;
             this.listView1.TileSize = new System.Drawing.Size(180, 44);
             this.listView1.UseCompatibleStateImageBehavior = false;
