@@ -116,9 +116,6 @@ namespace DePandaWinForms
 
         #endregion Code for dragging window and showing shadow
 
-        private void label2_Click(object sender, EventArgs e)
-        {
-        }
 
         private Form form = null;
         private string page = "none";
@@ -140,14 +137,12 @@ namespace DePandaWinForms
                     form = new OrdersPage();
                     break;
 
-
                 case "Instellingen":
                     page = "instellingen";
                     form = new SettingsPage(this.WindowState);
                     break;
 
                 case "Statestieken":
-                    page = "statestieken";
                     form = new StatisticsPage();
                     break;
                 default:
@@ -195,19 +190,5 @@ namespace DePandaWinForms
       
         }
 
-        private void listView1_SelectedIndexChanged(object sender, EventArgs e)
-        {
-        }
-
-        private void MenuJelmar_Click(object sender, EventArgs e)
-        {
-            form = new MenuPageJelmar();
-            form.TopLevel = false;
-            form.AutoScroll = true;
-            form.Size = new Size(PagePanel.Size.Width, PagePanel.Size.Height);
-            PagePanel.Controls.Clear();
-            PagePanel.Controls.Add(form);
-            form.Show();
-        }
     }
 }

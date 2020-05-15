@@ -656,8 +656,8 @@
             this.MondayClosedButton.TabIndex = 98;
             this.MondayClosedButton.Text = "Gesloten";
             this.MondayClosedButton.UseVisualStyleBackColor = false;
-            this.MondayClosedButton.Click += new System.EventHandler(this.ClosedClick);
             this.MondayClosedButton.MouseDown += new System.Windows.Forms.MouseEventHandler(this.ClosedClick);
+            this.MondayClosedButton.MouseUp += new System.Windows.Forms.MouseEventHandler(this.ClosedClick);
             // 
             // TuesdayClosedButton
             // 
@@ -670,7 +670,8 @@
             this.TuesdayClosedButton.TabIndex = 99;
             this.TuesdayClosedButton.Text = "Gesloten";
             this.TuesdayClosedButton.UseVisualStyleBackColor = false;
-            this.TuesdayClosedButton.Click += new System.EventHandler(this.ClosedClick);
+            this.TuesdayClosedButton.MouseDown += new System.Windows.Forms.MouseEventHandler(this.ClosedClick);
+            this.TuesdayClosedButton.MouseUp += new System.Windows.Forms.MouseEventHandler(this.ClosedClick);
             // 
             // WednesdayClosedButton
             // 
@@ -683,7 +684,8 @@
             this.WednesdayClosedButton.TabIndex = 100;
             this.WednesdayClosedButton.Text = "Gesloten";
             this.WednesdayClosedButton.UseVisualStyleBackColor = false;
-            this.WednesdayClosedButton.Click += new System.EventHandler(this.ClosedClick);
+            this.WednesdayClosedButton.MouseDown += new System.Windows.Forms.MouseEventHandler(this.ClosedClick);
+            this.WednesdayClosedButton.MouseUp += new System.Windows.Forms.MouseEventHandler(this.ClosedClick);
             // 
             // ThursdayClosedButton
             // 
@@ -696,7 +698,8 @@
             this.ThursdayClosedButton.TabIndex = 101;
             this.ThursdayClosedButton.Text = "Gesloten";
             this.ThursdayClosedButton.UseVisualStyleBackColor = false;
-            this.ThursdayClosedButton.Click += new System.EventHandler(this.ClosedClick);
+            this.ThursdayClosedButton.MouseDown += new System.Windows.Forms.MouseEventHandler(this.ClosedClick);
+            this.ThursdayClosedButton.MouseUp += new System.Windows.Forms.MouseEventHandler(this.ClosedClick);
             // 
             // FridayClosedButton
             // 
@@ -709,7 +712,8 @@
             this.FridayClosedButton.TabIndex = 102;
             this.FridayClosedButton.Text = "Gesloten";
             this.FridayClosedButton.UseVisualStyleBackColor = false;
-            this.FridayClosedButton.Click += new System.EventHandler(this.ClosedClick);
+            this.FridayClosedButton.MouseDown += new System.Windows.Forms.MouseEventHandler(this.ClosedClick);
+            this.FridayClosedButton.MouseUp += new System.Windows.Forms.MouseEventHandler(this.ClosedClick);
             // 
             // SaturdayClosedButton
             // 
@@ -722,7 +726,8 @@
             this.SaturdayClosedButton.TabIndex = 103;
             this.SaturdayClosedButton.Text = "Gesloten";
             this.SaturdayClosedButton.UseVisualStyleBackColor = false;
-            this.SaturdayClosedButton.Click += new System.EventHandler(this.ClosedClick);
+            this.SaturdayClosedButton.MouseDown += new System.Windows.Forms.MouseEventHandler(this.ClosedClick);
+            this.SaturdayClosedButton.MouseUp += new System.Windows.Forms.MouseEventHandler(this.ClosedClick);
             // 
             // SundayClosedButton
             // 
@@ -735,7 +740,8 @@
             this.SundayClosedButton.TabIndex = 104;
             this.SundayClosedButton.Text = "Gesloten";
             this.SundayClosedButton.UseVisualStyleBackColor = false;
-            this.SundayClosedButton.Click += new System.EventHandler(this.ClosedClick);
+            this.SundayClosedButton.MouseDown += new System.Windows.Forms.MouseEventHandler(this.ClosedClick);
+            this.SundayClosedButton.MouseUp += new System.Windows.Forms.MouseEventHandler(this.ClosedClick);
             // 
             // SettingsPage
             // 

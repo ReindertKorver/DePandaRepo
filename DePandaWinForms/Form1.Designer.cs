@@ -84,7 +84,6 @@
             this.label2.Size = new System.Drawing.Size(80, 20);
             this.label2.TabIndex = 3;
             this.label2.Text = "De Panda";
-            this.label2.Click += new System.EventHandler(this.label2_Click);
             // 
             // Minimize
             // 
@@ -171,7 +170,6 @@
             this.listView1.UseCompatibleStateImageBehavior = false;
             this.listView1.View = System.Windows.Forms.View.Tile;
             this.listView1.ItemSelectionChanged += new System.Windows.Forms.ListViewItemSelectionChangedEventHandler(this.listView1_ItemSelectionChanged);
-            this.listView1.SelectedIndexChanged += new System.EventHandler(this.listView1_SelectedIndexChanged);
             // 
             // LogoutLabel
             // 

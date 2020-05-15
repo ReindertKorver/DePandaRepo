@@ -29,8 +29,8 @@ namespace DePandaWinForms.Pages
                 
             {
                 this.Hide();
-                Form mainScreen = new Form1(this.WindowState);
-                mainScreen.Show();
+                new Form1(this.WindowState).Show();
+             
             }
             else if (PinInput.Text.Length == DataStorageHandler.Storage.Settings.PinCode.Length && PinInput.Text != DataStorageHandler.Storage.Settings.PinCode)
             { 
