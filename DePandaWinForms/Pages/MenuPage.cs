@@ -9,6 +9,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using DePandaLib.Entities;
+using DePandaClassLib.Entities;
 
 namespace DePandaWinForms.Pages
 {
@@ -19,7 +20,7 @@ namespace DePandaWinForms.Pages
         public MenuPage()
         {
             InitializeComponent();
-            LoadInMenuItems();   
+            LoadInMenuItems();
         }
 
         public void LoadInMenuItems()
@@ -34,6 +35,12 @@ namespace DePandaWinForms.Pages
 
             MenuItemsList.ValueMember = "ID";
             MenuItemsList.DisplayMember = "Name";
+            var temp = Enum.GetNames(typeof(Category));
+            var res = (temp as string[]).ToList();
+            res.RemoveAt(0);
+            CategoryCB.DataSource = res;
+            CategoryCB.SelectedItem = null;
+            CategoryCB.Text = "Selecteer...";
         }
 
         private void MenuItemClick(object sender, EventArgs e)
@@ -73,6 +80,16 @@ namespace DePandaWinForms.Pages
                 PriceMenuItemInput.Text = menuItem.Price.ToString();
                 NameMenuItemInput.Text = menuItem.Name;
                 AmountMenuItemInput.Text = menuItem.Amount.ToString();
+                if (menuItem.Category != Category.None)
+                {
+                    CategoryCB.SelectedItem = Enum.GetName(typeof(Category), menuItem.Category);
+                    CategoryCB.Text = Enum.GetName(typeof(Category), menuItem.Category);
+                }
+                else
+                {
+                    CategoryCB.SelectedItem = null;
+                    CategoryCB.Text = "Selecteer...";
+                }
             }
         }
 
@@ -125,21 +142,34 @@ namespace DePandaWinForms.Pages
         private void CreateMenuItem(object sender, EventArgs e)
         {
             string PriceToComma = PriceMenuItemInput.Text.Replace('.', ',');
-      
+
             if (ValidateInput("1234567890,", PriceToComma))
             {
                 Console.WriteLine(PriceToComma);
                 decimal Price = Convert.ToDecimal(PriceToComma);
                 int Amount = int.Parse(AmountMenuItemInput.Text);
 
-                TempStockDishes.Add(new Dish() { Name = NameMenuItemInput.Text, Price = Price, Description = DescriptionMenuItemInput.Text, Amount = Amount });
+                if (CategoryCB.SelectedItem != null)
+                {
+                    if (Enum.TryParse(CategoryCB.SelectedValue.ToString(), out Category cat))
+                    {
+                        TempStockDishes.Add(new Dish() { Name = NameMenuItemInput.Text, Price = Price, Description = DescriptionMenuItemInput.Text, Amount = Amount, Category = cat });
+                        NameMenuItemInput.Text = "";
+                        DescriptionMenuItemInput.Text = "";
+                        PriceMenuItemInput.Text = "";
+                        AmountMenuItemInput.Text = "";
 
-                NameMenuItemInput.Text = "";
-                DescriptionMenuItemInput.Text = "";
-                PriceMenuItemInput.Text = "";
-                AmountMenuItemInput.Text = "";
-
-                LoadInMenuItems();
+                        LoadInMenuItems();
+                    }
+                    else
+                    {
+                        MessageBox.Show("U heeft geen geldige categorie geselecteerd");
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("U heeft geen categorie geselecteerd ");
+                }
             }
             else
             {
@@ -149,9 +179,9 @@ namespace DePandaWinForms.Pages
 
         private bool ValidateInput(string mayContains, string input)
         {
-            foreach(char c in input)
+            foreach (char c in input)
             {
-                if(!mayContains.Contains(c))
+                if (!mayContains.Contains(c))
                 {
                     return false;
                 }
@@ -177,25 +207,52 @@ namespace DePandaWinForms.Pages
             Dish menuItem = (Dish)MenuItemsList.SelectedItem;
 
             string PriceToComma = PriceMenuItemInput.Text.Replace('.', ',');
-
-            if (ValidateInput("1234567890,", PriceToComma))
+            if (menuItem != null)
             {
-                menuItem.Name = NameMenuItemInput.Text;
-                menuItem.Price = Convert.ToDecimal(PriceToComma);
-                menuItem.Description = DescriptionMenuItemInput.Text;
-                menuItem.Amount = int.Parse(AmountMenuItemInput.Text);
+                if (ValidateInput("1234567890,", PriceToComma))
+                {
+                    if (CategoryCB.SelectedItem != null)
+                    {
+                        if (Enum.TryParse(CategoryCB.SelectedValue.ToString(), out Category cat))
+                        {
+                            menuItem.Category = cat;
+                            menuItem.Name = NameMenuItemInput.Text;
+                            menuItem.Price = Convert.ToDecimal(PriceToComma);
+                            menuItem.Description = DescriptionMenuItemInput.Text;
+                            menuItem.Amount = int.Parse(AmountMenuItemInput.Text);
+                            MenuItemGroupBox.Visible = false;
+                            MessageBox.Show("Menuitem is opgeslagen");
+                        }
+                        else
+                        {
+                            MessageBox.Show("U heeft geen geldige categorie geselecteerd");
+                        }
+                    }
+                    else
+                    {
+                        MessageBox.Show("U heeft geen categorie geselecteerd ");
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("U mag alleen cijfers cijfers invoeren");
+                }
             }
             else
             {
-                MessageBox.Show("U mag alleen cijfers cijfers invoeren");
+                MessageBox.Show("Selecteer eerst een menuitem");
             }
-            
+
             LoadInMenuItems();
         }
 
         private void CloseMenuItemPanel(object sender, EventArgs e)
         {
             MenuItemGroupBox.Visible = false;
+        }
+
+        private void label6_Click(object sender, EventArgs e)
+        {
         }
     }
 }

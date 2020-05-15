@@ -1,4 +1,5 @@
-﻿using DePandaLib.DAL;
+﻿using DePandaClassLib.Entities;
+using DePandaLib.DAL;
 using DePandaLib.Entities;
 using DePandaWinForms.Design;
 using System;
@@ -16,17 +17,26 @@ namespace DePandaWinForms.Pages.OrderPage
     public partial class NewOrder : Form
     {
         private Order CurrentOrder { get; set; }
+        private Category CurrentFilter = Category.None;
+        private List<Dish> Dishes;
 
         public NewOrder(ref Order order)
         {
             InitializeComponent();
             CurrentOrder = order;
-            var dishes = DataStorageHandler.Storage.StockDishes;
+            Dishes = DataStorageHandler.Storage.StockDishes;
+            var temp = Enum.GetNames(typeof(Category));
+            var res = (temp as string[]).ToList();
+            res.RemoveAt(0);
+            CategoryCB.DataSource = res;
+            CategoryCB.SelectedItem = null;
+            CategoryCB.Text = "Selecteer...";
+
             MenuItemList.Controls.Clear();
 
-            if (dishes != null && dishes.Count != 0)
+            if (Dishes != null && Dishes.Count != 0)
             {
-                foreach (var dish in dishes)
+                foreach (var dish in Dishes)
                 {
                     OrderItem item = new OrderItem(dish);
                     MenuItemList.Controls.Add(item);
@@ -115,6 +125,46 @@ namespace DePandaWinForms.Pages.OrderPage
             if (dishes != null && dishes.Count != 0)
             {
                 foreach (var dish in dishes)
+                {
+                    OrderItem item = new OrderItem(dish);
+                    MenuItemList.Controls.Add(item);
+                }
+            }
+        }
+
+        private void CategoryCB_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (CategoryCB.SelectedItem != null)
+            {
+                if (Enum.TryParse(CategoryCB.SelectedValue.ToString(), out Category cat))
+                {
+                    CurrentFilter = cat;
+                    MenuItemList.Controls.Clear();
+
+                    if (Dishes != null && Dishes.Count != 0)
+                    {
+                        foreach (var dish in Dishes)
+                        {
+                            if (CurrentFilter == dish.Category)
+                            {
+                                OrderItem item = new OrderItem(dish);
+                                MenuItemList.Controls.Add(item);
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        private void pictureBox2_Click(object sender, EventArgs e)
+        {
+            CategoryCB.SelectedItem = null;
+            CategoryCB.Text = "Selecteer...";
+            MenuItemList.Controls.Clear();
+
+            if (Dishes != null && Dishes.Count != 0)
+            {
+                foreach (var dish in Dishes)
                 {
                     OrderItem item = new OrderItem(dish);
                     MenuItemList.Controls.Add(item);
