@@ -188,7 +188,7 @@ namespace DePandaWinForms
 
             new Login(this.WindowState).Show();
 
-            form.Show();
+      
         }
 
         private void listView1_SelectedIndexChanged(object sender, EventArgs e)

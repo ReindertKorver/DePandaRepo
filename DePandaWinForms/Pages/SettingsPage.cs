@@ -147,7 +147,10 @@ namespace DePandaWinForms.Pages
         {
             string Name = ((sender as Button).Name).Replace("ClosedButton", "");
             if (Name == "Monday")
+            {
                 WeekDayList[0] = new DePandaClassLib.Entities.WeekDay(SetTimeClosed(MondayOpenPicker.Value), SetTimeClosed(MondayClosedPicker.Value));
+            }
+
 
             else if (Name == "Tuesday")
                 WeekDayList[1] = new DePandaClassLib.Entities.WeekDay(SetTimeClosed(TuesdayOpenPicker.Value), SetTimeClosed(TuesdayClosedPicker.Value));
