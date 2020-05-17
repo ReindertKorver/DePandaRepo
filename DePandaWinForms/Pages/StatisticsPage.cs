@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using DePandaClassLib.Entities;
 using DePandaLib.DAL;
 using DePandaLib.Entities;
 
@@ -14,75 +15,85 @@ namespace DePandaWinForms.Pages
 {
     public partial class StatisticsPage : Form
     {
+        int total = 0;
         private List<Dish> ListOfDishes = DataStorageHandler.Storage.StockDishes;
+        Dictionary<string, int> FromCategoryToEnum = new Dictionary<string, int>(){
+                                  {"drankmetprik", 1}, {"drankzonderprik", 2},
+                                  {"vlees", 3},{"vis", 4},
+                                  {"groente", 5}, {"zuivel", 6},
+                                  {"drankmetalcohol", 7},
+
+        };
         public StatisticsPage()
         {
             InitializeComponent();
-            TotalItemsLabel.Text = $"Totaal aantal items: {SumAllItems()}";
         }
 
-       private int SumAllItems()
+       private int SumAllItems(string categorie)
         {
-            int total = 0;
+            
             foreach (Dish menuItem in ListOfDishes)
             {
-                total += menuItem.Amount;
+                if (FromCategoryToEnum[categorie] == (int)menuItem.Category)
+                    total += menuItem.Amount;
             }
             return total;
         }
         private void ShowDrinkGraph_Click(object sender, EventArgs e)
         {
-            if (!ShowDrinkWithShotGraph.Visible)
+            if (!ShowDrinksWithShots.Visible)
             {
-                ShowDrinkWithShotGraph.Visible = true;
-                ShowDrinkWithOutShotGraph.Visible = true;
-                DrinkWithAlcohol.Visible = true;
+                ShowDrinksWithShots.Visible = true;
+                ShowDrinksWithoutShots.Visible = true;
+                ShowDrinksWithAlcohol.Visible = true;
             }
             else
             {
-                ShowDrinkWithShotGraph.Visible = false;
-                ShowDrinkWithOutShotGraph.Visible = false;
-                DrinkWithAlcohol.Visible = false;
+                ShowDrinksWithShots.Visible = false;
+                ShowDrinksWithoutShots.Visible = false;
+                ShowDrinksWithAlcohol.Visible = false;
             }
             
         }
         
         private void button1_Click(object sender, EventArgs e)
         {
-            if (!Fish.Visible)
+            if (!ShowFish.Visible)
             {
-                vegetables.Visible = true;
-                Fish.Visible = true;
-                Meat.Visible = true;
+                ShowVegtables.Visible = true;
+                ShowFish.Visible = true;
+                ShowMeat.Visible = true;
             }
             else
             {
-                vegetables.Visible = false;
-                Fish.Visible = false;
-                Meat.Visible = false;
+                ShowVegtables.Visible = false;
+                ShowFish.Visible = false;
+                ShowMeat.Visible = false;
             }
         }
 
-        private void SetGraph() // catogorie indoen?
+        private void SetGraph(string categorie) // catogorie indoen?
         {
             // eerst leeg maken
+            DrankMetPrinkChart.Visible = true;
+            TotalItemsLabel.Visible = true;
             foreach (var series in DrankMetPrinkChart.Series)
             {
                 series.Points.Clear();
             }
-            DrankMetPrinkChart.Visible = true;
-            TotalItemsLabel.Visible = true;
+
             foreach (Dish menuItem in ListOfDishes)
             {
-                this.DrankMetPrinkChart.Series["Hoeveelheid"].Points.AddXY(menuItem.Name, menuItem.Amount);
+               if (FromCategoryToEnum[categorie] == (int)menuItem.Category)
+                    this.DrankMetPrinkChart.Series["Hoeveelheid"].Points.AddXY(menuItem.Name, menuItem.Amount);
             }
-
-
+            TotalItemsLabel.Text = $"Totaal aantal items: {SumAllItems(categorie)}";
         }
-
+       
         private void ShowGraph(object sender, EventArgs e)
         {
-            SetGraph();
+            string categorie = ((sender as Button).Text).ToLower().Replace(" ", "");
+            SetGraph(categorie);
         }
     }
 }

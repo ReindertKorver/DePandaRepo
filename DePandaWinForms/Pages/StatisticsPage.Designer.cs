@@ -35,12 +35,12 @@
             this.ShowDrinkGraph = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.DrankMetPrinkChart = new System.Windows.Forms.DataVisualization.Charting.Chart();
-            this.ShowDrinkWithShotGraph = new System.Windows.Forms.Button();
-            this.ShowDrinkWithOutShotGraph = new System.Windows.Forms.Button();
-            this.DrinkWithAlcohol = new System.Windows.Forms.Button();
-            this.vegetables = new System.Windows.Forms.Button();
-            this.Fish = new System.Windows.Forms.Button();
-            this.Meat = new System.Windows.Forms.Button();
+            this.ShowDrinksWithShots = new System.Windows.Forms.Button();
+            this.ShowDrinksWithoutShots = new System.Windows.Forms.Button();
+            this.ShowDrinksWithAlcohol = new System.Windows.Forms.Button();
+            this.ShowVegtables = new System.Windows.Forms.Button();
+            this.ShowFish = new System.Windows.Forms.Button();
+            this.ShowMeat = new System.Windows.Forms.Button();
             this.TotalItemsLabel = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.DrankMetPrinkChart)).BeginInit();
             this.SuspendLayout();
@@ -79,7 +79,7 @@
             this.DrankMetPrinkChart.ChartAreas.Add(chartArea1);
             legend1.Name = "Legend1";
             this.DrankMetPrinkChart.Legends.Add(legend1);
-            this.DrankMetPrinkChart.Location = new System.Drawing.Point(240, 238);
+            this.DrankMetPrinkChart.Location = new System.Drawing.Point(245, 270);
             this.DrankMetPrinkChart.Name = "DrankMetPrinkChart";
             series1.ChartArea = "ChartArea1";
             series1.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Pie;
@@ -95,102 +95,102 @@
             this.DrankMetPrinkChart.Titles.Add(title1);
             this.DrankMetPrinkChart.Visible = false;
             // 
-            // ShowDrinkWithShotGraph
+            // ShowDrinksWithShots
             // 
-            this.ShowDrinkWithShotGraph.BackColor = System.Drawing.Color.White;
-            this.ShowDrinkWithShotGraph.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.ShowDrinkWithShotGraph.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.ShowDrinkWithShotGraph.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(72)))), ((int)(((byte)(142)))), ((int)(((byte)(149)))));
-            this.ShowDrinkWithShotGraph.Location = new System.Drawing.Point(240, 12);
-            this.ShowDrinkWithShotGraph.Name = "ShowDrinkWithShotGraph";
-            this.ShowDrinkWithShotGraph.Size = new System.Drawing.Size(162, 83);
-            this.ShowDrinkWithShotGraph.TabIndex = 103;
-            this.ShowDrinkWithShotGraph.Text = "drank met prik";
-            this.ShowDrinkWithShotGraph.UseVisualStyleBackColor = false;
-            this.ShowDrinkWithShotGraph.Visible = false;
-            this.ShowDrinkWithShotGraph.MouseEnter += new System.EventHandler(this.ShowGraph);
+            this.ShowDrinksWithShots.BackColor = System.Drawing.Color.White;
+            this.ShowDrinksWithShots.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.ShowDrinksWithShots.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.ShowDrinksWithShots.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(72)))), ((int)(((byte)(142)))), ((int)(((byte)(149)))));
+            this.ShowDrinksWithShots.Location = new System.Drawing.Point(245, 12);
+            this.ShowDrinksWithShots.Name = "ShowDrinksWithShots";
+            this.ShowDrinksWithShots.Size = new System.Drawing.Size(162, 83);
+            this.ShowDrinksWithShots.TabIndex = 103;
+            this.ShowDrinksWithShots.Text = "drank met prik";
+            this.ShowDrinksWithShots.UseVisualStyleBackColor = false;
+            this.ShowDrinksWithShots.Visible = false;
+            this.ShowDrinksWithShots.Click += new System.EventHandler(this.ShowGraph);
             // 
-            // ShowDrinkWithOutShotGraph
+            // ShowDrinksWithoutShots
             // 
-            this.ShowDrinkWithOutShotGraph.BackColor = System.Drawing.Color.White;
-            this.ShowDrinkWithOutShotGraph.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.ShowDrinkWithOutShotGraph.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.ShowDrinkWithOutShotGraph.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(72)))), ((int)(((byte)(142)))), ((int)(((byte)(149)))));
-            this.ShowDrinkWithOutShotGraph.Location = new System.Drawing.Point(424, 12);
-            this.ShowDrinkWithOutShotGraph.Name = "ShowDrinkWithOutShotGraph";
-            this.ShowDrinkWithOutShotGraph.Size = new System.Drawing.Size(162, 83);
-            this.ShowDrinkWithOutShotGraph.TabIndex = 104;
-            this.ShowDrinkWithOutShotGraph.Text = "drank met prik";
-            this.ShowDrinkWithOutShotGraph.UseVisualStyleBackColor = false;
-            this.ShowDrinkWithOutShotGraph.Visible = false;
-            this.ShowDrinkWithOutShotGraph.MouseEnter += new System.EventHandler(this.ShowGraph);
+            this.ShowDrinksWithoutShots.BackColor = System.Drawing.Color.White;
+            this.ShowDrinksWithoutShots.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.ShowDrinksWithoutShots.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.ShowDrinksWithoutShots.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(72)))), ((int)(((byte)(142)))), ((int)(((byte)(149)))));
+            this.ShowDrinksWithoutShots.Location = new System.Drawing.Point(429, 12);
+            this.ShowDrinksWithoutShots.Name = "ShowDrinksWithoutShots";
+            this.ShowDrinksWithoutShots.Size = new System.Drawing.Size(162, 83);
+            this.ShowDrinksWithoutShots.TabIndex = 104;
+            this.ShowDrinksWithoutShots.Text = "drank zonder prik";
+            this.ShowDrinksWithoutShots.UseVisualStyleBackColor = false;
+            this.ShowDrinksWithoutShots.Visible = false;
+            this.ShowDrinksWithoutShots.Click += new System.EventHandler(this.ShowGraph);
             // 
-            // DrinkWithAlcohol
+            // ShowDrinksWithAlcohol
             // 
-            this.DrinkWithAlcohol.BackColor = System.Drawing.Color.White;
-            this.DrinkWithAlcohol.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.DrinkWithAlcohol.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.DrinkWithAlcohol.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(72)))), ((int)(((byte)(142)))), ((int)(((byte)(149)))));
-            this.DrinkWithAlcohol.Location = new System.Drawing.Point(603, 12);
-            this.DrinkWithAlcohol.Name = "DrinkWithAlcohol";
-            this.DrinkWithAlcohol.Size = new System.Drawing.Size(162, 83);
-            this.DrinkWithAlcohol.TabIndex = 105;
-            this.DrinkWithAlcohol.Text = "drank met alcohol";
-            this.DrinkWithAlcohol.UseVisualStyleBackColor = false;
-            this.DrinkWithAlcohol.Visible = false;
-            this.DrinkWithAlcohol.MouseEnter += new System.EventHandler(this.ShowGraph);
+            this.ShowDrinksWithAlcohol.BackColor = System.Drawing.Color.White;
+            this.ShowDrinksWithAlcohol.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.ShowDrinksWithAlcohol.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.ShowDrinksWithAlcohol.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(72)))), ((int)(((byte)(142)))), ((int)(((byte)(149)))));
+            this.ShowDrinksWithAlcohol.Location = new System.Drawing.Point(608, 12);
+            this.ShowDrinksWithAlcohol.Name = "ShowDrinksWithAlcohol";
+            this.ShowDrinksWithAlcohol.Size = new System.Drawing.Size(162, 83);
+            this.ShowDrinksWithAlcohol.TabIndex = 105;
+            this.ShowDrinksWithAlcohol.Text = "drank met alcohol";
+            this.ShowDrinksWithAlcohol.UseVisualStyleBackColor = false;
+            this.ShowDrinksWithAlcohol.Visible = false;
+            this.ShowDrinksWithAlcohol.Click += new System.EventHandler(this.ShowGraph);
             // 
-            // vegetables
+            // ShowVegtables
             // 
-            this.vegetables.BackColor = System.Drawing.Color.White;
-            this.vegetables.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.vegetables.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.vegetables.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(72)))), ((int)(((byte)(142)))), ((int)(((byte)(149)))));
-            this.vegetables.Location = new System.Drawing.Point(240, 121);
-            this.vegetables.Name = "vegetables";
-            this.vegetables.Size = new System.Drawing.Size(162, 83);
-            this.vegetables.TabIndex = 106;
-            this.vegetables.Text = "groente";
-            this.vegetables.UseVisualStyleBackColor = false;
-            this.vegetables.Visible = false;
-            this.vegetables.MouseEnter += new System.EventHandler(this.ShowGraph);
+            this.ShowVegtables.BackColor = System.Drawing.Color.White;
+            this.ShowVegtables.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.ShowVegtables.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.ShowVegtables.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(72)))), ((int)(((byte)(142)))), ((int)(((byte)(149)))));
+            this.ShowVegtables.Location = new System.Drawing.Point(245, 121);
+            this.ShowVegtables.Name = "ShowVegtables";
+            this.ShowVegtables.Size = new System.Drawing.Size(162, 83);
+            this.ShowVegtables.TabIndex = 106;
+            this.ShowVegtables.Text = "groente";
+            this.ShowVegtables.UseVisualStyleBackColor = false;
+            this.ShowVegtables.Visible = false;
+            this.ShowVegtables.Click += new System.EventHandler(this.ShowGraph);
             // 
-            // Fish
+            // ShowFish
             // 
-            this.Fish.BackColor = System.Drawing.Color.White;
-            this.Fish.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.Fish.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.Fish.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(72)))), ((int)(((byte)(142)))), ((int)(((byte)(149)))));
-            this.Fish.Location = new System.Drawing.Point(424, 121);
-            this.Fish.Name = "Fish";
-            this.Fish.Size = new System.Drawing.Size(162, 83);
-            this.Fish.TabIndex = 107;
-            this.Fish.Text = "vis";
-            this.Fish.UseVisualStyleBackColor = false;
-            this.Fish.Visible = false;
-            this.Fish.MouseEnter += new System.EventHandler(this.ShowGraph);
+            this.ShowFish.BackColor = System.Drawing.Color.White;
+            this.ShowFish.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.ShowFish.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.ShowFish.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(72)))), ((int)(((byte)(142)))), ((int)(((byte)(149)))));
+            this.ShowFish.Location = new System.Drawing.Point(429, 121);
+            this.ShowFish.Name = "ShowFish";
+            this.ShowFish.Size = new System.Drawing.Size(162, 83);
+            this.ShowFish.TabIndex = 107;
+            this.ShowFish.Text = "vis";
+            this.ShowFish.UseVisualStyleBackColor = false;
+            this.ShowFish.Visible = false;
+            this.ShowFish.Click += new System.EventHandler(this.ShowGraph);
             // 
-            // Meat
+            // ShowMeat
             // 
-            this.Meat.BackColor = System.Drawing.Color.White;
-            this.Meat.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.Meat.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.Meat.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(72)))), ((int)(((byte)(142)))), ((int)(((byte)(149)))));
-            this.Meat.Location = new System.Drawing.Point(603, 121);
-            this.Meat.Name = "Meat";
-            this.Meat.Size = new System.Drawing.Size(162, 83);
-            this.Meat.TabIndex = 108;
-            this.Meat.Text = "vlees";
-            this.Meat.UseVisualStyleBackColor = false;
-            this.Meat.Visible = false;
-            this.Meat.MouseEnter += new System.EventHandler(this.ShowGraph);
+            this.ShowMeat.BackColor = System.Drawing.Color.White;
+            this.ShowMeat.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.ShowMeat.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.ShowMeat.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(72)))), ((int)(((byte)(142)))), ((int)(((byte)(149)))));
+            this.ShowMeat.Location = new System.Drawing.Point(608, 121);
+            this.ShowMeat.Name = "ShowMeat";
+            this.ShowMeat.Size = new System.Drawing.Size(162, 83);
+            this.ShowMeat.TabIndex = 108;
+            this.ShowMeat.Text = "vlees";
+            this.ShowMeat.UseVisualStyleBackColor = false;
+            this.ShowMeat.Visible = false;
+            this.ShowMeat.Click += new System.EventHandler(this.ShowGraph);
             // 
             // TotalItemsLabel
             // 
             this.TotalItemsLabel.AutoSize = true;
             this.TotalItemsLabel.BackColor = System.Drawing.Color.White;
             this.TotalItemsLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.TotalItemsLabel.Location = new System.Drawing.Point(605, 238);
+            this.TotalItemsLabel.Location = new System.Drawing.Point(594, 238);
             this.TotalItemsLabel.Name = "TotalItemsLabel";
             this.TotalItemsLabel.Size = new System.Drawing.Size(160, 17);
             this.TotalItemsLabel.TabIndex = 109;
@@ -203,12 +203,12 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(985, 667);
             this.Controls.Add(this.TotalItemsLabel);
-            this.Controls.Add(this.Meat);
-            this.Controls.Add(this.Fish);
-            this.Controls.Add(this.vegetables);
-            this.Controls.Add(this.DrinkWithAlcohol);
-            this.Controls.Add(this.ShowDrinkWithOutShotGraph);
-            this.Controls.Add(this.ShowDrinkWithShotGraph);
+            this.Controls.Add(this.ShowMeat);
+            this.Controls.Add(this.ShowFish);
+            this.Controls.Add(this.ShowVegtables);
+            this.Controls.Add(this.ShowDrinksWithAlcohol);
+            this.Controls.Add(this.ShowDrinksWithoutShots);
+            this.Controls.Add(this.ShowDrinksWithShots);
             this.Controls.Add(this.DrankMetPrinkChart);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.ShowDrinkGraph);
@@ -226,12 +226,12 @@
         private System.Windows.Forms.Button ShowDrinkGraph;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.DataVisualization.Charting.Chart DrankMetPrinkChart;
-        private System.Windows.Forms.Button ShowDrinkWithShotGraph;
-        private System.Windows.Forms.Button ShowDrinkWithOutShotGraph;
-        private System.Windows.Forms.Button DrinkWithAlcohol;
-        private System.Windows.Forms.Button vegetables;
-        private System.Windows.Forms.Button Fish;
-        private System.Windows.Forms.Button Meat;
+        private System.Windows.Forms.Button ShowDrinksWithShots;
+        private System.Windows.Forms.Button ShowDrinksWithoutShots;
+        private System.Windows.Forms.Button ShowDrinksWithAlcohol;
+        private System.Windows.Forms.Button ShowVegtables;
+        private System.Windows.Forms.Button ShowFish;
+        private System.Windows.Forms.Button ShowMeat;
         private System.Windows.Forms.Label TotalItemsLabel;
     }
 }

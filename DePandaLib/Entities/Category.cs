@@ -9,12 +9,12 @@ namespace DePandaClassLib.Entities
     public enum Category
     {
         None = 0,
-        DrankMetPrik,
-        DrankZonderPrik,
-        Vlees,
-        Vis,
-        Groenten,
-        Zuivel,
-        AlcoholischeDranken,
+        drankmetprik, // 1
+        drankzonderprik, //2
+        vlees, //3
+        vis, //4
+        groente, //5
+        zuivel, //6 
+        alcoholischedranken, //7
     }
 }
