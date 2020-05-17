@@ -1,4 +1,5 @@
-﻿using DePandaLib.DAL;
+﻿using DePandaClassLib.Entities;
+using DePandaLib.DAL;
 using DePandaLib.Entities;
 using DePandaWinForms.Design;
 using PdfSharp.Drawing;
@@ -19,6 +20,8 @@ namespace DePandaWinForms.Pages.OrderPage
     public partial class EditOrder : Form
     {
         private PageCloseNotifier pageClose;
+        private Category CurrentFilter = Category.None;
+        private List<Dish> Dishes;
 
         public EditOrder(ref Order order, PageCloseNotifier pageClose = null)
         {
@@ -33,6 +36,7 @@ namespace DePandaWinForms.Pages.OrderPage
             SaveOrderBtn.Visible = false;
             EditMode(false);
             this.pageClose = pageClose;
+            Dishes = DataStorageHandler.Storage.StockDishes;
         }
 
         public delegate void PageCloseNotifier(EditOrder order);
@@ -82,6 +86,12 @@ namespace DePandaWinForms.Pages.OrderPage
 
         private void FillUIWithOrderData()
         {
+            var temp = Enum.GetNames(typeof(Category));
+            var res = (temp as string[]).ToList();
+            res.RemoveAt(0);
+            CategoryCB.DataSource = res;
+            CategoryCB.SelectedItem = null;
+            CategoryCB.Text = "Selecteer...";
             if (CurrentOrder != null)
             {
                 if (CurrentOrder.Reservation != null && CurrentOrder.Reservation.ID != null)
@@ -211,6 +221,45 @@ namespace DePandaWinForms.Pages.OrderPage
                     string filename = "DePanda_" + tempRes.OnTheNameOf + "_" + order.OrderDate.ToString("ddMMyyyy_HHmm") + ".pdf";
                     pdfDocument.Save(filename);
                     Process.Start(filename);
+                }
+            }
+        }
+
+        private void pictureBox2_Click(object sender, EventArgs e)
+        {
+            CategoryCB.SelectedItem = null;
+            CategoryCB.Text = "Selecteer...";
+            MenuItemList.Controls.Clear();
+            if (Dishes != null && Dishes.Count != 0)
+            {
+                foreach (var dish in Dishes)
+                {
+                    OrderItem item = new OrderItem(dish);
+                    MenuItemList.Controls.Add(item);
+                }
+            }
+        }
+
+        private void CategoryCB_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (CategoryCB.SelectedItem != null)
+            {
+                if (Enum.TryParse(CategoryCB.SelectedValue.ToString(), out Category cat))
+                {
+                    CurrentFilter = cat;
+                    MenuItemList.Controls.Clear();
+
+                    if (Dishes != null && Dishes.Count != 0)
+                    {
+                        foreach (var dish in Dishes)
+                        {
+                            if (CurrentFilter == dish.Category)
+                            {
+                                OrderItem item = new OrderItem(dish);
+                                MenuItemList.Controls.Add(item);
+                            }
+                        }
+                    }
                 }
             }
         }

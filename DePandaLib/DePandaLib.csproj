@@ -47,6 +47,7 @@
   <ItemGroup>
     <Compile Include="DAL\DataStorageHandler.cs" />
     <Compile Include="Entities\AlternativeDate.cs" />
+    <Compile Include="Entities\Category.cs" />
     <Compile Include="Entities\DataStorage.cs" />
     <Compile Include="Entities\Dish.cs" />
     <Compile Include="Entities\Identifier.cs" />
