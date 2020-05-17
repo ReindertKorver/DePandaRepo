@@ -16,6 +16,12 @@ namespace DePandaWinForms
             this.CenterToScreen();
             this.WindowState = PreviousWinState;
             this.KeyPreview = true;
+            form = new ReservationPage();
+            form.TopLevel = false;
+            form.Size = new Size(PagePanel.Size.Width, PagePanel.Size.Height);
+            PagePanel.Controls.Clear();
+            PagePanel.Controls.Add(form);
+            form.Show();
         }
 
         private void Close_MouseHover(object sender, EventArgs e)

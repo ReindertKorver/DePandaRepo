@@ -100,11 +100,13 @@ namespace DePandaWinForms.Pages
                 List<OrderItem> items = new List<OrderItem>();
                 foreach (var order in orders)
                 {
+                    if (order.OrderDate.Date == DateTime.Today) { 
                     OrderItem item = new OrderItem(order);
                     item.Size = new Size(OrderItemList.Size.Width - 23, 50);
                     item.UseCounter = false;
                     item.ItemSelected += Item_Click;
                     items.Add(item);
+                        }
                 }
 
                 OrderItemList.Controls.Clear();

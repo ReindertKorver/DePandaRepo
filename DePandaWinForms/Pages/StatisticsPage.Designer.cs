@@ -28,10 +28,10 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.Title title1 = new System.Windows.Forms.DataVisualization.Charting.Title();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea2 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend2 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series2 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Title title2 = new System.Windows.Forms.DataVisualization.Charting.Title();
             this.ShowDrinkGraph = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.DrankMetPrinkChart = new System.Windows.Forms.DataVisualization.Charting.Chart();
@@ -75,24 +75,24 @@
             // 
             // DrankMetPrinkChart
             // 
-            chartArea1.Name = "ChartArea1";
-            this.DrankMetPrinkChart.ChartAreas.Add(chartArea1);
-            legend1.Name = "Legend1";
-            this.DrankMetPrinkChart.Legends.Add(legend1);
+            chartArea2.Name = "ChartArea1";
+            this.DrankMetPrinkChart.ChartAreas.Add(chartArea2);
+            legend2.Name = "Legend1";
+            this.DrankMetPrinkChart.Legends.Add(legend2);
             this.DrankMetPrinkChart.Location = new System.Drawing.Point(245, 270);
             this.DrankMetPrinkChart.Name = "DrankMetPrinkChart";
-            series1.ChartArea = "ChartArea1";
-            series1.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Pie;
-            series1.IsValueShownAsLabel = true;
-            series1.Legend = "Legend1";
-            series1.Name = "Hoeveelheid";
-            this.DrankMetPrinkChart.Series.Add(series1);
+            series2.ChartArea = "ChartArea1";
+            series2.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Pie;
+            series2.IsValueShownAsLabel = true;
+            series2.Legend = "Legend1";
+            series2.Name = "Hoeveelheid";
+            this.DrankMetPrinkChart.Series.Add(series2);
             this.DrankMetPrinkChart.Size = new System.Drawing.Size(525, 300);
             this.DrankMetPrinkChart.TabIndex = 101;
             this.DrankMetPrinkChart.Text = "chart1";
-            title1.Name = "Title1";
-            title1.Text = "Drank grafiek";
-            this.DrankMetPrinkChart.Titles.Add(title1);
+            title2.Name = "Title1";
+            title2.Text = "Drank grafiek";
+            this.DrankMetPrinkChart.Titles.Add(title2);
             this.DrankMetPrinkChart.Visible = false;
             // 
             // ShowDrinksWithShots
@@ -190,7 +190,7 @@
             this.TotalItemsLabel.AutoSize = true;
             this.TotalItemsLabel.BackColor = System.Drawing.Color.White;
             this.TotalItemsLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.TotalItemsLabel.Location = new System.Drawing.Point(594, 238);
+            this.TotalItemsLabel.Location = new System.Drawing.Point(610, 281);
             this.TotalItemsLabel.Name = "TotalItemsLabel";
             this.TotalItemsLabel.Size = new System.Drawing.Size(160, 17);
             this.TotalItemsLabel.TabIndex = 109;
@@ -209,9 +209,9 @@
             this.Controls.Add(this.ShowDrinksWithAlcohol);
             this.Controls.Add(this.ShowDrinksWithoutShots);
             this.Controls.Add(this.ShowDrinksWithShots);
-            this.Controls.Add(this.DrankMetPrinkChart);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.ShowDrinkGraph);
+            this.Controls.Add(this.DrankMetPrinkChart);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "StatisticsPage";
             this.Text = "StatisticsPage";

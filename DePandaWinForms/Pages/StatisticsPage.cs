@@ -15,7 +15,7 @@ namespace DePandaWinForms.Pages
 {
     public partial class StatisticsPage : Form
     {
-        int total = 0;
+        
         private List<Dish> ListOfDishes = DataStorageHandler.Storage.StockDishes;
         Dictionary<string, int> FromCategoryToEnum = new Dictionary<string, int>(){
                                   {"drankmetprik", 1}, {"drankzonderprik", 2},
@@ -31,7 +31,7 @@ namespace DePandaWinForms.Pages
 
        private int SumAllItems(string categorie)
         {
-            
+            int total = 0;
             foreach (Dish menuItem in ListOfDishes)
             {
                 if (FromCategoryToEnum[categorie] == (int)menuItem.Category)
