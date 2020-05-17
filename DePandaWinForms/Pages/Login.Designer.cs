@@ -43,6 +43,7 @@
             this.label3 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.MenuGrid = new System.Windows.Forms.DataGridView();
+            this.ForgotPinButton = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.Minimize)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Close)).BeginInit();
             this.panel2.SuspendLayout();
@@ -152,6 +153,7 @@
             // panel4
             // 
             this.panel4.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.panel4.Controls.Add(this.ForgotPinButton);
             this.panel4.Controls.Add(this.LoginBtn);
             this.panel4.Location = new System.Drawing.Point(0, 39);
             this.panel4.Name = "panel4";
@@ -240,6 +242,23 @@
             this.MenuGrid.Size = new System.Drawing.Size(800, 404);
             this.MenuGrid.TabIndex = 19;
             // 
+            // ForgotPinButton
+            // 
+            this.ForgotPinButton.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.ForgotPinButton.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(45)))), ((int)(((byte)(51)))));
+            this.ForgotPinButton.FlatAppearance.BorderSize = 2;
+            this.ForgotPinButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.ForgotPinButton.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ForgotPinButton.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(45)))), ((int)(((byte)(51)))));
+            this.ForgotPinButton.Location = new System.Drawing.Point(0, 31);
+            this.ForgotPinButton.MaximumSize = new System.Drawing.Size(200, 30);
+            this.ForgotPinButton.Name = "ForgotPinButton";
+            this.ForgotPinButton.Size = new System.Drawing.Size(200, 30);
+            this.ForgotPinButton.TabIndex = 11;
+            this.ForgotPinButton.Text = "Pincode vergeten?";
+            this.ForgotPinButton.UseVisualStyleBackColor = true;
+            this.ForgotPinButton.Click += new System.EventHandler(this.ForgotPinButton_Click);
+            // 
             // Login
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -289,5 +308,6 @@
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.DataGridView MenuGrid;
         private System.Windows.Forms.PictureBox Maximize;
+        private System.Windows.Forms.Button ForgotPinButton;
     }
 }

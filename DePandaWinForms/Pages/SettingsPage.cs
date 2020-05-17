@@ -143,7 +143,7 @@ namespace DePandaWinForms.Pages
         {
             TimesLoaded++;
 
-            if (TimesLoaded > 14)
+            if (TimesLoaded > 16)
             {
                 // when the times changed it will save
                 bool MondayInvalid = DateTime.Compare(MondayOpenPicker.Value, MondayClosedPicker.Value) > 0;
@@ -181,22 +181,22 @@ namespace DePandaWinForms.Pages
                 WeekDayList[0] = DayClosed;
 
             else if (Name == "Tuesday")
-                WeekDayList[0] = DayClosed;
+                WeekDayList[1] = DayClosed;
 
             else if (Name == "Wednesday")
-                WeekDayList[0] = DayClosed; 
+                WeekDayList[2] = DayClosed; 
 
             else if (Name == "Thursday")
-                WeekDayList[0] = DayClosed;
+                WeekDayList[3] = DayClosed;
 
             else if (Name == "Friday")
-                WeekDayList[0] = DayClosed;
+                WeekDayList[4] = DayClosed;
 
             else if (Name == "Saturday")
-                WeekDayList[0] = DayClosed;
+                WeekDayList[5] = DayClosed;
 
             else if (Name == "Sunday")
-                WeekDayList[0] = DayClosed;
+                WeekDayList[6] = DayClosed;
 
             LoadWeekDays();
         }
