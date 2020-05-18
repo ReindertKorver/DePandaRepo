@@ -175,6 +175,10 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <None Include="Resources\filterNot.png" />
+    <None Include="Resources\filter1.png" />
+    <None Include="Resources\filter.png" />
+    <None Include="Resources\filter.bmp" />
     <None Include="Resources\Edit.png" />
     <None Include="Resources\Del.png" />
     <None Include="Resources\panel.png" />
@@ -231,6 +235,7 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <Content Include="Assets\Icons\filter.png" />
     <Content Include="DataStorage.json">
       <SubType>Designer</SubType>
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
