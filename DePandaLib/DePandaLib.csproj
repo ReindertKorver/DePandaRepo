@@ -47,6 +47,7 @@
   <ItemGroup>
     <Compile Include="DAL\DataStorageHandler.cs" />
     <Compile Include="Entities\AlternativeDate.cs" />
+    <Compile Include="Entities\Category.cs" />
     <Compile Include="Entities\DataStorage.cs" />
     <Compile Include="Entities\Dish.cs" />
     <Compile Include="Entities\Identifier.cs" />
@@ -54,6 +55,7 @@
     <Compile Include="Entities\Reservation.cs" />
     <Compile Include="Entities\RestaurantTable.cs" />
     <Compile Include="Entities\Settings.cs" />
+    <Compile Include="Extensions\Extensions.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

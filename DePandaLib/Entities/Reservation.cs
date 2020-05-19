@@ -21,6 +21,7 @@ namespace DePandaLib.Entities
         //public List<RestaurantTable> Tables { get; set; }
         public string Specifications { get; set; }
 
+        public bool Payed { get; set; }
         public List<Order> Orders { get; set; }
 
         public decimal GetReservationTotal()

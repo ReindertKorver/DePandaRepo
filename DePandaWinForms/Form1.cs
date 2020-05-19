@@ -11,11 +11,11 @@ namespace DePandaWinForms
         public Form1(FormWindowState PreviousWinState)
         {
             InitializeComponent();
-
             this.SetStyle(ControlStyles.ResizeRedraw, true);
             this.CenterToScreen();
             this.WindowState = PreviousWinState;
             this.KeyPreview = true;
+            ShowForm(new ReservationPage());
         }
 
         private void Close_MouseHover(object sender, EventArgs e)
@@ -58,12 +58,7 @@ namespace DePandaWinForms
 
             if (page == "instellingen")
             {
-                form = new SettingsPage(this.WindowState);
-                form.TopLevel = false;
-                form.Size = new Size(PagePanel.Size.Width, PagePanel.Size.Height);
-                PagePanel.Controls.Clear();
-                PagePanel.Controls.Add(form);
-                form.Show();
+                ShowForm(new SettingsPage(this.WindowState));
             }
         }
 
@@ -116,9 +111,6 @@ namespace DePandaWinForms
 
         #endregion Code for dragging window and showing shadow
 
-        private void label2_Click(object sender, EventArgs e)
-        {
-        }
 
         private Form form = null;
         private string page = "none";
@@ -140,29 +132,32 @@ namespace DePandaWinForms
                     form = new OrdersPage();
                     break;
 
-                case "Betalingen":
-                    form = new PaymentPage();
-                    break;
-
                 case "Instellingen":
                     page = "instellingen";
                     form = new SettingsPage(this.WindowState);
                     break;
 
+                case "Statistieken":
+                    form = new StatisticsPage();
+                    break;
                 default:
                     break;
             }
             if (form != null)
             {
-                form.TopLevel = false;
-                form.AutoScroll = true;
-                form.Size = new Size(PagePanel.Size.Width, PagePanel.Size.Height);
-                PagePanel.Controls.Clear();
-                PagePanel.Controls.Add(form);
-                form.Show();
+                ShowForm(form);
             }
         }
 
+        private void ShowForm(Form form)
+        {
+            form.TopLevel = false;
+            form.AutoScroll = true;
+            form.Size = new Size(PagePanel.Size.Width, PagePanel.Size.Height);
+            PagePanel.Controls.Clear();
+            PagePanel.Controls.Add(form);
+            form.Show();
+        }
         public void Maximize_Click(object sender, EventArgs e)
         {
             ChangeWinState();
@@ -188,25 +183,8 @@ namespace DePandaWinForms
         private void panel3_Click(object sender, EventArgs e)
         {
             this.Hide();
-
-            new Login(this.WindowState).Show();
-
-            form.Show();
+            new Login(this.WindowState).Show();   
         }
 
-        private void listView1_SelectedIndexChanged(object sender, EventArgs e)
-        {
-        }
-
-        private void MenuJelmar_Click(object sender, EventArgs e)
-        {
-            form = new MenuPageJelmar();
-            form.TopLevel = false;
-            form.AutoScroll = true;
-            form.Size = new Size(PagePanel.Size.Width, PagePanel.Size.Height);
-            PagePanel.Controls.Clear();
-            PagePanel.Controls.Add(form);
-            form.Show();
-        }
     }
 }

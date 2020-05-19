@@ -29,8 +29,8 @@ namespace DePandaWinForms.Pages
                 
             {
                 this.Hide();
-                Form mainScreen = new Form1(this.WindowState);
-                mainScreen.Show();
+                new Form1(this.WindowState).Show();
+             
             }
             else if (PinInput.Text.Length == DataStorageHandler.Storage.Settings.PinCode.Length && PinInput.Text != DataStorageHandler.Storage.Settings.PinCode)
             { 
@@ -98,6 +98,11 @@ namespace DePandaWinForms.Pages
         private void PinInput_TextChanged(object sender, EventArgs e)
         {
             LoginEvent();
-        }      
+        }
+
+        private void ForgotPinButton_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("Als u de pincode bent vergeten moet u contact opnemen met \r\nDe Panda BV. via dit nummer: 06-12345678");
+        }
     }
 }
