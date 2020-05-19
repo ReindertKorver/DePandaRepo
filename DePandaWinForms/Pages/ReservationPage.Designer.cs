@@ -582,7 +582,7 @@
             this.pPanel1.Controls.Add(this.listView);
             this.pPanel1.Location = new System.Drawing.Point(7, 244);
             this.pPanel1.Name = "pPanel1";
-            this.pPanel1.Size = new System.Drawing.Size(866, 421);
+            this.pPanel1.Size = new System.Drawing.Size(866, 452);
             this.pPanel1.TabIndex = 21;
             // 
             // button2
@@ -590,7 +590,7 @@
             this.button2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(235)))), ((int)(((byte)(235)))));
             this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(137)))), ((int)(((byte)(145)))));
-            this.button2.Location = new System.Drawing.Point(29, 392);
+            this.button2.Location = new System.Drawing.Point(10, 406);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(100, 29);
             this.button2.TabIndex = 11;
@@ -662,7 +662,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(884, 668);
+            this.ClientSize = new System.Drawing.Size(874, 696);
             this.Controls.Add(this.pPanel2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.pPanel1);
