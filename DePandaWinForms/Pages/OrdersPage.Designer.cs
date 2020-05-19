@@ -39,12 +39,18 @@ namespace DePandaWinForms.Pages
             this.RightEditPanel = new DePandaWinForms.Design.PPanel();
             this.LeftEditPanel = new DePandaWinForms.Design.PPanel();
             this.OrderItemList = new System.Windows.Forms.FlowLayoutPanel();
-            this.NewOrderBtn = new System.Windows.Forms.Button();
+            this.panel1 = new System.Windows.Forms.Panel();
             this.SearchBox = new System.Windows.Forms.TextBox();
+            this.panel3 = new System.Windows.Forms.Panel();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.NewOrderBtn = new System.Windows.Forms.Button();
             this.MainPanel.SuspendLayout();
             this.panel2.SuspendLayout();
             this.LeftPanel.SuspendLayout();
             this.LeftEditPanel.SuspendLayout();
+            this.panel1.SuspendLayout();
+            this.panel3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // Title
@@ -105,14 +111,15 @@ namespace DePandaWinForms.Pages
             this.RightEditPanel.Padding = new System.Windows.Forms.Padding(10);
             this.RightEditPanel.Size = new System.Drawing.Size(535, 393);
             this.RightEditPanel.TabIndex = 0;
+            this.RightEditPanel.Paint += new System.Windows.Forms.PaintEventHandler(this.RightEditPanel_Paint);
             // 
             // LeftEditPanel
             // 
             this.LeftEditPanel.BackColor = System.Drawing.Color.White;
             this.LeftEditPanel.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.LeftEditPanel.Controls.Add(this.OrderItemList);
+            this.LeftEditPanel.Controls.Add(this.panel1);
             this.LeftEditPanel.Controls.Add(this.NewOrderBtn);
-            this.LeftEditPanel.Controls.Add(this.SearchBox);
             this.LeftEditPanel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.LeftEditPanel.Location = new System.Drawing.Point(10, 10);
             this.LeftEditPanel.Name = "LeftEditPanel";
@@ -126,11 +133,62 @@ namespace DePandaWinForms.Pages
             this.OrderItemList.BackColor = System.Drawing.Color.Transparent;
             this.OrderItemList.Dock = System.Windows.Forms.DockStyle.Fill;
             this.OrderItemList.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
-            this.OrderItemList.Location = new System.Drawing.Point(10, 43);
+            this.OrderItemList.Location = new System.Drawing.Point(10, 46);
             this.OrderItemList.Name = "OrderItemList";
-            this.OrderItemList.Size = new System.Drawing.Size(215, 312);
-            this.OrderItemList.TabIndex = 14;
+            this.OrderItemList.Size = new System.Drawing.Size(215, 309);
+            this.OrderItemList.TabIndex = 16;
             this.OrderItemList.WrapContents = false;
+            // 
+            // panel1
+            // 
+            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(235)))), ((int)(((byte)(235)))));
+            this.panel1.Controls.Add(this.SearchBox);
+            this.panel1.Controls.Add(this.panel3);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel1.Location = new System.Drawing.Point(10, 10);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(215, 36);
+            this.panel1.TabIndex = 14;
+            // 
+            // SearchBox
+            // 
+            this.SearchBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(235)))), ((int)(((byte)(235)))));
+            this.SearchBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.SearchBox.Dock = System.Windows.Forms.DockStyle.Top;
+            this.SearchBox.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.SearchBox.Location = new System.Drawing.Point(0, 0);
+            this.SearchBox.Name = "SearchBox";
+            this.SearchBox.Size = new System.Drawing.Size(197, 33);
+            this.SearchBox.TabIndex = 19;
+            this.SearchBox.Text = "Zoeken...";
+            this.SearchBox.Click += new System.EventHandler(this.SearchBox_Click);
+            this.SearchBox.TextChanged += new System.EventHandler(this.SearchBox_TextChanged);
+            this.SearchBox.Leave += new System.EventHandler(this.SearchBox_Leave);
+            // 
+            // panel3
+            // 
+            this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(235)))), ((int)(((byte)(235)))));
+            this.panel3.Controls.Add(this.pictureBox1);
+            this.panel3.Dock = System.Windows.Forms.DockStyle.Right;
+            this.panel3.Location = new System.Drawing.Point(197, 0);
+            this.panel3.Name = "panel3";
+            this.panel3.Padding = new System.Windows.Forms.Padding(0, 10, 0, 10);
+            this.panel3.Size = new System.Drawing.Size(18, 36);
+            this.panel3.TabIndex = 18;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(235)))), ((int)(((byte)(235)))));
+            this.pictureBox1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pictureBox1.Image = global::DePandaWinForms.Properties.Resources.filterNot;
+            this.pictureBox1.Location = new System.Drawing.Point(0, 10);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Padding = new System.Windows.Forms.Padding(10);
+            this.pictureBox1.Size = new System.Drawing.Size(18, 16);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 1;
+            this.pictureBox1.TabStop = false;
+            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
             // 
             // NewOrderBtn
             // 
@@ -149,22 +207,6 @@ namespace DePandaWinForms.Pages
             this.NewOrderBtn.UseVisualStyleBackColor = false;
             this.NewOrderBtn.Click += new System.EventHandler(this.NewOrderBtn_Click);
             // 
-            // SearchBox
-            // 
-            this.SearchBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(235)))), ((int)(((byte)(235)))));
-            this.SearchBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.SearchBox.Dock = System.Windows.Forms.DockStyle.Top;
-            this.SearchBox.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.SearchBox.Location = new System.Drawing.Point(10, 10);
-            this.SearchBox.Name = "SearchBox";
-            this.SearchBox.Size = new System.Drawing.Size(215, 33);
-            this.SearchBox.TabIndex = 0;
-            this.SearchBox.Text = "Zoeken...";
-            this.SearchBox.Click += new System.EventHandler(this.SearchBox_Click);
-            this.SearchBox.TextChanged += new System.EventHandler(this.SearchBox_TextChanged);
-            this.SearchBox.KeyDown += new System.Windows.Forms.KeyEventHandler(this.SearchBox_KeyDown);
-            this.SearchBox.Leave += new System.EventHandler(this.SearchBox_Leave);
-            // 
             // OrdersPage
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -179,7 +221,10 @@ namespace DePandaWinForms.Pages
             this.panel2.ResumeLayout(false);
             this.LeftPanel.ResumeLayout(false);
             this.LeftEditPanel.ResumeLayout(false);
-            this.LeftEditPanel.PerformLayout();
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
+            this.panel3.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -192,8 +237,11 @@ namespace DePandaWinForms.Pages
         private System.Windows.Forms.Panel LeftPanel;
         private PPanel RightEditPanel;
         private PPanel LeftEditPanel;
-        private System.Windows.Forms.TextBox SearchBox;
         private System.Windows.Forms.Button NewOrderBtn;
         private System.Windows.Forms.FlowLayoutPanel OrderItemList;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.TextBox SearchBox;
+        private System.Windows.Forms.Panel panel3;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }

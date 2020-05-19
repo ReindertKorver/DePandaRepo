@@ -19,6 +19,7 @@ namespace DePandaWinForms.Pages
             //DataStorageHandler.Storage.Reservations.Add(new DePandaLib.Entities.Reservation() { });
             LoadExistingReservations();
             dateTimePicker3.Value = dateTimePicker2.Value.AddHours(2);
+            //ReservationPage.ActiveForm.BackColor = Color.White;
         }
 
         // show reservations in listview
@@ -84,7 +85,7 @@ namespace DePandaWinForms.Pages
                 MessageBox.Show("Vul alle velden in");
                 return;
             }
-            if (dateTime.AddMinutes(1) < DateTime.Now)
+            if (dateTime.Date < DateTime.Now.Date)
             {
                 MessageBox.Show("Vul een geldige datum en tijd in");
                 return;
@@ -106,6 +107,7 @@ namespace DePandaWinForms.Pages
             LoadExistingReservations();
 
             Cleartables();
+            Tafeltext.Text = "Klik een tafel aan";
             PersonenBox.Value = 1;
 
             txtNaam.Clear(); txtBijzonder.Clear();
@@ -154,6 +156,23 @@ namespace DePandaWinForms.Pages
                 LoadExistingReservations();
             }
         }
+        private void searchBox_Enter(object sender, EventArgs e)
+        {
+            if (searchBox.Text == "Zoeken...")
+            {
+                searchBox.Text = "";
+                searchBox.ForeColor = Color.Black;
+            }
+        }
+        private void searchBox_Leave(object sender, EventArgs e)
+        {
+            if (searchBox.Text == "")
+            {
+                searchBox.Text = "Zoeken...";
+                searchBox.ForeColor = Color.Silver;
+                LoadExistingReservations();
+            }
+        }
 
         // restaurant tables
         string tafelnr = "";
@@ -170,6 +189,23 @@ namespace DePandaWinForms.Pages
             }
             tafelnr = "";
         }
+
+        public void CheckTableSeats(Panel panel)
+        {
+            if (panel.Name == "panel12" || panel.Name == "panel10" || panel.Name == "panel9")
+            {
+                Tafeltext.Text = "8 personen tafel geselecteerd";
+            }
+            else if (panel.Name == "panel2")
+            {
+                Tafeltext.Text = "2 personen tafel geselecteerd";
+            }
+            else
+            {
+                Tafeltext.Text = "4 personen tafel geselecteerd";
+            }
+        }
+
         private void panel14_MouseClick(object sender, MouseEventArgs e)
         {
             int CurX = e.X;
@@ -195,8 +231,22 @@ namespace DePandaWinForms.Pages
                                 TableSelected += 1;
                             }
                         }
+                        if (TableSelected == 1)
+                        {
+                            foreach(Panel x in panels)
+                            {
+                                if (x.BackColor == Color.Green)
+                                {
+                                    x.BackColor = Color.Gainsboro;
+                                }
+                            }
+                            CheckTableSeats(panel);
+                            panel.BackColor = Color.Green;
+                            tafelnr = panel.TabIndex.ToString();
+                        }
                         if (TableSelected == 0)
                         {
+                            CheckTableSeats(panel);
                             panel.BackColor = Color.Green;
                             tafelnr = panel.TabIndex.ToString();
                         }
@@ -253,5 +303,7 @@ namespace DePandaWinForms.Pages
                 }
             }
         }
+
+        
     }
 }

@@ -209,6 +209,7 @@
             this.AmountMenuItemInput.Name = "AmountMenuItemInput";
             this.AmountMenuItemInput.Size = new System.Drawing.Size(326, 20);
             this.AmountMenuItemInput.TabIndex = 23;
+            this.AmountMenuItemInput.TextChanged += new System.EventHandler(this.MenuItemAmountChanged);
             // 
             // label5
             // 

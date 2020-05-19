@@ -13,6 +13,7 @@ namespace DePandaWinForms.Pages
     public partial class OrdersPage : Form
     {
         public Order CurrentOrder;
+        public bool Filter = true;
 
         public OrdersPage()
         {
@@ -100,11 +101,25 @@ namespace DePandaWinForms.Pages
                 List<OrderItem> items = new List<OrderItem>();
                 foreach (var order in orders)
                 {
-                    OrderItem item = new OrderItem(order);
-                    item.Size = new Size(OrderItemList.Size.Width - 23, 50);
-                    item.UseCounter = false;
-                    item.ItemSelected += Item_Click;
-                    items.Add(item);
+                    if (Filter)
+                    {
+                        if (order.OrderDate.Date == DateTime.Today)
+                        {
+                            OrderItem item = new OrderItem(order);
+                            item.Size = new Size(OrderItemList.Size.Width - 23, 50);
+                            item.UseCounter = false;
+                            item.ItemSelected += Item_Click;
+                            items.Add(item);
+                        }
+                    }
+                    else
+                    {
+                        OrderItem item = new OrderItem(order);
+                        item.Size = new Size(OrderItemList.Size.Width - 23, 50);
+                        item.UseCounter = false;
+                        item.ItemSelected += Item_Click;
+                        items.Add(item);
+                    }
                 }
 
                 OrderItemList.Controls.Clear();
@@ -182,6 +197,17 @@ namespace DePandaWinForms.Pages
                     item.Visible = visible;
                 }
             }
+        }
+
+        private void RightEditPanel_Paint(object sender, PaintEventArgs e)
+        {
+        }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+            pictureBox1.Image = !Filter ? Properties.Resources.filterNot : Properties.Resources.filter1;
+            Filter = !Filter;
+            FillList();
         }
     }
 }

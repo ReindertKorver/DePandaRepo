@@ -30,6 +30,7 @@
         {
             this.label1 = new System.Windows.Forms.Label();
             this.pPanel2 = new DePandaWinForms.Design.PPanel();
+            this.Tafeltext = new System.Windows.Forms.Label();
             this.PersonenBox = new System.Windows.Forms.NumericUpDown();
             this.panel14 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
@@ -110,6 +111,7 @@
             // 
             // pPanel2
             // 
+            this.pPanel2.Controls.Add(this.Tafeltext);
             this.pPanel2.Controls.Add(this.PersonenBox);
             this.pPanel2.Controls.Add(this.panel14);
             this.pPanel2.Controls.Add(this.label9);
@@ -126,8 +128,20 @@
             this.pPanel2.Controls.Add(this.txtNaam);
             this.pPanel2.Location = new System.Drawing.Point(7, 40);
             this.pPanel2.Name = "pPanel2";
-            this.pPanel2.Size = new System.Drawing.Size(866, 198);
+            this.pPanel2.Size = new System.Drawing.Size(866, 207);
             this.pPanel2.TabIndex = 22;
+            // 
+            // Tafeltext
+            // 
+            this.Tafeltext.AutoSize = true;
+            this.Tafeltext.BackColor = System.Drawing.Color.Transparent;
+            this.Tafeltext.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.Tafeltext.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(137)))), ((int)(((byte)(145)))));
+            this.Tafeltext.Location = new System.Drawing.Point(555, 5);
+            this.Tafeltext.Name = "Tafeltext";
+            this.Tafeltext.Size = new System.Drawing.Size(127, 21);
+            this.Tafeltext.TabIndex = 23;
+            this.Tafeltext.Text = "Klik een tafel aan";
             // 
             // PersonenBox
             // 
@@ -162,9 +176,9 @@
             this.panel14.Controls.Add(this.panel7);
             this.panel14.Controls.Add(this.panel5);
             this.panel14.Controls.Add(this.panel6);
-            this.panel14.Location = new System.Drawing.Point(557, 14);
+            this.panel14.Location = new System.Drawing.Point(557, 29);
             this.panel14.Name = "panel14";
-            this.panel14.Size = new System.Drawing.Size(284, 169);
+            this.panel14.Size = new System.Drawing.Size(284, 170);
             this.panel14.TabIndex = 20;
             this.panel14.MouseClick += new System.Windows.Forms.MouseEventHandler(this.panel14_MouseClick);
             // 
@@ -173,7 +187,7 @@
             this.panel2.BackColor = System.Drawing.Color.Gainsboro;
             this.panel2.Controls.Add(this.label102);
             this.panel2.Enabled = false;
-            this.panel2.Location = new System.Drawing.Point(13, 71);
+            this.panel2.Location = new System.Drawing.Point(13, 69);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(23, 23);
             this.panel2.TabIndex = 2;
@@ -196,7 +210,7 @@
             this.panel1.BackColor = System.Drawing.Color.Gainsboro;
             this.panel1.Controls.Add(this.label11);
             this.panel1.Enabled = false;
-            this.panel1.Location = new System.Drawing.Point(13, 9);
+            this.panel1.Location = new System.Drawing.Point(13, 7);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(23, 54);
             this.panel1.TabIndex = 1;
@@ -219,7 +233,7 @@
             this.panel3.BackColor = System.Drawing.Color.Gainsboro;
             this.panel3.Controls.Add(this.label12);
             this.panel3.Enabled = false;
-            this.panel3.Location = new System.Drawing.Point(13, 102);
+            this.panel3.Location = new System.Drawing.Point(13, 100);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(23, 54);
             this.panel3.TabIndex = 3;
@@ -242,7 +256,7 @@
             this.panel10.BackColor = System.Drawing.Color.Gainsboro;
             this.panel10.Controls.Add(this.label13);
             this.panel10.Enabled = false;
-            this.panel10.Location = new System.Drawing.Point(140, 109);
+            this.panel10.Location = new System.Drawing.Point(140, 107);
             this.panel10.Name = "panel10";
             this.panel10.Size = new System.Drawing.Size(56, 53);
             this.panel10.TabIndex = 10;
@@ -265,7 +279,7 @@
             this.panel12.BackColor = System.Drawing.Color.Gainsboro;
             this.panel12.Controls.Add(this.label14);
             this.panel12.Enabled = false;
-            this.panel12.Location = new System.Drawing.Point(242, 49);
+            this.panel12.Location = new System.Drawing.Point(242, 47);
             this.panel12.Name = "panel12";
             this.panel12.Size = new System.Drawing.Size(28, 113);
             this.panel12.TabIndex = 12;
@@ -288,7 +302,7 @@
             this.panel9.BackColor = System.Drawing.Color.Gainsboro;
             this.panel9.Controls.Add(this.label15);
             this.panel9.Enabled = false;
-            this.panel9.Location = new System.Drawing.Point(140, 45);
+            this.panel9.Location = new System.Drawing.Point(140, 43);
             this.panel9.Name = "panel9";
             this.panel9.Size = new System.Drawing.Size(56, 53);
             this.panel9.TabIndex = 9;
@@ -311,7 +325,7 @@
             this.panel8.BackColor = System.Drawing.Color.Gainsboro;
             this.panel8.Controls.Add(this.label16);
             this.panel8.Enabled = false;
-            this.panel8.Location = new System.Drawing.Point(140, 9);
+            this.panel8.Location = new System.Drawing.Point(140, 7);
             this.panel8.Name = "panel8";
             this.panel8.Size = new System.Drawing.Size(56, 23);
             this.panel8.TabIndex = 8;
@@ -334,7 +348,7 @@
             this.panel11.BackColor = System.Drawing.Color.Gainsboro;
             this.panel11.Controls.Add(this.label17);
             this.panel11.Enabled = false;
-            this.panel11.Location = new System.Drawing.Point(214, 9);
+            this.panel11.Location = new System.Drawing.Point(214, 7);
             this.panel11.Name = "panel11";
             this.panel11.Size = new System.Drawing.Size(56, 23);
             this.panel11.TabIndex = 11;
@@ -357,7 +371,7 @@
             this.panel4.BackColor = System.Drawing.Color.Gainsboro;
             this.panel4.Controls.Add(this.label18);
             this.panel4.Enabled = false;
-            this.panel4.Location = new System.Drawing.Point(66, 9);
+            this.panel4.Location = new System.Drawing.Point(66, 7);
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(56, 23);
             this.panel4.TabIndex = 4;
@@ -380,7 +394,7 @@
             this.panel7.BackColor = System.Drawing.Color.Gainsboro;
             this.panel7.Controls.Add(this.label19);
             this.panel7.Enabled = false;
-            this.panel7.Location = new System.Drawing.Point(66, 135);
+            this.panel7.Location = new System.Drawing.Point(66, 133);
             this.panel7.Name = "panel7";
             this.panel7.Size = new System.Drawing.Size(56, 23);
             this.panel7.TabIndex = 7;
@@ -403,7 +417,7 @@
             this.panel5.BackColor = System.Drawing.Color.Gainsboro;
             this.panel5.Controls.Add(this.label20);
             this.panel5.Enabled = false;
-            this.panel5.Location = new System.Drawing.Point(66, 51);
+            this.panel5.Location = new System.Drawing.Point(66, 49);
             this.panel5.Name = "panel5";
             this.panel5.Size = new System.Drawing.Size(56, 23);
             this.panel5.TabIndex = 5;
@@ -426,7 +440,7 @@
             this.panel6.BackColor = System.Drawing.Color.Gainsboro;
             this.panel6.Controls.Add(this.label21);
             this.panel6.Enabled = false;
-            this.panel6.Location = new System.Drawing.Point(66, 93);
+            this.panel6.Location = new System.Drawing.Point(66, 91);
             this.panel6.Name = "panel6";
             this.panel6.Size = new System.Drawing.Size(56, 23);
             this.panel6.TabIndex = 6;
@@ -580,9 +594,9 @@
             this.pPanel1.Controls.Add(this.button2);
             this.pPanel1.Controls.Add(this.searchBox);
             this.pPanel1.Controls.Add(this.listView);
-            this.pPanel1.Location = new System.Drawing.Point(7, 244);
+            this.pPanel1.Location = new System.Drawing.Point(7, 253);
             this.pPanel1.Name = "pPanel1";
-            this.pPanel1.Size = new System.Drawing.Size(866, 421);
+            this.pPanel1.Size = new System.Drawing.Size(866, 414);
             this.pPanel1.TabIndex = 21;
             // 
             // button2
@@ -590,7 +604,7 @@
             this.button2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(235)))), ((int)(((byte)(235)))));
             this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(137)))), ((int)(((byte)(145)))));
-            this.button2.Location = new System.Drawing.Point(29, 392);
+            this.button2.Location = new System.Drawing.Point(10, 375);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(100, 29);
             this.button2.TabIndex = 11;
@@ -600,12 +614,15 @@
             // 
             // searchBox
             // 
-            this.searchBox.Location = new System.Drawing.Point(10, 23);
+            this.searchBox.ForeColor = System.Drawing.Color.Silver;
+            this.searchBox.Location = new System.Drawing.Point(10, 19);
             this.searchBox.Name = "searchBox";
             this.searchBox.Size = new System.Drawing.Size(143, 20);
             this.searchBox.TabIndex = 10;
             this.searchBox.Text = "Zoeken...";
             this.searchBox.TextChanged += new System.EventHandler(this.searchBox_TextChanged);
+            this.searchBox.Enter += new System.EventHandler(this.searchBox_Enter);
+            this.searchBox.Leave += new System.EventHandler(this.searchBox_Leave);
             // 
             // listView
             // 
@@ -622,7 +639,7 @@
             this.listView.HideSelection = false;
             this.listView.Location = new System.Drawing.Point(10, 49);
             this.listView.Name = "listView";
-            this.listView.Size = new System.Drawing.Size(841, 351);
+            this.listView.Size = new System.Drawing.Size(841, 320);
             this.listView.TabIndex = 1;
             this.listView.UseCompatibleStateImageBehavior = false;
             this.listView.View = System.Windows.Forms.View.Details;
@@ -662,7 +679,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(884, 668);
+            this.ClientSize = new System.Drawing.Size(874, 669);
             this.Controls.Add(this.pPanel2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.pPanel1);
@@ -756,5 +773,6 @@
         private Design.PPanel pPanel1;
         private Design.PPanel pPanel2;
         private System.Windows.Forms.NumericUpDown PersonenBox;
+        private System.Windows.Forms.Label Tafeltext;
     }
 }
