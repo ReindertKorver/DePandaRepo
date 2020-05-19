@@ -68,7 +68,7 @@ namespace DePandaWinForms.Pages
                 MessageBox.Show("Vul alle velden in");
                 return;
             }
-            if (dateTime.AddMinutes(1) < DateTime.Now)
+            if (dateTime.Date < DateTime.Now.Date)
             {
                 MessageBox.Show("Vul een geldige datum en tijd in");
                 return;
