@@ -19,65 +19,22 @@ namespace DePandaWinForms.Pages
 
         readonly private List<Reservation> ListOfReservations = DataStorageHandler.Storage.Reservations;
         private List<Dish> TotalDishes = new List<Dish>();
-        readonly private List<Dish> ListOfDishes = DataStorageHandler.Storage.StockDishes;
+        //readonly private List<Dish> ListOfDishes = DataStorageHandler.Storage.StockDishes;
         readonly Dictionary<string, int> FromCategoryToEnum = new Dictionary<string, int>(){
                                   {"drankmetprik", 1}, {"drankzonderprik", 2},
                                   {"vlees", 3},{"vis", 4},
                                   {"groente", 5}, {"zuivel", 6},
                                   {"drankmetalcohol", 7},
-
         };
         public StatisticsPage()
         {
             InitializeComponent();
+            
         }
 
-        private int SumAllItems(string categorie)
+        private void ShowGraph(object sender, EventArgs e)
         {
-            int total = 0;
-            foreach (Dish menuItem in TotalDishes)
-            {
-                if (FromCategoryToEnum[categorie] == (int)menuItem.Category)
-                    total += menuItem.Amount;
-            }
-            return total;
-        }
-
-        private void ShowDrinkGraph_Click(object sender, EventArgs e)
-        {
-            if (!ShowDrinksWithShots.Visible)
-            {
-                ShowDrinksWithShots.Visible = true;
-                ShowDrinksWithoutShots.Visible = true;
-                ShowDrinksWithAlcohol.Visible = true;
-            }
-            else
-            {
-                ShowDrinksWithShots.Visible = false;
-                ShowDrinksWithoutShots.Visible = false;
-                ShowDrinksWithAlcohol.Visible = false;
-            }
-
-        }
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-            if (!ShowFish.Visible)
-            {
-                ShowVegtables.Visible = true;
-                ShowFish.Visible = true;
-                ShowMeat.Visible = true;
-            }
-            else
-            {
-                ShowVegtables.Visible = false;
-                ShowFish.Visible = false;
-                ShowMeat.Visible = false;
-            }
-        }
-
-        private void SetGraph(string categorie) // catogorie indoen?
-        {
+            string categorie = ((sender as Button).Text).ToLower().Replace(" ", "");
             // eerst leeg maken
             FilterOrders();
             DrankMetPrinkChart.Visible = true;
@@ -94,11 +51,15 @@ namespace DePandaWinForms.Pages
             }
             TotalItemsLabel.Text = $"Totaal aantal items: {SumAllItems(categorie)}";
         }
-
-        private void ShowGraph(object sender, EventArgs e)
+        private int SumAllItems(string categorie)
         {
-            string categorie = ((sender as Button).Text).ToLower().Replace(" ", "");
-            SetGraph(categorie);
+            int total = 0;
+            foreach (Dish menuItem in TotalDishes)
+            {
+                if (FromCategoryToEnum[categorie] == (int)menuItem.Category)
+                    total += menuItem.Amount;
+            }
+            return total;
         }
         public void FilterOrders()
         {
@@ -107,7 +68,7 @@ namespace DePandaWinForms.Pages
             foreach (Reservation reservation in ListOfReservations)
             {
                 // filter welke er binnen 2 maken zijn gemaakt
-                if (reservation.Date > DateTime.Now.AddDays(-14))
+                if (reservation.Date > DateTime.Now.AddDays(-(int)AmountOfDays.Value))
                 {
                     if (reservation.Orders == null)
                     {
@@ -124,10 +85,14 @@ namespace DePandaWinForms.Pages
                     }
 
                 }
-
             }
             var TempList = TotalDishes.DistinctDishByKey();
             TotalDishes = TempList;
+        }
+
+        private void InfoButton_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("Op deze pagina kunt u zien wat de klanten hebben besteld de afgelopen 2 weken.\nDe grafieken zijn opgebouwd per categorie en ze worden automatisch bijgehouden.");
         }
     }
 }

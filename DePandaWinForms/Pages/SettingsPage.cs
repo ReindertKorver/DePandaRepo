@@ -112,7 +112,8 @@ namespace DePandaWinForms.Pages
             // deletes selected alternative dates 
             foreach (DePandaClassLib.Entities.AlternativeDate date in ListOfAlternativeDates)
             {
-                if (ListOfAlternativeDays.SelectedItem.ToString().Contains(date.DateString))
+
+                if (ListOfAlternativeDays.SelectedItem.ToString().Contains(date.DateString) && ListOfAlternativeDays.SelectedItem != null)
                 {
                     DataStorageHandler.Storage.Settings.AlternativeDates.Remove(date);
                     LoadAlternativeDays();
