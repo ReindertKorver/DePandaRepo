@@ -131,6 +131,12 @@
     <Compile Include="Pages\OrderPage\NewOrder.Designer.cs">
       <DependentUpon>NewOrder.cs</DependentUpon>
     </Compile>
+    <Compile Include="Pages\OrderPage\PaymentOption.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Pages\OrderPage\PaymentOption.Designer.cs">
+      <DependentUpon>PaymentOption.cs</DependentUpon>
+    </Compile>
     <Compile Include="Pages\OrdersPage.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -203,6 +209,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Pages\OrderPage\NewOrder.resx">
       <DependentUpon>NewOrder.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Pages\OrderPage\PaymentOption.resx">
+      <DependentUpon>PaymentOption.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Pages\OrdersPage.resx">
       <DependentUpon>OrdersPage.cs</DependentUpon>

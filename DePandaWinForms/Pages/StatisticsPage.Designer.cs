@@ -28,10 +28,10 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea2 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend2 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series2 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.Title title2 = new System.Windows.Forms.DataVisualization.Charting.Title();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Title title1 = new System.Windows.Forms.DataVisualization.Charting.Title();
             this.DrankMetPrinkChart = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.ShowDrinksWithShots = new System.Windows.Forms.Button();
             this.ShowDrinksWithoutShots = new System.Windows.Forms.Button();
@@ -42,30 +42,31 @@
             this.TotalItemsLabel = new System.Windows.Forms.Label();
             this.InfoButton = new System.Windows.Forms.Button();
             this.AmountOfDays = new System.Windows.Forms.NumericUpDown();
+            this.label1 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.DrankMetPrinkChart)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.AmountOfDays)).BeginInit();
             this.SuspendLayout();
             // 
             // DrankMetPrinkChart
             // 
-            chartArea2.Name = "ChartArea1";
-            this.DrankMetPrinkChart.ChartAreas.Add(chartArea2);
-            legend2.Name = "Legend1";
-            this.DrankMetPrinkChart.Legends.Add(legend2);
+            chartArea1.Name = "ChartArea1";
+            this.DrankMetPrinkChart.ChartAreas.Add(chartArea1);
+            legend1.Name = "Legend1";
+            this.DrankMetPrinkChart.Legends.Add(legend1);
             this.DrankMetPrinkChart.Location = new System.Drawing.Point(12, 260);
             this.DrankMetPrinkChart.Name = "DrankMetPrinkChart";
-            series2.ChartArea = "ChartArea1";
-            series2.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Pie;
-            series2.IsValueShownAsLabel = true;
-            series2.Legend = "Legend1";
-            series2.Name = "Hoeveelheid";
-            this.DrankMetPrinkChart.Series.Add(series2);
+            series1.ChartArea = "ChartArea1";
+            series1.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Pie;
+            series1.IsValueShownAsLabel = true;
+            series1.Legend = "Legend1";
+            series1.Name = "Hoeveelheid";
+            this.DrankMetPrinkChart.Series.Add(series1);
             this.DrankMetPrinkChart.Size = new System.Drawing.Size(525, 300);
             this.DrankMetPrinkChart.TabIndex = 101;
             this.DrankMetPrinkChart.Text = "chart1";
-            title2.Name = "Title1";
-            title2.Text = "Drank grafiek";
-            this.DrankMetPrinkChart.Titles.Add(title2);
+            title1.Name = "Title1";
+            title1.Text = "drankmetprik";
+            this.DrankMetPrinkChart.Titles.Add(title1);
             this.DrankMetPrinkChart.Visible = false;
             // 
             // ShowDrinksWithShots
@@ -170,7 +171,7 @@
             this.InfoButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.InfoButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.InfoButton.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(72)))), ((int)(((byte)(142)))), ((int)(((byte)(149)))));
-            this.InfoButton.Location = new System.Drawing.Point(777, 12);
+            this.InfoButton.Location = new System.Drawing.Point(759, 12);
             this.InfoButton.Name = "InfoButton";
             this.InfoButton.Size = new System.Drawing.Size(83, 83);
             this.InfoButton.TabIndex = 111;
@@ -180,26 +181,38 @@
             // 
             // AmountOfDays
             // 
-            this.AmountOfDays.Location = new System.Drawing.Point(673, 224);
+            this.AmountOfDays.Location = new System.Drawing.Point(675, 154);
             this.AmountOfDays.Minimum = new decimal(new int[] {
             1,
             0,
             0,
             0});
             this.AmountOfDays.Name = "AmountOfDays";
-            this.AmountOfDays.Size = new System.Drawing.Size(118, 20);
+            this.AmountOfDays.Size = new System.Drawing.Size(167, 20);
             this.AmountOfDays.TabIndex = 113;
             this.AmountOfDays.Value = new decimal(new int[] {
             1,
             0,
             0,
             0});
+            this.AmountOfDays.ValueChanged += new System.EventHandler(this.AmountOfDaysChanged);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.BackColor = System.Drawing.Color.White;
+            this.label1.Location = new System.Drawing.Point(672, 121);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(170, 26);
+            this.label1.TabIndex = 114;
+            this.label1.Text = "Selecteer hier van hoeveel dagen \r\ngeleden u de statistieken wilt zien";
             // 
             // StatisticsPage
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(970, 572);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.AmountOfDays);
             this.Controls.Add(this.InfoButton);
             this.Controls.Add(this.TotalItemsLabel);
@@ -231,5 +244,6 @@
         private System.Windows.Forms.Label TotalItemsLabel;
         private System.Windows.Forms.Button InfoButton;
         private System.Windows.Forms.NumericUpDown AmountOfDays;
+        private System.Windows.Forms.Label label1;
     }
 }

@@ -24,32 +24,45 @@ namespace DePandaWinForms.Pages
                                   {"drankmetprik", 1}, {"drankzonderprik", 2},
                                   {"vlees", 3},{"vis", 4},
                                   {"groente", 5}, {"zuivel", 6},
-                                  {"drankmetalcohol", 7},
-        };
+                                  {"drankmetalcohol", 7} };
+        public string categorie = "";
+       
         public StatisticsPage()
         {
             InitializeComponent();
             
-        }
 
+        }
+       
         private void ShowGraph(object sender, EventArgs e)
         {
             string categorie = ((sender as Button).Text).ToLower().Replace(" ", "");
-            // eerst leeg maken
-            FilterOrders();
-            DrankMetPrinkChart.Visible = true;
-            TotalItemsLabel.Visible = true;
-            foreach (var series in DrankMetPrinkChart.Series)
-            {
-                series.Points.Clear();
-            }
+            SetChart(categorie);          
+        }
 
-            foreach (Dish menuItem in TotalDishes)
+        private void SetChart(string categorie)
+        {
+            // eerst leeg maken
+            if (categorie != "")
             {
-                if (FromCategoryToEnum[categorie] == (int)menuItem.Category)
-                    this.DrankMetPrinkChart.Series["Hoeveelheid"].Points.AddXY(menuItem.Name, menuItem.Amount);
+                FilterOrders();
+                DrankMetPrinkChart.Visible = true;
+                TotalItemsLabel.Visible = true;            
+                foreach (var series in DrankMetPrinkChart.Series)
+                {
+                    series.Points.Clear();
+                    DrankMetPrinkChart.Titles.Clear();
+                }
+                DrankMetPrinkChart.Titles.Add(categorie);
+                
+                foreach (Dish menuItem in TotalDishes)
+                {
+                    if (FromCategoryToEnum[categorie] == (int)menuItem.Category)
+                        this.DrankMetPrinkChart.Series["Hoeveelheid"].Points.AddXY(menuItem.Name, menuItem.Amount);
+                }
+                TotalItemsLabel.Text = $"Totaal aantal items: {SumAllItems(categorie)}";
             }
-            TotalItemsLabel.Text = $"Totaal aantal items: {SumAllItems(categorie)}";
+            
         }
         private int SumAllItems(string categorie)
         {
@@ -93,6 +106,12 @@ namespace DePandaWinForms.Pages
         private void InfoButton_Click(object sender, EventArgs e)
         {
             MessageBox.Show("Op deze pagina kunt u zien wat de klanten hebben besteld de afgelopen 2 weken.\nDe grafieken zijn opgebouwd per categorie en ze worden automatisch bijgehouden.");
+        }
+
+        private void AmountOfDaysChanged(object sender, EventArgs e)
+        {
+            SetChart(DrankMetPrinkChart.Titles.First().Text);
+            
         }
     }
 }
