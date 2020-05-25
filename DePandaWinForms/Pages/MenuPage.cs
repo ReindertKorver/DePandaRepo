@@ -250,9 +250,18 @@ namespace DePandaWinForms.Pages
         {
             MenuItemGroupBox.Visible = false;
         }
-
-        private void label6_Click(object sender, EventArgs e)
+        private void MenuItemAmountChanged(object sender, EventArgs e)
         {
+            
+            string WholeString = (sender as TextBox).Text;
+        
+            foreach (Char character in WholeString)
+            {
+                if (!Char.IsDigit(character))
+                {
+                    (sender as TextBox).Text = "";
+                }
+            }
         }
     }
 }
