@@ -57,13 +57,13 @@ namespace DePandaWinForms.Pages
                     }
                     return true;
                 }
-            }
+            }0
             for (int i = 0; i < days.Length; i++)
             {
                 if (dateTimePicker1.Value.DayOfWeek == days[i])
                 {
-                   
-                    if (time < DataStorageHandler.Storage.Settings.WeekDays[i].OpenTime.TimeOfDay || time2 > DataStorageHandler.Storage.Settings.WeekDays[i].CloseTime.AddMinutes(1).TimeOfDay)
+
+                    if (DataStorageHandler.Storage.Settings.WeekDays.Count == 0 ||  time < DataStorageHandler.Storage.Settings.WeekDays[i].OpenTime.TimeOfDay || time2 > DataStorageHandler.Storage.Settings.WeekDays[i].CloseTime.AddMinutes(1).TimeOfDay)
                     {
                         return false;
                     }
