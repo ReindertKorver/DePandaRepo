@@ -22,6 +22,7 @@ namespace DePandaWinForms.Pages.OrderPage
         private PageCloseNotifier pageClose;
         private Category CurrentFilter = Category.None;
         private List<Dish> Dishes;
+        private List<OrderItem> OrderItems = new List<OrderItem>();
 
         public EditOrder(ref Order order, PageCloseNotifier pageClose = null)
         {
@@ -82,6 +83,39 @@ namespace DePandaWinForms.Pages.OrderPage
         private void EditOrderBtn_Click(object sender, EventArgs e)
         {
             EditMode(true);
+            //Get all Dishes and get the already ordered dishes merge them together so the amount will be remembered
+            Dishes = DataStorageHandler.Storage.StockDishes;
+            if (Dishes != null && Dishes.Count != 0)
+            {
+                OrderItems.Clear();
+                MenuItemList.Controls.Clear();
+                if (CurrentOrder.Dishes != null && CurrentOrder.Dishes.Count != 0)
+                {
+                    var changedList = new List<Dish>();
+                    foreach (var item in Dishes)
+                    {
+                        bool added = false;
+                        foreach (var dish in CurrentOrder.Dishes)
+                        {
+                            if (dish.ID == item.ID)
+                            {
+                                changedList.Add(new Dish() { Amount = dish.Amount, Category = dish.Category, Description = dish.Description, ID = dish.ID, Name = dish.Name, Price = dish.Price });
+                                added = true;
+                                break;
+                            }
+                        }
+                        if (!added)
+                        {
+                            changedList.Add(new Dish() { Amount = 0, Category = item.Category, Description = item.Description, ID = item.ID, Name = item.Name, Price = item.Price });
+                        }
+                    }
+                    foreach (var dishItem in changedList)
+                    {
+                        OrderItems.Add(new OrderItem(dishItem, useDefaultAmount: true));
+                    }
+                }
+                MenuItemList.Controls.AddRange(OrderItems.ToArray());
+            }
         }
 
         private void FillUIWithOrderData()
@@ -115,9 +149,9 @@ namespace DePandaWinForms.Pages.OrderPage
                 {
                     foreach (var dish in CurrentOrder.Dishes)
                     {
-                        OrderItem item = new OrderItem(dish, useDefaultAmount: true);
-                        MenuItemList.Controls.Add(item);
+                        OrderItems.Add(new OrderItem(new Dish() { Amount = dish.Amount, Category = dish.Category, Description = dish.Description, ID = dish.ID, Name = dish.Name, Price = dish.Price }, useDefaultAmount: true));
                     }
+                    MenuItemList.Controls.AddRange(OrderItems.ToArray());
                     decimal total = CurrentOrder.GetTotal();
                     TotalLbl.Text = "Totaal: \t€ " + total;
                 }
@@ -137,9 +171,7 @@ namespace DePandaWinForms.Pages.OrderPage
             }
             else
             {
-                OrderItem[] arr = new OrderItem[MenuItemList.Controls.Count];
-                MenuItemList.Controls.CopyTo(arr, 0);
-                var dishes = arr.Select(a => a.DishItem).Where(d => d.Amount > 0).ToList();
+                var dishes = OrderItems.Select(a => a.DishItem).Where(d => d.Amount > 0).ToList();
                 if (dishes == null || dishes.Count <= 0)
                 {
                     MessageBox.Show("Er zijn geen gerechten geselecteerd, selecteer 1 of meer gerechten.");
@@ -230,14 +262,7 @@ namespace DePandaWinForms.Pages.OrderPage
             CategoryCB.SelectedItem = null;
             CategoryCB.Text = "Selecteer...";
             MenuItemList.Controls.Clear();
-            if (Dishes != null && Dishes.Count != 0)
-            {
-                foreach (var dish in Dishes)
-                {
-                    OrderItem item = new OrderItem(dish);
-                    MenuItemList.Controls.Add(item);
-                }
-            }
+            MenuItemList.Controls.AddRange(OrderItems.ToArray());
         }
 
         private void CategoryCB_SelectedIndexChanged(object sender, EventArgs e)
@@ -249,17 +274,7 @@ namespace DePandaWinForms.Pages.OrderPage
                     CurrentFilter = cat;
                     MenuItemList.Controls.Clear();
 
-                    if (Dishes != null && Dishes.Count != 0)
-                    {
-                        foreach (var dish in Dishes)
-                        {
-                            if (CurrentFilter == dish.Category)
-                            {
-                                OrderItem item = new OrderItem(dish);
-                                MenuItemList.Controls.Add(item);
-                            }
-                        }
-                    }
+                    MenuItemList.Controls.AddRange(OrderItems.Where(o => o.DishItem.Category == cat).ToArray());
                 }
             }
         }

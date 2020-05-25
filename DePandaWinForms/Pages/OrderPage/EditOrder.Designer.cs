@@ -36,6 +36,13 @@
             this.SaveOrderBtn = new System.Windows.Forms.Button();
             this.DeleteOrderBtn = new System.Windows.Forms.PictureBox();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.panel6 = new System.Windows.Forms.Panel();
+            this.panel7 = new System.Windows.Forms.Panel();
+            this.label1 = new System.Windows.Forms.Label();
+            this.panel8 = new System.Windows.Forms.Panel();
+            this.CategoryCB = new System.Windows.Forms.ComboBox();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.MenuItemsLBL = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
             this.TableNumberTB = new System.Windows.Forms.TextBox();
             this.TableNumberLBL = new System.Windows.Forms.Label();
@@ -47,24 +54,17 @@
             this.OnTheNameOfLbl = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.MenuItemList = new System.Windows.Forms.FlowLayoutPanel();
-            this.panel6 = new System.Windows.Forms.Panel();
-            this.panel7 = new System.Windows.Forms.Panel();
-            this.label1 = new System.Windows.Forms.Label();
-            this.panel8 = new System.Windows.Forms.Panel();
-            this.CategoryCB = new System.Windows.Forms.ComboBox();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.MenuItemsLBL = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.EditOrderBtn)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.DeleteOrderBtn)).BeginInit();
             this.panel2.SuspendLayout();
+            this.panel6.SuspendLayout();
+            this.panel7.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.panel3.SuspendLayout();
             this.panel4.SuspendLayout();
             this.panel5.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            this.panel6.SuspendLayout();
-            this.panel7.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -165,8 +165,8 @@
             // 
             // panel2
             // 
-            this.panel2.Controls.Add(this.panel6);
             this.panel2.Controls.Add(this.MenuItemList);
+            this.panel2.Controls.Add(this.panel6);
             this.panel2.Controls.Add(this.panel3);
             this.panel2.Controls.Add(this.panel4);
             this.panel2.Controls.Add(this.panel5);
@@ -177,6 +177,86 @@
             this.panel2.Padding = new System.Windows.Forms.Padding(15);
             this.panel2.Size = new System.Drawing.Size(800, 396);
             this.panel2.TabIndex = 19;
+            // 
+            // panel6
+            // 
+            this.panel6.Controls.Add(this.panel7);
+            this.panel6.Controls.Add(this.MenuItemsLBL);
+            this.panel6.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel6.Location = new System.Drawing.Point(15, 105);
+            this.panel6.Name = "panel6";
+            this.panel6.Size = new System.Drawing.Size(770, 29);
+            this.panel6.TabIndex = 59;
+            // 
+            // panel7
+            // 
+            this.panel7.Controls.Add(this.label1);
+            this.panel7.Controls.Add(this.panel8);
+            this.panel7.Controls.Add(this.CategoryCB);
+            this.panel7.Controls.Add(this.pictureBox2);
+            this.panel7.Dock = System.Windows.Forms.DockStyle.Right;
+            this.panel7.Location = new System.Drawing.Point(480, 0);
+            this.panel7.Name = "panel7";
+            this.panel7.Padding = new System.Windows.Forms.Padding(4);
+            this.panel7.Size = new System.Drawing.Size(290, 29);
+            this.panel7.TabIndex = 62;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Dock = System.Windows.Forms.DockStyle.Right;
+            this.label1.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(8, 4);
+            this.label1.Margin = new System.Windows.Forms.Padding(4);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(112, 20);
+            this.label1.TabIndex = 68;
+            this.label1.Text = "Filter categorie:";
+            // 
+            // panel8
+            // 
+            this.panel8.Dock = System.Windows.Forms.DockStyle.Right;
+            this.panel8.Location = new System.Drawing.Point(120, 4);
+            this.panel8.Name = "panel8";
+            this.panel8.Size = new System.Drawing.Size(13, 21);
+            this.panel8.TabIndex = 67;
+            // 
+            // CategoryCB
+            // 
+            this.CategoryCB.Dock = System.Windows.Forms.DockStyle.Right;
+            this.CategoryCB.FormattingEnabled = true;
+            this.CategoryCB.Location = new System.Drawing.Point(133, 4);
+            this.CategoryCB.Name = "CategoryCB";
+            this.CategoryCB.Size = new System.Drawing.Size(128, 21);
+            this.CategoryCB.TabIndex = 66;
+            this.CategoryCB.SelectedIndexChanged += new System.EventHandler(this.CategoryCB_SelectedIndexChanged);
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.BackgroundImage = global::DePandaWinForms.Properties.Resources.closehover;
+            this.pictureBox2.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pictureBox2.Dock = System.Windows.Forms.DockStyle.Right;
+            this.pictureBox2.Image = global::DePandaWinForms.Properties.Resources.closehover;
+            this.pictureBox2.Location = new System.Drawing.Point(261, 4);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(25, 21);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox2.TabIndex = 0;
+            this.pictureBox2.TabStop = false;
+            this.pictureBox2.Click += new System.EventHandler(this.pictureBox2_Click);
+            // 
+            // MenuItemsLBL
+            // 
+            this.MenuItemsLBL.AutoSize = true;
+            this.MenuItemsLBL.BackColor = System.Drawing.Color.Transparent;
+            this.MenuItemsLBL.Dock = System.Windows.Forms.DockStyle.Left;
+            this.MenuItemsLBL.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.MenuItemsLBL.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(137)))), ((int)(((byte)(145)))));
+            this.MenuItemsLBL.Location = new System.Drawing.Point(0, 0);
+            this.MenuItemsLBL.Name = "MenuItemsLBL";
+            this.MenuItemsLBL.Size = new System.Drawing.Size(115, 25);
+            this.MenuItemsLBL.TabIndex = 61;
+            this.MenuItemsLBL.Text = "Menu items:";
             // 
             // panel3
             // 
@@ -301,90 +381,10 @@
             this.MenuItemList.AutoScroll = true;
             this.MenuItemList.Dock = System.Windows.Forms.DockStyle.Fill;
             this.MenuItemList.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
-            this.MenuItemList.Location = new System.Drawing.Point(15, 105);
+            this.MenuItemList.Location = new System.Drawing.Point(15, 134);
             this.MenuItemList.Name = "MenuItemList";
-            this.MenuItemList.Size = new System.Drawing.Size(770, 276);
-            this.MenuItemList.TabIndex = 52;
-            // 
-            // panel6
-            // 
-            this.panel6.Controls.Add(this.panel7);
-            this.panel6.Controls.Add(this.MenuItemsLBL);
-            this.panel6.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel6.Location = new System.Drawing.Point(15, 105);
-            this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(770, 29);
-            this.panel6.TabIndex = 59;
-            // 
-            // panel7
-            // 
-            this.panel7.Controls.Add(this.label1);
-            this.panel7.Controls.Add(this.panel8);
-            this.panel7.Controls.Add(this.CategoryCB);
-            this.panel7.Controls.Add(this.pictureBox2);
-            this.panel7.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panel7.Location = new System.Drawing.Point(480, 0);
-            this.panel7.Name = "panel7";
-            this.panel7.Padding = new System.Windows.Forms.Padding(4);
-            this.panel7.Size = new System.Drawing.Size(290, 29);
-            this.panel7.TabIndex = 62;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Dock = System.Windows.Forms.DockStyle.Right;
-            this.label1.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(8, 4);
-            this.label1.Margin = new System.Windows.Forms.Padding(4);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(112, 20);
-            this.label1.TabIndex = 68;
-            this.label1.Text = "Filter categorie:";
-            // 
-            // panel8
-            // 
-            this.panel8.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panel8.Location = new System.Drawing.Point(120, 4);
-            this.panel8.Name = "panel8";
-            this.panel8.Size = new System.Drawing.Size(13, 21);
-            this.panel8.TabIndex = 67;
-            // 
-            // CategoryCB
-            // 
-            this.CategoryCB.Dock = System.Windows.Forms.DockStyle.Right;
-            this.CategoryCB.FormattingEnabled = true;
-            this.CategoryCB.Location = new System.Drawing.Point(133, 4);
-            this.CategoryCB.Name = "CategoryCB";
-            this.CategoryCB.Size = new System.Drawing.Size(128, 21);
-            this.CategoryCB.TabIndex = 66;
-            this.CategoryCB.SelectedIndexChanged += new System.EventHandler(this.CategoryCB_SelectedIndexChanged);
-            // 
-            // pictureBox2
-            // 
-            this.pictureBox2.BackgroundImage = global::DePandaWinForms.Properties.Resources.closehover;
-            this.pictureBox2.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pictureBox2.Dock = System.Windows.Forms.DockStyle.Right;
-            this.pictureBox2.Image = global::DePandaWinForms.Properties.Resources.closehover;
-            this.pictureBox2.Location = new System.Drawing.Point(261, 4);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(25, 21);
-            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox2.TabIndex = 0;
-            this.pictureBox2.TabStop = false;
-            this.pictureBox2.Click += new System.EventHandler(this.pictureBox2_Click);
-            // 
-            // MenuItemsLBL
-            // 
-            this.MenuItemsLBL.AutoSize = true;
-            this.MenuItemsLBL.BackColor = System.Drawing.Color.Transparent;
-            this.MenuItemsLBL.Dock = System.Windows.Forms.DockStyle.Left;
-            this.MenuItemsLBL.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.MenuItemsLBL.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(137)))), ((int)(((byte)(145)))));
-            this.MenuItemsLBL.Location = new System.Drawing.Point(0, 0);
-            this.MenuItemsLBL.Name = "MenuItemsLBL";
-            this.MenuItemsLBL.Size = new System.Drawing.Size(115, 25);
-            this.MenuItemsLBL.TabIndex = 61;
-            this.MenuItemsLBL.Text = "Menu items:";
+            this.MenuItemList.Size = new System.Drawing.Size(770, 247);
+            this.MenuItemList.TabIndex = 60;
             // 
             // EditOrder
             // 
@@ -402,6 +402,11 @@
             ((System.ComponentModel.ISupportInitialize)(this.EditOrderBtn)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.DeleteOrderBtn)).EndInit();
             this.panel2.ResumeLayout(false);
+            this.panel6.ResumeLayout(false);
+            this.panel6.PerformLayout();
+            this.panel7.ResumeLayout(false);
+            this.panel7.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
             this.panel4.ResumeLayout(false);
@@ -409,11 +414,6 @@
             this.panel5.ResumeLayout(false);
             this.panel5.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            this.panel6.ResumeLayout(false);
-            this.panel6.PerformLayout();
-            this.panel7.ResumeLayout(false);
-            this.panel7.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -438,7 +438,6 @@
         private System.Windows.Forms.Button PaymentBtn;
         private System.Windows.Forms.Panel Spacer;
         private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.FlowLayoutPanel MenuItemList;
         private System.Windows.Forms.Panel panel6;
         private System.Windows.Forms.Panel panel7;
         private System.Windows.Forms.Label label1;
@@ -446,5 +445,6 @@
         private System.Windows.Forms.ComboBox CategoryCB;
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.Label MenuItemsLBL;
+        private System.Windows.Forms.FlowLayoutPanel MenuItemList;
     }
 }
