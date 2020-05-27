@@ -57,7 +57,7 @@ namespace DePandaWinForms.Pages
                     }
                     return true;
                 }
-            }0
+            }
             for (int i = 0; i < days.Length; i++)
             {
                 if (dateTimePicker1.Value.DayOfWeek == days[i])
