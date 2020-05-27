@@ -165,6 +165,7 @@ namespace DePandaWinForms.Pages.OrderPage
 
         private void SaveOrderBtn_Click(object sender, EventArgs e)
         {
+            
             var res = CurrentOrder.Reservation;
             if (MenuItemList.Controls == null || MenuItemList.Controls.Count == 0)
             {
@@ -192,6 +193,8 @@ namespace DePandaWinForms.Pages.OrderPage
                         if (order != null)
                         {
                             order = CurrentOrder;
+                            decimal total = CurrentOrder.GetTotal();
+                            TotalLbl.Text = "Totaal: \t€ " + total;
                         }
                         else
                         {
