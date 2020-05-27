@@ -36,6 +36,7 @@
             this.SaveOrderBtn = new System.Windows.Forms.Button();
             this.DeleteOrderBtn = new System.Windows.Forms.PictureBox();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.MenuItemList = new System.Windows.Forms.FlowLayoutPanel();
             this.panel6 = new System.Windows.Forms.Panel();
             this.panel7 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
@@ -53,7 +54,6 @@
             this.OnTheNameOfTb = new System.Windows.Forms.TextBox();
             this.OnTheNameOfLbl = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.MenuItemList = new System.Windows.Forms.FlowLayoutPanel();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.EditOrderBtn)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.DeleteOrderBtn)).BeginInit();
@@ -177,6 +177,16 @@
             this.panel2.Padding = new System.Windows.Forms.Padding(15);
             this.panel2.Size = new System.Drawing.Size(800, 396);
             this.panel2.TabIndex = 19;
+            // 
+            // MenuItemList
+            // 
+            this.MenuItemList.AutoScroll = true;
+            this.MenuItemList.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.MenuItemList.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
+            this.MenuItemList.Location = new System.Drawing.Point(15, 134);
+            this.MenuItemList.Name = "MenuItemList";
+            this.MenuItemList.Size = new System.Drawing.Size(770, 247);
+            this.MenuItemList.TabIndex = 60;
             // 
             // panel6
             // 
@@ -375,16 +385,6 @@
             this.pictureBox1.TabIndex = 54;
             this.pictureBox1.TabStop = false;
             this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
-            // 
-            // MenuItemList
-            // 
-            this.MenuItemList.AutoScroll = true;
-            this.MenuItemList.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.MenuItemList.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
-            this.MenuItemList.Location = new System.Drawing.Point(15, 134);
-            this.MenuItemList.Name = "MenuItemList";
-            this.MenuItemList.Size = new System.Drawing.Size(770, 247);
-            this.MenuItemList.TabIndex = 60;
             // 
             // EditOrder
             // 
