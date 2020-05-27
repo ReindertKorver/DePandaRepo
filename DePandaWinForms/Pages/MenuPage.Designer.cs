@@ -47,14 +47,13 @@
             this.NameMenuItemInput = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.LeftEditPanel = new DePandaWinForms.Design.PPanel();
-            this.label4 = new System.Windows.Forms.Label();
             this.SearchMenuItemsList = new System.Windows.Forms.TextBox();
             this.ShowCreateMenuItemPanel = new System.Windows.Forms.Button();
-            this.MenuItemsList = new System.Windows.Forms.ListBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.MenuItemsList = new System.Windows.Forms.ListBox();
             this.MainPanel.SuspendLayout();
             this.panel2.SuspendLayout();
             this.LeftPanel.SuspendLayout();
@@ -167,6 +166,7 @@
             // 
             // CategoryCB
             // 
+            this.CategoryCB.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.CategoryCB.Font = new System.Drawing.Font("Segoe UI", 14.25F);
             this.CategoryCB.FormattingEnabled = true;
             this.CategoryCB.Location = new System.Drawing.Point(153, 185);
@@ -199,10 +199,11 @@
             // 
             // AmountMenuItemInput
             // 
+            this.AmountMenuItemInput.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.AmountMenuItemInput.Font = new System.Drawing.Font("Segoe UI", 14.25F);
             this.AmountMenuItemInput.Location = new System.Drawing.Point(153, 110);
             this.AmountMenuItemInput.Name = "AmountMenuItemInput";
-            this.AmountMenuItemInput.Size = new System.Drawing.Size(276, 33);
+            this.AmountMenuItemInput.Size = new System.Drawing.Size(276, 26);
             this.AmountMenuItemInput.TabIndex = 23;
             this.AmountMenuItemInput.TextChanged += new System.EventHandler(this.MenuItemAmountChanged);
             // 
@@ -218,10 +219,11 @@
             // 
             // DescriptionMenuItemInput
             // 
+            this.DescriptionMenuItemInput.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.DescriptionMenuItemInput.Font = new System.Drawing.Font("Segoe UI", 14.25F);
             this.DescriptionMenuItemInput.Location = new System.Drawing.Point(153, 147);
             this.DescriptionMenuItemInput.Name = "DescriptionMenuItemInput";
-            this.DescriptionMenuItemInput.Size = new System.Drawing.Size(276, 33);
+            this.DescriptionMenuItemInput.Size = new System.Drawing.Size(276, 26);
             this.DescriptionMenuItemInput.TabIndex = 20;
             // 
             // label3
@@ -236,10 +238,11 @@
             // 
             // PriceMenuItemInput
             // 
+            this.PriceMenuItemInput.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.PriceMenuItemInput.Font = new System.Drawing.Font("Segoe UI", 14.25F);
             this.PriceMenuItemInput.Location = new System.Drawing.Point(153, 68);
             this.PriceMenuItemInput.Name = "PriceMenuItemInput";
-            this.PriceMenuItemInput.Size = new System.Drawing.Size(276, 33);
+            this.PriceMenuItemInput.Size = new System.Drawing.Size(276, 26);
             this.PriceMenuItemInput.TabIndex = 19;
             // 
             // label2
@@ -254,10 +257,11 @@
             // 
             // NameMenuItemInput
             // 
+            this.NameMenuItemInput.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.NameMenuItemInput.Font = new System.Drawing.Font("Segoe UI", 14.25F);
             this.NameMenuItemInput.Location = new System.Drawing.Point(153, 23);
             this.NameMenuItemInput.Name = "NameMenuItemInput";
-            this.NameMenuItemInput.Size = new System.Drawing.Size(276, 33);
+            this.NameMenuItemInput.Size = new System.Drawing.Size(276, 26);
             this.NameMenuItemInput.TabIndex = 18;
             // 
             // label1
@@ -274,9 +278,9 @@
             // 
             this.LeftEditPanel.BackColor = System.Drawing.Color.White;
             this.LeftEditPanel.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.LeftEditPanel.Controls.Add(this.MenuItemsList);
             this.LeftEditPanel.Controls.Add(this.ShowCreateMenuItemPanel);
             this.LeftEditPanel.Controls.Add(this.panel3);
-            this.LeftEditPanel.Controls.Add(this.MenuItemsList);
             this.LeftEditPanel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.LeftEditPanel.Location = new System.Drawing.Point(10, 10);
             this.LeftEditPanel.Name = "LeftEditPanel";
@@ -284,23 +288,16 @@
             this.LeftEditPanel.Size = new System.Drawing.Size(235, 393);
             this.LeftEditPanel.TabIndex = 0;
             // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.BackColor = System.Drawing.Color.Transparent;
-            this.label4.Location = new System.Drawing.Point(5, 6);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(32, 13);
-            this.label4.TabIndex = 31;
-            this.label4.Text = "Zoek";
-            // 
             // SearchMenuItemsList
             // 
-            this.SearchMenuItemsList.Location = new System.Drawing.Point(43, 3);
+            this.SearchMenuItemsList.Font = new System.Drawing.Font("Segoe UI", 14.25F);
+            this.SearchMenuItemsList.Location = new System.Drawing.Point(0, 0);
             this.SearchMenuItemsList.Name = "SearchMenuItemsList";
-            this.SearchMenuItemsList.Size = new System.Drawing.Size(172, 20);
+            this.SearchMenuItemsList.Size = new System.Drawing.Size(215, 33);
             this.SearchMenuItemsList.TabIndex = 30;
+            this.SearchMenuItemsList.Text = "Zoeken";
             this.SearchMenuItemsList.TextChanged += new System.EventHandler(this.SearchMenuItems);
+            this.SearchMenuItemsList.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.SearchMenuItemsList_KeyPress);
             // 
             // ShowCreateMenuItemPanel
             // 
@@ -314,19 +311,6 @@
             this.ShowCreateMenuItemPanel.Text = "Menu item aanmaken";
             this.ShowCreateMenuItemPanel.UseVisualStyleBackColor = true;
             this.ShowCreateMenuItemPanel.Click += new System.EventHandler(this.ShowMenuItemPanel);
-            // 
-            // MenuItemsList
-            // 
-            this.MenuItemsList.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.MenuItemsList.Font = new System.Drawing.Font("Segoe UI", 14.25F);
-            this.MenuItemsList.FormattingEnabled = true;
-            this.MenuItemsList.ItemHeight = 25;
-            this.MenuItemsList.Location = new System.Drawing.Point(10, 10);
-            this.MenuItemsList.Name = "MenuItemsList";
-            this.MenuItemsList.ScrollAlwaysVisible = true;
-            this.MenuItemsList.Size = new System.Drawing.Size(215, 373);
-            this.MenuItemsList.TabIndex = 28;
-            this.MenuItemsList.SelectedIndexChanged += new System.EventHandler(this.MenuItemsList_SelectedIndexChanged);
             // 
             // pictureBox2
             // 
@@ -372,12 +356,25 @@
             // 
             this.panel3.BackColor = System.Drawing.Color.Transparent;
             this.panel3.Controls.Add(this.SearchMenuItemsList);
-            this.panel3.Controls.Add(this.label4);
             this.panel3.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel3.Location = new System.Drawing.Point(10, 10);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(215, 30);
             this.panel3.TabIndex = 32;
+            // 
+            // MenuItemsList
+            // 
+            this.MenuItemsList.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(235)))), ((int)(((byte)(235)))));
+            this.MenuItemsList.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.MenuItemsList.Font = new System.Drawing.Font("Segoe UI", 14.25F);
+            this.MenuItemsList.FormattingEnabled = true;
+            this.MenuItemsList.ItemHeight = 25;
+            this.MenuItemsList.Location = new System.Drawing.Point(10, 40);
+            this.MenuItemsList.Name = "MenuItemsList";
+            this.MenuItemsList.ScrollAlwaysVisible = true;
+            this.MenuItemsList.Size = new System.Drawing.Size(215, 311);
+            this.MenuItemsList.TabIndex = 33;
+            this.MenuItemsList.SelectedIndexChanged += new System.EventHandler(this.MenuItemsList_SelectedIndexChanged);
             // 
             // MenuPage
             // 
@@ -414,10 +411,8 @@
         private Design.PPanel RightEditPanel;
         private System.Windows.Forms.Panel LeftPanel;
         private Design.PPanel LeftEditPanel;
-        private System.Windows.Forms.Label label4;
         private System.Windows.Forms.TextBox SearchMenuItemsList;
         private System.Windows.Forms.Button ShowCreateMenuItemPanel;
-        private System.Windows.Forms.ListBox MenuItemsList;
         private System.Windows.Forms.GroupBox MenuItemGroupBox;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.ComboBox CategoryCB;
@@ -435,5 +430,6 @@
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.PictureBox pictureBox3;
         private System.Windows.Forms.Panel panel3;
+        private System.Windows.Forms.ListBox MenuItemsList;
     }
 }
