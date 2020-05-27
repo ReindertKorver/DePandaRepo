@@ -43,7 +43,6 @@
             this.CategoryCB = new System.Windows.Forms.ComboBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.MenuItemsLBL = new System.Windows.Forms.Label();
-            this.MenuItemList = new System.Windows.Forms.FlowLayoutPanel();
             this.panel3 = new System.Windows.Forms.Panel();
             this.TableNumberTB = new System.Windows.Forms.TextBox();
             this.TableNumberLBL = new System.Windows.Forms.Label();
@@ -54,6 +53,7 @@
             this.OnTheNameOfTb = new System.Windows.Forms.TextBox();
             this.OnTheNameOfLbl = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.MenuItemList = new System.Windows.Forms.FlowLayoutPanel();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.EditOrderBtn)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.DeleteOrderBtn)).BeginInit();
@@ -165,8 +165,8 @@
             // 
             // panel2
             // 
-            this.panel2.Controls.Add(this.panel6);
             this.panel2.Controls.Add(this.MenuItemList);
+            this.panel2.Controls.Add(this.panel6);
             this.panel2.Controls.Add(this.panel3);
             this.panel2.Controls.Add(this.panel4);
             this.panel2.Controls.Add(this.panel5);
@@ -257,16 +257,6 @@
             this.MenuItemsLBL.Size = new System.Drawing.Size(115, 25);
             this.MenuItemsLBL.TabIndex = 61;
             this.MenuItemsLBL.Text = "Menu items:";
-            // 
-            // MenuItemList
-            // 
-            this.MenuItemList.AutoScroll = true;
-            this.MenuItemList.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.MenuItemList.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
-            this.MenuItemList.Location = new System.Drawing.Point(15, 105);
-            this.MenuItemList.Name = "MenuItemList";
-            this.MenuItemList.Size = new System.Drawing.Size(770, 276);
-            this.MenuItemList.TabIndex = 52;
             // 
             // panel3
             // 
@@ -386,6 +376,16 @@
             this.pictureBox1.TabStop = false;
             this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
             // 
+            // MenuItemList
+            // 
+            this.MenuItemList.AutoScroll = true;
+            this.MenuItemList.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.MenuItemList.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
+            this.MenuItemList.Location = new System.Drawing.Point(15, 134);
+            this.MenuItemList.Name = "MenuItemList";
+            this.MenuItemList.Size = new System.Drawing.Size(770, 247);
+            this.MenuItemList.TabIndex = 60;
+            // 
             // EditOrder
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -438,7 +438,6 @@
         private System.Windows.Forms.Button PaymentBtn;
         private System.Windows.Forms.Panel Spacer;
         private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.FlowLayoutPanel MenuItemList;
         private System.Windows.Forms.Panel panel6;
         private System.Windows.Forms.Panel panel7;
         private System.Windows.Forms.Label label1;
@@ -446,5 +445,6 @@
         private System.Windows.Forms.ComboBox CategoryCB;
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.Label MenuItemsLBL;
+        private System.Windows.Forms.FlowLayoutPanel MenuItemList;
     }
 }
