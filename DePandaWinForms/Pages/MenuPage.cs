@@ -45,22 +45,7 @@ namespace DePandaWinForms.Pages
 
         private void MenuItemClick(object sender, EventArgs e)
         {
-            Dish menuItem = (sender as Button).Tag as Dish;
 
-            CreateNewMenuItem.Visible = false;
-            MenuItemGroupBox.Visible = true;
-
-            if (menuItem == null)
-            {
-                MenuItemGroupBox.Visible = false;
-            }
-            else
-            {
-                DescriptionMenuItemInput.Text = menuItem.Description;
-                PriceMenuItemInput.Text = menuItem.Price.ToString();
-                NameMenuItemInput.Text = menuItem.Name;
-                AmountMenuItemInput.Text = menuItem.Amount.ToString();
-            }
         }
 
         private void MenuItemsList_SelectedIndexChanged(object sender, EventArgs e)
@@ -90,6 +75,14 @@ namespace DePandaWinForms.Pages
                     CategoryCB.SelectedItem = null;
                     CategoryCB.Text = "Selecteer...";
                 }
+            }
+        }
+
+        private void SearchMenuItemsList_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if(SearchMenuItemsList.Text == "Zoeken")
+            {
+                SearchMenuItemsList.Text = "";
             }
         }
 
@@ -263,5 +256,7 @@ namespace DePandaWinForms.Pages
                 }
             }
         }
+
+        
     }
 }
