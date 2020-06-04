@@ -32,28 +32,28 @@
             this.SaveOrderBtn = new System.Windows.Forms.Button();
             this.DeleteOrderBtn = new System.Windows.Forms.PictureBox();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.MenuItemList = new System.Windows.Forms.FlowLayoutPanel();
+            this.panel4 = new System.Windows.Forms.Panel();
+            this.panel5 = new System.Windows.Forms.Panel();
+            this.label1 = new System.Windows.Forms.Label();
+            this.panel6 = new System.Windows.Forms.Panel();
+            this.CategoryCB = new System.Windows.Forms.ComboBox();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.MenuItemsLBL = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
             this.ReservationLBL = new System.Windows.Forms.Label();
             this.TableNumberTB = new System.Windows.Forms.TextBox();
             this.TableNumberLBL = new System.Windows.Forms.Label();
             this.NewOrderLbl = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.panel4 = new System.Windows.Forms.Panel();
-            this.MenuItemList = new System.Windows.Forms.FlowLayoutPanel();
-            this.MenuItemsLBL = new System.Windows.Forms.Label();
-            this.panel5 = new System.Windows.Forms.Panel();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.panel6 = new System.Windows.Forms.Panel();
-            this.CategoryCB = new System.Windows.Forms.ComboBox();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DeleteOrderBtn)).BeginInit();
             this.panel2.SuspendLayout();
-            this.panel3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel4.SuspendLayout();
             this.panel5.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            this.panel3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -108,6 +108,96 @@
             this.panel2.Padding = new System.Windows.Forms.Padding(15);
             this.panel2.Size = new System.Drawing.Size(800, 396);
             this.panel2.TabIndex = 12;
+            // 
+            // MenuItemList
+            // 
+            this.MenuItemList.AutoScroll = true;
+            this.MenuItemList.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.MenuItemList.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
+            this.MenuItemList.Location = new System.Drawing.Point(15, 102);
+            this.MenuItemList.Name = "MenuItemList";
+            this.MenuItemList.Size = new System.Drawing.Size(770, 279);
+            this.MenuItemList.TabIndex = 61;
+            // 
+            // panel4
+            // 
+            this.panel4.Controls.Add(this.panel5);
+            this.panel4.Controls.Add(this.MenuItemsLBL);
+            this.panel4.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel4.Location = new System.Drawing.Point(15, 73);
+            this.panel4.Name = "panel4";
+            this.panel4.Size = new System.Drawing.Size(770, 29);
+            this.panel4.TabIndex = 58;
+            // 
+            // panel5
+            // 
+            this.panel5.Controls.Add(this.label1);
+            this.panel5.Controls.Add(this.panel6);
+            this.panel5.Controls.Add(this.CategoryCB);
+            this.panel5.Controls.Add(this.pictureBox2);
+            this.panel5.Dock = System.Windows.Forms.DockStyle.Right;
+            this.panel5.Location = new System.Drawing.Point(480, 0);
+            this.panel5.Name = "panel5";
+            this.panel5.Padding = new System.Windows.Forms.Padding(4);
+            this.panel5.Size = new System.Drawing.Size(290, 29);
+            this.panel5.TabIndex = 62;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Dock = System.Windows.Forms.DockStyle.Right;
+            this.label1.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(8, 4);
+            this.label1.Margin = new System.Windows.Forms.Padding(4);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(112, 20);
+            this.label1.TabIndex = 68;
+            this.label1.Text = "Filter categorie:";
+            // 
+            // panel6
+            // 
+            this.panel6.Dock = System.Windows.Forms.DockStyle.Right;
+            this.panel6.Location = new System.Drawing.Point(120, 4);
+            this.panel6.Name = "panel6";
+            this.panel6.Size = new System.Drawing.Size(13, 21);
+            this.panel6.TabIndex = 67;
+            // 
+            // CategoryCB
+            // 
+            this.CategoryCB.Dock = System.Windows.Forms.DockStyle.Right;
+            this.CategoryCB.FormattingEnabled = true;
+            this.CategoryCB.Location = new System.Drawing.Point(133, 4);
+            this.CategoryCB.Name = "CategoryCB";
+            this.CategoryCB.Size = new System.Drawing.Size(128, 21);
+            this.CategoryCB.TabIndex = 66;
+            this.CategoryCB.SelectedIndexChanged += new System.EventHandler(this.CategoryCB_SelectedIndexChanged);
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.BackgroundImage = global::DePandaWinForms.Properties.Resources.closehover;
+            this.pictureBox2.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pictureBox2.Dock = System.Windows.Forms.DockStyle.Right;
+            this.pictureBox2.Image = global::DePandaWinForms.Properties.Resources.closehover;
+            this.pictureBox2.Location = new System.Drawing.Point(261, 4);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(25, 21);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox2.TabIndex = 0;
+            this.pictureBox2.TabStop = false;
+            this.pictureBox2.Click += new System.EventHandler(this.pictureBox2_Click);
+            // 
+            // MenuItemsLBL
+            // 
+            this.MenuItemsLBL.AutoSize = true;
+            this.MenuItemsLBL.BackColor = System.Drawing.Color.Transparent;
+            this.MenuItemsLBL.Dock = System.Windows.Forms.DockStyle.Left;
+            this.MenuItemsLBL.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.MenuItemsLBL.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(137)))), ((int)(((byte)(145)))));
+            this.MenuItemsLBL.Location = new System.Drawing.Point(0, 0);
+            this.MenuItemsLBL.Name = "MenuItemsLBL";
+            this.MenuItemsLBL.Size = new System.Drawing.Size(115, 25);
+            this.MenuItemsLBL.TabIndex = 61;
+            this.MenuItemsLBL.Text = "Menu items:";
             // 
             // panel3
             // 
@@ -184,96 +274,6 @@
             this.pictureBox1.TabStop = false;
             this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
             // 
-            // panel4
-            // 
-            this.panel4.Controls.Add(this.panel5);
-            this.panel4.Controls.Add(this.MenuItemsLBL);
-            this.panel4.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel4.Location = new System.Drawing.Point(15, 73);
-            this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(770, 29);
-            this.panel4.TabIndex = 58;
-            // 
-            // MenuItemList
-            // 
-            this.MenuItemList.AutoScroll = true;
-            this.MenuItemList.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.MenuItemList.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
-            this.MenuItemList.Location = new System.Drawing.Point(15, 102);
-            this.MenuItemList.Name = "MenuItemList";
-            this.MenuItemList.Size = new System.Drawing.Size(770, 279);
-            this.MenuItemList.TabIndex = 61;
-            // 
-            // MenuItemsLBL
-            // 
-            this.MenuItemsLBL.AutoSize = true;
-            this.MenuItemsLBL.BackColor = System.Drawing.Color.Transparent;
-            this.MenuItemsLBL.Dock = System.Windows.Forms.DockStyle.Left;
-            this.MenuItemsLBL.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.MenuItemsLBL.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(137)))), ((int)(((byte)(145)))));
-            this.MenuItemsLBL.Location = new System.Drawing.Point(0, 0);
-            this.MenuItemsLBL.Name = "MenuItemsLBL";
-            this.MenuItemsLBL.Size = new System.Drawing.Size(115, 25);
-            this.MenuItemsLBL.TabIndex = 61;
-            this.MenuItemsLBL.Text = "Menu items:";
-            // 
-            // panel5
-            // 
-            this.panel5.Controls.Add(this.label1);
-            this.panel5.Controls.Add(this.panel6);
-            this.panel5.Controls.Add(this.CategoryCB);
-            this.panel5.Controls.Add(this.pictureBox2);
-            this.panel5.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panel5.Location = new System.Drawing.Point(480, 0);
-            this.panel5.Name = "panel5";
-            this.panel5.Padding = new System.Windows.Forms.Padding(4);
-            this.panel5.Size = new System.Drawing.Size(290, 29);
-            this.panel5.TabIndex = 62;
-            // 
-            // pictureBox2
-            // 
-            this.pictureBox2.BackgroundImage = global::DePandaWinForms.Properties.Resources.closehover;
-            this.pictureBox2.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pictureBox2.Dock = System.Windows.Forms.DockStyle.Right;
-            this.pictureBox2.Image = global::DePandaWinForms.Properties.Resources.closehover;
-            this.pictureBox2.Location = new System.Drawing.Point(261, 4);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(25, 21);
-            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox2.TabIndex = 0;
-            this.pictureBox2.TabStop = false;
-            this.pictureBox2.Click += new System.EventHandler(this.pictureBox2_Click);
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Dock = System.Windows.Forms.DockStyle.Right;
-            this.label1.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(8, 4);
-            this.label1.Margin = new System.Windows.Forms.Padding(4);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(112, 20);
-            this.label1.TabIndex = 68;
-            this.label1.Text = "Filter categorie:";
-            // 
-            // panel6
-            // 
-            this.panel6.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panel6.Location = new System.Drawing.Point(120, 4);
-            this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(13, 21);
-            this.panel6.TabIndex = 67;
-            // 
-            // CategoryCB
-            // 
-            this.CategoryCB.Dock = System.Windows.Forms.DockStyle.Right;
-            this.CategoryCB.FormattingEnabled = true;
-            this.CategoryCB.Location = new System.Drawing.Point(133, 4);
-            this.CategoryCB.Name = "CategoryCB";
-            this.CategoryCB.Size = new System.Drawing.Size(128, 21);
-            this.CategoryCB.TabIndex = 66;
-            this.CategoryCB.SelectedIndexChanged += new System.EventHandler(this.CategoryCB_SelectedIndexChanged);
-            // 
             // NewOrder
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -290,14 +290,14 @@
             ((System.ComponentModel.ISupportInitialize)(this.DeleteOrderBtn)).EndInit();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
-            this.panel3.ResumeLayout(false);
-            this.panel3.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.panel4.ResumeLayout(false);
             this.panel4.PerformLayout();
             this.panel5.ResumeLayout(false);
             this.panel5.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            this.panel3.ResumeLayout(false);
+            this.panel3.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }
