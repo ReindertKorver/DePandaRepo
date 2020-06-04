@@ -19,7 +19,6 @@ namespace DePandaWinForms.Pages
             //DataStorageHandler.Storage.Reservations.Add(new DePandaLib.Entities.Reservation() { });
             LoadExistingReservations();
             dateTimePicker3.Value = dateTimePicker2.Value.AddHours(2);
-            //ReservationPage.ActiveForm.BackColor = Color.White;
         }
 
         // show reservations in listview
@@ -53,16 +52,14 @@ namespace DePandaWinForms.Pages
                     if (time < ListOfAlternativeDates[i].StartDate.TimeOfDay || time2 > ListOfAlternativeDates[i].EndDate.TimeOfDay)
                     {
                         return false;
-
                     }
                     return true;
                 }
-            }0
+            }
             for (int i = 0; i < days.Length; i++)
             {
                 if (dateTimePicker1.Value.DayOfWeek == days[i])
                 {
-
                     if (DataStorageHandler.Storage.Settings.WeekDays.Count == 0 ||  time < DataStorageHandler.Storage.Settings.WeekDays[i].OpenTime.TimeOfDay || time2 > DataStorageHandler.Storage.Settings.WeekDays[i].CloseTime.AddMinutes(1).TimeOfDay)
                     {
                         return false;
@@ -73,7 +70,6 @@ namespace DePandaWinForms.Pages
             return true;
         }
        
-
         // add reservation
         private void button1_Click(object sender, EventArgs e)
         {
@@ -87,7 +83,7 @@ namespace DePandaWinForms.Pages
             }
             if (dateTime.Date < DateTime.Now.Date)
             {
-                MessageBox.Show("Vul een geldige datum en tijd in");
+                MessageBox.Show("Vul een geldige datum in");
                 return;
             }
             if (tafelnr == "")
@@ -95,7 +91,11 @@ namespace DePandaWinForms.Pages
                 MessageBox.Show("Klik een tafel aan");
                 return;
             }
-
+            if (PersonenBox.Value > zitplaatsen)
+            {
+                MessageBox.Show("Deze tafel heeft niet genoeg zitplaatsen voor het aantal ingevoerde personen");
+                return;
+            }
             if (!ReservationTimeCheck())
             {
                 MessageBox.Show("U kunt geen reservering plaatsen buiten de openingstijden");
@@ -111,7 +111,6 @@ namespace DePandaWinForms.Pages
             PersonenBox.Value = 1;
 
             txtNaam.Clear(); txtBijzonder.Clear();
-
         }
 
         // remove reservation
@@ -119,7 +118,6 @@ namespace DePandaWinForms.Pages
         private void button2_Click(object sender, EventArgs e)
         {
             Panel[] panels = new Panel[] { panel1, panel2, panel3, panel4, panel5, panel6, panel7, panel8, panel9, panel10, panel11, panel12 };
-           
 
             if (listView.SelectedItems.Count > 0)
             {
@@ -176,6 +174,7 @@ namespace DePandaWinForms.Pages
 
         // restaurant tables
         string tafelnr = "";
+        int zitplaatsen = 0;
 
         private void Cleartables()
         {
@@ -195,14 +194,17 @@ namespace DePandaWinForms.Pages
             if (panel.Name == "panel12" || panel.Name == "panel10" || panel.Name == "panel9")
             {
                 Tafeltext.Text = "8 personen tafel geselecteerd";
+                zitplaatsen = 8;
             }
             else if (panel.Name == "panel2")
             {
                 Tafeltext.Text = "2 personen tafel geselecteerd";
+                zitplaatsen = 2;
             }
             else
             {
                 Tafeltext.Text = "4 personen tafel geselecteerd";
+                zitplaatsen = 4;
             }
         }
 
@@ -211,7 +213,6 @@ namespace DePandaWinForms.Pages
             int CurX = e.X;
             int CurY = e.Y;
             Panel[] panels = new Panel[] { panel1, panel2, panel3, panel4, panel5, panel6, panel7, panel8, panel9, panel10, panel11, panel12 };
-
 
             foreach (Panel panel in panels)
             {
@@ -255,11 +256,10 @@ namespace DePandaWinForms.Pages
                     {
                         panel.BackColor = Color.Gainsboro;
                     }
-
                 }
             }
-
         }
+
         private void dateTimePicker2_ValueChanged(object sender, EventArgs e)
         {
             dateTimePicker3.Value = dateTimePicker2.Value.AddHours(2);
@@ -299,11 +299,8 @@ namespace DePandaWinForms.Pages
                 else
                 {
                     panel.BackColor = Color.Gainsboro;
-
                 }
             }
         }
-
-
     }
 }
