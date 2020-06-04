@@ -171,7 +171,7 @@
             this.InfoButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.InfoButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.InfoButton.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(72)))), ((int)(((byte)(142)))), ((int)(((byte)(149)))));
-            this.InfoButton.Location = new System.Drawing.Point(759, 12);
+            this.InfoButton.Location = new System.Drawing.Point(559, 12);
             this.InfoButton.Name = "InfoButton";
             this.InfoButton.Size = new System.Drawing.Size(83, 83);
             this.InfoButton.TabIndex = 111;
@@ -181,7 +181,8 @@
             // 
             // AmountOfDays
             // 
-            this.AmountOfDays.Location = new System.Drawing.Point(675, 154);
+            this.AmountOfDays.ForeColor = System.Drawing.Color.Black;
+            this.AmountOfDays.Location = new System.Drawing.Point(559, 165);
             this.AmountOfDays.Minimum = new decimal(new int[] {
             1,
             0,
@@ -200,8 +201,9 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.BackColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(672, 121);
+            this.label1.BackColor = System.Drawing.SystemColors.Control;
+            this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(72)))), ((int)(((byte)(142)))), ((int)(((byte)(149)))));
+            this.label1.Location = new System.Drawing.Point(556, 125);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(170, 26);
             this.label1.TabIndex = 114;

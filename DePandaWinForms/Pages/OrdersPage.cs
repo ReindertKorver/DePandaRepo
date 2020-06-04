@@ -103,7 +103,7 @@ namespace DePandaWinForms.Pages
                 {
                     if (Filter)
                     {
-                        if (order.OrderDate.Date == DateTime.Today)
+                        if (order.OrderDate.Date == DateTime.Today && !order.Paid)
                         {
                             OrderItem item = new OrderItem(order);
                             item.Size = new Size(OrderItemList.Size.Width - 23, 50);
