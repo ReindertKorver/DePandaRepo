@@ -25,8 +25,9 @@ namespace DePandaWinForms.Pages
         public void LoadExistingReservations()
         {
             var Reservations = DataStorageHandler.Storage.Reservations;
+            List<DePandaLib.Entities.Reservation> Sortedlist = Reservations.OrderBy(o => o.Date).ToList();
 
-            foreach (var reservation in Reservations)
+            foreach (var reservation in Sortedlist)
             {
                 ListViewItem item = new ListViewItem(reservation.OnTheNameOf);
                 item.SubItems.Add(reservation.Date.ToString("dd-MM-yyyy"));
@@ -114,18 +115,27 @@ namespace DePandaWinForms.Pages
         }
 
         // remove reservation
-        List<DePandaLib.Entities.Reservation> Reservations = DataStorageHandler.Storage.Reservations;
         private void button2_Click(object sender, EventArgs e)
         {
+
+            List<DePandaLib.Entities.Reservation> Reservations = DataStorageHandler.Storage.Reservations;
             Panel[] panels = new Panel[] { panel1, panel2, panel3, panel4, panel5, panel6, panel7, panel8, panel9, panel10, panel11, panel12 };
 
             if (listView.SelectedItems.Count > 0)
             {
-                int v = int.Parse(Reservations[listView.SelectedItems[0].Index].Table);
-                panels[v - 1].BackColor = Color.Gainsboro;
+                for (int i = 0; i < Reservations.Count; i++)
+                {
+                    if(listView.SelectedItems[0].SubItems[0].Text == Reservations[i].OnTheNameOf)
+                    {
+                        int v = int.Parse(Reservations[i].Table);
+                        panels[v - 1].BackColor = Color.Gainsboro;
 
-                Reservations.Remove(Reservations[listView.SelectedItems[0].Index]);
-                listView.Items.Remove(listView.SelectedItems[0]);
+                        Reservations.Remove(Reservations[i]);
+                        listView.Items.Remove(listView.SelectedItems[0]);
+                        break;
+
+                    }
+                }
             }
         }
 
@@ -137,12 +147,7 @@ namespace DePandaWinForms.Pages
                 for (int i = listView.Items.Count - 1; i >= 0; i--)
                 {
                     ListViewItem item = listView.Items[i];
-                    if (item.Text.ToLower().Contains(searchBox.Text.ToLower()))
-                    {
-                        item.BackColor = SystemColors.Highlight;
-                        item.ForeColor = SystemColors.HighlightText;
-                    }
-                    else
+                    if (!item.Text.ToLower().Contains(searchBox.Text.ToLower()))
                     {
                         listView.Items.Remove(item);
                     }
@@ -268,6 +273,8 @@ namespace DePandaWinForms.Pages
 
         private void dateTimePicker3_ValueChanged(object sender, EventArgs e)
         {
+
+            List<DePandaLib.Entities.Reservation> Reservations = DataStorageHandler.Storage.Reservations;
             Panel[] panels = new Panel[] { panel1, panel2, panel3, panel4, panel5, panel6, panel7, panel8, panel9, panel10, panel11, panel12 };
             List<Panel> seen = new List<Panel>();
 

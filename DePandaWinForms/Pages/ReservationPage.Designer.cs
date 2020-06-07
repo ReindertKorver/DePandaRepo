@@ -30,6 +30,7 @@
         {
             this.label1 = new System.Windows.Forms.Label();
             this.pPanel2 = new DePandaWinForms.Design.PPanel();
+            this.label6 = new System.Windows.Forms.Label();
             this.Tafeltext = new System.Windows.Forms.Label();
             this.PersonenBox = new System.Windows.Forms.NumericUpDown();
             this.panel14 = new System.Windows.Forms.Panel();
@@ -70,6 +71,7 @@
             this.label5 = new System.Windows.Forms.Label();
             this.txtNaam = new System.Windows.Forms.TextBox();
             this.pPanel1 = new DePandaWinForms.Design.PPanel();
+            this.label8 = new System.Windows.Forms.Label();
             this.button2 = new System.Windows.Forms.Button();
             this.searchBox = new System.Windows.Forms.TextBox();
             this.listView = new System.Windows.Forms.ListView();
@@ -79,8 +81,6 @@
             this.Aantalpersonen = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.Tafelnummer = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.Bijzonderheden = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.label6 = new System.Windows.Forms.Label();
-            this.label8 = new System.Windows.Forms.Label();
             this.pPanel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.PersonenBox)).BeginInit();
             this.panel14.SuspendLayout();
@@ -133,6 +133,18 @@
             this.pPanel2.Name = "pPanel2";
             this.pPanel2.Size = new System.Drawing.Size(866, 207);
             this.pPanel2.TabIndex = 22;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(235)))), ((int)(((byte)(235)))));
+            this.label6.Font = new System.Drawing.Font("Segoe UI", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(137)))), ((int)(((byte)(145)))));
+            this.label6.Location = new System.Drawing.Point(5, 5);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(179, 28);
+            this.label6.TabIndex = 24;
+            this.label6.Text = "Nieuwe reservering";
             // 
             // Tafeltext
             // 
@@ -603,6 +615,18 @@
             this.pPanel1.Size = new System.Drawing.Size(866, 414);
             this.pPanel1.TabIndex = 21;
             // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(235)))), ((int)(((byte)(235)))));
+            this.label8.Font = new System.Drawing.Font("Segoe UI", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(137)))), ((int)(((byte)(145)))));
+            this.label8.Location = new System.Drawing.Point(5, 6);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(224, 28);
+            this.label8.TabIndex = 25;
+            this.label8.Text = "Bestaande reserveringen";
+            // 
             // button2
             // 
             this.button2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(235)))), ((int)(((byte)(235)))));
@@ -643,7 +667,7 @@
             this.listView.HideSelection = false;
             this.listView.Location = new System.Drawing.Point(10, 70);
             this.listView.Name = "listView";
-            this.listView.Size = new System.Drawing.Size(841, 299);
+            this.listView.Size = new System.Drawing.Size(845, 299);
             this.listView.TabIndex = 1;
             this.listView.UseCompatibleStateImageBehavior = false;
             this.listView.View = System.Windows.Forms.View.Details;
@@ -677,30 +701,6 @@
             // 
             this.Bijzonderheden.Text = "Bijzonderheden";
             this.Bijzonderheden.Width = 140;
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(235)))), ((int)(((byte)(235)))));
-            this.label6.Font = new System.Drawing.Font("Segoe UI", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(137)))), ((int)(((byte)(145)))));
-            this.label6.Location = new System.Drawing.Point(5, 5);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(179, 28);
-            this.label6.TabIndex = 24;
-            this.label6.Text = "Nieuwe reservering";
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(235)))), ((int)(((byte)(235)))));
-            this.label8.Font = new System.Drawing.Font("Segoe UI", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(137)))), ((int)(((byte)(145)))));
-            this.label8.Location = new System.Drawing.Point(5, 6);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(224, 28);
-            this.label8.TabIndex = 25;
-            this.label8.Text = "Bestaande reserveringen";
             // 
             // ReservationPage
             // 
