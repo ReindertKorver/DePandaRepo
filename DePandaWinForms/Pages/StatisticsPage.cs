@@ -105,7 +105,7 @@ namespace DePandaWinForms.Pages
 
         private void InfoButton_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("Op deze pagina kunt u zien wat de klanten hebben besteld de afgelopen 2 weken.\nDe grafieken zijn opgebouwd per categorie en ze worden automatisch bijgehouden.");
+            MessageBox.Show($"Op deze pagina kunt u zien wat de klanten hebben besteld de afgelopen {AmountOfDays.Value} dagen.\nDe grafieken zijn opgebouwd per categorie en ze worden automatisch bijgehouden.");
         }
 
         private void AmountOfDaysChanged(object sender, EventArgs e)
@@ -113,5 +113,7 @@ namespace DePandaWinForms.Pages
             SetChart(DrankMetPrinkChart.Titles.First().Text);
             
         }
+
+       
     }
 }

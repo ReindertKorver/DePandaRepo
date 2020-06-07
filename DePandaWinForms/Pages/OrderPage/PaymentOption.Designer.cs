@@ -33,8 +33,8 @@
             this.CashButton = new System.Windows.Forms.Button();
             this.Question = new System.Windows.Forms.Label();
             this.Timer = new System.Windows.Forms.Timer(this.components);
-            this.TotalOrderAmount = new System.Windows.Forms.Label();
             this.ContactPanel = new DePandaWinForms.Design.PPanel();
+            this.ConfirmCashPayment = new System.Windows.Forms.Button();
             this.TotalGivenAmountBox = new System.Windows.Forms.TextBox();
             this.ChangeLabel = new System.Windows.Forms.Label();
             this.OutPutTextBox = new System.Windows.Forms.TextBox();
@@ -42,9 +42,13 @@
             this.ProgressPanel = new DePandaWinForms.Design.PPanel();
             this.ProgressBar = new System.Windows.Forms.ProgressBar();
             this.ProgressText = new System.Windows.Forms.Label();
-            this.ConfirmCashPayment = new System.Windows.Forms.Button();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.label2 = new System.Windows.Forms.Label();
+            this.Close = new System.Windows.Forms.PictureBox();
             this.ContactPanel.SuspendLayout();
             this.ProgressPanel.SuspendLayout();
+            this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.Close)).BeginInit();
             this.SuspendLayout();
             // 
             // PinButton
@@ -79,7 +83,7 @@
             // 
             this.Question.AutoSize = true;
             this.Question.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F);
-            this.Question.Location = new System.Drawing.Point(262, 34);
+            this.Question.Location = new System.Drawing.Point(266, 48);
             this.Question.Name = "Question";
             this.Question.Size = new System.Drawing.Size(261, 26);
             this.Question.TabIndex = 101;
@@ -88,16 +92,6 @@
             // Timer
             // 
             this.Timer.Tick += new System.EventHandler(this.Timer_Tick);
-            // 
-            // TotalOrderAmount
-            // 
-            this.TotalOrderAmount.AutoSize = true;
-            this.TotalOrderAmount.Location = new System.Drawing.Point(581, 376);
-            this.TotalOrderAmount.Name = "TotalOrderAmount";
-            this.TotalOrderAmount.Size = new System.Drawing.Size(35, 13);
-            this.TotalOrderAmount.TabIndex = 104;
-            this.TotalOrderAmount.Text = "label1";
-            this.TotalOrderAmount.Visible = false;
             // 
             // ContactPanel
             // 
@@ -111,6 +105,20 @@
             this.ContactPanel.Size = new System.Drawing.Size(174, 158);
             this.ContactPanel.TabIndex = 103;
             this.ContactPanel.Visible = false;
+            // 
+            // ConfirmCashPayment
+            // 
+            this.ConfirmCashPayment.BackColor = System.Drawing.Color.White;
+            this.ConfirmCashPayment.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.ConfirmCashPayment.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            this.ConfirmCashPayment.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(72)))), ((int)(((byte)(142)))), ((int)(((byte)(149)))));
+            this.ConfirmCashPayment.Location = new System.Drawing.Point(3, 119);
+            this.ConfirmCashPayment.Name = "ConfirmCashPayment";
+            this.ConfirmCashPayment.Size = new System.Drawing.Size(120, 25);
+            this.ConfirmCashPayment.TabIndex = 105;
+            this.ConfirmCashPayment.Text = "Betaald";
+            this.ConfirmCashPayment.UseVisualStyleBackColor = false;
+            this.ConfirmCashPayment.Click += new System.EventHandler(this.ConfirmCashPayment_Click);
             // 
             // TotalGivenAmountBox
             // 
@@ -182,26 +190,51 @@
             this.ProgressText.Text = "Bezig met verwerken";
             this.ProgressText.Visible = false;
             // 
-            // ConfirmCashPayment
+            // panel1
             // 
-            this.ConfirmCashPayment.BackColor = System.Drawing.Color.White;
-            this.ConfirmCashPayment.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.ConfirmCashPayment.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.ConfirmCashPayment.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(72)))), ((int)(((byte)(142)))), ((int)(((byte)(149)))));
-            this.ConfirmCashPayment.Location = new System.Drawing.Point(3, 119);
-            this.ConfirmCashPayment.Name = "ConfirmCashPayment";
-            this.ConfirmCashPayment.Size = new System.Drawing.Size(120, 25);
-            this.ConfirmCashPayment.TabIndex = 105;
-            this.ConfirmCashPayment.Text = "Betaald";
-            this.ConfirmCashPayment.UseVisualStyleBackColor = false;
-            this.ConfirmCashPayment.Click += new System.EventHandler(this.ConfirmCashPayment_Click);
+            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(28)))), ((int)(((byte)(29)))));
+            this.panel1.Controls.Add(this.label2);
+            this.panel1.Controls.Add(this.Close);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel1.Location = new System.Drawing.Point(0, 0);
+            this.panel1.MinimumSize = new System.Drawing.Size(0, 32);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(800, 32);
+            this.panel1.TabIndex = 104;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.Color.White;
+            this.label2.Location = new System.Drawing.Point(12, 7);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(80, 20);
+            this.label2.TabIndex = 3;
+            this.label2.Text = "De Panda";
+            // 
+            // Close
+            // 
+            this.Close.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.Close.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.Close.Image = global::DePandaWinForms.Properties.Resources.close;
+            this.Close.Location = new System.Drawing.Point(766, 2);
+            this.Close.Margin = new System.Windows.Forms.Padding(0);
+            this.Close.Name = "Close";
+            this.Close.Size = new System.Drawing.Size(26, 26);
+            this.Close.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.Close.TabIndex = 0;
+            this.Close.TabStop = false;
+            this.Close.Click += new System.EventHandler(this.Close_Click);
+            this.Close.MouseEnter += new System.EventHandler(this.Close_MouseHover);
+            this.Close.MouseLeave += new System.EventHandler(this.Close_MouseHover);
             // 
             // PaymentOption
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.TotalOrderAmount);
+            this.Controls.Add(this.panel1);
             this.Controls.Add(this.ContactPanel);
             this.Controls.Add(this.ProgressPanel);
             this.Controls.Add(this.Question);
@@ -209,12 +242,15 @@
             this.Controls.Add(this.PinButton);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "PaymentOption";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "PaymentOption";
             this.ContactPanel.ResumeLayout(false);
             this.ContactPanel.PerformLayout();
             this.ProgressPanel.ResumeLayout(false);
             this.ProgressPanel.PerformLayout();
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.Close)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -230,11 +266,13 @@
         private System.Windows.Forms.Label ChangeLabel;
         private System.Windows.Forms.TextBox OutPutTextBox;
         private System.Windows.Forms.Label CustomerGivesLabel;
-        private System.Windows.Forms.Label TotalOrderAmount;
         private System.Windows.Forms.TextBox TotalGivenAmountBox;
         private System.Windows.Forms.Label ProgressText;
         private System.Windows.Forms.ProgressBar ProgressBar;
         private Design.PPanel ProgressPanel;
         private System.Windows.Forms.Button ConfirmCashPayment;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.PictureBox Close;
     }
 }

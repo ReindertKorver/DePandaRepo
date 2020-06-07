@@ -165,7 +165,7 @@ namespace DePandaWinForms.Pages.OrderPage
 
         private void SaveOrderBtn_Click(object sender, EventArgs e)
         {
-            
+
             var res = CurrentOrder.Reservation;
             if (MenuItemList.Controls == null || MenuItemList.Controls.Count == 0)
             {
@@ -219,43 +219,8 @@ namespace DePandaWinForms.Pages.OrderPage
                 var order = tempRes.Orders.FirstOrDefault(o => o.ID == CurrentOrder.ID);
                 if (order != null)
                 {
-                    PdfDocument pdfDocument = new PdfDocument();
-                    pdfDocument.Info.Title = "DePanda_" + tempRes.OnTheNameOf + "_" + order.OrderDate.ToString("ddMMyyyy_HHmm");
-
-                    PdfPage page1 = pdfDocument.AddPage();
-                    XGraphics gfx = XGraphics.FromPdfPage(page1);
-
-                    XFont font = new XFont("Verdana", 20, XFontStyle.BoldItalic);
-
-                    gfx.DrawString("De Panda", font, XBrushes.Black, new XRect(20, 20, page1.Width, 30), XStringFormats.TopLeft);
-
-                    XFont font1 = new XFont("Verdana", 15, XFontStyle.Bold);
-                    gfx.DrawString("Bon", font1, XBrushes.Black, new XRect(20, 50, page1.Width, 30), XStringFormats.TopLeft);
-                    XFont font2 = new XFont("Verdana", 12, XFontStyle.Regular);
-
-                    gfx.DrawString("Tafel: " + tempRes.Table, font2, XBrushes.Black, new XRect(20, 75, page1.Width, 30), XStringFormats.TopLeft);
-                    gfx.DrawString("Datum: " + order.OrderDate.ToString("dd-MM-yyyy HH:mm"), font2, XBrushes.Black, new XRect(20, 100, page1.Width, 30), XStringFormats.TopLeft);
-                    gfx.DrawString("Reserveer datum: " + tempRes.Date.ToString("dd-MM-yyyy HH:mm"), font2, XBrushes.Black, new XRect(20, 125, page1.Width, 30), XStringFormats.TopLeft);
-                    gfx.DrawString("Reserveerder: " + tempRes.OnTheNameOf, font2, XBrushes.Black, new XRect(20, 150, page1.Width, 30), XStringFormats.TopLeft);
-                    gfx.DrawString("Aantal personen: " + tempRes.AmountOfPeople, font2, XBrushes.Black, new XRect(20, 175, page1.Width, 30), XStringFormats.TopLeft);
-                    gfx.DrawString("Specificaties: " + (string.IsNullOrEmpty(tempRes.Specifications) ? "Geen" : tempRes.Specifications), font2, XBrushes.Black, new XRect(20, 200, page1.Width, 30), XStringFormats.TopLeft);
-
-                    gfx.DrawString("Bestelitems:", font1, XBrushes.Black, new XRect(20, 225, page1.Width, 30), XStringFormats.TopLeft);
-
-                    var startpos = 230;
-                    for (int i = 0; i < order.Dishes.Count; i++)
-                    {
-                        gfx.DrawString(order.Dishes[i].Name, font2, XBrushes.Black, new XRect(25, (15 * (i + 1)) + startpos, page1.Width, 30), XStringFormats.TopLeft);
-                        gfx.DrawString("€ " + order.Dishes[i].Price.ToString() + " p/s", font2, XBrushes.Black, new XRect(-175, (15 * (i + 1)) + startpos, page1.Width, 30), XStringFormats.TopRight);
-                        gfx.DrawString("x" + order.Dishes[i].Amount, font2, XBrushes.Black, new XRect(-125, (15 * (i + 1)) + startpos, page1.Width, 30), XStringFormats.TopRight);
-                        gfx.DrawString("€ " + order.Dishes[i].Amount * order.Dishes[i].Price, font2, XBrushes.Black, new XRect(-50, (15 * (i + 1)) + startpos, page1.Width, 30), XStringFormats.TopRight);
-                    }
-                    gfx.DrawString("TOTAAL:", font2, XBrushes.Black, new XRect(-125, (15 * (order.Dishes.Count + 2)) + startpos, page1.Width, 30), XStringFormats.TopRight);
-                    gfx.DrawString("€ " + order.GetTotal().ToString(), font2, XBrushes.Black, new XRect(-50, (15 * (order.Dishes.Count + 2)) + startpos, page1.Width, 30), XStringFormats.TopRight);
-
-                    string filename = "DePanda_" + tempRes.OnTheNameOf + "_" + order.OrderDate.ToString("ddMMyyyy_HHmm") + ".pdf";
-                    pdfDocument.Save(filename);
-                    Process.Start(filename);
+                    Form form = new PaymentOption(order);
+                    form.Show();
                 }
             }
         }

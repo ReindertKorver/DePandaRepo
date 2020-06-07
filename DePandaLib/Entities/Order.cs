@@ -11,6 +11,7 @@ namespace DePandaLib.Entities
         public DateTime OrderDate { get; set; }
         public Reservation Reservation { get; set; }
         public List<Dish> Dishes { get; set; }
+        public bool Paid { get; set; }
 
         public decimal GetTotal()
         {
