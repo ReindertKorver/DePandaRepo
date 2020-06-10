@@ -21,15 +21,6 @@ namespace DePandaClassLib.Entities
         public string EndTimeString { get { return EndDate.ToString("HH:mm"); } }
         public string StartTimeString { get { return StartDate.ToString("HH:mm"); } }
 
-        public static void Example()
-        {
-            if (DataStorageHandler.Storage.Settings.AlternativeDates.Count == 0)
-            {
-                
-                var newAltDate = new DePandaClassLib.Entities.AlternativeDate(new DateTime(2020, 04, 07, 11, 0, 0), new DateTime(2020, 04, 07, 11, 0, 0));
-                DataStorageHandler.Storage.Settings.AlternativeDates.Add(newAltDate);
-            }
-        }
     }
     public class WeekDay
     {
@@ -41,8 +32,6 @@ namespace DePandaClassLib.Entities
 
         public DateTime OpenTime { get; set; }
         public DateTime CloseTime { get; set; }
-       
-        
-    }
 
+    }
 }

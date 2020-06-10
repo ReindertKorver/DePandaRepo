@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Drawing;
 using System.Linq;
 using System.Windows.Forms;
+using System.Threading;
 
 namespace DePandaWinForms.Pages
 {
@@ -82,7 +83,7 @@ namespace DePandaWinForms.Pages
             LoadAlternativeDays();
         }
 
-        
+
         public void LoadAlternativeDays()
         {
             // loads in the list of alternative days
@@ -135,11 +136,6 @@ namespace DePandaWinForms.Pages
                 MessageBox.Show("Een pincode mag alleen uit cijfers bestaan.");
             }
         }
-
-
-  
-
-
         private void ChangedValue(object sender, EventArgs e)
         {
             TimesLoaded++;
@@ -157,10 +153,10 @@ namespace DePandaWinForms.Pages
 
                 if (MondayInvalid | TuesdayInvalid | WednesdayInvalid | ThursdayInvalid | FridayInvalid | SaturdayInvalid | SundayInvalid)
                 {
-                    MessageBox.Show("U heeft een verkeerde tijd ingevuld, kies een andere tijd");
+                    MessageBox.Show("Uw tijden zijn opnieuw aangemaakt omdat er iets fout is gegaan.");
                     // for setting time back if its wrong
                     (sender as DateTimePicker).Value = ValueToCache;
-                    return;            
+                    return;
                 }
                 SaveRegularDays();
             }
@@ -176,30 +172,10 @@ namespace DePandaWinForms.Pages
         DePandaClassLib.Entities.WeekDay DayClosed = new DePandaClassLib.Entities.WeekDay(new DateTime(2020, 04, 07, 0, 0, 0), new DateTime(2020, 04, 07, 0, 0, 0));
         private void ClosedClick(object sender, MouseEventArgs e)
         {
-            string Name = ((sender as Button).Name).Replace("ClosedButton", "");
-
-            if (Name == "Monday")
-                WeekDayList[0] = DayClosed;
-
-            else if (Name == "Tuesday")
-                WeekDayList[1] = DayClosed;
-
-            else if (Name == "Wednesday")
-                WeekDayList[2] = DayClosed; 
-
-            else if (Name == "Thursday")
-                WeekDayList[3] = DayClosed;
-
-            else if (Name == "Friday")
-                WeekDayList[4] = DayClosed;
-
-            else if (Name == "Saturday")
-                WeekDayList[5] = DayClosed;
-
-            else if (Name == "Sunday")
-                WeekDayList[6] = DayClosed;
-
-          
+            int tag = int.Parse((sender as Button).Tag.ToString());
+            WeekDayList[tag] = DayClosed;
+            Thread.Sleep(100);
+            WeekDayList[tag] = DayClosed;
             LoadWeekDays();
         }
     }

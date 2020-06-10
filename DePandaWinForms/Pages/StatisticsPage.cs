@@ -30,8 +30,6 @@ namespace DePandaWinForms.Pages
         public StatisticsPage()
         {
             InitializeComponent();
-            
-
         }
        
         private void ShowGraph(object sender, EventArgs e)
@@ -93,7 +91,9 @@ namespace DePandaWinForms.Pages
                         // voor elk item in een bestelling
                         foreach (Dish dish in order.Dishes)
                         {
-                            TotalDishes.Add(new Dish() { ID = dish.ID, Amount = dish.Amount, Category = dish.Category, Description = dish.Description, Name = dish.Name, Price = dish.Price });
+                            TotalDishes.Add(new Dish() { ID = dish.ID, Amount = dish.Amount, 
+                                Category = dish.Category, Description = dish.Description, 
+                                Name = dish.Name, Price = dish.Price });
                         }
                     }
 
@@ -113,7 +113,5 @@ namespace DePandaWinForms.Pages
             SetChart(DrankMetPrinkChart.Titles.First().Text);
             
         }
-
-       
     }
 }

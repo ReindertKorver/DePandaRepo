@@ -654,6 +654,7 @@
             this.MondayClosedButton.Name = "MondayClosedButton";
             this.MondayClosedButton.Size = new System.Drawing.Size(75, 23);
             this.MondayClosedButton.TabIndex = 98;
+            this.MondayClosedButton.Tag = "0";
             this.MondayClosedButton.Text = "Gesloten";
             this.MondayClosedButton.UseVisualStyleBackColor = false;
             this.MondayClosedButton.MouseDown += new System.Windows.Forms.MouseEventHandler(this.ClosedClick);
@@ -668,6 +669,7 @@
             this.TuesdayClosedButton.Name = "TuesdayClosedButton";
             this.TuesdayClosedButton.Size = new System.Drawing.Size(75, 23);
             this.TuesdayClosedButton.TabIndex = 99;
+            this.TuesdayClosedButton.Tag = "1";
             this.TuesdayClosedButton.Text = "Gesloten";
             this.TuesdayClosedButton.UseVisualStyleBackColor = false;
             this.TuesdayClosedButton.MouseDown += new System.Windows.Forms.MouseEventHandler(this.ClosedClick);
@@ -682,6 +684,7 @@
             this.WednesdayClosedButton.Name = "WednesdayClosedButton";
             this.WednesdayClosedButton.Size = new System.Drawing.Size(75, 23);
             this.WednesdayClosedButton.TabIndex = 100;
+            this.WednesdayClosedButton.Tag = "2";
             this.WednesdayClosedButton.Text = "Gesloten";
             this.WednesdayClosedButton.UseVisualStyleBackColor = false;
             this.WednesdayClosedButton.MouseDown += new System.Windows.Forms.MouseEventHandler(this.ClosedClick);
@@ -696,6 +699,7 @@
             this.ThursdayClosedButton.Name = "ThursdayClosedButton";
             this.ThursdayClosedButton.Size = new System.Drawing.Size(75, 23);
             this.ThursdayClosedButton.TabIndex = 101;
+            this.ThursdayClosedButton.Tag = "3";
             this.ThursdayClosedButton.Text = "Gesloten";
             this.ThursdayClosedButton.UseVisualStyleBackColor = false;
             this.ThursdayClosedButton.MouseDown += new System.Windows.Forms.MouseEventHandler(this.ClosedClick);
@@ -710,6 +714,7 @@
             this.FridayClosedButton.Name = "FridayClosedButton";
             this.FridayClosedButton.Size = new System.Drawing.Size(75, 25);
             this.FridayClosedButton.TabIndex = 102;
+            this.FridayClosedButton.Tag = "4";
             this.FridayClosedButton.Text = "Gesloten";
             this.FridayClosedButton.UseVisualStyleBackColor = false;
             this.FridayClosedButton.MouseDown += new System.Windows.Forms.MouseEventHandler(this.ClosedClick);
@@ -724,6 +729,7 @@
             this.SaturdayClosedButton.Name = "SaturdayClosedButton";
             this.SaturdayClosedButton.Size = new System.Drawing.Size(75, 25);
             this.SaturdayClosedButton.TabIndex = 103;
+            this.SaturdayClosedButton.Tag = "5";
             this.SaturdayClosedButton.Text = "Gesloten";
             this.SaturdayClosedButton.UseVisualStyleBackColor = false;
             this.SaturdayClosedButton.MouseDown += new System.Windows.Forms.MouseEventHandler(this.ClosedClick);
@@ -738,6 +744,7 @@
             this.SundayClosedButton.Name = "SundayClosedButton";
             this.SundayClosedButton.Size = new System.Drawing.Size(75, 25);
             this.SundayClosedButton.TabIndex = 104;
+            this.SundayClosedButton.Tag = "6";
             this.SundayClosedButton.Text = "Gesloten";
             this.SundayClosedButton.UseVisualStyleBackColor = false;
             this.SundayClosedButton.MouseDown += new System.Windows.Forms.MouseEventHandler(this.ClosedClick);
